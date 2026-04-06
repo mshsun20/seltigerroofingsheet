@@ -1,0 +1,32 @@
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import Navbar from "@/components/Navbar";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata = {
+  title: "SEL Tiger Roofing Sheets",
+  description: "SEL Tiger Roofing Sheets Website built for Shyam Metalics",
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    >
+      <body className="root-layout">
+        <Navbar />
+        <main className="main">{children}</main>
+      </body>
+    </html>
+  );
+}
