@@ -7,10 +7,10 @@ const blogLayout = ({ children }) => {
     <div className="blog-layout">
         <ul>
             <li>
-                <Link href="/blogs/blog1">Blog Post 1</Link>
+                <Link href="/blogs/1">Blog Post 1</Link>
             </li>
             <li>
-                <Link href="/blogs/blog2">Blog Post 2</Link>
+                <Link href="/blogs/2">Blog Post 2</Link>
             </li>
         </ul>
         {children}

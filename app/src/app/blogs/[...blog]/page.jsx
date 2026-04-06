@@ -1,9 +1,11 @@
+"use client"
 import React from 'react'
 
-const Blog = ({ blog }) => {
-    console.log(blog)
+const Blog = ({ params }) => {
+    const param = React.use(params)
+    console.log(param)
   return (
-    <div>Blog 1</div>
+    <div>Blog {param.blog}</div>
   )
 }
 
