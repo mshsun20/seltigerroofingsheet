@@ -8,6 +8,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoConn from './db/dbcon.js';
 // import certificateRouter from './routes/certificate.js';
+import blogRouter from './routes/blogs.js';
 // Load environment variables from .env file
 dotenv.config({ quiet: true });
 
@@ -81,6 +82,7 @@ else {
 
     // routers
     // app.use('/api/certificate', certificateRouter);
+    app.use('/api/blogs', blogRouter);
 
     // static serves
     // if (apienv === 'live') {
