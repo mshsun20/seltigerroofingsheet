@@ -1,10 +1,11 @@
 import React from 'react'
 
 const AddEdit = ({
-    onCancel,
+    // onCancel,
     onSubmit,
-    mode = "add",
-    initialData = {}
+    // mode = "add",
+    initialData = {},
+    // show
 }) => {
     const [form, setForm] = React.useState({
         title: '',
@@ -48,6 +49,11 @@ const AddEdit = ({
         onSubmit(formData);
         // Handle form submission logic here
     };
+
+    // const handleCancel = () => {
+    //     onCancel();
+    //     // Handle cancel logic here
+    // };
 
   return (
     <>
