@@ -32,7 +32,7 @@ const blogLayout = ({ children }) => {
       <div className="blog-layout">
           <ul>
             {blogs.map((blog) => (
-              <li key={blog.id}>
+              <li key={blog.slug}>
                 <Link href={`/blogs/${blog?.slug}`}>{blog.title}</Link>
               </li>
             ))}
