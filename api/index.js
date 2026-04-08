@@ -81,21 +81,7 @@ else {
     app.use(express.static('uploads'));
 
     // routers
-    // app.use('/api/certificate', certificateRouter);
     app.use('/api/blogs', blogRouter);
-
-    // static serves
-    // if (apienv === 'live') {
-    //     // static frontend
-    //     const distPath = path.join(__dirname, '..', 'frontend', 'dist');
-    //     // console.log("Serving frontend from:", distPath);
-    //     app.use(express.static(distPath));
-
-    //     // frontend routes
-    //     app.get(/^\/(?!api).*/, (req, res) => {
-    //         res.sendFile(path.join(distPath, 'index.html'));
-    //     });
-    // }
 
     (async () => {
         await mongoConn();

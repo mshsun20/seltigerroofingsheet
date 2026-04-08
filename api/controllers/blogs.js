@@ -11,11 +11,10 @@ export const generateSlug = (title) => {
 // Controller logics ---------------------------------------------------------------------------------------------------------------------------------------------------------
 export const createBlog = async (req, res) => {
     try {
-        console.log(req.body);
-        // const { title, slug, metaTitle, metaDescription, author, content, mediaLink } = req.body;
-        // const newBlog = new Blog({ title, slug, metaTitle, metaDescription, author, content, mediaLink });
-        // const savedBlog = await newBlog.save();
-        // res.status(201).json(savedBlog);
+        const { title, slug, metaTitle, metaDescription, author, content, mediaLink } = req.body;
+        const newBlog = new Blog({ title, slug, metaTitle, metaDescription, author, content, mediaLink });
+        const savedBlog = await newBlog.save();
+        res.status(201).json({ message: "Blog post created successfully", data: savedBlog });
     } catch (error) {
         res.status(500).json({ error: "Failed to create blog post" });
     }
@@ -24,7 +23,7 @@ export const createBlog = async (req, res) => {
 export const getBlogs = async (req, res) => {
     try {
         const blogs = await Blog.find().sort({ createdAt: -1 });
-        res.status(200).json(blogs);
+        res.status(200).json({ message: "Blog posts fetched successfully", data: blogs });
     } catch (error) {
         res.status(500).json({ error: "Failed to fetch blog posts" });
     }
@@ -37,7 +36,7 @@ export const getBlogBySlug = async (req, res) => {
         if (!blog) {
             return res.status(404).json({ error: "Blog post not found" });
         }
-        res.status(200).json(blog);
+        res.status(200).json({ message: "Blog post fetched successfully", data: blog });
     } catch (error) {
         res.status(500).json({ error: "Failed to fetch blog post" });
     }
@@ -47,11 +46,11 @@ export const updateBlog = async (req, res) => {
     try {
         const { id } = req.params;
         const { title, slug, metaTitle, metaDescription, author, content, mediaLink } = req.body;
-        const updatedBlog = await Blog.findByIdAndUpdate(id, { title, slug, metaTitle, metaDescription, author, content, mediaLink }, { new: true });
+        const updatedBlog = await Blog.findByIdAndUpdate(id, { title, slug, metaTitle, metaDescription, author, content, mediaLink }, { returnDocument: "after" });
         if (!updatedBlog) {
             return res.status(404).json({ error: "Blog post not found" });
         }
-        res.status(200).json(updatedBlog);
+        res.status(200).json({ message: "Blog post updated successfully", data: updatedBlog });
     } catch (error) {
         res.status(500).json({ error: "Failed to update blog post" });
     }

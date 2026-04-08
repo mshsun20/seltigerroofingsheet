@@ -12,11 +12,12 @@ const Blogs = () => {
         // console.log(blogData);
         try {
             if (mode === "add") {
-                await axiosInstance.post('/api/blogs', blogData);
+                await axiosInstance.post('/api/blogs', blogData.formData);
             }
             else if (mode === "edit") {
-                await axiosInstance.put(`/api/blogs/${blogData.id}`, blogData);
+                await axiosInstance.patch(`/api/blogs/${blogData.id}`, blogData.formData);
             }
+            setShowForm(false);
             setMode(null);
             fetchData();
         }
@@ -28,7 +29,7 @@ const Blogs = () => {
     const fetchData = React.useCallback(async () => {
         try {
             const response = await axiosInstance.get('/api/blogs');
-            setData(response.data || []);
+            setData(response.data.data || []);
         }
         catch (error) {
             console.error("Error fetching blog posts:", error);

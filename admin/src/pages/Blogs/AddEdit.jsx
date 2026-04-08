@@ -3,7 +3,7 @@ import React from 'react'
 const AddEdit = ({
     onCancel,
     onSubmit,
-    // mode = "add",
+    mode = "add",
     initialData = {},
 }) => {
     const [form, setForm] = React.useState({
@@ -17,7 +17,7 @@ const AddEdit = ({
     });
 
     React.useEffect(() => {
-        if (initialData) {
+        if (mode === "edit" && initialData) {
             setForm({
                 title: initialData.title || '',
                 slug: initialData.slug || '',
@@ -45,13 +45,11 @@ const AddEdit = ({
             formData.append(key, form[key]);
         }
 
-        onSubmit(formData);
-        // Handle form submission logic here
+        onSubmit({ formData, id: initialData?._id });
     };
 
     const handleCancel = () => {
         onCancel(false);
-        // Handle cancel logic here
     };
 
   return (
@@ -91,7 +89,7 @@ const AddEdit = ({
                         <label htmlFor="mediaLink">Media Link</label>
                         <input type="text" id="mediaLink" value={form.mediaLink} onChange={handleChange} />
                     </div>
-                    <button type="submit" onClick={handleSubmit}>Create Blog Post</button>
+                    <button type="submit" onClick={handleSubmit}>Submit</button>
                     <button type="submit" onClick={handleCancel}>Cancel</button>
                 </div>
             </div>
