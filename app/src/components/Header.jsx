@@ -1,10 +1,12 @@
-"use client";
 import React from 'react'
+import Topbar from './Topbar'
+import Navbar from './Navbar'
 
 const Header = () => {
   return (
     <div className='header'>
-      <h1 className='header-title'>SEL Tiger Roofing Sheets</h1>
+      <Topbar />
+      <Navbar />
     </div>
   )
 }
