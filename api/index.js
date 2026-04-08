@@ -27,12 +27,12 @@ const port = portDetails[appenv] || 5052;
 
 const allowedOrigins = {
     dev: {
-        quality: [process.env.APP_URL_DEVQ],
-        production: [process.env.APP_URL_DEVP]
+        quality: [process.env.APP_URL_DEVQ, process.env.ADMIN_URL_DEVQ],
+        production: [process.env.APP_URL_DEVP, process.env.ADMIN_URL_DEVP]
     },
     live: {
-        quality: [process.env.APP_URL_LIVQ],
-        production: [process.env.APP_URL_LIVP]
+        quality: [process.env.APP_URL_LIVQ, process.env.ADMIN_URL_LIVQ],
+        production: [process.env.APP_URL_LIVP, process.env.ADMIN_URL_LIVP]
     }
 }
 const origins = allowedOrigins[apienv][appenv] || ['http://localhost:3047'];

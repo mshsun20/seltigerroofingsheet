@@ -6,12 +6,15 @@ const Blogs = () => {
     const [data, setData] = React.useState([]);
     const [mode, setMode] = React.useState(null);
     const [showForm, setShowForm] = React.useState(false);
+    const [blog, setBlog] = React.useState({});
 
     const handleSubmit = async (blogData) => {
+        // console.log(blogData);
         try {
             if (mode === "add") {
                 await axios.post('/api/blogs', blogData);
-            } else if (mode === "edit") {
+            }
+            else if (mode === "edit") {
                 await axios.put(`/api/blogs/${blogData.id}`, blogData);
             }
             setMode(null);
@@ -72,6 +75,8 @@ const Blogs = () => {
                                     <td>
                                         <button className="edit-btn" onClick={() => {
                                             setMode("edit");
+                                            setBlog(blog);
+                                            setShowForm(true);
                                         }}>
                                             Edit
                                         </button>
@@ -83,7 +88,15 @@ const Blogs = () => {
                     </table>
                 </div>
 
-                {showForm === true && <AddEdit mode={mode === "edit" ? "edit" : "add"} onSubmit={handleSubmit} onSuccess={fetchData} show={showForm} />}
+                {
+                    showForm === true && <AddEdit
+                        mode={mode === "edit" ? "edit" : "add"}
+                        initialData={mode === "edit" ? blog : {}}
+                        onSubmit={handleSubmit}
+                        onSuccess={fetchData}
+                        onCancel={() => setShowForm(false)}
+                    />
+                }
             </div>
         </div>
     </>

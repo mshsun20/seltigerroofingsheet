@@ -1,11 +1,10 @@
 import React from 'react'
 
 const AddEdit = ({
-    // onCancel,
+    onCancel,
     onSubmit,
     // mode = "add",
     initialData = {},
-    // show
 }) => {
     const [form, setForm] = React.useState({
         title: '',
@@ -50,10 +49,10 @@ const AddEdit = ({
         // Handle form submission logic here
     };
 
-    // const handleCancel = () => {
-    //     onCancel();
-    //     // Handle cancel logic here
-    // };
+    const handleCancel = () => {
+        onCancel(false);
+        // Handle cancel logic here
+    };
 
   return (
     <>
@@ -66,33 +65,34 @@ const AddEdit = ({
                 <div className='add-edit-form'>
                     <div className="form-group">
                         <label htmlFor="title">Title</label>
-                        <input type="text" id="title" onChange={handleChange} />
+                        <input type="text" id="title" value={form.title} onChange={handleChange} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="slug">Slug</label>
-                        <input type="text" id="slug" onChange={handleChange} />
+                        <input type="text" id="slug" value={form.slug} onChange={handleChange} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="metaTitle">Meta Title</label>
-                        <input type="text" id="metaTitle" onChange={handleChange} />
+                        <input type="text" id="metaTitle" value={form.metaTitle} onChange={handleChange} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="metaDescription">Meta Description</label>
-                        <input type="text" id="metaDescription" onChange={handleChange} />
+                        <input type="text" id="metaDescription" value={form.metaDescription} onChange={handleChange} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="author">Author</label>
-                        <input type="text" id="author" onChange={handleChange} />
+                        <input type="text" id="author" value={form.author} onChange={handleChange} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="content">Content</label>
-                        <textarea id="content" rows="5" onChange={handleChange}></textarea>
+                        <textarea id="content" rows="5" value={form.content} onChange={handleChange}></textarea>
                     </div>
                     <div className="form-group">
                         <label htmlFor="mediaLink">Media Link</label>
-                        <input type="text" id="mediaLink" onChange={handleChange} />
+                        <input type="text" id="mediaLink" value={form.mediaLink} onChange={handleChange} />
                     </div>
                     <button type="submit" onClick={handleSubmit}>Create Blog Post</button>
+                    <button type="submit" onClick={handleCancel}>Cancel</button>
                 </div>
             </div>
         </div>

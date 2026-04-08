@@ -11,10 +11,11 @@ export const generateSlug = (title) => {
 // Controller logics ---------------------------------------------------------------------------------------------------------------------------------------------------------
 export const createBlog = async (req, res) => {
     try {
-        const { title, slug, metaTitle, metaDescription, author, content, mediaLink } = req.body;
-        const newBlog = new Blog({ title, slug, metaTitle, metaDescription, author, content, mediaLink });
-        const savedBlog = await newBlog.save();
-        res.status(201).json(savedBlog);
+        console.log(req.body);
+        // const { title, slug, metaTitle, metaDescription, author, content, mediaLink } = req.body;
+        // const newBlog = new Blog({ title, slug, metaTitle, metaDescription, author, content, mediaLink });
+        // const savedBlog = await newBlog.save();
+        // res.status(201).json(savedBlog);
     } catch (error) {
         res.status(500).json({ error: "Failed to create blog post" });
     }
