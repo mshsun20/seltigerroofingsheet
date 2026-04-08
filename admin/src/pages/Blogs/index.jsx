@@ -11,18 +11,21 @@ const Blogs = () => {
     const handleSubmit = async (blogData) => {
         // console.log(blogData);
         try {
+            let response;
             if (mode === "add") {
-                await axiosInstance.post('/api/blogs', blogData.formData);
+                response = await axiosInstance.post('/api/blogs', blogData.formData);
             }
             else if (mode === "edit") {
-                await axiosInstance.patch(`/api/blogs/${blogData.id}`, blogData.formData);
+                response = await axiosInstance.patch(`/api/blogs/${blogData.id}`, blogData.formData);
             }
+            alert(`Blog post for ${response.data.data.slug} ${mode === "add" ? "created" : "updated"} successfully!`);
             setShowForm(false);
             setMode(null);
             fetchData();
         }
         catch (error) {
             console.error("Error submitting blog post:", error);
+            alert("ERROR details: " + (error.response?.data?.error || error.message || "An unknown error occurred"));
         }
     }
 

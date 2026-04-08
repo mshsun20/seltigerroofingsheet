@@ -4,12 +4,12 @@ const appenv = process.env.NEXT_PUBLIC_APP_ENV || 'quality';
 
 const baseUrl = {
     dev: {
-        quality: import.meta.env.NEXT_PUBLIC_APIURL_DEVQ,
-        production: import.meta.env.NEXT_PUBLIC_APIURL_DEVP,
+        quality: process.env.NEXT_PUBLIC_APIURL_DEVQ,
+        production: process.env.NEXT_PUBLIC_APIURL_DEVP,
     },
     live: {
-        quality: import.meta.env.NEXT_PUBLIC_APIURL_QAS,
-        production: import.meta.env.NEXT_PUBLIC_APIURL_PRD,
+        quality: process.env.NEXT_PUBLIC_APIURL_QAS,
+        production: process.env.NEXT_PUBLIC_APIURL_PRD,
     }
 };
 

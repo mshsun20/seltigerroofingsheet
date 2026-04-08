@@ -1,11 +1,18 @@
 "use client"
 import React from 'react'
+import { useParams } from 'next/navigation'
+import { useBlogContext } from '../layout'
 
-const Blog = ({ params }) => {
-    const param = React.use(params)
-    console.log(param)
+const Blog = () => {
+    const param = useParams()
+    const blogContext = useBlogContext()
+    // console.log(blogContext)
+    
   return (
-    <div>Blog {param.blog}</div>
+    <div className="major-data">
+      <h1>{blogContext?.title}</h1>
+      <p>{blogContext?.content}</p>
+    </div>
   )
 }
 
