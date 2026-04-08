@@ -35,7 +35,7 @@ const allowedOrigins = {
         production: [process.env.APP_URL_LIVP, process.env.ADMIN_URL_LIVP]
     }
 }
-const origins = allowedOrigins[apienv][appenv] || ['http://localhost:3047'];
+const origins = allowedOrigins[apienv][appenv] || ['http://localhost:3052'];
 
 
 const __filename = fileURLToPath(import.meta.url);

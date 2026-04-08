@@ -1,6 +1,6 @@
 import React from 'react'
 import AddEdit from './AddEdit';
-import axios from 'axios'
+import axiosInstance from '../../config/axiosInstance';
 
 const Blogs = () => {
     const [data, setData] = React.useState([]);
@@ -12,10 +12,10 @@ const Blogs = () => {
         // console.log(blogData);
         try {
             if (mode === "add") {
-                await axios.post('/api/blogs', blogData);
+                await axiosInstance.post('/api/blogs', blogData);
             }
             else if (mode === "edit") {
-                await axios.put(`/api/blogs/${blogData.id}`, blogData);
+                await axiosInstance.put(`/api/blogs/${blogData.id}`, blogData);
             }
             setMode(null);
             fetchData();
@@ -27,7 +27,7 @@ const Blogs = () => {
 
     const fetchData = React.useCallback(async () => {
         try {
-            const response = await axios.get('/api/blogs');
+            const response = await axiosInstance.get('/api/blogs');
             setData(response.data || []);
         }
         catch (error) {
