@@ -1,8 +1,10 @@
 "use client"
 import React from 'react'
+import "@/styles/blogs.css"
 import Link from 'next/link'
 import axiosInstance from '@/configs/axiosInstance'
 import { useSelectedLayoutSegment } from 'next/navigation'
+import Card from '@/components/Card'
 
 const BlogContext = React.createContext()
 export const useBlogContext = () => React.useContext(BlogContext)
@@ -29,15 +31,31 @@ const blogLayout = ({ children }) => {
 
   return (
     <BlogContext.Provider value={activeBlog}>
-      <div className="blog-layout">
-          <ul>
-            {blogs.map((blog) => (
-              <li key={blog.slug}>
-                <Link href={`/blogs/${blog?.slug}`}>{blog.title}</Link>
-              </li>
-            ))}
-          </ul>
-          {children}
+      <div className="containr">
+        <div className="content-layout">
+          <div className="content-part">
+            <div className="blog-details">
+              <h1 className='blog-heading'>Blog Details</h1>
+              {children}
+            </div>
+            <div className="blog-list">
+              <h2 className='bloglist-heading'>Blogs List</h2>
+              <ul>
+                {blogs.map((blog) => (
+                  <li key={blog.slug}>
+                    <Link href={`/blogs/${blog?.slug}`}>
+                      <Card 
+                        poster={blog.mediaLink}
+                        title={blog.title}
+                        shortInfo={blog.content}
+                      />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </BlogContext.Provider>
   )
