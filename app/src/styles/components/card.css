@@ -5,12 +5,12 @@
     flex-direction: column;
     /* border: 0.1rem solid #ccc; */
     border-radius: 4px;
-    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0rem 0.5rem var(--foreground);
     padding-bottom: 0.2rem;
     width: 100%;
     max-width: 400px;
     height: 10rem;
-    margin: 1rem;
+    margin: 2rem;
 }
 .card-poster {
     width: 100%;
