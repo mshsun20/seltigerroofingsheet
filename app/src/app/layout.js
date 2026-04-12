@@ -13,7 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "SEL Tiger Roofing Sheets",
+  title: {
+    default: "SEL Tiger Roofing Sheets",
+    template: "%s | SEL Tiger Roofing Sheets",
+  },
   description: "SEL Tiger Roofing Sheets Website built for Shyam Metalics",
 };
 
