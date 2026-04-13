@@ -5,13 +5,13 @@
   --foreground: #161002;
   --theme: #f78400;
 }
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #161002;
     --foreground: #fcf7ed;
     --theme: #8d4b00;
   }
-}
+} */
 
 @theme inline {
   --color-background: var(--background);

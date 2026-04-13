@@ -1,24 +1,19 @@
-"use client"
 import React from 'react'
 import "@/styles/blogs.css"
 import Link from 'next/link'
 import axiosInstance from '@/configs/axiosInstance'
 import Card from '@/components/Card'
 
-const BlogLayout = ({ children }) => {
-  const [blogs, setBlogs] = React.useState([])
+export const generateMetadata = async ({ params }) => {
+  return {
+    title: "Blog Deatils",
+    description: "Read our latest blogs on roofing solutions, industry insights, and tips for maintaining your roof. Stay informed with SEL Tiger Roofing Sheets.",
+  }
+}
 
-  const fetchBlogs = React.useCallback(async () => {
-    try {
-      const response = await axiosInstance.get('/api/blogs')
-      setBlogs(response.data?.data || [])
-    } catch (error) {
-      console.error(error)
-    }
-  }, [])
-  React.useEffect(() => {
-    fetchBlogs()
-  }, [fetchBlogs])
+const BlogLayout = async ({ children }) => {
+  const response = await axiosInstance.get('/api/blogs')
+  const blogs = response.data?.data || []
 
   return (
     <div className="containr">

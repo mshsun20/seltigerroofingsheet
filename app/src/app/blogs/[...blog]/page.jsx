@@ -7,7 +7,7 @@ export const generateMetadata = async ({ params }) => {
     const response = await axiosInstance.get(`/api/blogs/${slug}`)
     const blogData = response.data?.data || {}
     return {
-      title: blogData.metaTitle || blogData.title || "Blog Details",
+      title: blogData.metaTitle || blogData.title || "",
       description: blogData.metaDescription || "",
     }
   }

@@ -8,7 +8,15 @@ const Navbar = () => {
     <div className='containr nav-container'>
         <div className="navbar">
             <div className="logo">
-                <Image src="/logo.png" alt="SELTigerRoofingSheet" fill />
+                <Link className='icon-link' href="/">
+                    <Image
+                        src="/logo.png"
+                        alt="SELTigerRoofingSheet"
+                        width="100"
+                        height="100"
+                        style={{ objectFit: "contain" }}
+                    />
+                </Link>
             </div>
             <div className="nav">
                 <ul>
