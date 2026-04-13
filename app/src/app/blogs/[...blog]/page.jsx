@@ -22,7 +22,7 @@ export const generateMetadata = async ({ params }) => {
 
 const Blog = async ({ params }) => {
   const { blog } = await params
-  console.log(blog);
+  // console.log(blog);
   const slug = blog?.[0] || "";
 
   const response = await axiosInstance.get(`/api/blogs/${slug}`)

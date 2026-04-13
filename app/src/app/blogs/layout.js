@@ -5,7 +5,7 @@ import Link from 'next/link'
 import axiosInstance from '@/configs/axiosInstance'
 import Card from '@/components/Card'
 
-const blogLayout = ({ children }) => {
+const BlogLayout = ({ children }) => {
   const [blogs, setBlogs] = React.useState([])
 
   const fetchBlogs = React.useCallback(async () => {
@@ -50,4 +50,4 @@ const blogLayout = ({ children }) => {
   )
 }
 
-export default blogLayout
+export default BlogLayout
