@@ -19,6 +19,7 @@
 
 # production
 /build
+/public/wp-content
 
 # misc
 .DS_Store
