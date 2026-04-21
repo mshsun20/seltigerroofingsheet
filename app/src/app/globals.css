@@ -193,15 +193,18 @@ body {
   padding: 0.5rem 0;
   border-radius: 0;
 }
-.sub .menu .menuclose {
+.menuclose {
+  display: none;
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background-color: transparent;
+  background-color: var(--foreground);
+  padding: 0.2rem;
   color: var(--background);
   font-size: 2rem;
   cursor: pointer;
   border: none;
+  border-radius: 50%;
 }
 .sub .menu li {
   display: flex;
@@ -241,6 +244,9 @@ body {
 
   .sub {
     display: flex;
+  }
+  .menuclose {
+    display: block;
   }
 }
 
