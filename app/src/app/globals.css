@@ -48,6 +48,7 @@ body {
   align-items: center;
   width: 100%;
   height: auto;
+  padding: 0 12%;
 }
 .content-layout {
   display: flex;
@@ -62,9 +63,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  width: 60%;
+  width: 100%;
   height: auto;
-  /* padding: 2rem; */
 }
 
 /* header */
