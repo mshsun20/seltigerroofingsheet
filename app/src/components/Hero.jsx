@@ -1,19 +1,20 @@
 "use client";
 import React from 'react'
 import "@/styles/components/hero.css";
-import Image from 'next/image';
+// import Image from 'next/image';
 
 const Hero = () => {
   return (
     <div className="hero-layout">
         <div className="hero-wrapper">
-            <Image
-                src="/wp-content/themes/sel/assets/img/all-images/hero/hero0.jpg"
+            {/* <Image
+                src="/wp-content/themes/sel/assets/img/all-images/hero/hero0.avif"
                 alt="Roofing Sheet"
                 width={500}
                 height={100}
                 className="hero-bg"
-            />
+            /> */}
+            <img src="/wp-content/themes/sel/assets/img/all-images/hero/hero0.avif" alt="Roofing Sheet" className="hero-bg" />
         </div>
         <div className="hero-part">
             <div className="hero-content">
