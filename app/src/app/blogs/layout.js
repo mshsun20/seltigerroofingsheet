@@ -16,7 +16,7 @@ const BlogLayout = async ({ children }) => {
   const blogs = response.data?.data || []
 
   return (
-    <div className="containr">
+    <div className="container">
       <div className="content-layout">
         <div className="content-part">
           <div className="blog-details">
