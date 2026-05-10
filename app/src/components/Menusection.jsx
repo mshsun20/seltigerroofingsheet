@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ChevronRight } from 'lucide-react'
 
-const Menusection = React.memo(({ menuItems = [], onToggle }) => {
+const Menusection = ({ menuItems, onToggle }) => {
     return (
         <ul className='menu'>
             <button className='menuclose' onClick={onToggle}><ChevronRight /></button>
@@ -24,6 +24,6 @@ const Menusection = React.memo(({ menuItems = [], onToggle }) => {
             ))}
         </ul>
     )
-})
+}
 
-export default Menusection
+export default React.memo(Menusection)

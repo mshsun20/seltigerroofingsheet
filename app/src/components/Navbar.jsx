@@ -20,7 +20,7 @@ const Navbar = () => {
             <div className="logo">
                 <Link className='icon-link' href="/">
                     <Image
-                        src="/logo.png"
+                        src="/wp-content/themes/sel/assets/img/logo/Logo_White.png"
                         alt="SELTigerRoofingSheet"
                         width="100"
                         height="100"
@@ -49,4 +49,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default React.memo(Navbar)

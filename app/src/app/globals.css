@@ -4,6 +4,7 @@
   --background: #fcf7ed;
   --foreground: #161002;
   --theme: #f78400;
+  --theme-alt: #ca6c00;
 }
 /* @media (prefers-color-scheme: dark) {
   :root {
@@ -20,8 +21,11 @@
   --font-mono: var(--font-geist-mono);
 }
 
+html {
+  font-size: 100%;
+}
+
 body {
-  font-size: 62.5%;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
@@ -136,7 +140,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 0.5rem;
+  padding: 0 1rem;
   height: 100%;
   color: white;
   font-size: 1rem;
@@ -215,27 +219,6 @@ body {
 }
 
 
-/* globals.css */
-.filter-rainy {
-  filter: url('#rain-filter'); /* Referencing the SVG ID */
-}
-
-.raindrop {
-  position: absolute;
-  top: -10px;
-  width: 2px;
-  height: 15px;
-  background: rgba(255, 255, 255, 0.4);
-  animation: fall linear infinite;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(100vh);
-  }
-}
-
-
 
 
 
@@ -244,6 +227,9 @@ body {
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 @media (max-width: 1440px) {
+  html {
+    font-size: 95%;
+  }
   .container {
     padding: 0 5%;
   }
@@ -256,8 +242,11 @@ body {
   }  
 }
 @media (max-width: 1280px) {
+  html {
+    font-size: 90%;
+  }
   .container {
-    padding: 0 3%;
+    padding: 0 1%;
   }
   .content-layout {
     flex-direction: column;
@@ -269,6 +258,9 @@ body {
 }
 
 @media (max-width: 1024px) {
+  html {
+    font-size: 86%;
+  }
   .container {
     padding: 0 2%;
   }
@@ -303,6 +295,9 @@ body {
 }
 
 @media (max-width: 768px) {
+  html {
+    font-size: 83.5%;
+  }
   .container {
     padding: 0 1.5%;
   }
@@ -315,7 +310,19 @@ body {
   }
 }
 
+@media (max-width: 640px) {
+  html {
+    font-size: 82%;
+  }
+  .container {
+    padding: 0 3%;
+  }
+}
+
 @media (max-width: 480px) {
+  html {
+    font-size: 80%;
+  }
   .container {
     padding: 0 2%;
   }

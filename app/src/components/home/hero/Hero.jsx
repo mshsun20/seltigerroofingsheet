@@ -2,16 +2,10 @@
 import React from 'react'
 import "@/styles/components/hero.css";
 import Image from 'next/image';
-import RainyFilter from '@/components/RainyFilter';
-
-const statCounter = [
-    { value: 50, info: 'Countries Worldwide' },
-    { value: 400, info: 'Team Members' },
-    { value: 2000, info: 'Network Channel' },
-]
+import Statcounter from './Statcounter';
 
 const Hero = () => {
-    const counter = React.useMemo(() => statCounter, [])
+    const [arrow, setArrow] = React.useState('↗');
 
   return (
     <div className="hero-layout">
@@ -23,7 +17,6 @@ const Hero = () => {
                 height={100}
                 className="hero-bg"
             />
-            {/* <RainyFilter /> */}
         </div>
         <div className="hero-part container">
             <div className="hero-container">
@@ -45,16 +38,9 @@ const Hero = () => {
                     <span>From manufacturing plants to warehouses, our high-performance roofing sheets offer durability, efficiency, and long-lasting protection for industrial applications.</span>
                 </div>
                 <div className="hero-actions">
-                    <button>Discover More</button>
+                    <button onMouseEnter={() => setArrow('→')} onMouseLeave={() => setArrow('↗')}>Discover More <span>{arrow}</span></button>
                 </div>
-                <div className="hero-stat">
-                    {counter?.length>0 && counter?.map((elm, i) => (
-                        <div className="stat-counter" key={i}>
-                            <div className="counter-value">{elm.value}+</div>
-                            <div className="counter-info">{elm.info}</div>
-                        </div>
-                    ))}
-                </div>
+                <Statcounter />
             </div>
         </div>
     </div>
