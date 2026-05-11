@@ -3,42 +3,59 @@
 :root {
   --background: #fcf7ed;
   --foreground: #161002;
+
   --theme: #f78400;
   --theme-alt: #ca6c00;
+
+  --white: #ffffff;
+  --black: #000000;
+
+  --submenu-bg: rgba(0, 0, 0, 0.96);
+  --border-light: rgba(255, 255, 255, 0.08);
 }
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #161002;
-    --foreground: #fcf7ed;
-    --theme: #8d4b00;
-  }
-} */
+
+/* =======================================================================================================================
+   THEME
+======================================================================================================================= */
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+/* =======================================================================================================================
+   RESET
+======================================================================================================================= */
+
 html {
   font-size: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  scroll-behavior: smooth;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
+a {
+  text-decoration: none;
+}
 
+/* =======================================================================================================================
+   ROOT LAYOUT
+======================================================================================================================= */
 
-/* All Styles ========================================================================================================================================================================== */
-/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
-/* root layout */
 .root-layout {
   display: flex;
   flex-direction: column;
@@ -55,7 +72,10 @@ body {
   padding: 0 6%;
 }
 
-/* header ============================================================================================== */
+/* =======================================================================================================================
+   HEADER
+======================================================================================================================= */
+
 .header {
   position: fixed;
   top: 0;
@@ -67,7 +87,11 @@ body {
   height: auto;
   z-index: 999;
 }
-/* topbar */
+
+/* =======================================================================================================================
+   TOPBAR
+======================================================================================================================= */
+
 .topbar {
   width: 100%;
   background-color: #000000;
@@ -79,152 +103,377 @@ body {
   font-weight: bold;
   font-style: italic;
 }
-/* navbar */
+
+/* =======================================================================================================================
+   NAVBAR
+======================================================================================================================= */
+
 .nav-container {
   /* background-color: var(--theme); */
   background-color: transparent;
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-flow: row wrap;
-  width: 100%; 
+  width: 100%;
   height: 5rem;
+  overflow: visible;
 }
+
+/* =======================================================================================================================
+   LOGO
+======================================================================================================================= */
+
 .logo {
   position: relative;
   width: 7.5rem;
   height: 3rem;
 }
+
 .logo img {
   object-fit: contain;
 }
+
+/* =======================================================================================================================
+   DESKTOP NAVIGATION
+======================================================================================================================= */
+
 .nav {
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 50%;
   height: 100%;
+  overflow: visible;
 }
+
 .nav .menu {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  flex-flow: row;
-  width: 100%;
-  height: 100%;
-}
-.nav .menu li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* padding: 0.5rem; */
   height: 100%;
   list-style: none;
+  overflow: visible;
 }
-.icon-link {
+
+/* =======================================================================================================================
+   MENU ITEM
+======================================================================================================================= */
+
+.menu-item {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 7.5rem;
-  height: 3rem;
-  /* padding: 1.5rem; */
+  list-style: none;
 }
-.icon-link img {
-  max-width: 100%;
-  height: auto;
-}
+
+/* =======================================================================================================================
+   MENU LINKS
+======================================================================================================================= */
+
 .menu-link {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 5rem;
   padding: 0 1rem;
-  height: 100%;
-  color: white;
-  font-size: 1rem;
-  /* font-weight: bold; */
-  text-decoration: none;
+  color: var(--white);
+  font-size: 0.95rem;
   white-space: nowrap;
+  transition: all 0.25s ease;
 }
-/* toggle menu */
+
+.menu-link:hover {
+  color: var(--theme);
+}
+
+/* =======================================================================================================================
+   ICON LINK
+======================================================================================================================= */
+
+.icon-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7rem;
+  height: 3rem;
+}
+
+.icon-link img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* =======================================================================================================================
+   SUBMENU TOGGLE
+======================================================================================================================= */
+
+.submenu-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  height: 5rem;
+  padding: 0 1rem;
+  background: transparent;
+  border: none;
+  color: var(--white);
+  font-size: 0.95rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.submenu-toggle:hover {
+  color: var(--theme);
+}
+
+/* =======================================================================================================================
+   HAS CHILDREN
+======================================================================================================================= */
+
+.has-children {
+  position: relative;
+}
+
+/* =======================================================================================================================
+   DESKTOP SUBMENU
+======================================================================================================================= */
+
+.desktop-submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 15rem;
+  padding: 0.35rem 0;
+  background-color: var(--submenu-bg);
+  border-radius: 0.5rem;
+  overflow: visible;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+  z-index: 9999;
+}
+
+/* nested submenu */
+.desktop-submenu .desktop-submenu {
+  top: 0;
+  left: calc(100% + 0.2rem);
+  margin-top: -0.35rem;
+}
+
+/* show submenu on hover */
+.has-children:hover > .desktop-submenu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* submenu item */
+.desktop-submenu .menu-item {
+  position: relative;
+  width: 100%;
+}
+
+/* submenu links */
+.desktop-submenu .menu-link,
+.desktop-submenu .submenu-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.9rem 1rem;
+  color: var(--white);
+  font-size: 0.92rem;
+  border: none;
+  border-bottom: 1px solid var(--border-light);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* last item */
+.desktop-submenu .menu-item:last-child > .menu-link,
+.desktop-submenu .menu-item:last-child > .submenu-toggle {
+  border-bottom: none;
+}
+
+/* hover */
+.desktop-submenu .menu-link:hover,
+.desktop-submenu .submenu-toggle:hover {
+  background-color: var(--theme);
+  color: var(--white);
+}
+
+/* =======================================================================================================================
+   MOBILE TOGGLE
+======================================================================================================================= */
+
 .sub {
   display: none;
   justify-content: center;
   align-items: center;
-  width: 3rem;
-  height: 3rem;
-  color: var(--background);
-  font-size: 1.5rem;
-  cursor: pointer;
 }
+
 .sub .toggle {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--foreground);
-  width: 2.5rem;
-  height: 2.5rem;
-  color: var(--background);
-  font-size: 1.5rem;
-  cursor: pointer;
+  width: 2.7rem;
+  height: 2.7rem;
   border: none;
   border-radius: 50%;
+  background-color: var(--foreground);
+  color: var(--white);
+  cursor: pointer;
+  z-index: 99999;
 }
+
+/* =======================================================================================================================
+   MOBILE MENU
+======================================================================================================================= */
+
 .sub .menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
-  background-color: var(--theme);
-  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 24rem;
   height: 100vh;
-  padding: 0.5rem 0;
-  border-radius: 0;
+  padding: 5rem 0 2rem;
+  overflow-y: auto;
+  background-color: var(--foreground);
+  z-index: 9999;
 }
+
+/* =======================================================================================================================
+   CLOSE BUTTON
+======================================================================================================================= */
+
 .menuclose {
-  display: none;
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background-color: var(--foreground);
-  padding: 0.2rem;
-  color: var(--background);
-  font-size: 2rem;
-  cursor: pointer;
-  border: none;
-  border-radius: 50%;
-}
-.sub .menu li {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem;
-  list-style: none;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--theme);
+  color: var(--white);
+  cursor: pointer;
+  z-index: 99999;
 }
 
+/* =======================================================================================================================
+   MOBILE MENU ITEMS
+======================================================================================================================= */
 
-/* content ============================================================================================== */
+.sub .menu .menu-item {
+  width: 100%;
+}
+
+/* mobile links */
+.sub .menu .menu-link,
+.sub .menu .submenu-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 3.2rem;
+  padding: 1rem 5rem;
+  color: var(--white);
+  border-bottom: 1px solid var(--border-light);
+}
+.sub .menu .icon-link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 5rem;
+  padding: 1rem 5rem;
+  border-bottom: 1px solid var(--border-light);
+
+  img {
+    width: auto;
+    height: 100%;
+    /* object-fit: contain; */
+    float: left;
+  }
+}
+
+/* =======================================================================================================================
+   MOBILE SUBMENU
+======================================================================================================================= */
+
+.mobile-submenu-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.mobile-submenu-wrapper.open {
+  max-height: 2000px;
+}
+
+.mobile-submenu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* level 1 */
+.mobile-submenu .menu-link,
+.mobile-submenu .submenu-toggle {
+  padding-left: 2.5rem;
+}
+
+/* level 2 */
+.mobile-submenu .mobile-submenu .menu-link,
+.mobile-submenu .mobile-submenu .submenu-toggle {
+  padding-left: 3.5rem;
+}
+
+/* level 3 */
+.mobile-submenu .mobile-submenu .mobile-submenu .menu-link,
+.mobile-submenu .mobile-submenu .mobile-submenu .submenu-toggle {
+  padding-left: 4.5rem;
+}
+
+/* level 4 */
+.mobile-submenu .mobile-submenu .mobile-submenu .mobile-submenu .menu-link,
+.mobile-submenu .mobile-submenu .mobile-submenu .mobile-submenu .submenu-toggle {
+  padding-left: 5.5rem;
+}
+
+/* =======================================================================================================================
+   CONTENT LAYOUT
+======================================================================================================================= */
+
 .content-layout {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: auto;
-  padding: 0;
 }
 
-
-
-
-
-
-/* All Media Queries ========================================================================================================================================================================== */
-/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* =======================================================================================================================
+   MEDIA QUERIES
+======================================================================================================================= */
 
 @media (max-width: 1440px) {
   html {
@@ -233,28 +482,15 @@ body {
   .container {
     padding: 0 5%;
   }
-  .content-layout {
-    flex-direction: column;
-  }
-  .content-part {
-    width: 100%;
-    /* padding: 1.2rem; */
-  }  
 }
+
 @media (max-width: 1280px) {
   html {
     font-size: 90%;
   }
   .container {
-    padding: 0 1%;
+    padding: 0 2%;
   }
-  .content-layout {
-    flex-direction: column;
-  }
-  .content-part {
-    width: 100%;
-    /* padding: 1.2rem; */
-  }  
 }
 
 @media (max-width: 1024px) {
@@ -264,33 +500,20 @@ body {
   .container {
     padding: 0 2%;
   }
-  .content-layout {
-    flex-direction: column;
-  }
-  .content-part {
-    width: 100%;
-    /* padding: 1rem; */
-  }
-  
+  /* hide desktop nav */
   .nav {
     display: none;
-    width: 10%;
-    padding: 0.5rem 0;
   }
-  .nav .menu {
-    display: none;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .nav .menu li {
-    padding: 0.5rem;
-  }
-
+  /* show mobile menu */
   .sub {
     display: flex;
   }
+  .sub .menu {
+    display: flex;
+    max-width: 100%;
+  }
   .menuclose {
-    display: block;
+    display: flex;
   }
 }
 
@@ -301,12 +524,8 @@ body {
   .container {
     padding: 0 1.5%;
   }
-  .content-layout {
-    flex-direction: column;
-  }
-  .content-part {
-    width: 100%;
-    /* padding: 0.5rem; */
+  .sub .menu {
+    max-width: 100%;
   }
 }
 
@@ -317,6 +536,10 @@ body {
   .container {
     padding: 0 3%;
   }
+  .logo {
+    width: 6.5rem;
+    height: 2.8rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -326,11 +549,8 @@ body {
   .container {
     padding: 0 2%;
   }
-  .content-layout {
-    flex-direction: column;
-  }
-  .content-part {
-    width: 100%;
-    /* padding: 0rem; */
+  .menu-link,
+  .submenu-toggle {
+    font-size: 0.92rem;
   }
 }

@@ -2,6 +2,7 @@
 import React from 'react'
 import "@/styles/components/hero.css";
 import Image from 'next/image';
+import Link from 'next/link';
 import Statcounter from './Statcounter';
 
 const Hero = () => {
@@ -18,8 +19,8 @@ const Hero = () => {
                 className="hero-bg"
             />
         </div>
-        <div className="hero-part container">
-            <div className="hero-container">
+        <div className="hero-part">
+            <div className="hero-container container">
                 <div className="hero-topper">
                     <span className="topper-icon">
                         <Image
@@ -41,6 +42,14 @@ const Hero = () => {
                     <button onMouseEnter={() => setArrow('→')} onMouseLeave={() => setArrow('↗')}>Discover More <span>{arrow}</span></button>
                 </div>
                 <Statcounter />
+            </div>
+            <div className="hero-links">
+                <div className="link-wrap"></div>
+                <div className="link-info">
+                    <Link href="#">Industrial Use</Link>
+                    <Link href="#">Domestic Use</Link>
+                    <Link href="#">Project Application</Link>
+                </div>
             </div>
         </div>
     </div>

@@ -1,0 +1,121 @@
+/* =========================================================
+   BASE
+========================================================= */
+
+.mobile-wrapper,
+.desktop-wrapper {
+  width: 100%;
+}
+
+/* =========================================================
+   MOBILE MENU (TRUE ACCORDION)
+========================================================= */
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #f78400;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 4rem 0;
+}
+
+.m-node {
+  width: 100%;
+}
+
+.m-row {
+  width: 100%;
+  display: flex;
+}
+
+.m-btn,
+.m-link {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  text-decoration: none;
+}
+
+/* children push layout DOWN (REAL ACCORDION) */
+.m-children {
+  display: flex;
+  flex-direction: column;
+}
+
+/* indentation */
+.m-children .m-btn,
+.m-children .m-link {
+  padding-left: 2rem;
+}
+
+/* deeper levels */
+.m-children .m-children .m-btn,
+.m-children .m-children .m-link {
+  padding-left: 3rem;
+}
+
+/* =========================================================
+   DESKTOP MENU (HOVER DROPDOWN ONLY)
+========================================================= */
+
+.desktop-menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.d-node {
+  position: relative;
+}
+
+/* top-level links */
+.d-link,
+.d-btn {
+  padding: 1rem;
+  color: white;
+  background: transparent;
+}
+
+/* dropdown */
+.d-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  min-width: 200px;
+  background: black;
+
+  display: none;
+  flex-direction: column;
+}
+
+/* show on hover */
+.d-node:hover > .d-dropdown {
+  display: flex;
+}
+
+/* nested dropdown */
+.d-dropdown .d-dropdown {
+  left: 100%;
+  top: 0;
+}
+
+/* =========================================================
+   CLOSE BUTTON (MOBILE)
+========================================================= */
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: white;
+}

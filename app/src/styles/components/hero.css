@@ -1,11 +1,12 @@
 .hero-layout {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;
   /* height: auto; */
-  height: 65rem;
+  height: 70rem;
   padding: 0;
 }
 .hero-wrapper {
@@ -25,17 +26,24 @@
 .hero-part {
   position: absolute;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
-  height: auto;
-}
-.hero-container {
-  position: relative;
-  width: 100%;
-  padding: 0.5rem;
+  height: 100%;
 }
 
+/* hero container */
+.hero-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  padding: 2rem;
+  margin-top: 10rem;
+}
 .hero-topper {
   display: flex;
   justify-content: flex-start;
@@ -102,7 +110,6 @@
     }
   }
 }
-
 .hero-stat {
   display: flex;
   justify-content: flex-start;
@@ -129,4 +136,77 @@
   color: white;
   font-size: 1rem;
   text-align: center;
+}
+
+/* hero link */
+.hero-links {
+  position: relative;
+  float: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  width: 100%;
+  height: auto;
+  margin-top: 5rem;
+  /* padding: 1rem 0; */
+}
+.link-wrap {
+  position: absolute;
+  /* top: -0.5rem; */
+  /* left: 0; */
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+  opacity: 0.5;
+  filter: blur(5rem);
+}
+.link-info {
+  position: relative;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.1rem;
+  width: 100%;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: auto; */
+    width: 34%;
+    height: auto;
+    padding: 1rem;
+    background-color: transparent;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-wrap: nowrap;
+    border: 0.1rem solid #f7b50036;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: var(--theme);
+      color: var(--background);
+    }
+  }
+  a:nth-child(1):active {
+    background-color: var(--theme);
+    color: white;
+  }
+}
+
+
+
+/* Media Queries --------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ======================================================================================================================================================================= */
+
+@media screen and (max-width: 1024px) {
+  .link-info {
+    flex-direction: column;
+    a {
+      width: 100%;
+    }
+  }
 }
