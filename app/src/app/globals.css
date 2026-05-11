@@ -471,8 +471,228 @@ a {
   width: 100%;
 }
 
+
 /* =======================================================================================================================
-   MEDIA QUERIES
+   FOOTER LAYOUT
+======================================================================================================================= */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding: 2rem 0;
+  background-color: #fce3c6;
+  color: var(--foreground);
+}
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  /* max-width: 1200px; */
+  height: auto;
+}
+.footer-top {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* gap: 2rem; */
+  width: 100%;
+  height: auto;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-light);
+}
+.footer-middle {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: auto;
+  padding: 0.5rem 0;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-light);
+}
+.info-sec {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  text-align: center;
+}
+.info-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--foreground);
+}
+.info-desc {
+  display: flex;
+  width: 100%;
+  color: var(--foreground);
+  font-size: 0.9rem;
+  text-wrap: wrap;
+  text-align: left;
+}
+.quick-links {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+}
+.quick-links-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+}
+.quick-links li {
+  list-style: none;
+}
+.quick-links li a {
+  color: var(--foreground);
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
+}
+.product-links {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+}
+.product-links-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+}
+.product-links li {
+  list-style: none;
+}
+.product-links li a {
+  color: var(--foreground);
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
+}
+.subsciption {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+}
+.subscription-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+}
+.subscription-info {
+  color: var(--foreground);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.subscription-form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: row wrap;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+.subscription-form input {
+  background-color: var(--background);
+  padding: 0.8rem 1rem;
+  color: var(--foreground);
+  font-size: 0.9rem;
+  border: none;
+  outline: none;
+}
+.subscription-form button {
+  background-color: var(--theme);
+  padding: 0.8rem 1rem;
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 0.9rem;
+
+  &:hover {
+    background-color: black;
+    color: var(--white);
+  }
+}
+.subscription-social-links {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+.disclaimer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  color: var(--foreground);
+  font-size: 0.8rem;
+}
+.policy-links {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+}
+.policy-links li {
+  list-style: none;
+}
+.policy-links li a {
+  color: var(--foreground);
+  font-size: 0.8rem;
+  transition: all 0.25s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =======================================================================================================================
+   MEDIA QUERIES ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ======================================================================================================================= */
 
 @media (max-width: 1440px) {

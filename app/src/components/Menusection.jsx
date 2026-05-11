@@ -1,6 +1,5 @@
 "use client"
-
-import React, { useState } from "react"
+import React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import {
@@ -14,16 +13,11 @@ import {
 ========================================================================================= */
 
 const MobileMenuItem = ({ item, level = 0 }) => {
-
-    const [open, setOpen] = useState(false)
-
-    const hasChildren =
-        item.children &&
-        item.children.length > 0
+    const [open, setOpen] = React.useState(false)
+    const hasChildren = item.children && item.children.length > 0
 
     return (
         <li className="mobile-menu-item">
-
             {hasChildren ? (
                 <>
                     <button
@@ -32,20 +26,10 @@ const MobileMenuItem = ({ item, level = 0 }) => {
                         onClick={() => setOpen(!open)}
                     >
                         <span>{item.name}</span>
-
-                        {open ? (
-                            <ChevronDown size={16} />
-                        ) : (
-                            <ChevronRight size={16} />
-                        )}
+                        {open ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
                     </button>
-
-                    <div
-                        className={`mobile-accordion ${open ? "open" : ""
-                            }`}
-                    >
+                    <div className={`mobile-accordion ${open ? "open" : ""}`}>
                         <ul className="mobile-accordion-menu">
-
                             {item.children.map((child, index) => (
                                 <MobileMenuItem
                                     key={index}
@@ -53,7 +37,6 @@ const MobileMenuItem = ({ item, level = 0 }) => {
                                     level={level + 1}
                                 />
                             ))}
-
                         </ul>
                     </div>
                 </>
@@ -79,7 +62,6 @@ const MobileMenuItem = ({ item, level = 0 }) => {
                     {item.name}
                 </Link>
             )}
-
         </li>
     )
 }
@@ -89,33 +71,23 @@ const MobileMenuItem = ({ item, level = 0 }) => {
 ========================================================================================= */
 
 const DesktopMenuItem = ({ item }) => {
-
-    const hasChildren =
-        item.children &&
-        item.children.length > 0
+    const hasChildren = item.children && item.children.length > 0
 
     return (
-        <li
-            className={`menu-item ${hasChildren ? "has-children" : ""
-                }`}
-        >
-
+        <li className={`menu-item ${hasChildren ? "has-children" : ""}`}>
             {hasChildren ? (
                 <>
                     <button className="submenu-toggle">
                         <span>{item.name}</span>
                         <ChevronDown size={15} />
                     </button>
-
                     <ul className="desktop-submenu">
-
                         {item.children.map((child, index) => (
                             <DesktopMenuItem
                                 key={index}
                                 item={child}
                             />
                         ))}
-
                     </ul>
                 </>
             ) : item.icon ? (
@@ -140,7 +112,6 @@ const DesktopMenuItem = ({ item }) => {
                     {item.name}
                 </Link>
             )}
-
         </li>
     )
 }
@@ -154,10 +125,8 @@ const Menusection = ({
     onToggle,
     mobile = false
 }) => {
-
     return (
         <ul className="menu">
-
             {mobile && (
                 <button
                     className="menuclose"
@@ -166,9 +135,7 @@ const Menusection = ({
                     <X size={18} />
                 </button>
             )}
-
             {menuItems.map((item, index) => (
-
                 mobile ? (
                     <MobileMenuItem
                         key={index}
@@ -180,9 +147,7 @@ const Menusection = ({
                         item={item}
                     />
                 )
-
             ))}
-
         </ul>
     )
 }
