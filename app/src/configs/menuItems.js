@@ -2,7 +2,7 @@ import Image from "next/image"
 
 // About menu items
 const highlightItems = [
-  { name: "Meets &Events", path: "/meets-and-events" },
+  { name: "Meets & Events", path: "/meets-and-events" },
   { name: "Catalogues", path: "/catalogues" }
 ]
 const aboutItems = [

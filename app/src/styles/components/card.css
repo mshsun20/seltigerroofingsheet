@@ -1,15 +1,14 @@
 .card {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     /* border: 0.1rem solid #ccc; */
     border-radius: 4px;
     box-shadow: 0 0rem 0.5rem var(--foreground);
     padding-bottom: 0.2rem;
-    width: 100%;
-    max-width: 400px;
-    height: 10rem;
+    width: 30rem;
+    height: auto;
     margin: 2rem;
 }
 .card-poster {

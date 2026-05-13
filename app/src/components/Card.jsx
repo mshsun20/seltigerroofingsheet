@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import "@/styles/components/card.css"
 
@@ -12,4 +13,4 @@ const Card = ({ poster, title, shortInfo }) => {
   )
 }
 
-export default Card
+export default React.memo(Card)

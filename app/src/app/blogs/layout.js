@@ -1,8 +1,8 @@
 import React from 'react'
 import "@/styles/blogs.css"
-import Link from 'next/link'
+// import Link from 'next/link'
 import axiosInstance from '@/configs/axiosInstance'
-import Card from '@/components/Card'
+// import Card from '@/components/Card'
 
 export const generateMetadata = async ({ params }) => {
   return {
@@ -16,31 +16,35 @@ const BlogLayout = async ({ children }) => {
   const blogs = response.data?.data || []
 
   return (
-    <div className="container">
-      <div className="content-layout">
-        <div className="content-part">
-          <div className="blog-details">
-            <h1 className='blog-heading'>Blog Details</h1>
-            {children}
-          </div>
-          <div className="blog-list">
-            <h2 className='bloglist-heading'>Blogs List</h2>
-            <ul>
-              {blogs.map((blog) => (
-                <li key={blog.slug}>
-                  <Link href={`/blogs/${blog?.slug}`}>
-                    <Card 
-                      poster={blog.mediaLink}
-                      title={blog.title}
-                      shortInfo={blog.content}
-                    />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
+    // <div className="container">
+    //   <div className="content-layout">
+    //     <div className="content-part">
+    //       <div className="blog-details">
+    //         <h1 className='blog-heading'>Blog Details</h1>
+    //         {children}
+    //       </div>
+    //       <div className="blog-list">
+    //         <h2 className='bloglist-heading'>Blogs List</h2>
+    //         <ul>
+    //           {blogs.map((blog) => (
+    //             <li key={blog.slug}>
+    //               <Link href={`/blogs/${blog?.slug}`}>
+    //                 <Card 
+    //                   poster={blog.mediaLink}
+    //                   title={blog.title}
+    //                   shortInfo={blog.content}
+    //                 />
+    //               </Link>
+    //             </li>
+    //           ))}
+    //         </ul>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
+    
+    <div className="content-layout">
+      {children}
     </div>
   )
 }
