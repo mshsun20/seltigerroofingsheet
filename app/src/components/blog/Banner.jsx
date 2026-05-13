@@ -3,18 +3,18 @@ import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Banner = ({ children, link }) => {
+const Banner = ({ data }) => {
   return (
     <div className='banner'>
         <div className="banner-poster">
             <Image src="/wp-content/uploads/2026/02/blogs-banner.jpg" alt="blog-banner" width={1000} height={500} />
         </div>
-        <div className="banner-content">
-            <div className="banner-hdr">{children}</div>
+        <div className="banner-content container">
+            <div className="banner-hdr">{data}</div>
             <div className="banner-info">
-                <Link href={link || "/"}>Home</Link>
+                <Link href="/">Home</Link>
                 {
-                    children==="Blogs"
+                    data==="Blogs"
                     ? <span>&nbsp;&nbsp;{">>"}&nbsp;&nbsp;</span>
                     : (
                         <>
@@ -24,7 +24,7 @@ const Banner = ({ children, link }) => {
                         </>
                     )
                 }
-                <Link href={link || "#"}>{children}</Link>
+                <Link href="#">{data}</Link>
             </div>
         </div>
     </div>

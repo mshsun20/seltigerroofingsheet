@@ -34,7 +34,7 @@ const Blog = async ({ params }) => {
   return (
     <div className="blog-layout">
       <React.Suspense fallback={<div>Loading...</div>}>
-        <Banner children={blogData?.title || "Blog Details"} />
+        <Banner data={blogData?.title || "Blog Details"} />
       </React.Suspense>
       <h1>{blogData?.title}</h1>
       <p>{blogData?.content}</p>

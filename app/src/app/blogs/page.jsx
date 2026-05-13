@@ -11,9 +11,9 @@ const Blogs = async () => {
 
   return (
     <div className="blog-layout">
-      <Banner children={"Blogs"} />
+      <Banner data={"Blogs"} />
       <React.Suspense fallback={<div>Loading...</div>}>
-        <Blogwall children={blogs}>
+        <Blogwall>
           <ul className='blog-list'>
             {blogs.map((blog) => (
               <li key={blog.slug}>
