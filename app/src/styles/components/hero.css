@@ -5,7 +5,8 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
-  /* height: auto; */
+  /* height: auto;
+  min-height: 70rem; */
   height: 70rem;
   padding: 0;
 }
@@ -202,7 +203,7 @@
 /* Media Queries --------------------------------------------------------------------------------------------------------------------------------------------------------- */
 /* ======================================================================================================================================================================= */
 
-@media screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
   .link-info {
     flex-direction: column;
     a {
@@ -210,3 +211,36 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .hero-layout {
+    position: relative;
+    height: 70rem;
+  }
+  .hero-container {
+    margin-top: 5rem;
+  }
+  .hero-links {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .hero-layout {
+    position: relative;
+    height: 80rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero-layout {
+    position: relative;
+    height: 90rem;
+  }
+  .hero-container {
+    margin-top: 5rem;
+  }
+  .hero-links {
+    margin-top: 0;
+  }
+} 

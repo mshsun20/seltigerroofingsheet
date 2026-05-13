@@ -35,9 +35,9 @@ html {
 }
 
 * {
-  margin: 0;
+  /* margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; */
 }
 
 body {
@@ -109,7 +109,6 @@ a {
 ======================================================================================================================= */
 
 .nav-container {
-  /* background-color: var(--theme); */
   background-color: transparent;
 }
 
@@ -264,7 +263,7 @@ a {
 /* nested submenu */
 .desktop-submenu .desktop-submenu {
   top: 0;
-  left: calc(100% + 0.2rem);
+  left: calc(100% + 0rem);
   margin-top: -0.35rem;
 }
 
@@ -334,7 +333,7 @@ a {
   background-color: var(--foreground);
   color: var(--white);
   cursor: pointer;
-  z-index: 99999;
+  /* z-index: 99999; */
 }
 
 /* =======================================================================================================================
@@ -382,87 +381,117 @@ a {
    MOBILE MENU ITEMS
 ======================================================================================================================= */
 
-.sub .menu .menu-item {
+.mobile-menu-item {
   width: 100%;
+  list-style: none;
 }
 
-/* mobile links */
-.sub .menu .menu-link,
-.sub .menu .submenu-toggle {
+/* links + accordion buttons */
+
+.mobile-menu-link,
+.mobile-submenu-toggle {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  min-height: 3.2rem;
-  padding: 1rem 5rem;
-  color: var(--white);
+  min-height: 3.4rem;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  border: none;
   border-bottom: 1px solid var(--border-light);
+  color: var(--white);
+  font-size: 0.95rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
+
+.mobile-menu-link:hover,
+.mobile-submenu-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* level indentation */
+
+.level-0 {
+  padding-left: 1.5rem;
+}
+
+.level-1 {
+  padding-left: 2.5rem;
+}
+
+.level-2 {
+  padding-left: 3.5rem;
+}
+
+.level-3 {
+  padding-left: 4.5rem;
+}
+
+.level-4 {
+  padding-left: 5.5rem;
+}
+
+/* accordion wrapper */
+
+.mobile-submenu-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+  overflow: hidden;
+}
+
+.mobile-submenu-wrapper.open {
+  grid-template-rows: 1fr;
+}
+
+/* submenu */
+
+.mobile-submenu {
+  min-height: 0;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* arrow rotation */
+
+.mobile-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.25s ease;
+}
+
+.mobile-arrow.open {
+  transform: rotate(90deg);
+}
+
+/* mobile icon link */
+
 .sub .menu .icon-link {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
   height: 5rem;
-  padding: 1rem 5rem;
+  padding: 1rem 1.5rem;
   border-bottom: 1px solid var(--border-light);
-
-  img {
-    width: auto;
-    height: 100%;
-    /* object-fit: contain; */
-    float: left;
-  }
 }
 
-/* =======================================================================================================================
-   MOBILE SUBMENU
-======================================================================================================================= */
-
-.mobile-submenu-wrapper {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-
-.mobile-submenu-wrapper.open {
-  max-height: 2000px;
-}
-
-.mobile-submenu {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.03);
-}
-
-/* level 1 */
-.mobile-submenu .menu-link,
-.mobile-submenu .submenu-toggle {
-  padding-left: 2.5rem;
-}
-
-/* level 2 */
-.mobile-submenu .mobile-submenu .menu-link,
-.mobile-submenu .mobile-submenu .submenu-toggle {
-  padding-left: 3.5rem;
-}
-
-/* level 3 */
-.mobile-submenu .mobile-submenu .mobile-submenu .menu-link,
-.mobile-submenu .mobile-submenu .mobile-submenu .submenu-toggle {
-  padding-left: 4.5rem;
-}
-
-/* level 4 */
-.mobile-submenu .mobile-submenu .mobile-submenu .mobile-submenu .menu-link,
-.mobile-submenu .mobile-submenu .mobile-submenu .mobile-submenu .submenu-toggle {
-  padding-left: 5.5rem;
+.sub .menu .icon-link img {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* =======================================================================================================================
    CONTENT LAYOUT
 ======================================================================================================================= */
+
+.main {
+  position: relative;
+}
 
 .content-layout {
   display: flex;
@@ -477,6 +506,8 @@ a {
 ======================================================================================================================= */
 
 .footer {
+  position: relative;
+  /* top: 100%; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -717,8 +748,9 @@ a {
   html {
     font-size: 86%;
   }
+  .nav-container {}
   .container {
-    padding: 0 2%;
+    padding: 0 0%;
   }
   /* hide desktop nav */
   .nav {
@@ -742,7 +774,7 @@ a {
     font-size: 83.5%;
   }
   .container {
-    padding: 0 1.5%;
+    padding: 0 2%;
   }
   .sub .menu {
     max-width: 100%;
@@ -754,7 +786,7 @@ a {
     font-size: 82%;
   }
   .container {
-    padding: 0 3%;
+    padding: 0 8%;
   }
   .logo {
     width: 6.5rem;
@@ -767,7 +799,7 @@ a {
     font-size: 80%;
   }
   .container {
-    padding: 0 2%;
+    padding: 0 8%;
   }
   .menu-link,
   .submenu-toggle {

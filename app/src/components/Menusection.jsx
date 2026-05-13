@@ -12,9 +12,11 @@ import {
    MOBILE MENU ITEM
 ========================================================================================= */
 
-const MobileMenuItem = ({ item, level = 0 }) => {
+const MobileMenuItem = ({ item, level = 0, onToggle }) => {
     const [open, setOpen] = React.useState(false)
-    const hasChildren = item.children && item.children.length > 0
+
+    const hasChildren =
+        item.children && item.children.length > 0
 
     return (
         <li className="mobile-menu-item">
@@ -22,19 +24,30 @@ const MobileMenuItem = ({ item, level = 0 }) => {
                 <>
                     <button
                         type="button"
-                        className="mobile-submenu-toggle"
+                        className={`mobile-submenu-toggle level-${level}`}
                         onClick={() => setOpen(!open)}
                     >
                         <span>{item.name}</span>
-                        {open ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+
+                        <span
+                            className={`mobile-arrow ${open ? "open" : ""}`}
+                        >
+                            <ChevronRight size={16} />
+                        </span>
                     </button>
-                    <div className={`mobile-accordion ${open ? "open" : ""}`}>
-                        <ul className="mobile-accordion-menu">
+
+                    <div
+                        className={`mobile-submenu-wrapper ${
+                            open ? "open" : ""
+                        }`}
+                    >
+                        <ul className="mobile-submenu">
                             {item.children.map((child, index) => (
                                 <MobileMenuItem
                                     key={index}
                                     item={child}
                                     level={level + 1}
+                                    onToggle={onToggle}
                                 />
                             ))}
                         </ul>
@@ -45,6 +58,7 @@ const MobileMenuItem = ({ item, level = 0 }) => {
                     href={item.path}
                     target={item.target || "_self"}
                     className="icon-link"
+                    onClick={onToggle}
                 >
                     <Image
                         src={item.icon}
@@ -57,7 +71,8 @@ const MobileMenuItem = ({ item, level = 0 }) => {
                 <Link
                     href={item.path}
                     target={item.target || "_self"}
-                    className="mobile-menu-link"
+                    className={`mobile-menu-link level-${level}`}
+                    onClick={onToggle}
                 >
                     {item.name}
                 </Link>
@@ -140,6 +155,7 @@ const Menusection = ({
                     <MobileMenuItem
                         key={index}
                         item={item}
+                        onToggle={onToggle}
                     />
                 ) : (
                     <DesktopMenuItem

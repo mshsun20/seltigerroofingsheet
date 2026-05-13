@@ -40,7 +40,7 @@ const Navbar = () => {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: 20 }}
                     >
-                        <Menusection menuItems={menuItems} onToggle={handleMenuToggle} />
+                        <Menusection menuItems={menuItems} onToggle={handleMenuToggle} mobile={true} />
                     </m.div>}   
                 </AnimatePresence>
             </div>
