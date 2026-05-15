@@ -1,11 +1,5 @@
 import React from 'react';
 
-const statCounter = [
-    { value: 50, info: 'Countries Worldwide' },
-    { value: 400, info: 'Team Members' },
-    { value: 2000, info: 'Network Channel' },
-];
-
 const CounterItem = React.memo(function CounterItem({ target, info }) {
     const [count, setCount] = React.useState(0);
 
@@ -43,10 +37,10 @@ const CounterItem = React.memo(function CounterItem({ target, info }) {
     );
 });
 
-const Statcounter = () => {
+const Statcounter = ({ statData=[] }) => {
     return (
-        <div className="hero-stat">
-            {statCounter.map((elm, i) => (
+        <div className="stat-counter-wrapper">
+            {statData.map((elm, i) => (
                 <CounterItem
                     key={i}
                     target={elm.value}

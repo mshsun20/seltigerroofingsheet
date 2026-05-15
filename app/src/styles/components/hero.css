@@ -115,11 +115,18 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex-flow: row wrap;
   max-width: 60rem;
   padding: 1rem 0;
 }
-.stat-counter {
+.hero-stat .stat-counter-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  width: 100%;
+  padding: 2rem 0;
+}
+.hero-stat .stat-counter-wrapper .stat-counter {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,12 +135,12 @@
   height: auto;
   margin: 0.5rem 0.1rem;
 }
-.counter-value {
+.hero-stat .stat-counter-wrapper .counter-value {
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
 }
-.counter-info {
+.hero-stat .stat-counter-wrapper .counter-info {
   color: white;
   font-size: 1rem;
   text-align: center;

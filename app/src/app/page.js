@@ -2,13 +2,21 @@ import React from 'react';
 import "@/styles/home.css";
 // import Hero from "@/components/home/hero/Hero";
 const Hero = React.lazy(() => import('@/components/home/hero/Hero'));
+const About = React.lazy(() => import('@/components/home/about/About'))
+
+const LazyWrapper = ({ children, fallback }) => {
+  return (
+    <React.Suspense fallback={fallback}>
+      {children}
+    </React.Suspense>
+  )
+}
 
 export default function Home() {
   return (
     <div className="content-layout">
-      <React.Suspense fallback={<div>Loading...</div>}>
-        <Hero />
-      </React.Suspense>
+      <LazyWrapper fallback={"Loading..."}><Hero /></LazyWrapper>
+      <LazyWrapper fallback={"Loading..."}><About /></LazyWrapper>
     </div>
   );
 }

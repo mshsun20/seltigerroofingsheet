@@ -3,7 +3,8 @@ import React from 'react'
 import "@/styles/components/hero.css";
 import Image from 'next/image';
 import Link from 'next/link';
-import Statcounter from './Statcounter';
+import Statcounter from '../../Statcounter';
+import { heroStatCounterItems } from '@/configs/allStatCounterItems';
 
 const Hero = () => {
     const [arrow, setArrow] = React.useState('↗');
@@ -41,7 +42,9 @@ const Hero = () => {
                 <div className="hero-actions">
                     <button onMouseEnter={() => setArrow('→')} onMouseLeave={() => setArrow('↗')}>Discover More <span>{arrow}</span></button>
                 </div>
-                <Statcounter />
+                <div className="hero-stat">
+                    <Statcounter statData={heroStatCounterItems} />
+                </div>
             </div>
             <div className="hero-links">
                 <div className="link-wrap"></div>
