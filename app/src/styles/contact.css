@@ -207,7 +207,7 @@
     border-radius: 0.2rem;
     outline: none;
     box-sizing: border-box;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.1s ease-in-out;
 
     &:focus {
         border: 0.1rem solid #dfb599;
@@ -236,7 +236,7 @@
     font-weight: 500;
     border: none;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.1s ease-in-out;
     font-size: 0.9rem;
 
     &:hover, &:focus {
@@ -252,6 +252,7 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
+    padding: 5rem 0;
 }
 .contact-location-hdr {
     display: flex;
@@ -280,75 +281,137 @@
     font-size: 2rem;
     font-weight: 600;
 }
-.conatct-location-slider {
+
+
+
+.contact-location-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 }
-.contact-location-slider .slider-card {
+
+
+/* =========================
+   TESTIMONIAL SLIDER
+========================= */
+
+.testimonial-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 0.5rem 0;
+}
+
+.testimonial-stage {
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    height: 24rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonial-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    will-change: transform, opacity;
+}
+
+/* CARD */
+
+.slider-card {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    flex-shrink: 0;
-    background: rgba(255,255,255,0.08);
     width: 30rem;
-    height: 15rem;
-    padding: 1rem;
-    border: 1px solid rgba(255,255,255,0.12);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.15);;
+    min-height: 16rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: grab;
 }
-.slider-card.active {
-    z-index: 10;
-}
-.slider-card.inactive {
-    pointer-events: none;
-}
+
+/* HEADER */
+
 .slider-card-hdr {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
-    width: 100%;
-    height: 40%;
-    padding: 1rem;
+    margin-bottom: 1rem;
 }
-.slider-card-hdr .slider-hdr {
-    width: auto;
+
+.slider-hdr {
     color: var(--theme);
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1.4rem;
+    font-weight: 700;
 }
-.slider-card-hdr .slider-icon {
-    width: auto;
+
+.slider-icon img {
+    width: 2rem;
     height: auto;
-    img {
-        width: 2rem;
-        height: auto;
-        background-size: cover;
-    }
 }
+
+/* DETAILS */
+
 .slider-details {
     width: 100%;
-    height: 60%;
-    padding: 1rem;
-}
-.contact-location-map {
-    width: 100%;
+    color: #444;
+    line-height: 1.8;
+    font-size: 1rem;
 }
 
+/* PAGINATION */
 
-/* Media queries */
+.slider-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 3rem;
+}
+
+.pagination-dot {
+    width: 0.8rem;
+    height: 0.8rem;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    background: rgba(255, 255, 255, 0.767);
+}
+
+.pagination-dot.active {
+    width: 2.5rem;
+    background: #ffc277;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media (max-width: 992px) {
-  .slider-card {
-    width: 320px;
-    padding: 25px;
-  }
+    .slider-card {
+        width: 24rem;
+    }
 }
 
 @media (max-width: 768px) {
-  .slider-card {
-    width: 90vw;
-  }
-  .slider-card.inactive {
-    display: none;
-  }
+    .testimonial-stage {
+        height: 20rem;
+    }
+    .slider-card {
+        width: 85vw;
+        min-height: auto;
+        padding: 1.5rem;
+    }
 }
