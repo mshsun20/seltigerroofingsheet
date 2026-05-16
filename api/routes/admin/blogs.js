@@ -1,7 +1,7 @@
 import express from 'express';
 const blogRouter = express.Router();
-import fileUpload from '../middlewares/fileUpload.js';
-import { createBlog, getBlogs, getBlogBySlug, updateBlog, deleteBlog } from '../controllers/blogs.js';
+import fileUpload from '../../middlewares/fileUpload.js';
+import { createBlog, getBlogs, getBlogBySlug, updateBlog, deleteBlog } from '../../controllers/admin/blogs.js';
 
 // Routes ---------------------------------------------------------------------------------------------------------------------------------------------------------
 blogRouter.post('/', fileUpload.none(), createBlog);

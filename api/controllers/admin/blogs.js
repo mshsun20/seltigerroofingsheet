@@ -1,4 +1,4 @@
-import Blog from "../models/blogs.js";
+import Blog from "../../models/admin/blogs.js";
 
 // Reusable functions --------------------------------------------------------------------------------------------------------------------------------------------------------
 export const generateSlug = (title) => {

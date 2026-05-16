@@ -8,7 +8,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoConn from './db/dbcon.js';
 // import certificateRouter from './routes/certificate.js';
-import blogRouter from './routes/blogs.js';
+import blogRouter from './routes/admin/blogs.js';
 // Load environment variables from .env file
 dotenv.config({ quiet: true });
 
