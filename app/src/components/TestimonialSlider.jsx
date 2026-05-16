@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { m } from "framer-motion";
-import testimonialData from "@/configs/testimonialData";
+import testimonialData from "@/data/contact/testimonialData";
 
 const AUTO_DELAY = 5000;
 const CARD_WIDTH = 480;

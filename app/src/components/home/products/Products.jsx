@@ -2,7 +2,7 @@
 import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
-import { productData } from "@/configs/productData"
+import { productData } from "@/data/home/productData"
 
 const ProductPoster = React.memo(function ProductPoster({ items, tabIndex=0 }) {
     return (
