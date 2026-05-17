@@ -1,11 +1,36 @@
 "use client";
 import React from 'react'
+import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer"
+import { div } from 'framer-motion/client';
+import Image from 'next/image';
+import moment from "moment";
 
-const Blogcontent = ({ children }) => {
-  console.log(children);
+const Blogcontent = ({ data }) => {
+  console.log(data);
+  const [blocks] = React.useState([...data?.blocks])
 
   return (
-    <div>Blogcontent</div>
+    <div className="blog-details">
+      <div className="blog-poster">
+        <div className="blog-image">
+          {/* <Image src={data?.mediaLink} width={100} height={75} alt="blog image" /> */}
+          <img src={data?.mediaLink} alt="blog image" />
+        </div>
+        <div className="blog-date">{`${moment(data?.createdAt).format("Do MMM, YYYY")} - by Shyam Metalics`} </div>
+      </div>
+      <div className="blog-info">
+        <div className="blog-hdr">{data?.title}</div>
+        <div className="blog-content">
+          {blocks?.length>0 && blocks?.map((block, i) => (
+            <div className="block-details" key={i}>
+              { block?.blockType==="snippet" && <SafeHtmlRenderer content={block?.blockSnippet} /> }
+              { block?.blockType==="tag" && <SafeHtmlRenderer content={`<${block?.blockTags}>${block?.blockContent}</${block?.blockTags}>`} /> }
+            </div>
+          ))}
+          {/* <SafeHtmlRenderer content={data} /> */}
+        </div>
+      </div>
+    </div>
   )
 }
 

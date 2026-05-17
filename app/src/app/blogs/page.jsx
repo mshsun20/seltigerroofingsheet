@@ -17,14 +17,12 @@ const Blogs = async () => {
           <ul className='blog-list'>
             {blogs.map((blog) => (
               <li key={blog.slug}>
-                <Link href={`/blogs/${blog?.slug}`}>
-                  <Card 
-                    poster={blog?.mediaLink}
-                    title={blog?.title}
-                    description={blog?.description}
-                    url={`/blogs/${blog?.slug}`}
-                  />
-                </Link>
+                <Card 
+                  poster={blog?.mediaLink}
+                  title={blog?.title}
+                  description={blog?.description}
+                  url={`/blogs/${blog?.slug}`}
+                />
               </li>
             ))}
           </ul>

@@ -7,10 +7,12 @@ const Card = ({ poster, title, description, url }) => {
   return (
     <div className='card'>
         <div className="card-poster">
-            {poster === "" ? <h3>{title || ""}</h3> : <img src={poster} alt={title} />}
+          <Link href={url}>{poster === "" ? <h3>{title || ""}</h3> : <img src={poster} alt={title} />}</Link>
         </div>
         <div className='card-info'>
-          <div className="card-hdr">{title}</div>
+          <div className="card-hdr">
+            <Link href={url}>{title}</Link>
+          </div>
           <div className="card-details">{description}</div>
         </div>
         <div className="card-actions">

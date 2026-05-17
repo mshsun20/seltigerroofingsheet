@@ -1,6 +1,7 @@
 import React from 'react'
 // import Banner from "@/components/blog/Banner";
 const Banner = React.lazy(() => import("@/components/blog/Banner"))
+const Blogcontent = React.lazy(() => import("@/components/blog/Blogcontent"))
 import axiosInstance from "@/configs/axiosInstance"
 
 export const generateMetadata = async ({ params }) => {
@@ -10,8 +11,8 @@ export const generateMetadata = async ({ params }) => {
     const response = await axiosInstance.get(`/api/blogs/${slug}`)
     const blogData = response.data?.data || {}
     return {
-      title: blogData.metaTitle || blogData.title || "",
-      description: blogData.metaDescription || "",
+      title: blogData.title || blogData.title || "",
+      description: blogData.description || "",
     }
   }
   catch (error) {
@@ -36,8 +37,9 @@ const Blog = async ({ params }) => {
       <React.Suspense fallback={<div>Loading...</div>}>
         <Banner data={blogData?.title || "Blog Details"} />
       </React.Suspense>
-      <h1>{blogData?.title}</h1>
-      <p>{blogData?.content}</p>
+      <React.Suspense fallback={<div>Loading...</div>}>
+        <Blogcontent data={blogData} />
+      </React.Suspense>
     </div>
   )
 }
