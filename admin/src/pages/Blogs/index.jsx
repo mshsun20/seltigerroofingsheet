@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router';
 import AddEdit from './AddEdit';
 import axiosInstance from '../../config/axiosInstance';
 
@@ -7,6 +8,20 @@ const Blogs = () => {
     const [mode, setMode] = React.useState(null);
     const [showForm, setShowForm] = React.useState(false);
     const [blog, setBlog] = React.useState({});
+
+    const fetchData = React.useCallback(async () => {
+        try {
+            const response = await axiosInstance.get('/api/blogs');
+            // console.log(response);
+            setData(response.data.data || []);
+        }
+        catch (error) {
+            console.error("Error fetching blog posts:", error);
+        }
+    }, [])
+    React.useEffect(() => {
+        fetchData();
+    }, [fetchData])
 
     const handleSubmit = async (blogData) => {
         // console.log(blogData);
@@ -29,20 +44,6 @@ const Blogs = () => {
         }
     }
 
-    const fetchData = React.useCallback(async () => {
-        try {
-            const response = await axiosInstance.get('/api/blogs');
-            setData(response.data.data || []);
-        }
-        catch (error) {
-            console.error("Error fetching blog posts:", error);
-        }
-    }, [])
-
-    React.useEffect(() => {
-        fetchData();
-    }, [])
-
 
   return (
     <>
@@ -50,15 +51,20 @@ const Blogs = () => {
             <div className="heading">
                 <h1>Blogs</h1>
             </div>
-            <div className="datasection">
-                <p>Here you can manage your blog posts. You can create, edit, and delete blog posts as needed.</p>
-                <p>To create a new blog post, click the "Create New Blog Post" button below. To edit or delete an existing blog post, click on the respective buttons next to each post in the list.</p>
-                <button className="create-btn" onClick={() => {
-                    setMode("add");
-                    setShowForm(true);
-                }}>
-                    Create New Blog Post
-                </button>
+            <div className="data-section">
+                <div className="data-description">
+                    <p>Here you can manage your blog posts. You can create, edit, and delete blog posts as needed.</p>
+                    <p>To create a new blog post, click the "Create New Blog Post" button below. To edit or delete an existing blog post, click on the respective buttons next to each post in the list.</p>
+                </div>
+                <div className="lnk-group">
+                    <button className="create-btn" onClick={() => {
+                        setMode("add");
+                        setShowForm(true);
+                    }}>
+                        Create New Blog Post
+                    </button>
+                    <Link to='/image-uploader'>Image Uploader</Link>
+                </div>
                 <div className="data-list">
                     <table>
                         <thead>
@@ -72,7 +78,7 @@ const Blogs = () => {
                         </thead>
                         <tbody>
                             {data.map((blog) => (
-                                <tr key={blog.id}>
+                                <tr key={blog._id}>
                                     <td>{blog.title}</td>
                                     <td>{blog.slug}</td>
                                     <td>{blog.author}</td>

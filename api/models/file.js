@@ -8,6 +8,7 @@ const fileSchema = new Schema({
     mimetype: String,
     size: Number,
     path: String,
+    relativePath: String,
     hash: String
 }, { timestamps: true });
 

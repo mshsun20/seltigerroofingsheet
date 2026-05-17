@@ -19,9 +19,10 @@ const Blogs = async () => {
               <li key={blog.slug}>
                 <Link href={`/blogs/${blog?.slug}`}>
                   <Card 
-                    poster={blog.mediaLink}
-                    title={blog.title}
-                    shortInfo={blog.content}
+                    poster={blog?.mediaLink}
+                    title={blog?.title}
+                    description={blog?.description}
+                    url={`/blogs/${blog?.slug}`}
                   />
                 </Link>
               </li>

@@ -1,5 +1,5 @@
 import express from "express";
-import fileUpload from "../middleware/fileUpload.js";
+import fileUpload from '../middlewares/fileUpload.js';
 import {
     uploadHandler,
     getAllHandler,
@@ -7,10 +7,10 @@ import {
     downloadAllHandler,
     deleteHandler,
     deleteManyHandler
-} from "../controller/fileOpController.js";
+} from "../controllers/fileOpController.js";
 const fileRouter = express.Router();
 
-fileRouter.post('/upload', fileUpload.fields([{ name: 'files', maxCount: 1 }]), uploadHandler);
+fileRouter.post('/upload', fileUpload.fields([{ name: 'files' }]), uploadHandler);
 fileRouter.get('/fetch-all', getAllHandler);
 fileRouter.get('/fetch/:id', getByIdHandler);
 fileRouter.get('/download-zip', downloadAllHandler);

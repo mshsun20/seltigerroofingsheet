@@ -9,6 +9,7 @@ import bodyParser from 'body-parser';
 import mongoConn from './db/dbcon.js';
 // import certificateRouter from './routes/certificate.js';
 import blogRouter from './routes/admin/blogs.js';
+import fileRouter from './routes/file.js';
 // Load environment variables from .env file
 dotenv.config({ quiet: true });
 
@@ -78,10 +79,11 @@ else {
     }));
     app.use(bodyParser.json({ limit: '10000mb' }));
     app.use(bodyParser.urlencoded({ limit: '10000mb', extended: true }));
-    app.use(express.static('uploads'));
+    app.use("/api/uploads", express.static(path.join(__dirname, "uploads")));
 
     // routers
     app.use('/api/blogs', blogRouter);
+    app.use('/api/files', fileRouter);
 
     (async () => {
         await mongoConn();

@@ -11,12 +11,16 @@ export const generateSlug = (title) => {
 // Controller logics ---------------------------------------------------------------------------------------------------------------------------------------------------------
 export const createBlog = async (req, res) => {
     try {
-        const { title, slug, metaTitle, metaDescription, author, content, mediaLink } = req.body;
-        const existingBlog = await Blog.findOne({ slug });
+        const blogPayload = req.body;
+        const existingBlog = await Blog.findOne({ slug: blogPayload?.slug });
         if (existingBlog) {
             return res.status(400).json({ error: `A blog post for '${slug}' already exists`, success: false });
         }
-        const newBlog = new Blog({ title, slug, metaTitle, metaDescription, author, content, mediaLink });
+
+        const parsedblocks = JSON.parse(blogPayload.blocks)
+        Object.assign(blogPayload, { blocks: parsedblocks })
+        console.log(blogPayload);
+        const newBlog = new Blog(blogPayload);
         const savedBlog = await newBlog.save();
         res.status(201).json({ message: "Blog post created successfully", data: savedBlog, success: true });
     } catch (error) {
@@ -49,8 +53,16 @@ export const getBlogBySlug = async (req, res) => {
 export const updateBlog = async (req, res) => {
     try {
         const { id } = req.params;
-        const { title, slug, metaTitle, metaDescription, author, content, mediaLink } = req.body;
-        const updatedBlog = await Blog.findByIdAndUpdate(id, { title, slug, metaTitle, metaDescription, author, content, mediaLink }, { returnDocument: "after" });
+        const blogPayload = req.body;
+        // console.log(blogPayload);
+
+        delete blogPayload._id;
+        delete blogPayload.slug;
+        const parsedblocks = JSON.parse(blogPayload.blocks)
+        Object.assign(blogPayload, { blocks: parsedblocks })
+
+        console.log(blogPayload);
+        const updatedBlog = await Blog.findByIdAndUpdate(id, blogPayload, { returnDocument: "after" });
         if (!updatedBlog) {
             return res.status(404).json({ error: "Blog post not found", success: false });
         }
