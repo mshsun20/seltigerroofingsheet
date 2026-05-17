@@ -9,6 +9,7 @@ const metaSchema = new Schema({
     site_name: { type: String, trim: true },
     robots: { type: String, trim: true },
     canonical: { type: String, trim: true },
+    author: { type: String, trim: true },
     mediaLink: { type: String, trim: true },
 }, { _id: true })
 
