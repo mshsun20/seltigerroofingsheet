@@ -110,7 +110,12 @@
     font-size: 1rem;
     font-style: oblique;
 }
-.blog-info {}
+.blog-info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
 .blog-hdr {
     padding: 1rem 0;
     font-size: 2rem;

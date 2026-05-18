@@ -13,7 +13,7 @@ export const chooseDetails = [{
         }
     },
     heading: {
-        className: "products-hdng",
+        className: "choose-heading",
         data: "Why Choose Roofing Sheets of SEL Tiger"
     },
     contents: {

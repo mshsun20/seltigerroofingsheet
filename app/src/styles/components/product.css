@@ -1,0 +1,132 @@
+.products-layout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 5rem;
+}
+
+.products-hdr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+}
+.products-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.products-top .topper-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.2rem;
+    img {
+        width: 2rem;
+    }
+}
+.products-top .topper-text {
+    margin-left: 0.2rem;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.products-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+    max-width: 50rem;
+    padding: 0;
+    color: black;
+    font-size: 2.3rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+
+    .hdng {
+        text-wrap: nowrap;
+    }
+}
+
+.products-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 100%;
+    padding: 2rem 0;
+}
+
+.products-vtabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 25rem;
+    padding: 1.5rem 1.5rem 1.5rem 0;
+}
+.products-vtabs-link {
+    background-color: white;
+    padding: 1rem;
+    /* margin: 1rem 0; */
+    color: #636363;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-wrap: nowrap;
+    border-radius: 0.5rem;
+}
+.products-vtabs-link.active {
+    background-color: var(--theme);
+    color: var(--background);
+}
+.products-tab-item {}
+
+.products-section {
+    width: 100%;
+    height: 25rem;
+    padding: 1.5rem 0 1.5rem 1.5rem;
+}
+.products-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+.products-poster {
+    width: 35%;
+    height: 100%;
+
+    img {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+    }
+
+}
+.products-content {
+    width: 60%;
+    height: 100%;
+}
+.products-content-hds {}
+.products-content-info {}
+.products-content-description {}
+.products-content-action {}
+
+
+@media (max-width: 1024px) {
+    .products-container {
+        flex-direction: column;
+    }
+
+    .products-vtabs {}
+    .products-vtabs-link {}
+}

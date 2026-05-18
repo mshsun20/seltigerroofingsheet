@@ -13,7 +13,7 @@ export const brandDetails = [{
         }
     },
     heading: {
-        className: "brand-hdng",
+        className: "brand-heading",
         data: ""
     },
     allBrands: [

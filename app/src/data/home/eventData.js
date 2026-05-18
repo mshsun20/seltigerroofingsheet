@@ -13,7 +13,7 @@ export const eventData = [{
         }
     },
     heading: {
-        className: "event-hdng",
+        className: "event-heading",
         data: "Our Meets & Events"
     },
     allEvents: [

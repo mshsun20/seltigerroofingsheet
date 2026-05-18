@@ -13,7 +13,7 @@ export const faqData = [{
         }
     },
     heading: {
-        className: "faq-hdng",
+        className: "faq-heading",
         data: "FAQs"
     },
     allFaqs: [
