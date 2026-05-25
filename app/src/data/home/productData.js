@@ -24,7 +24,10 @@ export const productData = [{
         itemDetails: [
             {
                 tabName: "Colour Coated Segment",
-                poster: "/wp-content/themes/sel/assets/img/all-images/product/product-1.jpg",
+                posters: [
+                    "/wp-content/uploads/2025/05/products_0009_colored-industrial-steel-copy-space-background.webp",
+                    "/wp-content/uploads/2026/03/products_0009_colored-industrial-steel-copy-space-background.webp",
+                ],
                 heading: "Colour Coated Sheets and Coils",
                 info: "Elegance that Endures",
                 description: "Colour Coated Steel Sheets & Coils With a production capacity of 15,000 tonnes per month and a state-of-the-art 4-coat painting process, our colour coated steel sheets and coils are engineered for superior corrosion resistance, vibrant finishes, and long-lasting performance in roofing, cladding, and architectural applications.",
@@ -34,7 +37,11 @@ export const productData = [{
             },
             {
                 tabName: "Aluzinc Sheets",
-                poster: "/wp-content/themes/sel/assets/img/all-images/product/product-1.jpg",
+                posters: [
+                    "/wp-content/uploads/2026/03/product-3.webp",
+                    "/wp-content/uploads/2026/03/products_0006_production-industry-equipment-manufacture-background.webp",
+                    "/wp-content/uploads/2026/03/products_0004_rolls-steel-sheet-factory.webp",
+                ],
                 heading: "Aluzinc Sheets and Coils",
                 info: "Built to Last",
                 description: "With a production capacity of 12,000 tonnes per month, our galvalume steel sheets (al-zn coated) offer superior heat reflectivity, corrosion resistance, and extended service life making them ideal for roofing, siding, and structural applications in diverse environments.",
@@ -44,7 +51,10 @@ export const productData = [{
             },
             {
                 tabName: "Pipes",
-                poster: "/wp-content/themes/sel/assets/img/all-images/product/product-1.jpg",
+                posters: [
+                    "/wp-content/uploads/2025/05/products_0009_colored-industrial-steel-copy-space-background.webp",
+                    "/wp-content/uploads/2026/03/products_0009_colored-industrial-steel-copy-space-background.webp",
+                ],
                 heading: "Pipes",
                 info: "Durable Solution",
                 description: "At Shyam Metalics Pipe Division, we produce a versatile range of steel pipes and hollow sections tailored for strength, precision, and performance. With 4,000 tonnes monthly capacity, we serve industries like construction, automotive, agriculture, and furniture. Our round, square, and rectangular sections are precision-engineered and quality-checked for durability, dimensional accuracy, and reliability in the most demanding applications.",
@@ -54,7 +64,10 @@ export const productData = [{
             },
             {
                 tabName: "CRFH & CRCA",
-                poster: "/wp-content/themes/sel/assets/img/all-images/product/product-1.jpg",
+                posters: [
+                    "/wp-content/uploads/2025/05/products_0009_colored-industrial-steel-copy-space-background.webp",
+                    "/wp-content/uploads/2026/03/products_0009_colored-industrial-steel-copy-space-background.webp",
+                ],
                 heading: "CRFH & CRCA",
                 info: "Elegance that Endures",
                 description: "Colour Coated Steel Sheets & Coils With a production capacity of 15,000 tonnes per month and a state-of-the-art 4-coat painting process, our colour coated steel sheets and coils are engineered for superior corrosion resistance, vibrant finishes, and long-lasting performance in roofing, cladding, and architectural applications.",

@@ -4,6 +4,7 @@ import "@/styles/home.css";
 const Hero = React.lazy(() => import('@/components/home/hero/Hero'));
 const About = React.lazy(() => import('@/components/home/about/About'))
 const Products = React.lazy(() => import('@/components/home/products/Products'))
+const Brands = React.lazy(() => import('@/components/home/brands/Brands'))
 
 const LazyWrapper = ({ children, fallback }) => {
   return (
@@ -16,9 +17,10 @@ const LazyWrapper = ({ children, fallback }) => {
 export default function Home() {
   return (
     <div className="content-layout">
-      <LazyWrapper fallback={"Loading..."}><Hero /></LazyWrapper>
-      <LazyWrapper fallback={"Loading..."}><About /></LazyWrapper>
-      <LazyWrapper fallback={"Loading..."}><Products /></LazyWrapper>
+      <LazyWrapper fallback={<div>Loading...</div>}><Hero /></LazyWrapper>
+      <LazyWrapper fallback={<div>Loading...</div>}><About /></LazyWrapper>
+      <LazyWrapper fallback={<div>Loading...</div>}><Products /></LazyWrapper>
+      <LazyWrapper fallback={<div>Loading...</div>}><Brands /></LazyWrapper>
     </div>
   );
 }

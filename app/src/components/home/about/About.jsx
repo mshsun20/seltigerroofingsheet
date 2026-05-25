@@ -6,6 +6,7 @@ import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer";
 
 const About = () => {
     if (aboutDetails?.length === 0) return <></>
+    
   return (
     <div className="about-layout">
         <div className="about-hdr">

@@ -4,17 +4,13 @@ import "@/styles/components/product.css"
 import Image from 'next/image';
 import Link from 'next/link';
 import { productData } from "@/data/home/productData"
+import GallerySlider from '@/components/GallerySlider';
 
 const ProductPoster = React.memo(function ProductPoster({ items, tabIndex=0 }) {
     return (
         <div className="products-details">
-            <div className="products-poster">
-                <Image
-                    src={items[tabIndex]?.poster || "/"}
-                    alt="products details"
-                    width={20}
-                    height={20}
-                />
+            <div className="products-poster" style={{ maxWidth: 1000, margin: 'auto', padding: 20 }}>
+                <GallerySlider slides={items[tabIndex]?.posters} key={tabIndex} />
             </div>
             <div className="products-content">
                 <div className="products-content-hds">{items[tabIndex]?.heading}</div>
@@ -30,9 +26,7 @@ const Products = () => {
     const [tabIndex, setTabIndex] = React.useState(0)
     const [activeTab, setActiveTab] = React.useState(0)
 
-    const handleActiveTab = () => {
-        console.log(activeTabRef);
-    }
+    if (productData?.length===0) return <></>
 
   return (
     <div className="products-layout">
@@ -67,7 +61,7 @@ const Products = () => {
                     </div>
                 ))}
             </div>
-            <div className="products-section"><ProductPoster items={productData[0]?.allItems?.itemDetails} tabIndex={tabIndex} /></div>
+            <div className="products-section"><ProductPoster items={Array.from({ length: productData[0]?.allItems?.itemDetails?.length }, (_, i) => productData[0]?.allItems?.itemDetails[i])} tabIndex={tabIndex} /></div>
         </div>
     </div>
   )
