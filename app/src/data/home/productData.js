@@ -52,8 +52,9 @@ export const productData = [{
             {
                 tabName: "Pipes",
                 posters: [
-                    "/wp-content/uploads/2025/05/products_0009_colored-industrial-steel-copy-space-background.webp",
-                    "/wp-content/uploads/2026/03/products_0009_colored-industrial-steel-copy-space-background.webp",
+                    "/wp-content/uploads/2026/03/product-3-1.webp",
+                    "/wp-content/uploads/2026/03/products_0002_stack-valley-roofing-material-metal-roofing-factory.webp",
+                    "/wp-content/uploads/2026/03/products_0011_big-storehouse-with-construction-materials-inside-wholesale-1.webp",
                 ],
                 heading: "Pipes",
                 info: "Durable Solution",
@@ -65,8 +66,8 @@ export const productData = [{
             {
                 tabName: "CRFH & CRCA",
                 posters: [
-                    "/wp-content/uploads/2025/05/products_0009_colored-industrial-steel-copy-space-background.webp",
-                    "/wp-content/uploads/2026/03/products_0009_colored-industrial-steel-copy-space-background.webp",
+                    "/wp-content/uploads/2026/03/product-4.webp",
+                    "/wp-content/uploads/2026/03/products_0003_rolls-steel-sheet-plant-galvanized-steel-coil.webp",
                 ],
                 heading: "CRFH & CRCA",
                 info: "Elegance that Endures",

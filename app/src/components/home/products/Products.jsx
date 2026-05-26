@@ -7,16 +7,22 @@ import { productData } from "@/data/home/productData"
 import GallerySlider from '@/components/GallerySlider';
 
 const ProductPoster = React.memo(function ProductPoster({ items, tabIndex=0 }) {
+    const [arrow, setArrow] = React.useState('↗');
+
     return (
         <div className="products-details">
-            <div className="products-poster" style={{ maxWidth: 1000, margin: 'auto', padding: 20 }}>
+            <div className="products-poster">
                 <GallerySlider slides={items[tabIndex]?.posters} key={tabIndex} />
             </div>
             <div className="products-content">
                 <div className="products-content-hds">{items[tabIndex]?.heading}</div>
                 <div className="products-content-info">{items[tabIndex]?.info}</div>
                 <div className="products-content-description">{items[tabIndex]?.description}</div>
-                <div className="products-content-action">{items[tabIndex]?.actionBtn[0]?.label}</div>
+                <div className="products-content-action">
+                    <Link href="#" className="action-btn" onMouseEnter={() => setArrow('→')} onMouseLeave={() => setArrow('↗')}>
+                        {items[tabIndex]?.actionBtn[0]?.label} <span>{arrow}</span>
+                    </Link>
+                </div>
             </div>
         </div>
     )

@@ -60,7 +60,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    height: 100%;
+    height: auto;
     padding: 2rem 0;
 }
 
@@ -74,6 +74,7 @@
 }
 .products-vtabs-link {
     background-color: white;
+    width: 100%;
     padding: 1rem;
     /* margin: 1rem 0; */
     color: #636363;
@@ -91,11 +92,15 @@
 .products-tab-item {}
 
 .products-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 25rem;
+    height: 100%;
     padding: 1.5rem 0 1.5rem 1.5rem;
 }
 .products-details {
+    /* position: relative; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -104,19 +109,66 @@
     height: 100%;
 }
 .products-poster {
+    /* position: relative; */
     display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex: 0 0 35%; */
     width: 35%;
     height: 100%;
-    overflow: hidden;
+    padding: 0.2rem;
+    /* overflow: hidden; */
 }
 .products-content {
     width: 60%;
-    height: 100%;
+    height: auto;
 }
-.products-content-hds {}
-.products-content-info {}
-.products-content-description {}
-.products-content-action {}
+.products-content-hds {
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.products-content-info {
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.products-content-description {
+    font-size: 1.1rem;
+}
+.products-content-action {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.products-content-action .action-btn {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    background-color: var(--theme);
+    width: auto;
+    height: auto;
+    padding: 1rem;
+    color: var(--background);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    text-wrap: nowrap;
+    transition: all 0.3s ease-in-out;
+
+    span {
+        width: 2rem;
+        font-weight: 500;
+        margin-left: 0.5rem;
+        transition: all 0.3s ease;
+    }
+    &:hover {
+        background-color: var(--foreground);
+        color: var(--background);
+    }
+}
 
 
 @media (max-width: 1024px) {
@@ -124,6 +176,18 @@
         flex-direction: column;
     }
 
-    .products-vtabs {}
-    .products-vtabs-link {}
+    .products-vtabs {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+    }
+    .products-vtabs-link {
+        width: 100%;
+        padding: 0.8rem;
+        margin: 0.5rem 0;
+    }
+    
+    .products-section {
+        padding: 1rem;
+    }
 }

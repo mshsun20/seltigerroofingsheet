@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: var(--white);
     width: 100%;
     height: auto;
     padding: 5rem;
@@ -63,7 +64,7 @@
 .about-content-text {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     padding: 0.5rem 0;
 
@@ -102,6 +103,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 1rem;
 }
 .about-highlight-card {
     display: flex;
@@ -124,4 +126,15 @@
 }
 .about-highlight-card-details {
     font-size: 1.1rem;
+}
+
+
+
+@media (max-width: 1024px) {
+    .about-layout {
+        padding: 5rem;
+    }
+    .about-container {
+        flex-direction: column;
+    }
 }

@@ -3,12 +3,7 @@ import React from 'react'
 import "@/styles/components/brand.css";
 import { brandDetails } from "@/data/home/brandDetails";
 import Image from 'next/image';
-
-const BrandPoster = React.memo(function BrandPoster({ data }) {
-    return (
-        <div className=""></div>
-    )
-})
+import BandItems from './BandItems';
 
 const Brands = () => {
     if (brandDetails?.length===0) return <></>
@@ -29,7 +24,11 @@ const Brands = () => {
             </div>
             <div className={brandDetails[0]?.heading?.className}>{brandDetails[0]?.heading?.data}</div>
         </div>
-        <div className="brands-container"></div>
+        <div className="brands-container">
+            {brandDetails[0]?.allBrands?.map((brand, index) => (
+                <BandItems key={index} data={brand} />
+            ))}
+        </div>
     </div>
   )
 }

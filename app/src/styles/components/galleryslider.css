@@ -1,16 +1,22 @@
 .embla {
-    overflow: hidden;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .embla__container {
     display: flex;
+    width: 100%;
+    height: 100%;
 }
 
 .embla__slide {
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     flex: 0 0 100%;
     min-width: 0;
 }
@@ -19,23 +25,22 @@
 .embla__slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    /* display: block; */
+    object-fit: fill;
+    display: block;
 }
 
 /* 🔥 Custom Scrollbar */
 .embla__scrollbar {
-    position: relative;
-    height: 4px;
+    height: 0.2rem;
     background: #9f9f9fa5;
     border-radius: 5rem;
     overflow: hidden;
 }
 
 .embla__scrollbar_thumb {
-    height: 4px;
+    height: 0.2rem;
     width: 100%;
-    background: #111;
+    background: #111111;
     border-radius: 5rem;
     transform-origin: left;
     transform: scaleX(0);
