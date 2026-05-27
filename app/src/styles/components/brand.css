@@ -79,17 +79,6 @@
 
     &:hover {
         min-width: 25rem;
-        /* transition: opacity 0.3s ease-in-out; */
-
-        .brand-item-wrapper {
-            opacity: 0;
-        }
-        .brand-item-description {
-            width: 100%;
-            height: 50%;
-            opacity: 1;
-            transition: all 0.3s ease-in-out;
-        }
     }
 }
 .brand-item-section {
@@ -136,11 +125,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000000cc;
+    background-color: #000000d2;
     width: 100%;
     height: 100%;
     opacity: 0.5;
     z-index: 2;
+    pointer-events: auto;
 }
 .brand-item-icon {
     position: absolute;
@@ -158,48 +148,93 @@
         object-fit: contain;
     }
 }
+.brand-item-container:hover .brand-item-wrapper {
+    opacity: 0;
+    pointer-events: none;
+}
+
 .brand-item-description {
     position: absolute;
-    bottom: 0%;
+    left: 0;
+    bottom: 0;
     display: flex;
-    justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    background-color: var(--theme);
-    width: 0;
-    height: 0;
+    width: 100%;
     padding: 1rem;
+    background: #623501be;
+    -webkit-backdrop-filter: blur(0.4rem);
+    backdrop-filter: blur(0.4rem);
     color: white;
-    text-align: center;
     opacity: 0;
     z-index: 4;
+    pointer-events: none;
+    transform: translateX(-100%);
+    transition:
+        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.35s ease;
+
+    will-change: transform, opacity;
 
     .item-description-heading {
+        display: block;
         font-size: 1.5rem;
         font-weight: bold;
         margin-bottom: 0.5rem;
+        transition:
+            transform 0.3s ease,
+            background 0.3s ease;
     }
-    .item-description-details {;
+    .item-description-details {
+        display: block;
         font-size: 1rem;
         font-weight: normal;
         text-align: start;
         margin-bottom: 1rem;
+        transition:
+            transform 0.3s ease,
+            background 0.3s ease;
     }
     .brand-item-link {
         display: flex;
         justify-content: center;
         align-items: center;
         width: auto;
-        padding: 0.5rem 1rem;
-        background-color: var(--primary);
         color: white;
         font-size: 0.9rem;
         font-weight: 600;
         border-radius: 0.3rem;
         text-decoration: none;
+        transition:
+            transform 0.3s ease,
+            background 0.3s ease;
 
-        &:hover {
-            background-color: var(--primary-dark);
+        a {
+            background-color: black;
+            padding: 0.5rem 1rem;
+            color: white;
+            text-decoration: none;
+
+            &:hover {
+                background-color: white;
+                color: black;
+                transition: all 0.3s ease-in-out;
+            }
         }
+    }
+}
+.brand-item-container:hover .brand-item-description {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+
+    .item-description-heading {
+        transition-delay: 0.1s;
+    }
+    .item-description-details {
+        transition-delay: 0.2s;
+    }
+    .brand-item-link {
+        transition-delay: 0.3s;
     }
 }

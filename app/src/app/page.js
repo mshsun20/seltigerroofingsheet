@@ -5,6 +5,7 @@ const Hero = React.lazy(() => import('@/components/home/hero/Hero'));
 const About = React.lazy(() => import('@/components/home/about/About'))
 const Products = React.lazy(() => import('@/components/home/products/Products'))
 const Brands = React.lazy(() => import('@/components/home/brands/Brands'))
+const Choose = React.lazy(() => import('@/components/home/choose/Choose'))
 
 const LazyWrapper = ({ children, fallback }) => {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <LazyWrapper fallback={<div>Loading...</div>}><About /></LazyWrapper>
       <LazyWrapper fallback={<div>Loading...</div>}><Products /></LazyWrapper>
       <LazyWrapper fallback={<div>Loading...</div>}><Brands /></LazyWrapper>
+      <LazyWrapper fallback={<div>Loading...</div>}><Choose /></LazyWrapper>
     </div>
   );
 }
