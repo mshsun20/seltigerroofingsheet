@@ -17,17 +17,17 @@ export const chooseDetails = [{
         data: "Why Choose Roofing Sheets of SEL Tiger"
     },
     contents: {
+        className: "choose-container",
         allChoices: [
             {
-                className: "choose-container",
+                className: "choose-contents",
                 containerIndex: 1,
                 alignment: "left",
                 allDetails: [
                     {
-                        className: "detail-info",
                         name: "Colour with a Purpose",
                         icon: {
-                            className: "detail-info-icon",
+                            className: "detail-icon",
                             url: "/wp-content/themes/sel/assets/img/icons/sub-logo3.svg",
                             alt: "sub logo3",
                             width: 20,
@@ -36,111 +36,123 @@ export const chooseDetails = [{
                         details: "Our coatings don't just look good, they last. Our roofing sheets are fade-resistant, impact-ready, weatherproof, and always eye-catching.",
                     },
                     {
-                        className: "detail-info",
-                        name: "Colour with a Purpose",
+                        name: "Strength Inspired by the Wild",
                         icon: {
-                            className: "detail-info-icon",
+                            className: "detail-icon",
                             url: "/wp-content/themes/sel/assets/img/icons/sub-logo3.svg",
                             alt: "sub logo3",
                             width: 20,
                             height: 20
                         },
-                        details: "Our coatings don't just look good, they last. Our roofing sheets are fade-resistant, impact-ready, weatherproof, and always eye-catching.",
+                        details: "Our name says it all. With the unmatched strength of a tiger, our roofing sheets offer protection you can rely on.",
                     },
                     {
-                        className: "detail-info",
-                        name: "Colour with a Purpose",
+                        name: "You Imagine, We Deliver",
                         icon: {
-                            className: "detail-info-icon",
+                            className: "detail-icon",
                             url: "/wp-content/themes/sel/assets/img/icons/sub-logo3.svg",
                             alt: "sub logo3",
                             width: 20,
                             height: 20
                         },
-                        details: "Our coatings don't just look good, they last. Our roofing sheets are fade-resistant, impact-ready, weatherproof, and always eye-catching.",
+                        details: "From classic elegance to bold modernism, our sheets effortlessly turn your vision into vibrant, lasting reality.",
                     },
                 ]
             },
             {
-                className: "",
+                className: "choose-gallery",
                 containerIndex: 2,
                 alignment: "center",
-                chooseImages: {
-                    className: "choose-tab",
-                    imageGroup: [
-                        {
-                            tabName: "Blue Coated",
-                            className: "choose-sheets",
-                            color: "blue",
-                            image: "/",
-                        },
-                        {
-                            tabName: "Green Coated",
-                            className: "choose-sheets",
-                            color: "green",
-                            image: "/",
-                        },
-                        {
-                            tabName: "Red Coated",
-                            className: "choose-sheets",
-                            color: "red",
-                            image: "/",
-                        },
-                        {
-                            tabName: "Orange Coated",
-                            className: "choose-sheets",
-                            color: "orange",
-                            image: "/",
-                        },
-                        {
-                            tabName: "White",
-                            className: "choose-sheets",
-                            color: "white",
-                            image: "/",
-                        },
-                    ]
-                }
+                chooseImages: [
+                    {
+                        tabName: "Blue Coated",
+                        tabIndex: 0,
+                        className: "choose-sheets",
+                        color: "blue",
+                        imageUrl: "/",
+                        alt: "blue coated sheet",
+                        width: 100,
+                        height: 100
+                    },
+                    {
+                        tabName: "Green Coated",
+                        tabIndex: 1,
+                        className: "choose-sheets",
+                        color: "green",
+                        imageUrl: "/",
+                        alt: "green coated sheet",
+                        width: 100,
+                        height: 100
+                    },
+                    {
+                        tabName: "Red Coated",
+                        tabIndex: 2,
+                        className: "choose-sheets",
+                        color: "red",
+                        imageUrl: "/",
+                        alt: "red coated sheet",
+                        width: 100,
+                        height: 100
+                    },
+                    {
+                        tabName: "Orange Coated",
+                        tabIndex: 3,
+                        className: "choose-sheets",
+                        color: "orange",
+                        imageUrl: "/",
+                        alt: "orange coated sheet",
+                        width: 100,
+                        height: 100
+                    },
+                    {
+                        tabName: "White",
+                        tabIndex: 4,
+                        className: "choose-sheets",
+                        color: "white",
+                        imageUrl: "/",
+                        alt: "white coated sheet",
+                        width: 100,
+                        height: 100
+                    },
+                ]
             },
             {
-                className: "choose-container",
+                className: "choose-contents",
                 containerIndex: 3,
                 alignment: "right",
                 allDetails: [
                     {
-                        className: "detail-info",
-                        name: "Colour with a Purpose",
+                        name: "Backed by Trust",
                         icon: {
-                            className: "detail-info-icon",
+                            className: "detail-icon",
                             url: "/wp-content/themes/sel/assets/img/icons/sub-logo3.svg",
                             alt: "sub logo3",
                             width: 20,
                             height: 20
                         },
-                        details: "Our coatings don't just look good, they last. Our roofing sheets are fade-resistant, impact-ready, weatherproof, and always eye-catching.",
+                        details: "Part of the Shyam Metalics Group, our commitment to quality is backed by decades of industry excellence.",
                     },
                     {
-                        className: "detail-info",
-                        name: "Colour with a Purpose",
+                        name: "Industry-Leading Technology",
                         icon: {
-                            className: "detail-info-icon",
+                            className: "detail-icon",
                             url: "/wp-content/themes/sel/assets/img/icons/sub-logo3.svg",
                             alt: "sub logo3",
                             width: 20,
                             height: 20
                         },
-                        details: "Our coatings don't just look good, they last. Our roofing sheets are fade-resistant, impact-ready, weatherproof, and always eye-catching.",
+                        details: "Our galvanizing and coating processes ensure longer-lasting, high-performance steel that's built for the future.",
                     },
                     {
-                        className: "detail-info",
-                        name: "Colour with a Purpose",
+                        name: "Strategic Supply Chain",
                         icon: {
-                            className: "detail-info-icon",
+                            className: "detail-icon",
                             url: "/wp-content/themes/sel/assets/img/icons/sub-logo3.svg",
                             alt: "sub logo3",
                             width: 20,
                             height: 20
                         },
-                        details: "Our coatings don't just look good, they last. Our roofing sheets are fade-resistant, impact-ready, weatherproof, and always eye-catching.",
+                        details: "With manufacturing units near raw material hubs, we ensure faster production and quicker deliveries.",
                     },
                 ]
             },

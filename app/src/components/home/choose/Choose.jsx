@@ -3,6 +3,8 @@ import Image from 'next/image';
 import React from 'react';
 import { chooseDetails } from "@/data/home/chooseDetails";
 import Link from 'next/link';
+import ChooseReason from "./ChooseReason"
+import ChooseGallery from "./ChooseGallery"
 
 const Choose = () => {
   return (
@@ -22,23 +24,16 @@ const Choose = () => {
                 </div>
                 <div className={chooseDetails[0]?.heading?.className}>{chooseDetails[0]?.heading?.data}</div>
             </div>
-            <div className="choose-container">
+            <div className={chooseDetails[0]?.contents?.className}>
                 {
                     chooseDetails[0]?.contents?.allChoices?.map(elm => {
-                        String(elm.alignment)==="left" && (
-                            <div key={elm.containerIndex}></div>
-                        );
-                        String(elm.alignment)==="center" && (
-                            <div key={elm.containerIndex}></div>
-                        );
-                        String(elm.alignment)==="right" && (
-                            <div key={elm.containerIndex}></div>
-                        );
+                        if (["left", "right"].includes(String(elm.alignment))) return <ChooseReason data={elm} key={elm.containerIndex} />;
+                        if (String(elm.alignment)==="center") return <ChooseGallery data={elm} key={elm.containerIndex} />;
                     })
                 }
             </div>
             <div className="choose-actions">
-                <Link className={chooseDetails[0]?.link?.className}>{chooseDetails[0]?.link?.name}</Link>
+                <Link href="#" className={chooseDetails[0]?.link?.className}>{chooseDetails[0]?.link?.name}</Link>
             </div>
         </div>
     </>
