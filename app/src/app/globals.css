@@ -677,6 +677,13 @@ a {
     background-color: black;
     color: var(--white);
   }
+  span {
+    width: 2rem;
+    /* margin: 0.5rem; */
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
 }
 .subscription-social-links {
   display: flex;

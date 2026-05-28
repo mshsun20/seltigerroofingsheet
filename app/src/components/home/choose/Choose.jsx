@@ -1,12 +1,15 @@
 "use client";
 import Image from 'next/image';
 import React from 'react';
+import "@/styles/components/choose.css";
 import { chooseDetails } from "@/data/home/chooseDetails";
 import Link from 'next/link';
 import ChooseReason from "./ChooseReason"
 import ChooseGallery from "./ChooseGallery"
 
 const Choose = () => {
+    const [arrow, setArrow] = React.useState('↗');
+    
   return (
     <>
         <div className="choose-layout">
@@ -33,7 +36,14 @@ const Choose = () => {
                 }
             </div>
             <div className="choose-actions">
-                <Link href="#" className={chooseDetails[0]?.link?.className}>{chooseDetails[0]?.link?.name}</Link>
+                <Link
+                    href="#"
+                    className={chooseDetails[0]?.link?.className}
+                    onMouseEnter={() => setArrow('→')}
+                    onMouseLeave={() => setArrow('↗')}
+                >
+                    {chooseDetails[0]?.link?.name} <span>{arrow}</span>
+                </Link>
             </div>
         </div>
     </>

@@ -28,7 +28,7 @@ export const chooseDetails = [{
                         name: "Colour with a Purpose",
                         icon: {
                             className: "detail-icon",
-                            url: "/wp-content/themes/sel/assets/img/icons/sub-logo3.svg",
+                            url: "/wp-content/uploads/2025/04/why-icon-purpose.png",
                             alt: "sub logo3",
                             width: 20,
                             height: 20
@@ -39,7 +39,7 @@ export const chooseDetails = [{
                         name: "Strength Inspired by the Wild",
                         icon: {
                             className: "detail-icon",
-                            url: "/wp-content/themes/sel/assets/img/icons/sub-logo3.svg",
+                            url: "/wp-content/uploads/2025/04/why-icon-strength.png",
                             alt: "sub logo3",
                             width: 20,
                             height: 20
@@ -50,7 +50,7 @@ export const chooseDetails = [{
                         name: "You Imagine, We Deliver",
                         icon: {
                             className: "detail-icon",
-                            url: "/wp-content/themes/sel/assets/img/icons/sub-logo3.svg",
+                            url: "/wp-content/uploads/2025/04/why-icon-engineeerd.png",
                             alt: "sub logo3",
                             width: 20,
                             height: 20
@@ -68,51 +68,51 @@ export const chooseDetails = [{
                         tabName: "Blue Coated",
                         tabIndex: 0,
                         className: "choose-sheets",
-                        color: "blue",
-                        imageUrl: "/",
+                        color: "#0188b8",
+                        imageUrl: "/wp-content/themes/sel/assets/img/all-images/choose/choose-img7.png",
                         alt: "blue coated sheet",
-                        width: 100,
-                        height: 100
+                        width: 1000,
+                        height: 1000
                     },
                     {
                         tabName: "Green Coated",
                         tabIndex: 1,
                         className: "choose-sheets",
-                        color: "green",
-                        imageUrl: "/",
+                        color: "#86c47a",
+                        imageUrl: "/wp-content/themes/sel/assets/img/all-images/choose/choose-img8.png",
                         alt: "green coated sheet",
-                        width: 100,
-                        height: 100
+                        width: 1000,
+                        height: 1000
                     },
                     {
                         tabName: "Red Coated",
                         tabIndex: 2,
                         className: "choose-sheets",
-                        color: "red",
-                        imageUrl: "/",
+                        color: "#ef3447",
+                        imageUrl: "/wp-content/themes/sel/assets/img/all-images/choose/choose-img11.png",
                         alt: "red coated sheet",
-                        width: 100,
-                        height: 100
+                        width: 1000,
+                        height: 1000
                     },
                     {
                         tabName: "Orange Coated",
                         tabIndex: 3,
                         className: "choose-sheets",
-                        color: "orange",
-                        imageUrl: "/",
+                        color: "#f09100",
+                        imageUrl: "/wp-content/themes/sel/assets/img/all-images/choose/choose-img10.png",
                         alt: "orange coated sheet",
-                        width: 100,
-                        height: 100
+                        width: 1000,
+                        height: 1000
                     },
                     {
-                        tabName: "White",
+                        tabName: "White Coated",
                         tabIndex: 4,
                         className: "choose-sheets",
-                        color: "white",
-                        imageUrl: "/",
+                        color: "#d5d5cb",
+                        imageUrl: "/wp-content/themes/sel/assets/img/all-images/choose/choose-img9.png",
                         alt: "white coated sheet",
-                        width: 100,
-                        height: 100
+                        width: 1000,
+                        height: 1000
                     },
                 ]
             },
@@ -125,7 +125,7 @@ export const chooseDetails = [{
                         name: "Backed by Trust",
                         icon: {
                             className: "detail-icon",
-                            url: "/wp-content/themes/sel/assets/img/icons/sub-logo3.svg",
+                            url: "/wp-content/uploads/2025/04/why-icon1-trust.png",
                             alt: "sub logo3",
                             width: 20,
                             height: 20
@@ -136,7 +136,7 @@ export const chooseDetails = [{
                         name: "Industry-Leading Technology",
                         icon: {
                             className: "detail-icon",
-                            url: "/wp-content/themes/sel/assets/img/icons/sub-logo3.svg",
+                            url: "/wp-content/uploads/2025/05/why-icon1-3.svg",
                             alt: "sub logo3",
                             width: 20,
                             height: 20
@@ -147,7 +147,7 @@ export const chooseDetails = [{
                         name: "Strategic Supply Chain",
                         icon: {
                             className: "detail-icon",
-                            url: "/wp-content/themes/sel/assets/img/icons/sub-logo3.svg",
+                            url: "/wp-content/uploads/2025/04/why-icon-tech.png",
                             alt: "sub logo3",
                             width: 20,
                             height: 20

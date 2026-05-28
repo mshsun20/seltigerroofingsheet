@@ -7,7 +7,7 @@ const ChooseReason = ({ data }) => {
     <div className={data.className} id={data.containerIndex}>
         {
             data.allDetails?.length>0 && data.allDetails?.map((elm, i) => (
-                <div className="detail-section" key={i}>
+                <div className="detail-section" id={String(data.alignment)} key={i}>
                     {
                         String(data.alignment)==="left" && (
                             <>

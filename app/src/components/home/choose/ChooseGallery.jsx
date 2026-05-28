@@ -3,20 +3,16 @@ import Image from 'next/image';
 import React from 'react'
 
 const ChooseGallery = ({ data }) => {
-    const [img, setImg] = React.useState("")
     const [tabIndex, setTabIndex] = React.useState(0)
 
     const handleTab = (e, i) => {
         e.preventDefault();
-        console.log(e);
-        console.log(i);
         setTabIndex(i)
     }
 
   return (
     <div className={data.className} id={data.containerIndex}>
         <div className="gallery-poster">
-            <span>{data?.chooseImages[tabIndex]?.tabName}</span>
             <Image
                 src={data?.chooseImages[tabIndex]?.imageUrl}
                 alt={data?.chooseImages[tabIndex]?.alt}
@@ -33,7 +29,7 @@ const ChooseGallery = ({ data }) => {
                         style={{backgroundColor:String(elm.color)}}
                         onClick={(e) => handleTab(e, elm.tabIndex)}
                     >
-                        {elm?.tabName}
+                        {/* {elm?.tabName} */}
                     </div>
                 ))
             }
