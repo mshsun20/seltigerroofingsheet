@@ -5,13 +5,13 @@ import React from 'react'
 
 const BandItems = ({ data }) => {
   return (
-    <div className="brand-item-container">
-        <div className="brand-item-section">
-            <div className="brand-item-poster">
+    <div className="brands-item-container">
+        <div className="brands-item-section">
+            <div className="brands-item-poster">
                 {data.poster && <Image src={data.poster} alt={data.name} width={1000} height={1000} />}
             </div>
-            <div className="brand-item-wrapper"></div>
-            <div className="brand-item-icon">
+            <div className="brands-item-wrapper"></div>
+            <div className="brands-item-icon">
                 {data.icon && <Image src={data.icon} alt={data.name} width={1000} height={1000} />}
             </div>
             <div className={data.description.className}>

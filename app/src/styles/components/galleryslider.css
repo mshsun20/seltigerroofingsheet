@@ -46,3 +46,14 @@
     transform: scaleX(0);
     transition: transform 0.2s ease;
 }
+
+
+@media (max-width: 768px) {
+    .embla {
+        height: 20rem;
+    }
+    .embla__slide {
+        /* flex: 0 0 100%; */
+        width: 100%;
+    }
+}

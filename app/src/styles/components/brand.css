@@ -62,36 +62,34 @@
     align-items: center;
     flex-direction: row;
     width: 100%;
-    height: 100%;
+    height: auto;
     padding: 2rem 0;
 }
 
-
-.brand-item-container {
+.brands-item-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex: 1 1 0%;
     width: auto;
-    min-width: 13rem;
     height: 25rem;
     transition: all 0.4s ease-in-out;
     overflow: hidden;
 
     &:hover {
-        min-width: 25rem;
+        flex-grow: 1.5;
     }
 }
-.brand-item-section {
+.brands-item-section {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: flex 0.3s ease;
+    background-color: var(--white);
     width: 100%;
     height: 100%;
-    /* margin: 0 1rem; */
-    background-color: var(--white);
     border-radius: 0.5rem;
     box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
     transition: opacity 0.3s ease-in-out;
@@ -106,14 +104,13 @@
         object-fit: cover;
     }
 }
-.brand-item-poster {
+.brands-item-poster {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    /* margin-top: 1rem; */
 
     img {
         width: 100%;
@@ -121,7 +118,7 @@
         object-fit: cover;
     }
 }
-.brand-item-wrapper {
+.brands-item-wrapper {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -133,7 +130,7 @@
     z-index: 2;
     pointer-events: auto;
 }
-.brand-item-icon {
+.brands-item-icon {
     position: absolute;
     bottom: 10%;
     display: flex;
@@ -149,12 +146,12 @@
         object-fit: contain;
     }
 }
-.brand-item-container:hover .brand-item-wrapper {
+.brands-item-container:hover .brands-item-wrapper {
     opacity: 0;
     pointer-events: none;
 }
 
-.brand-item-description {
+.brands-item-description {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -196,7 +193,7 @@
             transform 0.3s ease,
             background 0.3s ease;
     }
-    .brand-item-link {
+    .brands-item-link {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -224,7 +221,7 @@
         }
     }
 }
-.brand-item-container:hover .brand-item-description {
+.brands-item-container:hover .brands-item-description {
     opacity: 1;
     pointer-events: auto;
     transform: translateX(0);
@@ -235,7 +232,31 @@
     .item-description-details {
         transition-delay: 0.2s;
     }
-    .brand-item-link {
+    .brands-item-link {
         transition-delay: 0.3s;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .brands-layout {
+        padding: 2rem; /* Reduces huge desktop padding on mobile screens */
+    }
+
+    .brands-container {
+        flex-direction: column;
+        height: 80rem;   /* CRITICAL FIX: Locks total mobile vertical space */
+    }
+
+    .brands-item-container {
+        width: 100%;     /* Forces full-width usage horizontally */
+        height: auto;    /* Releases fixed desktop heights */
+        flex: 1 1 0%;    /* Splits the 60rem height equally into 5 rows (12rem each) */
+        transition: flex-grow 0.4s ease-in-out;
+    }
+
+    /* Keeps 1.5x hover logic perfectly confined to the 60rem constraint */
+    .brands-container:hover .brands-item-container:hover {
+        flex-grow: 2; /* Expanded row becomes 18rem; others shrink to 10.5rem */
     }
 }

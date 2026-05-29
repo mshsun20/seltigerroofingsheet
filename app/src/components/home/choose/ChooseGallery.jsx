@@ -11,7 +11,7 @@ const ChooseGallery = ({ data }) => {
     }
 
   return (
-    <div className={data.className} id={data.containerIndex}>
+    <div className={data.className} id={`id${data.containerIndex}`}>
         <div className="gallery-poster">
             <Image
                 src={data?.chooseImages[tabIndex]?.imageUrl}
