@@ -51,7 +51,7 @@
 .faqs-container {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     width: 100%;
     padding: 1rem 0;
@@ -105,17 +105,22 @@
     max-height: 0;
     padding: 0;
     opacity: 0;
-    color: #6a6a6a;
+    color: #808080;
     font-size: 1rem;
     font-weight: 400;
     letter-spacing: 0.1rem;
     overflow: hidden;
     transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
 }
-.faqs-item.active .faqs-item-content {
-    max-height: 40rem;
-    opacity: 1;
-    padding: 0 2rem 2rem 2rem;
+.faqs-item.active {
+    .faqs-item-heading {
+        padding-bottom: 1rem;
+    }
+    .faqs-item-content {
+        max-height: 40rem;
+        opacity: 1;
+        padding: 0 2rem 2rem 2rem;
+    }
 }
 
 
