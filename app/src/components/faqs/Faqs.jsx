@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import React from 'react';
 import "@/styles/components/faq.css";
-import { faqData } from "@/data/home/faqData";
+import { faqData } from "@/data/faqData";
 
 const Faqs = () => {
     const [fqIndx, setFqIndx] = React.useState(null)

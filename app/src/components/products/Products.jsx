@@ -3,7 +3,7 @@ import React from 'react'
 import "@/styles/components/product.css"
 import Image from 'next/image';
 import Link from 'next/link';
-import { productData } from "@/data/home/productData"
+import { productData } from "@/data/productData"
 import GallerySlider from '@/components/GallerySlider';
 
 const ProductPoster = React.memo(function ProductPoster({ items, tabIndex=0 }) {

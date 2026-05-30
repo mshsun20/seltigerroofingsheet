@@ -1,7 +1,7 @@
 "use client";
 import React from 'react'
 import "@/styles/components/brand.css";
-import { brandDetails } from "@/data/home/brandDetails";
+import { brandDetails } from "@/data/brandDetails";
 import Image from 'next/image';
 import BandItems from './BandItems';
 

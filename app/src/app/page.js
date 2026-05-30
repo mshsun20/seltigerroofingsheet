@@ -1,12 +1,12 @@
 import React from 'react';
 import "@/styles/home.css";
 // import Hero from "@/components/home/hero/Hero";
-const Hero = React.lazy(() => import('@/components/home/hero/Hero'));
-const About = React.lazy(() => import('@/components/home/about/About'))
-const Products = React.lazy(() => import('@/components/home/products/Products'))
-const Brands = React.lazy(() => import('@/components/home/brands/Brands'))
-const Choose = React.lazy(() => import('@/components/home/choose/Choose'))
-const Faqs = React.lazy(() => import('@/components/home/faqs/Faqs'))
+const Hero = React.lazy(() => import('@/components/hero/Hero'));
+const About = React.lazy(() => import('@/components/about/About'))
+const Products = React.lazy(() => import('@/components/products/Products'))
+const Brands = React.lazy(() => import('@/components/brands/Brands'))
+const Choose = React.lazy(() => import('@/components/choose/Choose'))
+const Faqs = React.lazy(() => import('@/components/faqs/Faqs'))
 
 const LazyWrapper = ({ children, fallback }) => {
   return (

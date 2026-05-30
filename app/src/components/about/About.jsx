@@ -1,7 +1,7 @@
 import React from 'react'
 import '@/styles/components/about.css';
 import Image from 'next/image';
-import { aboutDetails } from "@/data/home/aboutDetails"
+import { aboutDetails } from "@/data/aboutDetails"
 import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer";
 
 const About = () => {

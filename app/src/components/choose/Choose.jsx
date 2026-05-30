@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import React from 'react';
 import "@/styles/components/choose.css";
-import { chooseDetails } from "@/data/home/chooseDetails";
+import { chooseDetails } from "@/data/chooseDetails";
 import Link from 'next/link';
 import ChooseReason from "./ChooseReason"
 import ChooseGallery from "./ChooseGallery"

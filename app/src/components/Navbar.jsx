@@ -3,7 +3,7 @@ import React from 'react'
 import { Logs } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { menuItems } from '@/configs/menuItems'
+import { menuItems } from '@/data/menuItems'
 import Menusection from './Menusection'
 import { m, AnimatePresence } from 'framer-motion'
 
