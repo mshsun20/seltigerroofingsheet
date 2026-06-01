@@ -1,6 +1,7 @@
 import React from 'react'
 // import Banner from "@/components/blog/Banner";
-const Banner = React.lazy(() => import("@/components/blog/Banner"))
+const Banner = React.lazy(() => import("@/components/Banner"))
+import { blogBanner } from "@/data/blogBanner";
 const Blogcontent = React.lazy(() => import("@/components/blog/Blogcontent"))
 import axiosInstance from "@/configs/axiosInstance"
 
@@ -35,7 +36,7 @@ const Blog = async ({ params }) => {
   return (
     <div className="blog-layout">
       <React.Suspense fallback={<div>Loading...</div>}>
-        <Banner data={blogData?.title || "Blog Details"} />
+        <Banner data={blogData?.title || "Blog Details"} info={blogBanner} />
       </React.Suspense>
       <React.Suspense fallback={<div>Loading...</div>}>
         <Blogcontent data={blogData} />

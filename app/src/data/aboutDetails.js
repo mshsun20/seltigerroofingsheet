@@ -23,10 +23,15 @@ export const aboutDetails = [{
             { data: `We focus on strong materials, modern technology, and strict quality checks to make sure flat steel and roofing sheets are durable and reliable. Our roofing sheets and flat steel products are designed to meet today's industry needs.` },
             { data: `Like a tiger, we work with focus, strength, and precision-setting new standards in the steel industry.` },
         ],
+        // contentInfo: [
+        //     { top: `<span style="font-weight:900;">20</span>k+`, info: "Employee Strength" },
+        //     { top: `<span style="font-weight:900;">6</span>th Largest`, info: "Integrated Steel Producer in India" },
+        //     { top: `<span style="font-weight:900;">16.78</span> MTPA`, info: "Combined Production Capacity" },
+        // ]
         contentInfo: [
-            { top: `<span style="font-weight:900;">20</span>k+`, description: "Employee Strength" },
-            { top: `<span style="font-weight:900;">6th</span> Largest`, description: "Integrated Steel Producer in India" },
-            { top: `<span style="font-weight:900;">16.78</span> MTPA`, description: "Combined Production Capacity" },
+            { value: 20, suffix: "k+", info: "Employee Strength" },
+            { value: 6, suffix: "th Largest", info: "Integrated Steel Producer in India" },
+            { value: 16.78, suffix: " MTPA", info: "Combined Production Capacity" },
         ]
     },
     highlightedContent: {

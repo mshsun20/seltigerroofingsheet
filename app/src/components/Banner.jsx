@@ -3,26 +3,31 @@ import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Banner = ({ data }) => {
+const Banner = ({ data, info }) => {
   return (
     <div className='banner'>
         <div className="banner-poster">
-            <Image src="/wp-content/uploads/2026/02/blogs-banner.jpg" alt="blog-banner" width={1000} height={500} />
+            <Image
+                src={info?.bannerImage?.url}
+                alt={info?.bannerImage?.alt}
+                width={info?.bannerImage?.width}
+                height={info?.bannerImage?.height}
+            />
         </div>
         <div className="banner-content container">
             <div className="banner-hdr">{data}</div>
             <div className="banner-info">
-                <Link href="/">Home</Link>
+                <Link href={info?.baseInfo?.url}>{info?.baseInfo?.name}</Link>
                 {
-                    data==="Blogs"
+                    data===info?.bannerTitle
                     ? <span>&nbsp;&nbsp;{">>"}&nbsp;&nbsp;</span>
-                    : (
-                        <>
+                    : info?.bannerInfo?.map((elm, i) => (
+                        <div key={i}>
                             <span>&nbsp;&nbsp;{">>"}&nbsp;&nbsp;</span>
-                            <Link href="/blogs">Blogs</Link>
+                            <Link href={elm?.url}>{elm?.name}</Link>
                             <span>&nbsp;&nbsp;{">>"}&nbsp;&nbsp;</span>
-                        </>
-                    )
+                        </div>
+                    ))
                 }
                 <Link href="#">{data}</Link>
             </div>

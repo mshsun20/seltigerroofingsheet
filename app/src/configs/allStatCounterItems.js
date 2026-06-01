@@ -1,5 +1,5 @@
 export const heroStatCounterItems = [
-    { value: 50, info: 'Countries Worldwide' },
-    { value: 400, info: 'Team Members' },
-    { value: 2000, info: 'Network Channel' },
+    { value: 50, suffix: "+", info: 'Countries Worldwide' },
+    { value: 400, suffix: "+", info: 'Team Members' },
+    { value: 2000, suffix: "+", info: 'Network Channel' },
 ];

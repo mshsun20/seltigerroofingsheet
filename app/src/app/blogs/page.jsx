@@ -1,9 +1,9 @@
 import React from 'react'
-import Banner from '@/components/blog/Banner'
 const Blogwall = React.lazy(() => import("@/components/blog/Blogwall"))
 import axiosInstance from '@/configs/axiosInstance'
 import Card from '@/components/Card'
-import Link from 'next/link'
+import Banner from "@/components/Banner";
+import { blogBanner } from "@/data/blogBanner";
 
 const Blogs = async () => {
   const response = await axiosInstance.get('/api/blogs')
@@ -11,7 +11,7 @@ const Blogs = async () => {
 
   return (
     <div className="blog-layout">
-      <Banner data={"Blogs"} />
+      <Banner data={"Blogs"} info={blogBanner} />
       <React.Suspense fallback={<div>Loading...</div>}>
         <Blogwall>
           <ul className='blog-list'>

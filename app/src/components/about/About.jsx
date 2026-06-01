@@ -3,6 +3,7 @@ import '@/styles/components/about.css';
 import Image from 'next/image';
 import { aboutDetails } from "@/data/aboutDetails"
 import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer";
+import Statcounter from "@/components/Statcounter";
 
 const About = () => {
     if (aboutDetails?.length === 0) return <></>
@@ -34,13 +35,13 @@ const About = () => {
                     ))}
                 </div>
                 <div className="about-content-info">
-                    {aboutDetails[0]?.mainContent?.contentInfo?.length>0
-                    && aboutDetails[0]?.mainContent?.contentInfo?.map((itm, i) => (
+                    {aboutDetails[0]?.mainContent?.contentInfo?.length>0 && <Statcounter statData={aboutDetails[0]?.mainContent?.contentInfo} />}
+                    {/* && aboutDetails[0]?.mainContent?.contentInfo?.map((itm, i) => (
                         <div className="about-content-info-card" key={i}>
                             <div className="content-info-top"><SafeHtmlRenderer content={itm.top} /></div>
                             <div className="content-info-desc">{itm.description}</div>
                         </div>
-                    ))}
+                    ))} */}
                 </div>
             </div>
             <div className={aboutDetails[0]?.highlightedContent?.className}>

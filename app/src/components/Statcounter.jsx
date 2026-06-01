@@ -1,38 +1,71 @@
+"use client";
 import React from 'react';
 
-const CounterItem = React.memo(function CounterItem({ target, info }) {
+const CounterItem = React.memo(function CounterItem({ target, suffix, info }) {
     const [count, setCount] = React.useState(0);
 
-    const counter = React.useCallback(() => {
-        let start = 0;
-        // Animation duration
-        const duration = 2000;
-        // Increase speed calculation
-        const increment = target / (duration / 16);
-        const timer = setInterval(() => {
-            start += increment;
-            if (start >= target) {
-                setCount(target);
-                clearInterval(timer);
-            } else {
-                setCount(Math.floor(start));
-            }
-        }, 16);
-        return () => clearInterval(timer);
-    }, []);
-
     React.useEffect(() => {
-       counter();
-    }, [counter]);
+        const endValue = Number(target);
+
+        if (!Number.isFinite(endValue)) {
+            setTimeout(() => {
+                setCount(target);
+            }, 0);
+            return;
+        }
+
+        const duration = 2000;
+        const startTime = performance.now();
+
+        // Detect precision automatically
+        const decimalPlaces = (() => {
+            const str = endValue.toString();
+
+            if (str.includes("e")) {
+                const [, exp] = str.split("e");
+                return Math.max(0, Math.abs(Number(exp)));
+            }
+
+            return str.includes(".")
+                ? str.split(".")[1].length
+                : 0;
+        })();
+
+        let animationFrame;
+
+        const updateCounter = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            const currentValue = endValue * progress;
+
+            setCount(
+                decimalPlaces > 0
+                    ? Number(currentValue.toFixed(decimalPlaces))
+                    : Math.round(currentValue)
+            );
+
+            if (progress < 1) {
+                animationFrame = requestAnimationFrame(updateCounter);
+            } else {
+                setCount(endValue);
+            }
+        };
+
+        animationFrame = requestAnimationFrame(updateCounter);
+
+        return () => cancelAnimationFrame(animationFrame);
+    }, [target]);
 
     return (
         <div className="stat-counter">
-            <div className="counter-value">
-                {count}+
+            <div className="counter-details">
+                <div className="counter-value">
+                    {typeof count === "number" ? count.toLocaleString() : count}
+                </div>
+                <div className="counter-suffix">{suffix}</div>
             </div>
-            <div className="counter-info">
-                {info}
-            </div>
+            <div className="counter-info">{info}</div>
         </div>
     );
 });
@@ -44,6 +77,7 @@ const Statcounter = ({ statData=[] }) => {
                 <CounterItem
                     key={i}
                     target={elm.value}
+                    suffix={elm.suffix}
                     info={elm.info}
                 />
             ))}
