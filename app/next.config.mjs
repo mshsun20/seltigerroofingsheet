@@ -3,7 +3,22 @@ const nextConfig = {
   /* config options here */
   experimental: {
     turbopackFileSystemCacheForDev: true,
-  }
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "5052",
+        pathname: "/api/uploads/**",
+      },
+      {
+        protocol: "https",
+        hostname: "api.seltigerroofingsheets.com",
+        pathname: "/api/uploads/**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

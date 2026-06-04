@@ -29,19 +29,13 @@ const About = () => {
                 <div className="about-content-text">
                     {aboutDetails[0]?.mainContent?.contentTextuals?.length>0
                     && aboutDetails[0]?.mainContent?.contentTextuals?.map((elm, i) => (
-                        <p key={i}>
+                        <span key={i}>
                             <SafeHtmlRenderer content={elm?.data} />
-                        </p>
+                        </span>
                     ))}
                 </div>
                 <div className="about-content-info">
                     {aboutDetails[0]?.mainContent?.contentInfo?.length>0 && <Statcounter statData={aboutDetails[0]?.mainContent?.contentInfo} />}
-                    {/* && aboutDetails[0]?.mainContent?.contentInfo?.map((itm, i) => (
-                        <div className="about-content-info-card" key={i}>
-                            <div className="content-info-top"><SafeHtmlRenderer content={itm.top} /></div>
-                            <div className="content-info-desc">{itm.description}</div>
-                        </div>
-                    ))} */}
                 </div>
             </div>
             <div className={aboutDetails[0]?.highlightedContent?.className}>

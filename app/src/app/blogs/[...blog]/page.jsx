@@ -1,5 +1,5 @@
 import React from 'react'
-// import Banner from "@/components/blog/Banner";
+import LazyWrapper from "@/components/LazyWrapper"
 const Banner = React.lazy(() => import("@/components/Banner"))
 import { blogBanner } from "@/data/blogBanner";
 const Blogcontent = React.lazy(() => import("@/components/blog/Blogcontent"))
@@ -32,15 +32,19 @@ const Blog = async ({ params }) => {
 
   const response = await axiosInstance.get(`/api/blogs/${slug}`)
   const blogData = response.data?.data || null
+
+  const banner = {...blogBanner}
+  banner.bannerInfo = [...banner.bannerInfo, {
+    name: blogData?.title,
+    url: "#"
+  }]
+
+  console.log(banner);
     
   return (
     <div className="blog-layout">
-      <React.Suspense fallback={<div>Loading...</div>}>
-        <Banner data={blogData?.title || "Blog Details"} info={blogBanner} />
-      </React.Suspense>
-      <React.Suspense fallback={<div>Loading...</div>}>
-        <Blogcontent data={blogData} />
-      </React.Suspense>
+      <LazyWrapper><Banner data={blogData?.title} info={banner} /></LazyWrapper>
+      <LazyWrapper><Blogcontent data={blogData} /></LazyWrapper>
     </div>
   )
 }

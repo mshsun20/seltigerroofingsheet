@@ -1,4 +1,5 @@
 import React from 'react'
+import LazyWrapper from '@/components/LazyWrapper';
 const Blogwall = React.lazy(() => import("@/components/blog/Blogwall"))
 import axiosInstance from '@/configs/axiosInstance'
 import Card from '@/components/Card'
@@ -11,8 +12,8 @@ const Blogs = async () => {
 
   return (
     <div className="blog-layout">
-      <Banner data={"Blogs"} info={blogBanner} />
-      <React.Suspense fallback={<div>Loading...</div>}>
+      <LazyWrapper><Banner data={"Blogs"} info={blogBanner} /></LazyWrapper>
+      <LazyWrapper>
         <Blogwall>
           <ul className='blog-list'>
             {blogs.map((blog) => (
@@ -27,7 +28,7 @@ const Blogs = async () => {
             ))}
           </ul>
         </Blogwall>
-      </React.Suspense>
+      </LazyWrapper>
     </div>
   )
 }

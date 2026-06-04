@@ -1,0 +1,53 @@
+{
+    "Inspid": "31540396402350001671202605271103130001017802522001780295038",
+    "Pono": "2350001671",
+    "Gatepassno": "3154039640",
+    "Partyname": "PCA PROCESSING UNIT INDIA PRIVATE L",
+    "Materialcode": "RMOTH102508",
+    "Truckno": "MP09HH9096",
+    "Batchno": "622300526A",
+    "Supervisor": "Neeraj Kumar",
+    "Invoiceno": "PCA/26-27/382",
+    "Invoicedate": "25.05.2026",
+    "Invoiceqty": "23.890",
+    "Netqty": "12.350",
+    "Qtydiff": "11.540",
+    "Difftype": "Shortage",
+    "Totalimpqty": "15.570",
+    "Uom": "MT",
+    "Inspstatus": "Active",
+    "Createdby": "Bharat Nigam",
+    "Inspdt": "01.06.2026",
+    "Insptm": "11:53:58",
+    "Updatedby": "",
+    "Updatedt": "",
+    "Updatetm": "",
+    "Approvedby": "Dharmendra Kumar Saini",
+    "Apprvdt": "04.06.2026",
+    "Apprvtm": "12:14:19",
+    "Impurities": [{
+            "Imptype": "REJECTION WITH REMARK",
+            "Impqty": "11.540",
+            "Impuom": "MT",
+            "Impremarks": "THIS MATERIAL REJECT AND RETURN DUE TO POOR QUALITY SCRAP"
+        },
+        {
+            "Imptype": "LIGHT MATERIAL",
+            "Impqty": "2.000",
+            "Impuom": "MT",
+            "Impremarks": ""
+        },
+        {
+            "Imptype": "OVER SIZE",
+            "Impqty": "2.000",
+            "Impuom": "MT",
+            "Impremarks": ""
+        },
+        {
+            "Imptype": "Dust+Rust",
+            "Impqty": "0.030",
+            "Impuom": "MT",
+            "Impremarks": ""
+        }
+    ]
+}

@@ -7,7 +7,7 @@ const aboutItems = [
   { name: "Company Overview", path: "/about/company_overview" },
   { name: "Manufacturing Facilities", path: "/about/manufacturing_facilities" },
   { name: "Future Vision", path: "/about/future_vision" },
-  { name: "Certifications & Credentials", path: "/about/certifications_and_credentials" },
+  { name: "Certifications & Credentials", path: "/about/certifications_credentials" },
   { name: "CSR", path: "/about/csr" },
   { name: "Highlights", children: [ ...highlightItems ] }
 ]

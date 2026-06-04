@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const Banner = ({ data, info }) => {
+    console.log("Data:", data);
+    console.log("Banner Title:", info?.bannerInfo);
   return (
     <div className='banner'>
         <div className="banner-poster">
@@ -19,17 +21,16 @@ const Banner = ({ data, info }) => {
             <div className="banner-info">
                 <Link href={info?.baseInfo?.url}>{info?.baseInfo?.name}</Link>
                 {
-                    data===info?.bannerTitle
-                    ? <span>&nbsp;&nbsp;{">>"}&nbsp;&nbsp;</span>
-                    : info?.bannerInfo?.map((elm, i) => (
+                    info?.bannerInfo?.map((elm, i) => (
                         <div key={i}>
                             <span>&nbsp;&nbsp;{">>"}&nbsp;&nbsp;</span>
-                            <Link href={elm?.url}>{elm?.name}</Link>
-                            <span>&nbsp;&nbsp;{">>"}&nbsp;&nbsp;</span>
+                            {
+                                String(elm?.url)==="#" ? <span>{elm.name}</span>
+                                : <Link href={elm?.url}>{elm?.name}</Link>
+                            }
                         </div>
                     ))
                 }
-                <Link href="#">{data}</Link>
             </div>
         </div>
     </div>

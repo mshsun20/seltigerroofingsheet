@@ -14,9 +14,7 @@ import {
 
 const MobileMenuItem = ({ item, level = 0, onToggle }) => {
     const [open, setOpen] = React.useState(false)
-
-    const hasChildren =
-        item.children && item.children.length > 0
+    const hasChildren = item.children && item.children.length > 0
 
     return (
         <li className="mobile-menu-item">
@@ -28,19 +26,12 @@ const MobileMenuItem = ({ item, level = 0, onToggle }) => {
                         onClick={() => setOpen(!open)}
                     >
                         <span>{item.name}</span>
-
-                        <span
-                            className={`mobile-arrow ${open ? "open" : ""}`}
-                        >
+                        <span className={`mobile-arrow ${open ? "open" : ""}`}>
                             <ChevronRight size={16} />
                         </span>
                     </button>
 
-                    <div
-                        className={`mobile-submenu-wrapper ${
-                            open ? "open" : ""
-                        }`}
-                    >
+                    <div className={`mobile-submenu-wrapper ${ open ? "open" : "" }`}>
                         <ul className="mobile-submenu">
                             {item.children.map((child, index) => (
                                 <MobileMenuItem
@@ -86,31 +77,25 @@ const MobileMenuItem = ({ item, level = 0, onToggle }) => {
 ========================================================================================= */
 
 const DesktopMenuItem = ({ item }) => {
+    const [open, setOpen] = React.useState(false)
     const hasChildren = item.children && item.children.length > 0
 
     return (
         <li className={`menu-item ${hasChildren ? "has-children" : ""}`}>
             {hasChildren ? (
                 <>
-                    <button className="submenu-toggle">
+                    <button className="submenu-toggle" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
                         <span>{item.name}</span>
-                        <ChevronDown size={15} />
+                        <span className={`desktop-arrow ${open ? "open" : ""}`}>
+                            <ChevronDown size={15} />
+                        </span>
                     </button>
                     <ul className="desktop-submenu">
-                        {item.children.map((child, index) => (
-                            <DesktopMenuItem
-                                key={index}
-                                item={child}
-                            />
-                        ))}
+                        {item.children.map((child, index) => (<DesktopMenuItem key={index} item={child} />))}
                     </ul>
                 </>
             ) : item.icon ? (
-                <Link
-                    href={item.path}
-                    target={item.target || "_self"}
-                    className="icon-link"
-                >
+                <Link href={item.path} target={item.target || "_self"} className="icon-link">
                     <Image
                         src={item.icon}
                         alt={item.name}
@@ -119,11 +104,7 @@ const DesktopMenuItem = ({ item }) => {
                     />
                 </Link>
             ) : (
-                <Link
-                    href={item.path}
-                    target={item.target || "_self"}
-                    className="menu-link"
-                >
+                <Link href={item.path} target={item.target || "_self"} className="menu-link">
                     {item.name}
                 </Link>
             )}

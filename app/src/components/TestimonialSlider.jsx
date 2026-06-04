@@ -2,6 +2,7 @@
 import React from "react";
 import { m } from "framer-motion";
 import testimonialData from "@/data/testimonialData";
+import Image from "next/image";
 
 const AUTO_DELAY = 5000;
 const CARD_WIDTH = 480;
@@ -106,9 +107,11 @@ const TestimonialSlider = () => {
                                         {item.heading}
                                     </div>
                                     <div className="slider-icon">
-                                        <img
+                                        <Image
                                             src={item.icon.src}
                                             alt="icon"
+                                            width={1000}
+                                            height={750}
                                         />
                                     </div>
                                 </div>
