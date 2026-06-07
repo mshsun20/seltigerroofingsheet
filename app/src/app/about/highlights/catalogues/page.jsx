@@ -1,4 +1,5 @@
 import React from 'react'
+import "@/styles/components/catalogues.css";
 const Banner = React.lazy(() => import("@/components/Banner"))
 import { cataloguesBanner } from "@/data/cataloguesBanner";
 import LazyWrapper from '@/components/LazyWrapper';
@@ -22,9 +23,13 @@ const Catalogues = () => {
                             height={elm?.contentWall?.height}
                         />
                     </div>
-                    <div className="title-section">{elm?.title}</div>
-                    <div className="action-section">
-                        <Link href={`http://localhost:3052/${elm?.fileContent?.url}`} target="_blank">Download</Link>
+                    <div className="caption-section">
+                        <div className="title-section">
+                            <Link href={`http://localhost:3052/${elm?.fileContent?.url}`} target="_blank">{elm?.title}</Link>
+                        </div>
+                        <div className="action-section">
+                            <Link href={`http://localhost:3052/${elm?.fileContent?.url}`} target="_blank">Download</Link>
+                        </div>
                     </div>
                 </div>
             ))

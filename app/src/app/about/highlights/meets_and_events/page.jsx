@@ -1,12 +1,15 @@
 import React from 'react'
+import "@/styles/components/meetsevents.css";
 const Banner = React.lazy(() => import("@/components/Banner"))
 import { meetsEventsBanner } from "@/data/meetsEventsBanner";
 import LazyWrapper from '@/components/LazyWrapper';
+const FeaturedMeetsEvents = React.lazy(() => import("@/components/about/FeaturedMeetsEvents"))
 
 const MeetsEvents = () => {
   return (
     <div className="content-layout">
       <LazyWrapper><Banner data={"Meets & Events"} info={meetsEventsBanner} /></LazyWrapper>
+      <LazyWrapper><FeaturedMeetsEvents /></LazyWrapper>
     </div>
   )
 }
