@@ -2,7 +2,7 @@ export const meetsEventsData = [{
     baseTitle: "All Meets & Events",
     className: "meets-events-container",
     bannerImage: {
-        url: "https://www.pngall.com/wp-content/uploads/5/Calendar-PNG-High-Quality-Image.png",
+        url: "/wp-content/uploads/5/Calendar-PNG-High-Quality-Image.png",
         alt: "Meets & Events banner",
         width: "1000",
         height: "800"

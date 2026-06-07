@@ -36,7 +36,9 @@ const FeaturedMeetsEvents = () => {
                                 <span><SafeHtmlRenderer content={elm?.contentTextuals} /></span>
                             </div>
                             <div className="featured-actions">
-                                <Link href={`/about/highlights/meets_and_events/${elm.contentSlug}`}>Read More</Link>
+                                <Link href={`/about/highlights/meets_and_events/${elm.contentSlug}`}>
+                                    Read More
+                                </Link>
                             </div>
                         </div>
                     </div>
