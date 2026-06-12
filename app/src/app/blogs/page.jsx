@@ -1,9 +1,9 @@
 import React from 'react'
-import LazyWrapper from '@/components/LazyWrapper';
+import LazyWrapper from '@/components/common/LazyWrapper';
 const Blogwall = React.lazy(() => import("@/components/blog/Blogwall"))
 import axiosInstance from '@/configs/axiosInstance'
-import Card from '@/components/Card'
-import Banner from "@/components/Banner";
+import Card from '@/components/common/Card'
+import Banner from "@/components/common/Banner";
 import { blogBanner } from "@/data/blogBanner";
 
 const Blogs = async () => {

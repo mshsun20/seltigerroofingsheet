@@ -1,11 +1,10 @@
 "use client";
 import Image from 'next/image';
 import React from 'react'
-import "@/styles/components/reliableinfo.css";
 import { reliableInfo } from "@/data/reliableInfo";
-import GallerySlider from "@/components/GallerySlider";
+import GallerySlider from "@/components/common/GallerySlider";
 import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer";
-import Statcounter from "@/components/Statcounter";
+import Statcounter from "@/components/common/Statcounter";
 
 const ReliableInfo = () => {
   return (

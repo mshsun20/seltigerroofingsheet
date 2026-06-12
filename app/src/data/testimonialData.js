@@ -1,6 +1,6 @@
 import quoteIcon from "@/../public/wp-content/themes/sel/assets/img/icons/location1.svg";
 
-const testimonialData = [
+export const testimonialData = [
     {
         id: 1,
         heading: "Amazing Experience",
@@ -32,5 +32,3 @@ const testimonialData = [
         details: "Communication and execution quality were beyond expectations.",
     },
 ];
-
-export default testimonialData;

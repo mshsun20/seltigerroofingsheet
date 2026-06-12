@@ -20,7 +20,7 @@ export const companyValueData = [{
         className: "value-content",
         contentBackground: {
             className: "value-content-bg",
-            url: "/wp-content/uploads/2026/03/about_0003_steel-sheet-factory.webp",
+            url: "/wp-content/uploads/2025/05/02.webp",
             alt: "steel sheet factory",
             width: 540,
             height: 360
@@ -34,7 +34,7 @@ export const companyValueData = [{
         allHighlighted: [
             {
                 heading: "Mission",
-                details: "Shyam Metalics leverages resource efficiency and dynamic leadership to boost productivity and strengthen India's industrial base, in line with Shri M. P. Agarwal’s vision."
+                details: "Shyam Metalics leverages resource efficiency and dynamic leadership to boost productivity and strengthen India's industrial base, in line with Shri M. P. Agarwal's vision."
             },
             {
                 heading: "Vision",

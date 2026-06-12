@@ -3,15 +3,15 @@ import Image from 'next/image';
 import React from 'react';
 import "@/styles/components/faq.css";
 import { faqData } from "@/data/faqData";
+import Accordion from "@/components/common/Accordion";
+import FaqItem from "./FaqItem";
 
 const Faqs = () => {
-    const [fqIndx, setFqIndx] = React.useState(null)
-    // const [open, setOpen] = React.useState(false)
-
-    const handleFaq = (e, i) => {
-        // e.preventDefault();
-        setFqIndx(prev => prev===i ? null : i)
-    }
+    const items = faqData[0]?.allFaqs?.map((faq) => ({
+        id: faq.faqIndex,
+        heading: faq.heading,
+        details: faq.details,
+    }));
 
   return (
     <>
@@ -30,22 +30,20 @@ const Faqs = () => {
                 </div>
                 <div className={faqData[0]?.heading?.className}>{faqData[0]?.heading?.data}</div>
             </div>
-            <div className="faqs-container">
-                {faqData[0]?.allFaqs?.map((faq) => {
-                    const isOpen = fqIndx===faq.faqIndex
-                    return (
-                        <div className={`faqs-item ${isOpen ? 'active' : ''}`} key={faq.faqIndex}>
-                            <div className="faqs-item-heading" onClick={(e) => handleFaq(e, faq.faqIndex)}>
-                                <div className="faqs-heading-part">{faq.heading}</div>
-                                <div className="faqs-toggler">
-                                    {isOpen ? <span>−</span> : <span>+</span>}
-                                </div>
-                            </div>
-
-                            <div className="faqs-item-content">{faq.details}</div>
-                        </div>
-                    )
-                })}
+            <div className="faqs-container">                
+                <Accordion
+                    items={items}
+                    defaultOpen={0}
+                    multiple={false}
+                    renderItem={(faq, isOpen, toggle) => (
+                        <FaqItem
+                            key={faq.id}
+                            faq={faq}
+                            isOpen={isOpen}
+                            toggle={toggle}
+                        />
+                    )}
+                />
             </div>
         </div>
     </>

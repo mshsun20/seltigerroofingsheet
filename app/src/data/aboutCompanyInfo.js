@@ -26,5 +26,14 @@ export const aboutCompanyInfo = [{
             { value: 6, suffix: "th Largest", info: "Integrated Steel Producer in India" },
             { value: 16.78, suffix: " MTPA", info: "Combined Production Capacity" },
         ]
+    },
+    graphicalContent: {
+        className: "company-graphical",
+        poster: {
+            url: "/wp-content/uploads/2025/06/SP_1194-1024x495-1.jpg",
+            alt: "comapany graphical",
+            width: 1000,
+            height: 1000
+        }
     }
 }]

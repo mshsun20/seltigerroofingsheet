@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import React from 'react'
 import { aboutCompanyInfo } from "@/data/aboutCompanyInfo";
-import GallerySlider from '@/components/GallerySlider';
+import GallerySlider from '@/components/common/GallerySlider';
 import SafeHtmlRenderer from '@/configs/SafeHtmlRenderer';
-import Statcounter from '@/components/Statcounter';
+import Statcounter from '@/components/common/Statcounter';
 
 const AboutCompanyInfo = () => {
   return (
@@ -32,6 +32,14 @@ const AboutCompanyInfo = () => {
                     }
                 </div>
                 <div className="company-content-info"><Statcounter statData={aboutCompanyInfo[0]?.mainContent?.contentCounter} /></div>
+            </div>
+            <div className={aboutCompanyInfo[0]?.graphicalContent?.className}>
+                <Image
+                    src={aboutCompanyInfo[0]?.graphicalContent?.poster?.url}
+                    alt={aboutCompanyInfo[0]?.graphicalContent?.poster?.alt}
+                    width={aboutCompanyInfo[0]?.graphicalContent?.poster?.width}
+                    height={aboutCompanyInfo[0]?.graphicalContent?.poster?.height}
+                />
             </div>
         </div>
     </div>

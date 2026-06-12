@@ -1,7 +1,7 @@
 import React from 'react'
-const Banner = React.lazy(() => import("@/components/Banner"));
+const Banner = React.lazy(() => import("@/components/common/Banner"));
 import { manufacturingFacilitiesBanner } from "@/data/manufacturingFacilitiesBanner";
-import LazyWrapper from '@/components/LazyWrapper';
+import LazyWrapper from '@/components/common/LazyWrapper';
 
 
 const ManufacturingFacilities = () => {

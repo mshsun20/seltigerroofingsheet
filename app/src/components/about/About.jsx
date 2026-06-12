@@ -3,7 +3,7 @@ import '@/styles/components/about.css';
 import Image from 'next/image';
 import { aboutDetails } from "@/data/aboutDetails"
 import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer";
-import Statcounter from "@/components/Statcounter";
+import Statcounter from "@/components/common/Statcounter";
 
 const About = () => {
     if (aboutDetails?.length === 0) return <></>

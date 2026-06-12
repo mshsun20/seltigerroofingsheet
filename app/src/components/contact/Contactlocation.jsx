@@ -1,6 +1,9 @@
+"use client";
 import Image from 'next/image';
 import React from 'react'
-import TestimonialSlider from '@/components/TestimonialSlider'
+import { testimonialData } from "@/data/testimonialData"
+import CarouselSlider from "@/components/common/CarouselSlider";
+import ContactLocationCard from "./ContactLocationCard";
 
 const Contactlocation = () => {
   return (
@@ -19,10 +22,33 @@ const Contactlocation = () => {
             </div>
             <div className="contact-location-hdng">Our Other Loactions</div>
         </div>
-        <div className="contact-location-slider"><TestimonialSlider /></div>
+        <div className="contact-location-slider">
+            <CarouselSlider
+                data={testimonialData}
+                cardWidth={80}
+                slideWidth={350}
+                gap={40}
+                autoPlay={true}
+                autoDelay={5000}
+                renderItem={(item) => (
+                    <ContactLocationCard item={item} />
+                )}                
+                animationConfig={{
+                    activeOpacity: 1,
+                    inactiveOpacity: 0.4,
+                    activeBlur: "0",
+                    inactiveBlur: "0.2rem"
+                }}
+                springConfig={{
+                    type: "spring",
+                    stiffness: 500,
+                    damping: 350
+                }}
+            />
+        </div>
         <div className="contact-location-map"></div>
     </div>
   )
 }
 
-export default Contactlocation
+export default React.memo(Contactlocation)

@@ -18,15 +18,16 @@ export const companyLeadershipData = [{
     },
     mainContent: [
         {
-            className: "leadership-tabs",
+            className: "leadership-tab",
             value: "Board of Directors",
+            tabIndex: 0,
             data: [
                 {
                     name: "Mahabir Prasad Agarwal",
                     leadershipIndex: 0,
                     position: "Chairman",
                     image: {
-                        url: "/wp-content/themes/sel/assets/img/leadership/sel.jpg",
+                        url: "/wp-content/uploads/2025/06/Mahabir-Prasad-Agarwal.webp",
                         alt: "sel liyanage",
                         width: 200,
                         height: 200
@@ -52,7 +53,7 @@ export const companyLeadershipData = [{
                     leadershipIndex: 1,
                     position: "Chairman & Managing Director",
                     image: {
-                        url: "/wp-content/themes/sel/assets/img/leadership/sel.jpg",
+                        url: "/wp-content/uploads/2025/06/BRIJ-AGARWAL-BHUSHAN.jpg",
                         alt: "sel liyanage",
                         width: 200,
                         height: 200
@@ -103,7 +104,7 @@ export const companyLeadershipData = [{
                     leadershipIndex: 2,
                     position: "Joint Managing Director",
                     image: {
-                        url: "/wp-content/themes/sel/assets/img/leadership/sel.jpg",
+                        url: "/wp-content/uploads/2025/06/SANJAY-KUMAR-AGARWAL.jpg",
                         alt: "sel liyanage",
                         width: 200,
                         height: 200
@@ -129,7 +130,7 @@ export const companyLeadershipData = [{
                     leadershipIndex: 3,
                     position: "Whole-time Director",
                     image: {
-                        url: "/wp-content/themes/sel/assets/img/leadership/sel.jpg",
+                        url: "/wp-content/uploads/2025/06/Deepak-Agarwal-e1599196276808.jpg",
                         alt: "sel liyanage",
                         width: 200,
                         height: 200
@@ -153,7 +154,7 @@ export const companyLeadershipData = [{
                     leadershipIndex: 4,
                     position: "Whole-time Director",
                     image: {
-                        url: "/wp-content/themes/sel/assets/img/leadership/sel.jpg",
+                        url: "/wp-content/uploads/2025/06/Sheetij-Agarwal.webp",
                         alt: "sel liyanage",
                         width: 200,
                         height: 200
@@ -185,7 +186,7 @@ export const companyLeadershipData = [{
                     leadershipIndex: 5,
                     position: "Whole-time Director",
                     image: {
-                        url: "/wp-content/themes/sel/assets/img/leadership/sel.jpg",
+                        url: "/wp-content/uploads/2025/06/dev.jpg",
                         alt: "sel liyanage",
                         width: 200,
                         height: 200
@@ -209,11 +210,13 @@ export const companyLeadershipData = [{
             ]
         },
         {
-            className: "leadership-tabs",
+            className: "leadership-tab",
             value: "Board of Committees",
+            tabIndex: 1,
             data: [
                 {
                     type: "Audit Committee",
+                    committeeIndex: 0,
                     members: [
                         { name: "Kishan Gopal Baldwa", position: "Chairman", role: "Non Executive Independent" },
                         { name: "Sanjay Kumar Agarwal", position: "Member", role: "Executive" },
@@ -222,6 +225,7 @@ export const companyLeadershipData = [{
                 },
                 {
                     type: "Nomination and Remuneration Committee",
+                    committeeIndex: 1,
                     members: [
                         { name: "Kishan Gopal Baldwa", position: "Chairman", role: "Non Executive Independent" },
                         { name: "Shashi Kumar", position: "Member", role: "Non Executive Independent" },
@@ -230,6 +234,7 @@ export const companyLeadershipData = [{
                 },
                 {
                     type: "Stakeholder Relationship Committee",
+                    committeeIndex: 2,
                     members: [
                         { name: "Chandra Shekhar Verma", position: "Chairman", role: "Non Executive Independent" },
                         { name: "Sanjay Kumar Agarwal", position: "Member", role: "Executive" },
@@ -238,6 +243,7 @@ export const companyLeadershipData = [{
                 },
                 {
                     type: "CSR Committee",
+                    committeeIndex: 3,
                     members: [
                         { name: "Mahabir Prasad Agarwal", position: "Chairman", role: "Non Executive" },
                         { name: "Brij Bhushan Agarwal", position: "Member", role: "Executive" },
@@ -246,6 +252,7 @@ export const companyLeadershipData = [{
                 },
                 {
                     type: "Risk Management Committee",
+                    committeeIndex: 4,
                     members: [
                         { name: "Kishan Gopal Baldwa", position: "Chairman", role: "Non Executive Independent" },
                         { name: "Brij Bhushan Agarwal", position: "Member", role: "Executive" },
@@ -254,6 +261,7 @@ export const companyLeadershipData = [{
                 },
                 {
                     type: "Executive Committee",
+                    committeeIndex: 5,
                     members: [
                         { name: "Mahabir Prasad Agarwal", position: "Chairman", role: "Non Executive" },
                         { name: "Brij Bhushan Agarwal", position: "Member", role: "Executive" },

@@ -3,7 +3,7 @@ import React from 'react'
 import "@/styles/components/hero.css";
 import Image from 'next/image';
 import Link from 'next/link';
-import Statcounter from '@/components/Statcounter';
+import Statcounter from '@/components/common/Statcounter';
 import { heroStatCounterItems } from '@/configs/allStatCounterItems';
 
 const Hero = () => {

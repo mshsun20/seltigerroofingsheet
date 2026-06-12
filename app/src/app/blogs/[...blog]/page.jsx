@@ -1,6 +1,6 @@
 import React from 'react'
-import LazyWrapper from "@/components/LazyWrapper"
-const Banner = React.lazy(() => import("@/components/Banner"))
+import LazyWrapper from "@/components/common/LazyWrapper"
+const Banner = React.lazy(() => import("@/components/common/Banner"))
 import { blogBanner } from "@/data/blogBanner";
 const Blogcontent = React.lazy(() => import("@/components/blog/Blogcontent"))
 import axiosInstance from "@/configs/axiosInstance"

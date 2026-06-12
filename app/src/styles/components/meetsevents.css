@@ -63,7 +63,7 @@
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
     font-weight: bold;
-    color: #363535;
+    color: #ffffff;
     -webkit-line-clamp: 2;
     line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -73,7 +73,7 @@
     width: 100%;
     height: auto;
     font-size: 1rem;
-    color: #666666;
+    color: #ece8e8;
     
     span {
         display: -webkit-box;
@@ -200,9 +200,18 @@
 
         &:hover {
             background-color: #0056b3;
+            /* color: rgba(255, 119, 0, 0.5); */
         }
     }
 }
 .meets-events-content:hover .all-content-wall img {
     transform: scale(1.15) rotate(5deg);
+}
+
+.meets-events-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
 }

@@ -1,6 +1,9 @@
+"use client";
 import React from 'react'
-import { companyStoryData } from "@/data/companyStoryData";
 import Image from 'next/image';
+import { companyStoryData } from "@/data/companyStoryData";
+import CarouselSlider from "@/components/common/CarouselSlider";
+import CompanyStoryCard from "@/components/about/CompanyStoryCard";
 
 const CompanyStory = () => {
   return (
@@ -19,7 +22,30 @@ const CompanyStory = () => {
             </div>
             <div className={companyStoryData[0]?.heading?.className}>{companyStoryData[0]?.heading?.data}</div>
         </div>
-        <div className="story-container"></div>
+        <div className="story-container">
+            <CarouselSlider
+                data={companyStoryData[0]?.mainContent?.contentDetails}
+                cardWidth={80}
+                slideWidth={50}
+                gap={50}
+                autoPlay={true}
+                autoDelay={5000}
+                renderItem={(item) => (
+                    <CompanyStoryCard item={item} />
+                )}
+                animationConfig={{
+                    activeOpacity: 1,
+                    inactiveOpacity: 0.4,
+                    activeBlur: "0",
+                    inactiveBlur: "0.2rem"
+                }}
+                springConfig={{
+                    type: "spring",
+                    stiffness: 150,
+                    damping: 50
+                }}
+            />
+        </div>
     </div>
   )
 }

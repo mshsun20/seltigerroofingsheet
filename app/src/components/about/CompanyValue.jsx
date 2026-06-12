@@ -19,7 +19,27 @@ const CompanyValue = () => {
             </div>
             <div className={companyValueData[0]?.heading?.className}>{companyValueData[0]?.heading?.data}</div>
         </div>
-        <div className="value-container"></div>
+        <div className="value-container">
+            <div className={companyValueData[0]?.mainContent?.className}>
+                <Image
+                    src={companyValueData[0]?.mainContent?.contentBackground?.url}
+                    alt={companyValueData[0]?.mainContent?.contentBackground?.alt}
+                    width={companyValueData[0]?.mainContent?.contentBackground?.width}
+                    height={companyValueData[0]?.mainContent?.contentBackground?.height}
+                />
+            </div>
+            <div className={companyValueData[0]?.highlightedContent?.className}>
+                {
+                    companyValueData[0]?.highlightedContent?.allHighlighted?.length>0
+                    && companyValueData[0]?.highlightedContent?.allHighlighted?.map((itm, i) => (
+                        <div className="about-highlight-card" key={i}>
+                            <div className="about-highlight-card-hds">{itm.heading}</div>
+                            <div className="about-highlight-card-details">{itm.details}</div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
     </div>
   )
 }

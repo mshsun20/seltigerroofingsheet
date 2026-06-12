@@ -1,8 +1,8 @@
 import React from 'react'
 import "@/styles/components/catalogues.css";
-const Banner = React.lazy(() => import("@/components/Banner"))
+const Banner = React.lazy(() => import("@/components/common/Banner"))
 import { cataloguesBanner } from "@/data/cataloguesBanner";
-import LazyWrapper from '@/components/LazyWrapper';
+import LazyWrapper from '@/components/common/LazyWrapper';
 import { cataloguesData } from "@/data/cataloguesData";
 import Image from 'next/image';
 import Link from 'next/link';

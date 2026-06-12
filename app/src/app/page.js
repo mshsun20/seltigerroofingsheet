@@ -1,7 +1,7 @@
 import React from 'react';
 import "@/styles/home.css";
 // import Hero from "@/components/home/hero/Hero";
-import LazyWrapper from "@/components/LazyWrapper";
+import LazyWrapper from "@/components/common/LazyWrapper";
 const Hero = React.lazy(() => import('@/components/hero/Hero'));
 const About = React.lazy(() => import('@/components/about/About'))
 const Products = React.lazy(() => import('@/components/products/Products'))

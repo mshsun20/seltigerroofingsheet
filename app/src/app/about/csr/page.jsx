@@ -1,11 +1,11 @@
 "use client";
 import React from 'react'
-const Banner = React.lazy(() => import("@/components/Banner"))
+const Banner = React.lazy(() => import("@/components/common/Banner"))
 import { csrBanner } from "@/data/csrBanner";
 import { csrData } from "@/data/csrData"
 import Image from 'next/image';
 import Link from 'next/link';
-import LazyWrapper from '@/components/LazyWrapper';
+import LazyWrapper from '@/components/common/LazyWrapper';
 
 const Csr = () => {
   return (

@@ -1,7 +1,8 @@
 import React from 'react'
-const Banner = React.lazy(() => import("@/components/Banner"))
+import "@/styles/components/companyoverview.css";
+const Banner = React.lazy(() => import("@/components/common/Banner"))
 import { companyOverviewBanner } from "@/data/companyOverviewBanner";
-import LazyWrapper from '@/components/LazyWrapper';
+import LazyWrapper from '@/components/common/LazyWrapper';
 const ReliableInfo = React.lazy(() => import("@/components/about/ReliableInfo"))
 const AboutCompanyInfo = React.lazy(() => import("@/components/about/AboutCompanyInfo"))
 const CompanyStory = React.lazy(() => import("@/components/about/CompanyStory"))

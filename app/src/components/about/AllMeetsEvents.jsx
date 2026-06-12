@@ -5,6 +5,7 @@ import SafeHtmlRenderer from '@/configs/SafeHtmlRenderer';
 import Link from 'next/link';
 import Image from 'next/image';
 import Pagination from "@mui/material/Pagination";
+import CustomPagination from "@/components/common/CustomPagination";
 
 let LIMIT = 6
 
@@ -61,12 +62,10 @@ const AllMeetsEvents = () => {
             }
         </div>
         <div className="meets-events-pagination">
-            <Pagination
+            <CustomPagination
             page={page}
-            count={totalPages}
-            onChange={handlePageChange}
-            variant="outlined"
-            color="secondary"
+            totalPages={totalPages}
+            handlePageChange={handlePageChange}
             />
         </div>
     </div>
