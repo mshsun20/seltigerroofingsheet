@@ -13,10 +13,8 @@ const BoardOfCommittee = ({ committeeData, isOpen, toggle }) => {
         <div className="committee-item-content">
             {
                 committeeData.members?.map((elm, i) => (
-                    <div className="committee-item" key={i}>
-                        <span>{elm?.name}</span>
-                        <span>{elm?.position}</span>
-                        <span>{elm?.role}</span>
+                    <div className="committee-item-details" key={i}>
+                        {`${elm?.name}, ${elm?.position}, ${elm?.role}`}
                     </div>
                 ))
             }
