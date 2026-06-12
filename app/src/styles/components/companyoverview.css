@@ -628,13 +628,19 @@
     font-weight: bold;
 }
 .committee-item-content {
-    display: none;
-}
-.committee-item.active .committee-item-content {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+    max-height: 0;
+    padding: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+.committee-item.active .committee-item-content {
+    max-height: 40rem;
+    opacity: 1;
+    padding: 0 2rem 2rem 0;
 }
 .committee-item-details {
     display: flex;
@@ -642,4 +648,5 @@
     align-items: center;
     flex-direction: row;
     color: #585858;
+    font-size: 1.1rem;
 }
