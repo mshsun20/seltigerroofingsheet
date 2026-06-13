@@ -6,6 +6,7 @@ import LazyWrapper from '@/components/common/LazyWrapper';
 import { cataloguesData } from "@/data/cataloguesData";
 import Image from 'next/image';
 import Link from 'next/link';
+import WallCard from "@/components/common/WallCard";
 
 const Catalogues = () => {
   return (
@@ -13,26 +14,20 @@ const Catalogues = () => {
       <LazyWrapper><Banner data={"Catalogues"} info={cataloguesBanner} /></LazyWrapper>
       <div className={cataloguesData[0]?.className}>
         {
-            cataloguesData[0]?.allContents?.map(elm => (
-                <div className={elm?.className} key={elm?.contentIndex}>
-                    <div className="wall-section">
-                        <Image
-                            src={elm?.contentWall?.url}
-                            alt={elm?.contentWall?.alt}
-                            width={elm?.contentWall?.width}
-                            height={elm?.contentWall?.height}
-                        />
-                    </div>
-                    <div className="caption-section">
-                        <div className="title-section">
-                            <Link href={`http://localhost:3052/${elm?.fileContent?.url}`} target="_blank">{elm?.title}</Link>
-                        </div>
-                        <div className="action-section">
-                            <Link href={`http://localhost:3052/${elm?.fileContent?.url}`} target="_blank">Download</Link>
-                        </div>
-                    </div>
-                </div>
-            ))
+          cataloguesData[0]?.allContents?.map(elm => (
+            <WallCard
+              id={elm?.contentIndex}
+              key={elm?.contentIndex}
+              contentWall={elm?.contentWall}
+              fileContent={elm?.fileContent}
+              title={elm?.title}
+              renderAction={
+                <Link href={`http://localhost:3052/${elm?.fileContent?.url}`} className="catalogues-content-link">
+                  Download
+                </Link>
+              }
+            />
+          ))
         }
       </div>
     </div>

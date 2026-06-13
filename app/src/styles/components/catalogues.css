@@ -1,85 +1,12 @@
-
 .catalogues-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     padding: 5rem 2rem;
     gap: 2rem;
 }
-.catalogues-content {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    height: 30rem;
-    background-color: var(--white);
-    border-radius: 0.5rem;
-    transition: all 0.3s ease;
-}
-.wall-section {
-    height: 100%;
-    padding: 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
-
-    img {
-        height: 100%;
-        border-top-left-radius: 0.5rem;
-        border-top-right-radius: 0.5rem;
-        transition: transform 0.3s ease;
-    }
-}
-.caption-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 20%;
-    padding: 0.5rem 1rem;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-.title-section {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-
-    a {
-        transition: color 0.2s ease-in-out;
-        &:hover {
-            color: var(--theme);
-        }
-    }
-}
-.action-section {
-    font-size: 1.25rem;
-    font-weight: bold;
-    text-align: center;
-    height: 0;
-    opacity: 0;
-    transition: all 0.3s ease;
-
-    a {
-        transition: color 0.2s ease-in-out;
-        &:hover {
-            color: var(--theme);
-        }
-    }
-}
-
-.catalogues-content:hover {
-    .wall-section {
-        img {
-            transform: scale(1.25) rotate(5deg);
-        }
-    }
-    .caption-section {
-        height: 30%;
-
-        .title-section {
-            height: 50%;
-        }
-        .action-section {
-            opacity: 1;
-            height: 50%;
-        }
+.catalogues-content-link {
+    transition: color 0.2s ease-in-out;
+    &:hover {
+        color: var(--theme);
     }
 }

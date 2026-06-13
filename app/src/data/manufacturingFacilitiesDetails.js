@@ -8,39 +8,39 @@ export const manufacturingFacilitiesDetails = [{
         contentGraphicals: {
             className: "manufacturing-facility-graphical-contents",
             gallery: [
-                "/wp-content/themes/sel/assets/img/manufacturing-facility1.jpg",
-                "/wp-content/themes/sel/assets/img/manufacturing-facility2.jpg",
-                "/wp-content/themes/sel/assets/img/manufacturing-facility3.jpg"
+                "/wp-content/uploads/2026/04/facilities-overview-1-2.webp",
+                "/wp-content/uploads/2026/04/facilities-overview-1.webp",
             ],
             imageBlock: {
                 blockA: {
                     className: "manufacturing-facility-image-block-a",
-                    url: "/wp-content/themes/sel/assets/img/manufacturing-facility1.jpg",
+                    url: "/wp-content/uploads/2026/04/facility-overview-2.webp",
                     alt: "manufacturing facility1",
                     width: 540,
                     height: 360
                 },
                 blockB: {
                     className: "manufacturing-facility-image-block-b",
-                    url: "/wp-content/themes/sel/assets/img/manufacturing-facility2.jpg",
+                    url: "/wp-content/uploads/2026/04/facility-overview-3.webp",
                     alt: "manufacturing facility2",
                     width: 540,
                     height: 360
                 },
                 blockC: {
                     className: "manufacturing-facility-image-block-c",
-                    url: "/wp-content/themes/sel/assets/img/manufacturing-facility3.jpg",
+                    url: "/wp-content/uploads/2026/04/facility-overview-4.webp",
                     alt: "manufacturing facility3",
                     width: 540,
                     height: 360
                 }
             }
         },
-        contentTextuals: [
-            { data: `Shyam Metalics and Energy Limited (SMEL) is a leading Indian company in the metals and energy sector, known for its commitment to quality, innovation, and sustainability. With a strong presence in the steel industry, SMEL has established itself as a key player in the production of high-quality steel products, including flat steel and roofing sheets under the brand name SEL TIGER.` },
-            { data: `The company operates state-of-the-art manufacturing facilities equipped with advanced technology and machinery to ensure the production of superior steel products. SMEL's manufacturing facilities are strategically located across India, enabling efficient distribution and timely delivery to customers nationwide.` },
-            { data: `SMEL's manufacturing facilities are designed to meet the highest standards of quality and safety. The company employs a skilled workforce and implements rigorous quality control measures at every stage of the production process to ensure that its products meet the stringent requirements of customers and industry standards.` },
-            { data: `In addition to its focus on quality, SMEL is committed to sustainability and environmental responsibility. The company has implemented various initiatives to reduce its carbon footprint, minimize waste, and promote energy efficiency in its manufacturing processes. SMEL's dedication to sustainability is reflected in its efforts to use eco-friendly materials and adopt green practices throughout its operations.` },
-        ]
+        contentTextuals: {
+            title: `State-of-the-Art Manufacturing Facilities`,
+            description: [
+                `<p>SEL Tiger's manufacturing facilities integrate advanced cold rolling, galvanizing, and coating technologies to produce premium roofing sheets with exceptional strength and corrosion resistance. Our process begins with precision-engineered steel coils, which are cold rolled to exact thickness, then galvanised and colour-coated through a multi-stage coating line that ensures lasting protection and vibrant aesthetics.</p>`,
+                `<p>Every stage undergoes stringent quality checks to guarantee dimensional accuracy, durability, and superior performance. Backed by cutting-edge machinery and skilled professionals, SEL Tiger delivers reliable, high-quality roofing solutions built for modern construction demands and client peace of mind.</p>`
+            ]
+        }
     }
 }]
