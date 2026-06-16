@@ -22,13 +22,13 @@ export const futureVisionDetails = [{
             className: "future-vision-graphical",
             contents: [
                 {
-                    url: `https://seltigerroofingsheets.com/wp-content/uploads/2026/01/future-vision-overview-1.webp`,
+                    url: `/wp-content/uploads/2026/01/future-vision-overview-1.webp`,
                     alt: `future vision overview 1`,
                     width: `1000`,
                     height: `1000`,
                 },
                 {
-                    url: `https://seltigerroofingsheets.com/wp-content/uploads/2026/01/future-vision-overview-2.webp`,
+                    url: `/wp-content/uploads/2026/01/future-vision-overview-2.webp`,
                     alt: `future vision overview 2`,
                     width: `1000`,
                     height: `1000`,

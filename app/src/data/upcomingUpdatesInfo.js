@@ -18,23 +18,11 @@ const iconSets = {
         height: `1000`
     },
 }
-const backgroundImages = [
-  "https://seltigerroofingsheets.com/wp-content/uploads/2026/01/cr.webp",
-  "https://seltigerroofingsheets.com/wp-content/uploads/2026/01/gl.webp",
-  "https://seltigerroofingsheets.com/wp-content/uploads/2026/01/gp.webp",
-  "https://seltigerroofingsheets.com/wp-content/uploads/2026/01/colour-coated-roofing-sheets.webp",
-  "https://seltigerroofingsheets.com/wp-content/uploads/2026/01/black-pipes.webp",
-  "https://seltigerroofingsheets.com/wp-content/uploads/2026/01/crash-barrier.webp",
-  "https://seltigerroofingsheets.com/wp-content/uploads/2026/01/galvanized-pipes.webp",
-  "https://seltigerroofingsheets.com/wp-content/uploads/2026/01/hr.webp",
-  "https://seltigerroofingsheets.com/wp-content/uploads/2026/01/color-coated-aluminium-sheets.webp",
-  "https://seltigerroofingsheets.com/wp-content/uploads/2026/01/aluminium-sheets.webp"
-];
-const allProducts = [
+const allProductDetails = [
     {
         name: `Cold Rolled Coils`,
         poster: {
-            url: `https://seltigerroofingsheets.com/wp-content/uploads/2026/01/cr.webp`,
+            url: `/wp-content/uploads/2026/01/cr.webp`,
             alt: `product image`,
             width: "1500",
             height: "1500",
@@ -47,12 +35,16 @@ const allProducts = [
         tiles: [
             { id: 0, icon: {...iconSets?.badgeA}, statValue: 15000, statUnit: `MT/Month`, statTag: "Phase I" },
             { id: 1, icon: {...iconSets?.badgeB}, statValue: 30000, statUnit: `MT/Month`, statTag: "Phase II" },
+        ],
+        caption: `<p></p>`,
+        description: [
+            `<p></p>`,
         ]
     },
     {
         name: `Alu-Zinc`,
         poster: {
-            url: `https://seltigerroofingsheets.com/wp-content/uploads/2026/01/cr.webp`,
+            url: `/wp-content/uploads/2026/01/gl.webp`,
             alt: `product image`,
             width: "1500",
             height: "1500",
@@ -65,12 +57,16 @@ const allProducts = [
         tiles: [
             { id: 0, icon: {...iconSets?.badgeA}, statValue: 15000, statUnit: `MT/Month`, statTag: "Phase I" },
             { id: 1, icon: {...iconSets?.badgeB}, statValue: 30000, statUnit: `MT/Month`, statTag: "Phase II" },
+        ],
+        caption: `<p></p>`,
+        description: [
+            `<p></p>`,
         ]
     },
     {
         name: `Galvanized`,
         poster: {
-            url: `https://seltigerroofingsheets.com/wp-content/uploads/2026/01/cr.webp`,
+            url: `/wp-content/uploads/2026/01/gp.webp`,
             alt: `product image`,
             width: "1500",
             height: "1500",
@@ -83,12 +79,16 @@ const allProducts = [
         tiles: [
             { id: 0, icon: {...iconSets?.badgeA}, statValue: 15000, statUnit: `MT/Month`, statTag: "Phase I" },
             { id: 1, icon: {...iconSets?.badgeB}, statValue: 30000, statUnit: `MT/Month`, statTag: "Phase II" },
+        ],
+        caption: `<p></p>`,
+        description: [
+            `<p></p>`,
         ]
     },
     {
         name: `Color Coated Sheet`,
         poster: {
-            url: `https://seltigerroofingsheets.com/wp-content/uploads/2026/01/cr.webp`,
+            url: `/wp-content/uploads/2026/01/colour-coated-roofing-sheets.webp`,
             alt: `product image`,
             width: "1500",
             height: "1500",
@@ -101,12 +101,16 @@ const allProducts = [
         tiles: [
             { id: 0, icon: {...iconSets?.badgeA}, statValue: 15000, statUnit: `MT/Month`, statTag: "Phase I" },
             { id: 1, icon: {...iconSets?.badgeB}, statValue: 30000, statUnit: `MT/Month`, statTag: "Phase II" },
+        ],
+        caption: `<p></p>`,
+        description: [
+            `<p></p>`,
         ]
     },
     {
         name: `Cold Rolled Coils`,
         poster: {
-            url: `https://seltigerroofingsheets.com/wp-content/uploads/2026/01/cr.webp`,
+            url: `/wp-content/uploads/2026/01/black-pipes.webp`,
             alt: `product image`,
             width: "1500",
             height: "1500",
@@ -119,12 +123,16 @@ const allProducts = [
         tiles: [
             { id: 0, icon: {...iconSets?.badgeA}, statValue: 15000, statUnit: `MT/Month`, statTag: "Phase I" },
             { id: 1, icon: {...iconSets?.badgeB}, statValue: 30000, statUnit: `MT/Month`, statTag: "Phase II" },
+        ],
+        caption: `<p></p>`,
+        description: [
+            `<p></p>`,
         ]
     },
     {
         name: `Cold Rolled Coils`,
         poster: {
-            url: `https://seltigerroofingsheets.com/wp-content/uploads/2026/01/cr.webp`,
+            url: `/wp-content/uploads/2026/01/crash-barrier.webp`,
             alt: `product image`,
             width: "1500",
             height: "1500",
@@ -137,12 +145,16 @@ const allProducts = [
         tiles: [
             { id: 0, icon: {...iconSets?.badgeA}, statValue: 15000, statUnit: `MT/Month`, statTag: "Phase I" },
             { id: 1, icon: {...iconSets?.badgeB}, statValue: 30000, statUnit: `MT/Month`, statTag: "Phase II" },
+        ],
+        caption: `<p></p>`,
+        description: [
+            `<p></p>`,
         ]
     },
     {
         name: `Cold Rolled Coils`,
         poster: {
-            url: `https://seltigerroofingsheets.com/wp-content/uploads/2026/01/cr.webp`,
+            url: `/wp-content/uploads/2026/01/galvanized-pipes.webp`,
             alt: `product image`,
             width: "1500",
             height: "1500",
@@ -155,12 +167,16 @@ const allProducts = [
         tiles: [
             { id: 0, icon: {...iconSets?.badgeA}, statValue: 15000, statUnit: `MT/Month`, statTag: "Phase I" },
             { id: 1, icon: {...iconSets?.badgeB}, statValue: 30000, statUnit: `MT/Month`, statTag: "Phase II" },
+        ],
+        caption: `<p></p>`,
+        description: [
+            `<p></p>`,
         ]
     },
     {
         name: `Cold Rolled Coils`,
         poster: {
-            url: `https://seltigerroofingsheets.com/wp-content/uploads/2026/01/cr.webp`,
+            url: `/wp-content/uploads/2026/01/hr.webp`,
             alt: `product image`,
             width: "1500",
             height: "1500",
@@ -173,12 +189,16 @@ const allProducts = [
         tiles: [
             { id: 0, icon: {...iconSets?.badgeA}, statValue: 15000, statUnit: `MT/Month`, statTag: "Phase I" },
             { id: 1, icon: {...iconSets?.badgeB}, statValue: 30000, statUnit: `MT/Month`, statTag: "Phase II" },
+        ],
+        caption: `<p></p>`,
+        description: [
+            `<p></p>`,
         ]
     },
     {
         name: `Cold Rolled Coils`,
         poster: {
-            url: `https://seltigerroofingsheets.com/wp-content/uploads/2026/01/cr.webp`,
+            url: `/wp-content/uploads/2026/01/color-coated-aluminium-sheets.webp`,
             alt: `product image`,
             width: "1500",
             height: "1500",
@@ -191,12 +211,16 @@ const allProducts = [
         tiles: [
             { id: 0, icon: {...iconSets?.badgeA}, statValue: 15000, statUnit: `MT/Month`, statTag: "Phase I" },
             { id: 1, icon: {...iconSets?.badgeB}, statValue: 30000, statUnit: `MT/Month`, statTag: "Phase II" },
+        ],
+        caption: `<p></p>`,
+        description: [
+            `<p></p>`,
         ]
     },
     {
         name: `Cold Rolled Coils`,
         poster: {
-            url: `https://seltigerroofingsheets.com/wp-content/uploads/2026/01/cr.webp`,
+            url: `/wp-content/uploads/2026/01/aluminium-sheets.webp`,
             alt: `product image`,
             width: "1500",
             height: "1500",
@@ -209,6 +233,10 @@ const allProducts = [
         tiles: [
             { id: 0, icon: {...iconSets?.badgeA}, statValue: 15000, statUnit: `MT/Month`, statTag: "Phase I" },
             { id: 1, icon: {...iconSets?.badgeB}, statValue: 30000, statUnit: `MT/Month`, statTag: "Phase II" },
+        ],
+        caption: `<p></p>`,
+        description: [
+            `<p></p>`,
         ]
     },
 ]
@@ -232,5 +260,6 @@ export const upcomingUpdatesInfo = [{
     },
     mainContent: {
         className: "upcoming-updates-contents",
+        allProducts: [...allProductDetails]
     }
 }]
