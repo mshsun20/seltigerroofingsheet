@@ -6,7 +6,6 @@ import { upcomingUpdatesInfo } from "@/data/upcomingUpdatesInfo";
 const TABS = ["Current", "Upcoming"];
 
 const UpcomingUpdates = () => {
-    const data = upcomingUpdatesInfo?.[0];
     const [tab, setTab] = React.useState("Current");
     const [lineIndex, setLineIndex] = React.useState(0);
     const products = React.useMemo(() => upcomingUpdatesInfo[0]?.mainContent?.allProducts || [], []);
@@ -73,7 +72,7 @@ const UpcomingUpdates = () => {
             </div>
 
             {/* Main Content */}
-            <div className={data?.mainContent?.className}>
+            <div className={upcomingUpdatesInfo[0]?.mainContent?.className}>
                 {/* Product List */}
                 <div className="upcoming-updates-lines">
                     {lineItems.map((item) => (

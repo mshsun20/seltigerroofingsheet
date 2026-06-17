@@ -6,7 +6,6 @@ import WallCard from "@/components/common/WallCard";
 import SafeHtmlRenderer from '@/configs/SafeHtmlRenderer';
 
 const UpcomingProducts = () => {
-    console.log(upcomingProductsData);
   return (
     <div className="upcoming-products-layout">
         <div className="upcoming-products-hdr">
