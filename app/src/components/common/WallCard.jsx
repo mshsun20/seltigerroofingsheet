@@ -7,8 +7,8 @@ import "@/styles/components/wallcard.css";
 const WallCard = ({
     id=0,
     contentWall,
-    fileContent,
     title,
+    description,
     renderAction
 }) => {
   return (

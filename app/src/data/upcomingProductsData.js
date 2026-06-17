@@ -1,3 +1,4 @@
+import { allProductDetails } from "@/data/allProductDetails";
 export const upcomingProductsData = [{
     topper: {
         icon: {
@@ -18,5 +19,6 @@ export const upcomingProductsData = [{
     },
     mainContent: {
         className: "upcoming-products-contents",
+        allProducts: allProductDetails?.filter(elm => elm?.productStatus==="Upcoming")
     }
 }]

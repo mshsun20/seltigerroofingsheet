@@ -22,12 +22,14 @@ export const futureVisionDetails = [{
             className: "future-vision-graphical",
             contents: [
                 {
+                    contentIndex: 0,
                     url: `/wp-content/uploads/2026/01/future-vision-overview-1.webp`,
                     alt: `future vision overview 1`,
                     width: `1000`,
                     height: `1000`,
                 },
                 {
+                    contentIndex: 1,
                     url: `/wp-content/uploads/2026/01/future-vision-overview-2.webp`,
                     alt: `future vision overview 2`,
                     width: `1000`,
