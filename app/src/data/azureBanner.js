@@ -9,6 +9,6 @@ export const azureBanner = {
     bannerDescription: "High-performance AluZinc coils are manufactured for strength, durability and varied applications, ensuring reliability and long-lasting performance across diverse industries.",
     baseInfo: { name: "Home", url: "/" },
     bannerInfo: [
-        { name: "Azure", url: "/about/highlights/meets_and_events" }
+        { name: "Azure", url: "/business/galvalume/azure" }
     ]
 }

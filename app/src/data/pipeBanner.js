@@ -8,6 +8,6 @@ export const pipeBanner = {
     bannerTitle: "Pipes",
     baseInfo: { name: "Home", url: "/" },
     bannerInfo: [
-        { name: "Pipes", url: "/about/highlights/meets_and_events" }
+        { name: "Pipes", url: "/business/pipes" }
     ]
 }

@@ -9,6 +9,6 @@ export const alZnCoatedSheetHandbookBanner = {
     bannerDescription: "",
     baseInfo: { name: "Home", url: "/" },
     bannerInfo: [
-        { name: "Handbook for Al-Zn Coated Sheet", url: "/about/highlights/meets_and_events" }
+        { name: "Handbook for Al-Zn Coated Sheet", url: "/roof_it_yourself/handbook_for_alzn_coated_sheet" }
     ]
 }

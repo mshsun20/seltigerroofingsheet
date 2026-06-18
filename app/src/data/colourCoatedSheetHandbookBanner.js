@@ -9,6 +9,6 @@ export const colourCoatedSheetHandbookBanner = {
     bannerDescription: "",
     baseInfo: { name: "Home", url: "/" },
     bannerInfo: [
-        { name: "Handbook for Colour Coated Roofing Sheet", url: "/about/highlights/meets_and_events" }
+        { name: "Handbook for Colour Coated Roofing Sheet", url: "/roof_it_yourself/handbook_for_colour_coated_roofing_sheet" }
     ]
 }

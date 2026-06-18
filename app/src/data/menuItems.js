@@ -45,8 +45,8 @@ const businessItems = [
 
 // Roof It Yourself menu items
 const resourceItems = [
-  { name: "Handbook for Colour Coated Roofing Sheet", path: "/roof_it_yourself/resources/handbook_for_colour_coated_roofing_sheet" },
-  { name: "Handbook for Al-Zn Coated Sheet", path: "/roof_it_yourself/resources/handbook_for_alzn_coated_sheet" },
+  { name: "Handbook for Colour Coated Roofing Sheet", path: "/roof_it_yourself/handbook_for_colour_coated_roofing_sheet" },
+  { name: "Handbook for Al-Zn Coated Sheet", path: "/roof_it_yourself/handbook_for_alzn_coated_sheet" },
 ]
 const roofItYourselfItems = [
   { name: "Design Your Roof", path: "/roof_it_yourself/design_your_roof" },

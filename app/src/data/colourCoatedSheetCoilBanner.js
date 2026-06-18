@@ -9,6 +9,6 @@ export const colourCoatedSheetCoilBanner = {
     bannerDescription: "",
     baseInfo: { name: "Home", url: "/" },
     bannerInfo: [
-        { name: "Colour Coated Sheet and Coil", url: "/about/highlights/meets_and_events" }
+        { name: "Colour Coated Sheet and Coil", url: "/business/colour_coated" }
     ]
 }

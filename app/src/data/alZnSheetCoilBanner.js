@@ -9,6 +9,6 @@ export const alZnSheetCoilBanner = {
     bannerDescription: "",
     baseInfo: { name: "Home", url: "/" },
     bannerInfo: [
-        { name: "Aluzinc Sheet and Coil", url: "/about/highlights/meets_and_events" }
+        { name: "Aluzinc Sheet and Coil", url: "/business/aluzinc_sheets" }
     ]
 }

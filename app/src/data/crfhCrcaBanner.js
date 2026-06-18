@@ -9,6 +9,6 @@ export const crfhCrcaBanner = {
     bannerDescription: "",
     baseInfo: { name: "Home", url: "/" },
     bannerInfo: [
-        { name: "CRFH & CRCA", url: "/about/highlights/meets_and_events" }
+        { name: "CRFH & CRCA", url: "/business/crfh_and_crca" }
     ]
 }

@@ -9,6 +9,6 @@ export const alfaBanner = {
     bannerDescription: "Aluzinc roofing sheet are manufactured to handle the everyday demands for every needs.",
     baseInfo: { name: "Home", url: "/" },
     bannerInfo: [
-        { name: "Alfa", url: "/about/highlights/meets_and_events" }
+        { name: "Alfa", url: "/business/galvalume/alfa" }
     ]
 }

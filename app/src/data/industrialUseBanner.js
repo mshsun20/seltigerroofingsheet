@@ -5,10 +5,10 @@ export const industrialUseBanner = {
         width: 1000,
         height: 500
     },
-    bannerTitle: "Alfa",
+    bannerTitle: "Roofing Sheets for Industrial Use",
     bannerDescription: "",
     baseInfo: { name: "Home", url: "/" },
     bannerInfo: [
-        { name: "Alfa", url: "/about/highlights/meets_and_events" }
+        { name: "Roofing Sheets for Industrial Use", url: "/business/industrial_use" }
     ]
 }

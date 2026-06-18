@@ -5,10 +5,10 @@ export const projectBasedBanner = {
         width: 1000,
         height: 500
     },
-    bannerTitle: "Alfa",
+    bannerTitle: "Roofing Sheets for Project Based",
     bannerDescription: "",
     baseInfo: { name: "Home", url: "/" },
     bannerInfo: [
-        { name: "Alfa", url: "/about/highlights/meets_and_events" }
+        { name: "Roofing Sheets for Project Based", url: "/business/project_based" }
     ]
 }
