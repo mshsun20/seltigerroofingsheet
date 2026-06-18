@@ -1,9 +1,10 @@
 import React from 'react'
-const Banner = React.lazy(() => import("@/components/common/Banner"));
+import dynamic from "next/dynamic";
+const Banner = dynamic(() => import("@/components/common/Banner"));
 import { manufacturingFacilitiesBanner } from "@/data/manufacturingFacilitiesBanner";
 import LazyWrapper from '@/components/common/LazyWrapper';
-const ManufacturingFacilitySection = React.lazy(() => import("@/components/about/ManufacturingFacilitySection"));
-const OtherFacilitySection = React.lazy(() => import("@/components/about/OtherFacilitySection"));
+const ManufacturingFacilitySection = dynamic(() => import("@/components/about/ManufacturingFacilitySection"));
+const OtherFacilitySection = dynamic(() => import("@/components/about/OtherFacilitySection"));
 
 
 const ManufacturingFacilities = () => {

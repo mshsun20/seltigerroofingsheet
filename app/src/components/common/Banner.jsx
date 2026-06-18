@@ -4,8 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const Banner = ({ data, info }) => {
-    // console.log("Data:", data);
-    // console.log("Banner Title:", info?.bannerInfo);
   return (
     <div className='banner'>
         <div className="banner-poster">

@@ -1,6 +1,7 @@
 "use client";
 import React from 'react'
-const Banner = React.lazy(() => import("@/components/common/Banner"))
+import dynamic from "next/dynamic";
+const Banner = dynamic(() => import("@/components/common/Banner"))
 import { csrBanner } from "@/data/csrBanner";
 import { csrData } from "@/data/csrData"
 import Image from 'next/image';

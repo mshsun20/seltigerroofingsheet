@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import Contactlist from './Contactlist'
 import Contactform from './Contactform'

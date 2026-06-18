@@ -1,3 +1,5 @@
+"use client";
+import React from "react";
 import Image from "next/image";
 import "@/styles/components/contactlocationcard.css";
 
@@ -24,4 +26,4 @@ const ContactLocationCard = ({ item }) => {
     );
 };
 
-export default ContactLocationCard;
+export default React.memo(ContactLocationCard);

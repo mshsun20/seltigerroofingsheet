@@ -6,6 +6,7 @@ export const csrBanner = {
         height: 500
     },
     bannerTitle: "CSR",
+    bannerDescription: "",
     baseInfo: { name: "Home", url: "/" },
     bannerInfo: [
         { name: "CSR", url: "/about/csr" }

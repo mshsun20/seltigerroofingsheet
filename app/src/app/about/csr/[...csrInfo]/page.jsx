@@ -1,10 +1,10 @@
 import React from 'react';
+import dynamic from "next/dynamic";
 import LazyWrapper from '@/components/common/LazyWrapper';
 import { csrData } from "@/data/csrData";
-const Banner = React.lazy(() => import("@/components/generic/Banner"))
+const Banner = dynamic(() => import("@/components/generic/Banner"))
 import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer"
 import Image from 'next/image';
-import Link from 'next/link';
 
 
 const CsrInfo = async ({ params }) => {

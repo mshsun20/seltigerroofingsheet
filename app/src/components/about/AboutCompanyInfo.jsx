@@ -1,7 +1,7 @@
+"use client";
 import Image from 'next/image';
 import React from 'react'
 import { aboutCompanyInfo } from "@/data/aboutCompanyInfo";
-import GallerySlider from '@/components/common/GallerySlider';
 import SafeHtmlRenderer from '@/configs/SafeHtmlRenderer';
 import Statcounter from '@/components/common/Statcounter';
 

@@ -1,0 +1,14 @@
+export const alZnSheetCoilBanner = {
+    bannerImage: {
+        url: "/wp-content/uploads/2025/06/banner-1.png",
+        alt: "Business Banner",
+        width: 1000,
+        height: 500
+    },
+    bannerTitle: "Aluzinc Sheet and Coil",
+    bannerDescription: "",
+    baseInfo: { name: "Home", url: "/" },
+    bannerInfo: [
+        { name: "Aluzinc Sheet and Coil", url: "/about/highlights/meets_and_events" }
+    ]
+}

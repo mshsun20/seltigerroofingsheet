@@ -1,12 +1,12 @@
 "use client";
 import React from 'react'
-const Banner = React.lazy(() => import("@/components/common/Banner"))
+import dynamic from "next/dynamic";
+const Banner = dynamic(() => import("@/components/common/Banner"))
 import { futureVisionBanner } from "@/data/futureVisionBanner";
 import LazyWrapper from '@/components/common/LazyWrapper';
-import { upcomingUpdatesInfo } from "@/data/upcomingUpdatesInfo";
-const FutureVision = React.lazy(() => import("@/components/about/FutureVision"));
-const UpcomingUpdates = React.lazy(() => import("@/components/about/UpcomingUpdates"));
-const UpcomingProducts = React.lazy(() => import("@/components/about/UpcomingProducts"));
+const FutureVision = dynamic(() => import("@/components/about/FutureVision"));
+const UpcomingUpdates = dynamic(() => import("@/components/about/UpcomingUpdates"));
+const UpcomingProducts = dynamic(() => import("@/components/about/UpcomingProducts"));
 
 const futureVision = () => {
   return (

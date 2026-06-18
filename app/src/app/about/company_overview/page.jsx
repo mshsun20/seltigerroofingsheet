@@ -1,14 +1,15 @@
 import React from 'react'
 import "@/styles/components/companyoverview.css";
-const Banner = React.lazy(() => import("@/components/common/Banner"))
+import dynamic from "next/dynamic";
+const Banner = dynamic(() => import("@/components/common/Banner"))
 import { companyOverviewBanner } from "@/data/companyOverviewBanner";
 import LazyWrapper from '@/components/common/LazyWrapper';
-const ReliableInfo = React.lazy(() => import("@/components/about/ReliableInfo"))
-const AboutCompanyInfo = React.lazy(() => import("@/components/about/AboutCompanyInfo"))
-const CompanyStory = React.lazy(() => import("@/components/about/CompanyStory"))
-const CompanyValue = React.lazy(() => import("@/components/about/CompanyValue"))
-const CompanyLeadership = React.lazy(() => import("@/components/about/CompanyLeadership"))
-const Faqs = React.lazy(() => import("@/components/faqs/Faqs"))
+const ReliableInfo = dynamic(() => import("@/components/about/ReliableInfo"))
+const AboutCompanyInfo = dynamic(() => import("@/components/about/AboutCompanyInfo"))
+const CompanyStory = dynamic(() => import("@/components/about/CompanyStory"))
+const CompanyValue = dynamic(() => import("@/components/about/CompanyValue"))
+const CompanyLeadership = dynamic(() => import("@/components/about/CompanyLeadership"))
+const Faqs = dynamic(() => import("@/components/faqs/Faqs"))
 
 const CompanyOverview = () => {
   return (

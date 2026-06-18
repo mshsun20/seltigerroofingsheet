@@ -6,6 +6,7 @@ export const meetsEventsBanner = {
         height: 500
     },
     bannerTitle: "Meets & Events",
+    bannerDescription: "",
     baseInfo: { name: "Home", url: "/" },
     bannerInfo: [
         { name: "Meets & Events", url: "/about/highlights/meets_and_events" }

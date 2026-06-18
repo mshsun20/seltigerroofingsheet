@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 
-const BandItems = ({ data }) => {
+const BrandItems = ({ data }) => {
   return (
     <div className="brands-item-container">
         <div className="brands-item-section">
@@ -26,4 +26,4 @@ const BandItems = ({ data }) => {
   )
 }
 
-export default React.memo(BandItems)
+export default React.memo(BrandItems)

@@ -1,8 +1,9 @@
 import React from 'react'
+import dynamic from "next/dynamic";
 import LazyWrapper from "@/components/common/LazyWrapper"
-const Banner = React.lazy(() => import("@/components/common/Banner"))
+const Banner = dynamic(() => import("@/components/common/Banner"))
 import { blogBanner } from "@/data/blogBanner";
-const Blogcontent = React.lazy(() => import("@/components/blog/Blogcontent"))
+const Blogcontent = dynamic(() => import("@/components/blog/Blogcontent"))
 import axiosInstance from "@/configs/axiosInstance"
 
 export const generateMetadata = async ({ params }) => {

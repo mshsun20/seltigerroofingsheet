@@ -3,7 +3,7 @@ import React from 'react'
 import "@/styles/components/brand.css";
 import { brandDetails } from "@/data/brandDetails";
 import Image from 'next/image';
-import BandItems from './BandItems';
+import BrandItems from './BrandItems';
 
 const Brands = () => {
     if (brandDetails?.length===0) return <></>
@@ -26,7 +26,7 @@ const Brands = () => {
         </div>
         <div className="brands-container">
             {brandDetails[0]?.allBrands?.map((brand, index) => (
-                <BandItems key={index} data={brand} />
+                <BrandItems key={index} data={brand} />
             ))}
         </div>
     </div>

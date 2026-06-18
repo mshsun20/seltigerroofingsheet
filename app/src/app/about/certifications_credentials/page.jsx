@@ -1,8 +1,9 @@
 import React from 'react'
+import dynamic from "next/dynamic";
 import LazyWrapper from "@/components/common/LazyWrapper"
-const Banner = React.lazy(() => import("@/components/common/Banner"))
+const Banner = dynamic(() => import("@/components/common/Banner"))
 import { certificationCredentialBanner } from "@/data/certificationCredentialBanner";
-const Faqs = React.lazy(() => import("@/components/faqs/Faqs"))
+const Faqs = dynamic(() => import("@/components/faqs/Faqs"))
 import { certificationCredentialData } from "@/data/certificationCredentialsData"
 import Image from 'next/image';
 import Link from 'next/link';

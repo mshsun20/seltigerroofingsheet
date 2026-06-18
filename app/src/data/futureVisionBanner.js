@@ -6,6 +6,7 @@ export const futureVisionBanner = {
         height: 500
     },
     bannerTitle: "Future Vision",
+    bannerDescription: "",
     baseInfo: { name: "Home", url: "/" },
     bannerInfo: [
         { name: "Future Vision", url: "/about/future_vision" }

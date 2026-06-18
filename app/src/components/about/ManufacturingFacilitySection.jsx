@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import { manufacturingFacilitiesDetails } from "@/data/manufacturingFacilitiesDetails"
 import GallerySlider from "@/components/common/GallerySlider";

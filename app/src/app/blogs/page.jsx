@@ -1,6 +1,7 @@
 import React from 'react'
+import dynamic from "next/dynamic";
 import LazyWrapper from '@/components/common/LazyWrapper';
-const Blogwall = React.lazy(() => import("@/components/blog/Blogwall"))
+const Blogwall = dynamic(() => import("@/components/blog/Blogwall"))
 import axiosInstance from '@/configs/axiosInstance'
 import Card from '@/components/common/Card'
 import Banner from "@/components/common/Banner";

@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import '@/styles/components/about.css';
 import Image from 'next/image';

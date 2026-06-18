@@ -1,10 +1,11 @@
 import React from 'react'
 import "@/styles/components/meetsevents.css";
-const Banner = React.lazy(() => import("@/components/common/Banner"))
+import dynamic from "next/dynamic";
+const Banner = dynamic(() => import("@/components/common/Banner"))
 import { meetsEventsBanner } from "@/data/meetsEventsBanner";
 import LazyWrapper from '@/components/common/LazyWrapper';
-const FeaturedMeetsEvents = React.lazy(() => import("@/components/about/FeaturedMeetsEvents"))
-const AllMeetsEvents = React.lazy(() => import("@/components/about/AllMeetsEvents"))
+const FeaturedMeetsEvents = dynamic(() => import("@/components/about/FeaturedMeetsEvents"))
+const AllMeetsEvents = dynamic(() => import("@/components/about/AllMeetsEvents"))
 
 const MeetsEvents = () => {
   return (

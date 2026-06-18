@@ -1,7 +1,8 @@
 import React from 'react'
 import '@/styles/contact.css'
-const Banner = React.lazy(() => import('@/components/contact/Banner'))
-const Contactpart = React.lazy(() => import('@/components/contact/Contactpart'))
+import dynamic from "next/dynamic";
+const Banner = dynamic(() => import('@/components/contact/Banner'))
+const Contactpart = dynamic(() => import('@/components/contact/Contactpart'))
 
 const Contact = () => {
   return (

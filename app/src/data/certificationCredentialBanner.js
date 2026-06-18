@@ -6,6 +6,7 @@ export const certificationCredentialBanner = {
         height: 500
     },
     bannerTitle: "Certifications & Credentials",
+    bannerDescription: "",
     baseInfo: { name: "Home", url: "/" },
     bannerInfo: [
         { name: "Certifications & Credentials", url: "/about/certifications_credentials" }

@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import { futureVisionDetails } from "@/data/futureVisionDetails";
 import Image from 'next/image';

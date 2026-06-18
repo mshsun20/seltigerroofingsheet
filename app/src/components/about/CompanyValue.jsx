@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import { companyValueData } from "@/data/companyValueData";
 import Image from 'next/image';

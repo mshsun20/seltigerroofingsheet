@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 
 const Topbar = () => {
@@ -8,4 +9,4 @@ const Topbar = () => {
   )
 }
 
-export default Topbar
+export default React.memo(Topbar)

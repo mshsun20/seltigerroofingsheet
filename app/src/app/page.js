@@ -1,13 +1,13 @@
 import React from 'react';
+import dynamic from "next/dynamic";
 import "@/styles/home.css";
-// import Hero from "@/components/home/hero/Hero";
 import LazyWrapper from "@/components/common/LazyWrapper";
-const Hero = React.lazy(() => import('@/components/hero/Hero'));
-const About = React.lazy(() => import('@/components/about/About'))
-const Products = React.lazy(() => import('@/components/products/Products'))
-const Brands = React.lazy(() => import('@/components/brands/Brands'))
-const Choose = React.lazy(() => import('@/components/choose/Choose'))
-const Faqs = React.lazy(() => import('@/components/faqs/Faqs'))
+const Hero = dynamic(() => import('@/components/hero/Hero'));
+const About = dynamic(() => import('@/components/about/About'))
+const Products = dynamic(() => import('@/components/products/Products'))
+const Brands = dynamic(() => import('@/components/brands/Brands'))
+const Choose = dynamic(() => import('@/components/choose/Choose'))
+const Faqs = dynamic(() => import('@/components/faqs/Faqs'))
 
 export default function Home() {
   return (
