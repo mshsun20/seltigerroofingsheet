@@ -1,6 +1,6 @@
 export const alZnCoatedSheetHandbookBanner = {
     bannerImage: {
-        url: "/wp-content/uploads/2025/06/banner-1.png",
+        url: "/wp-content/uploads/2025/03/about-2.jpg",
         alt: "Roof It Yourself Banner",
         width: 1000,
         height: 500
