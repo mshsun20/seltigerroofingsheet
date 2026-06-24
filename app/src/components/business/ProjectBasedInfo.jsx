@@ -51,4 +51,4 @@ const ProjectBasedInfo = () => {
   )
 }
 
-export default ProjectBasedInfo
+export default React.memo(ProjectBasedInfo)

@@ -21,8 +21,8 @@ export const industrialUseInfoDetails = [{
         textualContents: {
             className: "industrial-use-info-contents-textuals",
             contents: [
-                `<span>SEL Tiger manufactures and supplies roofing sheets that provide unmatched performance across demanding industrial environments, engineered for strength, resilience, and long-term reliability. Our roofing sheets empower manufacturing facilities and warehouses, logistics hubs, and infrastructure projects with superior protection and performance.</span>`,
-                `<span>Each roofing sheets is manufactured by <span style="font-weight:bold;">aluzinc sheets</span> with stringent quality standards to withstand harsh conditions, ensuring operational continuity while reducing maintenance costs. Trusted by industry leaders, SEL Tiger enhances efficiency, safety, and structural integrity for industrial applications of all scales. Choose <span style="color:var(--theme);">al-zn roofing sheets</span> built for performance, backed by advanced engineering and proven durability that supports your toughest industrial challenges.</span>`
+                `<p>SEL Tiger manufactures and supplies roofing sheets that provide unmatched performance across demanding industrial environments, engineered for strength, resilience, and long-term reliability. Our roofing sheets empower manufacturing facilities and warehouses, logistics hubs, and infrastructure projects with superior protection and performance.</p>`,
+                `<p>Each roofing sheets is manufactured by <span style="font-weight:bold;">aluzinc sheets</span> with stringent quality standards to withstand harsh conditions, ensuring operational continuity while reducing maintenance costs. Trusted by industry leaders, SEL Tiger enhances efficiency, safety, and structural integrity for industrial applications of all scales. Choose <span style="color:var(--theme);">al-zn roofing sheets</span> built for performance, backed by advanced engineering and proven durability that supports your toughest industrial challenges.</p>`
             ]
         },
         graphicalContents: {

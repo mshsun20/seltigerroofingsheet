@@ -1,5 +1,6 @@
 "use client";
 import React from 'react'
+import "@/styles/components/futurevision.css";
 import dynamic from "next/dynamic";
 const Banner = dynamic(() => import("@/components/common/Banner"))
 import { futureVisionBanner } from "@/data/futureVisionBanner";

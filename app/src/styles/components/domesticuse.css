@@ -1,0 +1,243 @@
+.domestic-use-info-layout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--white);
+    width: 100%;
+    height: auto;
+}
+.domestic-use-info-contents-textuals {
+    background-color: #ffffff;
+    padding: 5rem;
+
+    p {
+        padding: 0.5rem 0;
+        color: #858585;
+        line-height: 2rem;
+    }
+}
+.domestic-use-info-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+
+    a {
+        background-color: var(--theme);
+        padding: 0.5rem 1rem;
+        color: #ffffff;
+        font-size: 1.35rem;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background-color: black;
+        }
+    }
+}
+.domestic-use-info-hdr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ededed;
+    width: 100%;
+    padding: 5rem 5rem 1rem 5rem;
+}
+.domestic-use-info-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.domestic-use-info-top .topper-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.2rem;
+
+    img {
+        width: 2rem;
+    }
+}
+.domestic-use-info-top .topper-text {
+    margin-left: 0.2rem;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.domestic-use-info-heading {
+    width: auto;
+    max-width: 50rem;
+    padding: 0;
+    color: black;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.1rem;
+}
+
+.domestic-use-info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ededed;
+    width: 100%;
+    height: auto;
+    padding: 1rem 5rem 5rem 5rem;
+}
+.domestic-use-info-contents {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+}
+.domestic-use-info-contents-graphical {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 1rem;
+    width: 100%;
+    height: auto;
+
+    img {
+        width: 100%;
+        height: 20rem;
+    }
+}
+
+
+.domestic-use-faq-layout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--white);
+    width: 100%;
+    height: auto;
+    padding: 5rem;
+}
+.domestic-use-faq-hdr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.domestic-use-faq-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.domestic-use-faq-top .topper-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.2rem;
+
+    img {
+        width: 2rem;
+    }
+}
+.domestic-use-faq-top .topper-text {
+    margin-left: 0.2rem;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.domestic-use-faq-heading {
+    width: auto;
+    max-width: 50rem;
+    padding: 0;
+    color: black;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.1rem;
+}
+
+.domestic-use-faq-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #f3f3f8;
+    width: 100%;
+    max-width: 75rem;
+    margin-top: 2rem;
+    overflow: hidden;
+}
+.domestic-use-faq-item-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: auto;
+    padding: 2rem;
+    cursor: pointer;
+}
+.domestic-use-faq-heading-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+.domestic-use-faq-toggler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    width: 3rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+.domestic-use-faq-item-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    padding: 0;
+    opacity: 0;
+    color: #808080;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+
+    li {
+        margin-left: 2rem;
+        list-style-type: disc;
+
+        a {
+            color: #808080;
+            transition: color 0.1s ease-in-out;
+        }
+
+        &:hover {
+            a {
+                color: var(--theme);
+            }
+        }
+    }
+}
+.domestic-use-faq-item.active {
+    .domestic-use-faq-item-heading {
+        padding-bottom: 1rem;
+    }
+    .domestic-use-faq-item-content {
+        max-height: 40rem;
+        opacity: 1;
+        padding: 0 2rem 2rem 2rem;
+    }
+}
