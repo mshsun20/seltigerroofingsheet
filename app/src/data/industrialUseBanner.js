@@ -1,6 +1,6 @@
 export const industrialUseBanner = {
     bannerImage: {
-        url: "/wp-content/uploads/2025/06/banner-1.png",
+        url: "/wp-content/uploads/2025/09/GL-WAREHOUSE-2.webp",
         alt: "Business Banner",
         width: 1000,
         height: 500

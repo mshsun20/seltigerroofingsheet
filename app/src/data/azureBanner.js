@@ -1,6 +1,6 @@
 export const azureBanner = {
     bannerImage: {
-        url: "/wp-content/uploads/2025/06/banner-1.png",
+        url: "/wp-content/uploads/2025/07/change-3.webp",
         alt: "Business Banner",
         width: 1000,
         height: 500
