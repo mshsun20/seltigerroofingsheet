@@ -1,5 +1,5 @@
+"use client";
 import React from 'react'
-import "@/styles/components/industrialuse.css";
 import { industrialUseInfoDetails } from "@/data/industrialUseInfoDetails";
 import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer";
 import Link from 'next/link';
