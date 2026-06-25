@@ -23,20 +23,22 @@ const UpcomingProducts = () => {
             <div className={upcomingProductsData[0]?.heading?.className}>{upcomingProductsData[0]?.heading?.data}</div>
         </div>
         <div className="upcoming-products-container">
-            {upcomingProductsData[0]?.mainContent?.allProducts?.length>0
-            && upcomingProductsData[0]?.mainContent?.allProducts?.map(elm => (
-                <WallCard
-                    id={elm?.productIndex}
-                    key={elm?.productIndex}
-                    contentWall={elm?.poster}
-                    title={elm?.caption}
-                    renderAction={
-                        <div>
-                            <SafeHtmlRenderer content={elm?.description} />
-                        </div>
-                    }
-                />
-            ))}
+            <div className={upcomingProductsData[0]?.mainContent?.className}>
+                {upcomingProductsData[0]?.mainContent?.allProducts?.length>0
+                && upcomingProductsData[0]?.mainContent?.allProducts?.map(elm => (
+                    <WallCard
+                        id={elm?.productIndex}
+                        key={elm?.productIndex}
+                        contentWall={elm?.poster}
+                        title={elm?.caption}
+                        renderAction={
+                            <div>
+                                <SafeHtmlRenderer content={elm?.description} />
+                            </div>
+                        }
+                    />
+                ))}
+            </div>
         </div>
     </div>
   )
