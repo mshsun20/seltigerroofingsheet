@@ -11,29 +11,32 @@ export const manufacturingFacilitiesDetails = [{
                 "/wp-content/uploads/2026/04/facilities-overview-1-2.webp",
                 "/wp-content/uploads/2026/04/facilities-overview-1.webp",
             ],
-            imageBlock: {
-                blockA: {
-                    className: "manufacturing-facility-image-block-a",
+            imageBlock: [
+                {
+                    imgIndex: 0,
+                    id: "image-block-1",
                     url: "/wp-content/uploads/2026/04/facility-overview-2.webp",
                     alt: "manufacturing facility1",
                     width: 540,
                     height: 360
                 },
-                blockB: {
-                    className: "manufacturing-facility-image-block-b",
+                {
+                    imgIndex: 1,
+                    id: "image-block-2",
                     url: "/wp-content/uploads/2026/04/facility-overview-3.webp",
                     alt: "manufacturing facility2",
                     width: 540,
                     height: 360
                 },
-                blockC: {
-                    className: "manufacturing-facility-image-block-c",
+                {
+                    imgIndex: 2,
+                    id: "image-block-3",
                     url: "/wp-content/uploads/2026/04/facility-overview-4.webp",
                     alt: "manufacturing facility3",
                     width: 540,
                     height: 360
                 }
-            }
+            ]
         },
         contentTextuals: {
             title: `State-of-the-Art Manufacturing Facilities`,

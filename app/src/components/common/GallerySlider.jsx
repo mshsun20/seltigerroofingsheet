@@ -34,7 +34,7 @@ const GallerySlider = ({ slides = [] }) => {
     }, [emblaApi])
 
     return (
-        <div>
+        <div className="gallery-slider">
             {/* 🔥 Carousel */}
             <div className="embla" ref={emblaRef}>
                 <div className="embla__container">
@@ -46,7 +46,7 @@ const GallerySlider = ({ slides = [] }) => {
                                 width={100000}
                                 height={100000}
                             /> */}
-                            <img src={img} alt={`Slide ${index}`} />
+                            <Image src={img} alt={`Slide ${index}`} width={1000} height={1000} />
                         </div>
                     ))}
                 </div>

@@ -22,17 +22,21 @@ const OtherFacilitySection = () => {
             <div className={otherFacilitiesInfo[0]?.mainContent?.className}>
                 {otherFacilitiesInfo[0]?.mainContent?.allContents?.length>0
                 && otherFacilitiesInfo[0]?.mainContent?.allContents?.map(elm => (
-                    <WallCard
-                        id={elm?.contentIndex}
+                    <div
                         key={elm?.contentIndex}
-                        contentWall={elm?.poster}
-                        title={elm?.heading}
-                        renderAction={
-                            <button onClick={(e) => handleOpen(e, elm?.linkUrl)} className="other-facility-content-btn">
-                                Open
-                            </button>
-                        }
-                    />
+                        className="other-facility-content-card"
+                    >
+                        <WallCard
+                            id={elm?.contentIndex}
+                            contentWall={elm?.poster}
+                            title={elm?.heading}
+                            renderAction={
+                                <button onClick={(e) => handleOpen(e, elm?.linkUrl)} className="other-facility-content-btn">
+                                    Open
+                                </button>
+                            }
+                        />
+                    </div>
                 ))}
             </div>
         </div>

@@ -1,6 +1,6 @@
 export const otherFacilitiesInfo = [{
     heading: {
-        className: "manufacturing-facility-heading",
+        className: "other-facility-heading",
         data: "Others Manufacturing Facilities"
     },
     mainContent: {

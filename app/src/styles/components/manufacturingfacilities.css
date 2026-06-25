@@ -1,0 +1,190 @@
+/* manufacturing facilities */
+.manufacturing-facility-layout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--white);
+    width: 100%;
+    height: auto;
+    padding: 5rem;
+}
+
+.manufacturing-facility-hdr {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+.manufacturing-facility-heading {
+    width: auto;
+    max-width: 50rem;
+    padding: 0;
+    color: black;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+
+.manufacturing-facility-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.manufacturing-facility-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+}
+.manufacturing-facility-graphical-contents {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    width: 100%;
+    height: auto;
+    padding: 1rem 0;
+}
+.manufacturing-facility-slider {
+    grid-column: span 2;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    div:first-child {
+        height: 100%;
+    }
+    &:hover div:first-child {
+        transform: scale(1.2);
+        transition: transform 2s ease-in-out;
+    }
+}
+.manufacturing-facility-images {
+    grid-column: span 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    width: 100%;
+    height: 100%;
+    
+    .image-block {
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+
+            &:hover {
+                transform: scale(1.2);
+                transition: transform 2s ease-in-out;
+            }
+        }
+    }
+    #img-block-1 {
+        grid-column: span 1;
+    }
+    #img-block-2 {
+        grid-column: span 1;
+    }
+    #img-block-3 {
+        grid-column: span 2;
+    }
+}
+.manufacturing-facility-textual-contents {
+    height: auto;
+    padding: 1rem 0;
+}
+.manufacturing-facility-textual-contents-title {
+    padding: 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.manufacturing-facility-textual-contents-description {
+    padding: 0.2rem 0;
+
+    p {
+        padding: 0.35rem 0;
+        color: #7d7d7d;
+        font-size: 1rem;
+        line-height: 1.8rem;
+        letter-spacing: 0.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .manufacturing-facility-graphical-contents {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 1024px) {
+    .manufacturing-facility-layout {
+        padding: 2rem;
+    }
+    .manufacturing-facility-hdr {
+        align-items: center;
+        width: 80%;
+    }
+    .manufacturing-facility-container {
+        grid-template-columns: 0.75fr;
+        gap: 1rem;
+    }
+}
+
+
+
+
+/* other facilities */
+.other-facility-layout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f4f4f4;
+    width: 100%;
+    height: auto;
+    padding: 5rem;
+}
+
+.other-facility-hdr {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+.other-facility-heading {
+    width: auto;
+    max-width: 50rem;
+    padding: 1rem 0;
+    color: black;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+
+.other-facility-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    width: 100%;
+}
+.other-facility-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1rem;
+    width: 100%;
+}
+
+.other-facility-content-card {
+    width: 100%;
+}   
+.other-facility-content-btn {
+    color: var(--theme);
+    cursor: pointer;
+}
