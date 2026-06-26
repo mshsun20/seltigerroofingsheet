@@ -96,8 +96,8 @@ const UpcomingUpdates = () => {
                                 {activeProduct?.info?.map((info) => (
                                     <div className="data-details" key={info?.id}>
                                         <div className="data-tag">{info?.descTag}:</div>
-                                        <div className="data-thickness">{info?.thickness}</div>
-                                        <div className="data-width">{info?.width}</div>
+                                        <div className="data-thickness">Thickness: {info?.thickness}</div>
+                                        <div className="data-width">Width: {info?.width}</div>
                                     </div>
                                 ))}
                             </div>
@@ -107,18 +107,52 @@ const UpcomingUpdates = () => {
                             <div className="upcoming-updates-details-subsection">
                                 {activeProduct?.tiles?.map((tile) => (
                                     <div key={tile?.id} className="upcoming-updates-details-subsection-tile">
-                                        {tile?.statValue!==0?tile?.statValue:"_"}
+                                        <div className="upcoming-updates-details-subsection-tile-icon">
+                                            <Image
+                                                src={tile?.icon?.url}
+                                                alt={tile?.icon?.alt}
+                                                width={tile?.icon?.width}
+                                                height={tile?.icon?.height}
+                                            />
+                                        </div>
+                                        <div className="upcoming-updates-details-subsection-tile-value">
+                                            {tile?.statValue!==0?tile?.statValue:"_"}
+                                        </div>
+                                        <div className="upcoming-updates-details-subsection-tile-unit">
+                                            {tile?.statUnit!==0?tile?.statUnit:""}
+                                        </div>
+                                        <div className="upcoming-updates-details-subsection-tile-tag">
+                                            {tile?.statTag!==0?tile?.statTag:""}
+                                        </div>
                                     </div>
                                 ))}
                             </div>
                             <div className="upcoming-updates-details-totalsection">
-                                <div className="upcoming-updates-details-subsection-tile">
-                                    {activeProduct?.netItem?.statValue!==0?activeProduct?.netItem?.statValue:"_"}
+                                <div className="upcoming-updates-details-totalsection-tile">
+                                    <div className="upcoming-updates-details-totalsection-tile-icon">
+                                        <Image
+                                            src={activeProduct?.netItem?.icon?.url}
+                                            alt={activeProduct?.netItem?.icon?.alt}
+                                            width={activeProduct?.netItem?.icon?.width}
+                                            height={activeProduct?.netItem?.icon?.height}
+                                        />
+                                    </div>
+                                    <div className="upcoming-updates-details-totalsection-tile-value">
+                                        {activeProduct?.netItem?.statValue!==0?activeProduct?.netItem?.statValue:"_"}
+                                    </div>
+                                    <div className="upcoming-updates-details-totalsection-tile-unit">
+                                        {activeProduct?.netItem?.statUnit!==0?activeProduct?.netItem?.statUnit:""}
+                                    </div>
+                                    <div className="upcoming-updates-details-totalsection-tile-tag">
+                                        {activeProduct?.netItem?.statTag!==0?activeProduct?.netItem?.statTag:""}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                
+                <div className="upcoming-updates-comment">Phase 2 Coming Soon</div>
             </div>
         </div>
 

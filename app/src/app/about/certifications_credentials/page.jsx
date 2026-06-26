@@ -4,8 +4,8 @@ import dynamic from "next/dynamic";
 import LazyWrapper from "@/components/common/LazyWrapper"
 const Banner = dynamic(() => import("@/components/common/Banner"))
 import { certificationCredentialBanner } from "@/data/certificationCredentialBanner";
-const Faqs = dynamic(() => import("@/components/faqs/Faqs"))
 import { certificationCredentialData } from "@/data/certificationCredentialsData"
+const CertificationsCredentialsFaqInfo = dynamic(() => import("@/components/about/CertificationsCredentialsFaqInfo"));
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -13,11 +13,11 @@ const CertificationsCredentials = () => {
   return (
     <div className="content-layout">
         <LazyWrapper><Banner data={"Certifications & Credentials"} info={certificationCredentialBanner} /></LazyWrapper>
-        <div className="document-container">
+        <div className="certifications-credentials-document-container">
             {
                 certificationCredentialData?.map(elm => (
-                    <div className="document-section" key={elm?.certIndex}>
-                        <div className="document-icon">
+                    <div className="certifications-credentials-document-section" key={elm?.certIndex}>
+                        <div className="certifications-credentials-document-icon">
                             <Image
                                 src={elm?.certIcon?.url}
                                 alt={elm?.certIcon?.alt}
@@ -25,15 +25,15 @@ const CertificationsCredentials = () => {
                                 height={elm?.certIcon?.height}
                             />
                         </div>
-                        <div className="document-title">{elm?.certTitle}</div>
-                        <div className="document-actions">
+                        <div className="certifications-credentials-document-title">{elm?.certTitle}</div>
+                        <div className="certifications-credentials-document-actions">
                             <Link href={elm?.certLink} target="_blank">Download</Link>
                         </div>
                     </div>
                 ))
             }
         </div>
-        <LazyWrapper><Faqs /></LazyWrapper>
+        <LazyWrapper><CertificationsCredentialsFaqInfo /></LazyWrapper>
     </div>
   )
 }
