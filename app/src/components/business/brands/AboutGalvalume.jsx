@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import "@/styles/components/aboutproduct.css";
-import GallerySlider from "@/components/common/GallerySlider";
 import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer";
 
 const AboutGalvalume = ({ dataSet = {} }) => {
@@ -11,7 +10,12 @@ const AboutGalvalume = ({ dataSet = {} }) => {
     <div className="galvalume-about-layout">
         <div className="galvalume-about-wall">
             <div className="galvalume-about-gallery">
-                <GallerySlider slides={dataSet?.mainGallery?.galleryItems} />
+                <Image
+                    src={dataSet?.poster?.url}
+                    alt={dataSet?.poster?.alt}
+                    width={dataSet?.poster?.width}
+                    height={dataSet?.poster?.height}
+                />
             </div>
         </div>
         <div className="galvalume-about-container">
