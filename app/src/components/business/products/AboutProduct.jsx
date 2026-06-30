@@ -27,7 +27,7 @@ const AboutProduct = ({ dataSet = {} }) => {
             </div>
         </div>
         <div className="product-about-container">
-            <div className="project-about-hdr">
+            <div className="product-about-hdr">
                 <div className="product-about-top">
                     <span className="topper-icon">
                         <Image

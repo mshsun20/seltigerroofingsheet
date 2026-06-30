@@ -4,8 +4,8 @@ import dynamic from "next/dynamic";
 import LazyWrapper from '@/components/common/LazyWrapper';
 const Banner = dynamic(() => import("@/components/common/Banner"))
 import { domesticUseBanner } from "@/data/domesticUseBanner";
-const DomesticUseInfo = dynamic(() => import("@/components/business/DomesticUseInfo"));
-const DomesticUseFaqInfo = dynamic(() => import("@/components/business/DomesticUseFaqInfo"));
+const DomesticUseInfo = dynamic(() => import("@/components/business/application/DomesticUseInfo"));
+const DomesticUseFaqInfo = dynamic(() => import("@/components/business/application/DomesticUseFaqInfo"));
 
 const DomesticUse = () => {
   return (
