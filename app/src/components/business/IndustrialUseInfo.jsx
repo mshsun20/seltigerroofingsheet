@@ -36,13 +36,17 @@ const IndustrialUseInfo = () => {
           <div className={industrialUseInfoDetails[0]?.mainContent?.graphicalContents?.className}>
             {industrialUseInfoDetails[0]?.mainContent?.graphicalContents?.contents?.length>0
             && industrialUseInfoDetails[0]?.mainContent?.graphicalContents?.contents?.map(elm => 
-              <Image
+              <div
+                className="graphical-content-info"
                 key={elm?.contentIndex}
-                src={elm?.url}
-                alt={elm?.alt}
-                width={elm?.width}
-                height={elm?.height}
-              />
+              >
+                <Image
+                  src={elm?.url}
+                  alt={elm?.alt}
+                  width={elm?.width}
+                  height={elm?.height}
+                />
+              </div>
             )}
           </div>
         </div>

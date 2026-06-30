@@ -36,13 +36,17 @@ const DomesticUseInfo = () => {
                 <div className={domesticUseInfoDetails[0]?.mainContent?.graphicalContents?.className}>
                     {domesticUseInfoDetails[0]?.mainContent?.graphicalContents?.contents?.length>0
                     && domesticUseInfoDetails[0]?.mainContent?.graphicalContents?.contents?.map(elm => 
-                        <Image
+                        <div
+                            className="graphical-content-info"
                             key={elm?.contentIndex}
-                            src={elm?.url}
-                            alt={elm?.alt}
-                            width={elm?.width}
-                            height={elm?.height}
-                        />
+                        >
+                            <Image
+                                src={elm?.url}
+                                alt={elm?.alt}
+                                width={elm?.width}
+                                height={elm?.height}
+                            />
+                        </div>
                     )}
                 </div>
             </div>
