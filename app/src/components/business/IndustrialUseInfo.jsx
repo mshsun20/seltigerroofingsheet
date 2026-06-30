@@ -11,7 +11,7 @@ const IndustrialUseInfo = () => {
       <div className={industrialUseInfoDetails[0]?.mainContent?.textualContents?.className}>
         {industrialUseInfoDetails[0]?.mainContent?.textualContents?.contents?.length>0
         && industrialUseInfoDetails[0]?.mainContent?.textualContents?.contents?.map((elm, i) => (
-            <SafeHtmlRenderer content={elm} key={i} />
+          <SafeHtmlRenderer content={elm} key={i} />
         ))}
         <div className="industrial-use-info-link">
           <Link href={`/contact`}>Contact Us</Link>
