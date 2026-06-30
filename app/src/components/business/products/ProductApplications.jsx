@@ -15,9 +15,9 @@ const ProductApplications = ({ dataSet = {}, tabs = [] }) => {
     }, [dataSet])
 
   return (
-    <div className="product-application-layout">
-        <div className="product-application-hdr">
-            <div className="product-application-top">
+    <div className="product-applications-layout">
+        <div className="product-applications-hdr">
+            <div className="product-applications-top">
                 <span className="topper-icon">
                     <Image
                         src={dataSet?.topper?.icon?.url}
@@ -28,10 +28,10 @@ const ProductApplications = ({ dataSet = {}, tabs = [] }) => {
                 </span>
                 <span className="topper-text">{dataSet?.topper?.text?.data}</span>
             </div>
-            <div className="product-application-heading">{dataSet?.heading?.data}</div>
+            <div className="product-applications-heading">{dataSet?.heading?.data}</div>
         </div>
-        <div className="product-application-container">
-            <div className="product-application-tabs">
+        <div className="product-applications-container">
+            <div className="product-applications-tabs">
                 {tabs?.length>0 && tabs?.map(itm => (
                     <div
                         key={itm?.itemIndex}
@@ -41,12 +41,12 @@ const ProductApplications = ({ dataSet = {}, tabs = [] }) => {
                     </div>
                 ))}
             </div>
-            <div className="product-application-contents">
+            <div className="product-applications-contents">
                 {tabContents?.itemImages?.length>0
                 && tabContents?.itemImages?.map(img => (
-                    <div className="product-application-section" key={img?.imgsIndex}>
+                    <div className="product-applications-section" key={img?.imgsIndex}>
                         <button
-                            className="product-application-action"
+                            className="product-applications-action"
                             onClick={() => setOpen(true)}
                         >
                             <Image
@@ -56,7 +56,7 @@ const ProductApplications = ({ dataSet = {}, tabs = [] }) => {
                                 height={img?.itemImage?.height}
                             />
                         </button>
-                        {open && <div className="product-application-modal">
+                        {open && <div className="product-applications-modal">
                             <Image
                                 src={img?.itemImage?.url}
                                 alt={img?.itemImage?.alt}
@@ -67,7 +67,7 @@ const ProductApplications = ({ dataSet = {}, tabs = [] }) => {
                     </div>
                 ))}
             </div>
-            <div className="product-application-description">
+            <div className="product-applications-description">
                 <SafeHtmlRenderer content={tabContents?.itemDescription} />
             </div>
         </div>

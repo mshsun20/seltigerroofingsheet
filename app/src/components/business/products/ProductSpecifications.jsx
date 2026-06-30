@@ -16,9 +16,9 @@ const ProductSpecifications = ({ dataSet = {}, tabs = [] }) => {
     }
 
   return (
-    <div className="product-specification-layout">
-        <div className="product-specification-hdr">
-            <div className="product-specification-top">
+    <div className="product-specifications-layout">
+        <div className="product-specifications-hdr">
+            <div className="product-specifications-top">
                 <span className="topper-icon">
                     <Image
                         src={dataSet?.topper?.icon?.url}
@@ -29,10 +29,10 @@ const ProductSpecifications = ({ dataSet = {}, tabs = [] }) => {
                 </span>
                 <span className="topper-text">{dataSet?.topper?.text?.data}</span>
             </div>
-            <div className="product-specification-heading">{dataSet?.heading?.data}</div>
+            <div className="product-specifications-heading">{dataSet?.heading?.data}</div>
         </div>
-        <div className="product-specification-container">
-            <div className="product-specification-tabs">
+        <div className="product-specifications-container">
+            <div className="product-specifications-tabs">
                 {tabs?.length>0 && tabs?.map(itm => (
                     <div
                         key={itm?.itemIndex}
@@ -42,11 +42,11 @@ const ProductSpecifications = ({ dataSet = {}, tabs = [] }) => {
                     </div>
                 ))}
             </div>
-            <div className="product-specification-contents">
+            <div className="product-specifications-contents">
                 {tabContents?.itemSpecifications?.length>0
                 && tabContents?.itemSpecifications?.map(spec => (
-                    <div className="product-specification-section" key={spec?.specsIndex}>
-                        <div className="product-specification-icon">
+                    <div className="product-specifications-section" key={spec?.specsIndex}>
+                        <div className="product-specifications-icon">
                             <Image
                                 src={spec?.propertyIcon?.url}
                                 alt={spec?.propertyIcon?.alt}
@@ -54,19 +54,19 @@ const ProductSpecifications = ({ dataSet = {}, tabs = [] }) => {
                                 height={spec?.propertyIcon?.height}
                             />
                         </div>
-                        <div className="product-specification-info">
-                            <div className="product-specification-heading">{spec?.propertyHeading}</div>
-                            <div className="product-specification-details">
+                        <div className="product-specifications-info">
+                            <div className="product-specifications-heading">{spec?.propertyHeading}</div>
+                            <div className="product-specifications-details">
                                 <SafeHtmlRenderer content={spec} />
                             </div>
                         </div>
                     </div>
                 ))}
             </div>
-            <div className="product-specification-description">
+            <div className="product-specifications-description">
                 <SafeHtmlRenderer content={tabContents?.itemDescription} />
             </div>
-            <div className="product-specification-action">
+            <div className="product-specifications-action">
                 {tabContents?.itemDetails
                 && <button onClick={() => setOpen(true)}>{tabContents?.itemDetails?.info}</button>}
             </div>

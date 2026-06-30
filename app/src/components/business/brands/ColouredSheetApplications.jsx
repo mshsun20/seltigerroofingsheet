@@ -15,9 +15,9 @@ const ColouredSheetApplications = ({ dataSet = {}, tabs = [] }) => {
     }, [dataSet])
 
   return (
-    <div className="coloured-sheet-application-layout">
-        <div className="coloured-sheet-application-hdr">
-            <div className="coloured-sheet-application-top">
+    <div className="coloured-sheet-applications-layout">
+        <div className="coloured-sheet-applications-hdr">
+            <div className="coloured-sheet-applications-top">
                 <span className="topper-icon">
                     <Image
                         src={dataSet?.topper?.icon?.url}
@@ -28,10 +28,10 @@ const ColouredSheetApplications = ({ dataSet = {}, tabs = [] }) => {
                 </span>
                 <span className="topper-text">{dataSet?.topper?.text?.data}</span>
             </div>
-            <div className="coloured-sheet-application-heading">{dataSet?.heading?.data}</div>
+            <div className="coloured-sheet-applications-heading">{dataSet?.heading?.data}</div>
         </div>
-        <div className="coloured-sheet-application-container">
-            <div className="coloured-sheet-application-tabs">
+        <div className="coloured-sheet-applications-container">
+            <div className="coloured-sheet-applications-tabs">
                 {tabs?.length>0 && tabs?.map(itm => (
                     <div
                         key={itm?.itemIndex}
@@ -41,12 +41,12 @@ const ColouredSheetApplications = ({ dataSet = {}, tabs = [] }) => {
                     </div>
                 ))}
             </div>
-            <div className="coloured-sheet-application-contents">
+            <div className="coloured-sheet-applications-contents">
                 {tabContents?.itemImages?.length>0
                 && tabContents?.itemImages?.map(img => (
-                    <div className="coloured-sheet-application-section" key={img?.imgsIndex}>
+                    <div className="coloured-sheet-applications-section" key={img?.imgsIndex}>
                         <button
-                            className="coloured-sheet-application-action"
+                            className="coloured-sheet-applications-action"
                             onClick={() => setOpen(true)}
                         >
                             <Image
@@ -56,7 +56,7 @@ const ColouredSheetApplications = ({ dataSet = {}, tabs = [] }) => {
                                 height={img?.itemImage?.height}
                             />
                         </button>
-                        {open && <div className="coloured-sheet-application-modal">
+                        {open && <div className="coloured-sheet-applications-modal">
                             <Image
                                 src={img?.itemImage?.url}
                                 alt={img?.itemImage?.alt}
@@ -67,7 +67,7 @@ const ColouredSheetApplications = ({ dataSet = {}, tabs = [] }) => {
                     </div>
                 ))}
             </div>
-            <div className="coloured-sheet-application-description">
+            <div className="coloured-sheet-applications-description">
                 <SafeHtmlRenderer content={tabContents?.itemDescription} />
             </div>
         </div>
