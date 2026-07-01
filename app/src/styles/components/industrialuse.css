@@ -97,7 +97,7 @@
 .industrial-use-info-contents-graphical {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-    gap: 1rem;
+    gap: 2rem;
     width: 100%;
     height: auto;
 }
@@ -114,6 +114,9 @@
         &:hover {
             transform: scale(1.1) rotate(3deg);
         }
+    }
+    &:hover {
+        box-shadow: 0 0 1.5rem #1616164d;
     }
 }
 
