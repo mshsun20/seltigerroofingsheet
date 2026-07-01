@@ -175,7 +175,6 @@
     justify-content: center;
     align-items: flex-start;
     z-index: 1000;
-    /* overflow-y: auto; */
 }
 .product-specifications-modal-container {
     position: relative;
@@ -183,10 +182,7 @@
     max-width: 50rem;
     height: 100%;
     background-color: white;
-    border-radius: 0.5rem;
     padding: 1rem;
-    /* overflow-y: auto;
-    overflow-x: hidden; */
 }
 .product-specifications-modal-close {
     position: absolute;
