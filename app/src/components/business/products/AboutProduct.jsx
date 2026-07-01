@@ -43,7 +43,8 @@ const AboutProduct = ({ dataSet = {} }) => {
             </div>
             <div className="product-about-contents">
                 <div className="product-about-textual-contents">
-                    <SafeHtmlRenderer content={dataSet?.content} />
+                    {dataSet?.contents?.textualContents?.length>0
+                    && dataSet?.contents?.textualContents?.map((itm, i) => <SafeHtmlRenderer content={itm} key={i} />)}
                 </div>
             </div>
             <div className="product-about-actions">

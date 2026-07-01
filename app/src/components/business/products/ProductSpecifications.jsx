@@ -5,15 +5,16 @@ import "@/styles/components/productspecifications.css";
 import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer";
 
 const ProductSpecifications = ({ dataSet = {}, tabs = [] }) => {
-    const [tabContents, setTabContents] = React.useState({... dataSet[0]})
+    const [tab, setTab] = React.useState(tabs[0]?.itemName);
+    const [tabContents, setTabContents] = React.useState({... dataSet?.contents[0]})
     const [open, setOpen] = React.useState(false);
 
-    const handleTab = (e, indx) => {
+    const handleTab = React.useCallback((e, indx) => {
         e.preventDefault();
-        // console.log(indx);
-        const itemSpecs = dataSet?.find(d => parseInt(d.itemIndex)===parseInt(indx))
+        setTab(tabs[indx]?.itemName)
+        const itemSpecs = dataSet?.contents?.find(d => parseInt(d.itemIndex)===parseInt(indx))
         setTabContents({...itemSpecs})
-    }
+    }, [dataSet, tabs])
 
   return (
     <div className="product-specifications-layout">
@@ -32,16 +33,19 @@ const ProductSpecifications = ({ dataSet = {}, tabs = [] }) => {
             <div className="product-specifications-heading">{dataSet?.heading?.data}</div>
         </div>
         <div className="product-specifications-container">
-            <div className="product-specifications-tabs">
-                {tabs?.length>0 && tabs?.map(itm => (
-                    <div
-                        key={itm?.itemIndex}
-                        onClick={(e) => handleTab(e, itm?.itemIndex)}
-                    >
-                        {itm?.itemName}
-                    </div>
-                ))}
-            </div>
+            {tabs?.length>1 && (
+                <div className="product-specifications-tabs">
+                    {tabs?.map(tabItem => (
+                        <div
+                            key={tabItem?.itemIndex}
+                            className={`product-specifications-tab-item ${tab === tabItem?.itemName ? "active" : ""}`}
+                            onClick={(e) => handleTab(e, tab?.itemIndex)}
+                        >
+                            {tabItem?.itemName}
+                        </div>
+                    ))}
+                </div>
+            )}
             <div className="product-specifications-contents">
                 {tabContents?.itemSpecifications?.length>0
                 && tabContents?.itemSpecifications?.map(spec => (
@@ -55,9 +59,9 @@ const ProductSpecifications = ({ dataSet = {}, tabs = [] }) => {
                             />
                         </div>
                         <div className="product-specifications-info">
-                            <div className="product-specifications-heading">{spec?.propertyHeading}</div>
-                            <div className="product-specifications-details">
-                                <SafeHtmlRenderer content={spec} />
+                            <div className="product-specifications-info-heading">{spec?.propertyHeading}</div>
+                            <div className="product-specifications-info-details">
+                                <SafeHtmlRenderer content={spec?.propertyDetails} />
                             </div>
                         </div>
                     </div>
@@ -72,8 +76,18 @@ const ProductSpecifications = ({ dataSet = {}, tabs = [] }) => {
             </div>
         </div>
 
-        {open && <div className="spec-details-modal">
-            <SafeHtmlRenderer content={tabContents?.itemDetails?.detailsData} />
+        {open && <div className="product-specifications-modal">
+            <div className="product-specifications-modal-container">
+                <button
+                    className="product-specifications-modal-close"
+                    onClick={() => setOpen(false)}
+                >
+                    X
+                </button>
+                <div className="product-specifications-modal-contents">
+                    <SafeHtmlRenderer content={tabContents?.itemDetails?.detailsData} />
+                </div>
+            </div>
         </div>}
     </div>
   )

@@ -5,14 +5,15 @@ import LazyWrapper from '@/components/common/LazyWrapper';
 const Banner = dynamic(() => import("@/components/common/Banner"))
 import { domesticUseBanner } from "@/data/domesticUseBanner";
 const DomesticUseInfo = dynamic(() => import("@/components/business/application/DomesticUseInfo"));
-const DomesticUseFaqInfo = dynamic(() => import("@/components/business/application/DomesticUseFaqInfo"));
+import { domesticUseFaqDetails } from "@/data/domesticUseFaqDetails";
+const AllFaqsInfo = dynamic(() => import("@/components/business/AllFaqsInfo"));
 
 const DomesticUse = () => {
   return (
     <div className="content-layout">
       <LazyWrapper><Banner data={"Roofing Sheets for Domestic Use"} info={domesticUseBanner} /></LazyWrapper>
       <LazyWrapper><DomesticUseInfo /></LazyWrapper>
-      <LazyWrapper><DomesticUseFaqInfo /></LazyWrapper>
+      <LazyWrapper><AllFaqsInfo dataSet={domesticUseFaqDetails[0]} /></LazyWrapper>
     </div>
   )
 }

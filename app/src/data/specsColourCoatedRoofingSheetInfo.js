@@ -21,102 +21,102 @@ export const specsColourCoatedRoofingSheetInfo = [{
             itemSpecifications: [
                 {
                     specsIndex: 0,
-                    propertyHeading: "Thickness",
+                    propertyHeading: "Top Coat",
                     propertyIcon: {
-                        url: "/wp-content/uploads/2025/06/specification-1.png",
+                        url: "/wp-content/uploads/2025/09/Top-Coat.png",
                         alt: "sub logo3",
                         width: 1000,
                         height: 1000
                     },
-                    propertyDetails: `<span>0.30 mm - 2.0 mm</span>`,
+                    propertyDetails: `<span>As per Customer Req</span>`,
                 },
                 {
                     specsIndex: 1,
-                    propertyHeading: "Thickness",
+                    propertyHeading: "Back Coat",
                     propertyIcon: {
-                        url: "/wp-content/uploads/2025/06/specification-1.png",
+                        url: "/wp-content/uploads/2025/09/Back-Coat.png",
                         alt: "sub logo3",
                         width: 1000,
                         height: 1000
                     },
-                    propertyDetails: `<span>0.30 mm - 2.0 mm</span>`,
+                    propertyDetails: `<span>As per Customer Req</span>`,
                 },
                 {
                     specsIndex: 2,
-                    propertyHeading: "Thickness",
+                    propertyHeading: "Primer",
                     propertyIcon: {
-                        url: "/wp-content/uploads/2025/06/specification-1.png",
+                        url: "/wp-content/uploads/2025/09/water.png",
                         alt: "sub logo3",
                         width: 1000,
                         height: 1000
                     },
-                    propertyDetails: `<span>0.30 mm - 2.0 mm</span>`,
+                    propertyDetails: `<span>3-10 micron (Top & Back)</span>`,
                 },
                 {
                     specsIndex: 3,
-                    propertyHeading: "Thickness",
+                    propertyHeading: "Thickness (mm)",
                     propertyIcon: {
                         url: "/wp-content/uploads/2025/06/specification-1.png",
                         alt: "sub logo3",
                         width: 1000,
                         height: 1000
                     },
-                    propertyDetails: `<span>0.30 mm - 2.0 mm</span>`,
+                    propertyDetails: `<span>0.25-1.50 mm</span>`,
                 },
                 {
                     specsIndex: 4,
-                    propertyHeading: "Thickness",
+                    propertyHeading: "Width (mm)",
                     propertyIcon: {
-                        url: "/wp-content/uploads/2025/06/specification-1.png",
+                        url: "/wp-content/uploads/2025/06/specification-2.png",
                         alt: "sub logo3",
                         width: 1000,
                         height: 1000
                     },
-                    propertyDetails: `<span>0.30 mm - 2.0 mm</span>`,
+                    propertyDetails: `<span>Upto 1500 mm</span>`,
                 },
                 {
                     specsIndex: 5,
-                    propertyHeading: "Thickness",
+                    propertyHeading: "Coil weight (mt)",
                     propertyIcon: {
-                        url: "/wp-content/uploads/2025/06/specification-1.png",
+                        url: "/wp-content/uploads/2025/06/specification-3.png",
                         alt: "sub logo3",
                         width: 1000,
                         height: 1000
                     },
-                    propertyDetails: `<span>0.30 mm - 2.0 mm</span>`,
+                    propertyDetails: `<span>Upto 15MT</span>`,
                 },
                 {
                     specsIndex: 6,
-                    propertyHeading: "Thickness",
+                    propertyHeading: "Paint Type",
                     propertyIcon: {
-                        url: "/wp-content/uploads/2025/06/specification-1.png",
+                        url: "/wp-content/uploads/2025/08/paint-brush.png",
                         alt: "sub logo3",
                         width: 1000,
                         height: 1000
                     },
-                    propertyDetails: `<span>0.30 mm - 2.0 mm</span>`,
+                    propertyDetails: `<span>RMP/SMP/SDP/PVDF</span>`,
                 },
                 {
                     specsIndex: 7,
-                    propertyHeading: "Thickness",
+                    propertyHeading: "Coating",
                     propertyIcon: {
-                        url: "/wp-content/uploads/2025/06/specification-1.png",
+                        url: "/wp-content/uploads/2025/09/metal.png",
                         alt: "sub logo3",
                         width: 1000,
                         height: 1000
                     },
-                    propertyDetails: `<span>0.30 mm - 2.0 mm</span>`,
+                    propertyDetails: `<span>70 GSM to 150 GSM</span>`,
                 },
                 {
                     specsIndex: 8,
-                    propertyHeading: "Thickness",
+                    propertyHeading: "Standard",
                     propertyIcon: {
-                        url: "/wp-content/uploads/2025/06/specification-1.png",
+                        url: "/wp-content/uploads/2025/07/snowing.png",
                         alt: "sub logo3",
                         width: 1000,
                         height: 1000
                     },
-                    propertyDetails: `<span>0.30 mm - 2.0 mm</span>`,
+                    propertyDetails: `<span>EN/ASTM/JIS</span>`,
                 },
             ],
             itemDetails: {
