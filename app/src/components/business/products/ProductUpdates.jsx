@@ -2,9 +2,25 @@
 import Image from 'next/image';
 import React from 'react'
 import "@/styles/components/productupdates.css";
+import CarouselSlider from "@/components/common/CarouselSlider";
 
 const ProductUpdates = ({ dataSet = {} }) => {
     const [open, setOpen] = React.useState(false);
+    const modalRef = React.useRef();
+
+    const handleClickOutside = React.useCallback((e) => {
+        if (modalRef.current && !modalRef.current.contains(e.target)) {
+            setOpen(false)
+        }
+    }, [])
+    React.useEffect(() => {
+        if (open) {
+            document.addEventListener("mousedown", handleClickOutside);
+        }
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [handleClickOutside, open])
 
   return (
     <div className="product-updates-layout">
@@ -24,30 +40,35 @@ const ProductUpdates = ({ dataSet = {} }) => {
         </div>
         <div className="product-updates-container">
             <div className="product-updates-contents">
-                {dataSet?.contents?.itemImages?.length>0
-                && dataSet?.contents?.itemImages?.map(img => (
-                    <div className="product-updates-section" key={img?.imgsIndex}>
-                        <button
-                            className="product-updates-action"
-                            onClick={() => setOpen(true)}
-                        >
+                <CarouselSlider
+                    data={dataSet?.contents?.graphicalContents}
+                    cardWidth={80}
+                    slideWidth={50}
+                    gap={50}
+                    autoPlay={true}
+                    autoDelay={5000}
+                    renderItem={(item) => (
+                        <div>
                             <Image
-                                src={img?.itemImage?.url}
-                                alt={img?.itemImage?.alt}
-                                width={img?.itemImage?.width}
-                                height={img?.itemImage?.height}
+                                src={item?.image?.url || "/"}
+                                alt={item?.image?.alt || "No Image"}
+                                width={item?.image?.width || 0}
+                                height={item?.image?.height || 0}
                             />
-                        </button>
-                        {open && <div className="product-updates-modal">
-                            <Image
-                                src={img?.itemImage?.url}
-                                alt={img?.itemImage?.alt}
-                                width={img?.itemImage?.width}
-                                height={img?.itemImage?.height}
-                            />
-                        </div>}
-                    </div>
-                ))}
+                        </div>
+                    )}
+                    animationConfig={{
+                        activeOpacity: 1,
+                        inactiveOpacity: 0.4,
+                        activeBlur: "0",
+                        inactiveBlur: "0.2rem"
+                    }}
+                    springConfig={{
+                        type: "spring",
+                        stiffness: 150,
+                        damping: 50
+                    }}
+                />
             </div>
         </div>
     </div>

@@ -8,6 +8,7 @@ const ProductSpecifications = ({ dataSet = {}, tabs = [] }) => {
     const [tab, setTab] = React.useState(tabs[0]?.itemName);
     const [tabContents, setTabContents] = React.useState({... dataSet?.contents[0]})
     const [open, setOpen] = React.useState(false);
+    const modalRef = React.useRef();
 
     const handleTab = React.useCallback((e, indx) => {
         e.preventDefault();
@@ -15,6 +16,20 @@ const ProductSpecifications = ({ dataSet = {}, tabs = [] }) => {
         const itemSpecs = dataSet?.contents?.find(d => parseInt(d.itemIndex)===parseInt(indx))
         setTabContents({...itemSpecs})
     }, [dataSet, tabs])
+
+    const handleClickOutside = React.useCallback((e) => {
+        if (modalRef.current && !modalRef.current.contains(e.target)) {
+            setOpen(false)
+        }
+    }, [])
+    React.useEffect(() => {
+        if (open) {
+            document.addEventListener("mousedown", handleClickOutside);
+        }
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [handleClickOutside, open])
 
   return (
     <div className="product-specifications-layout">
@@ -77,7 +92,7 @@ const ProductSpecifications = ({ dataSet = {}, tabs = [] }) => {
         </div>
 
         {open && <div className="product-specifications-modal">
-            <div className="product-specifications-modal-container">
+            <div className="product-specifications-modal-container" ref={modalRef}>
                 <button
                     className="product-specifications-modal-close"
                     onClick={() => setOpen(false)}

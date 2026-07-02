@@ -7,13 +7,13 @@ import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer";
 const ProductFeatures = ({ dataSet = {} }) => {
   return (
     <div className="product-features-layout">
-        <div className="product-features-poster">
-            <div className="product-features-top">
+        <div className="product-features-wall">
+            <div className="product-features-poster">
                 <Image
-                    src={dataSet?.topper?.icon?.url}
-                    alt={dataSet?.topper?.icon?.alt}
-                    width={parseInt(dataSet?.topper?.icon?.width)}
-                    height={parseInt(dataSet?.topper?.icon?.height)}
+                    src={dataSet?.contents?.graphicalContents?.poster?.url}
+                    alt={dataSet?.contents?.graphicalContents?.poster?.alt}
+                    width={parseInt(dataSet?.contents?.graphicalContents?.poster?.width)}
+                    height={parseInt(dataSet?.contents?.graphicalContents?.poster?.height)}
                 />
             </div>
         </div>
@@ -33,26 +33,26 @@ const ProductFeatures = ({ dataSet = {} }) => {
                 <div className="product-features-heading">{dataSet?.heading?.data}</div>
             </div>
             <div className="product-features-contents">
-                {dataSet?.contents?.length>0
-                && dataSet?.contents?.map(itm => 
+                {dataSet?.contents?.textualContents?.length>0
+                && dataSet?.contents?.textualContents?.map(itm => 
                     <div
                         className="product-features-item"
                         key={itm?.contentIndex}
                     >
                         <div className="product-features-item-icon">
                             <Image
-                                src={itm?.itemIcon?.url}
-                                alt={itm?.itemIcon?.alt}
-                                width={itm?.itemIcon?.width}
-                                height={itm?.itemIcon?.height}
+                                src={itm?.contentIcon?.url}
+                                alt={itm?.contentIcon?.alt}
+                                width={itm?.contentIcon?.width}
+                                height={itm?.contentIcon?.height}
                             />
                         </div>
                         <div className="product-features-item-details">
                             <div className="product-features-item-title">
-                                {itm?.itemTitle}
+                                {itm?.contentHeading}
                             </div>
                             <div className="product-features-item-description">
-                                <SafeHtmlRenderer content={itm?.itemDescription} />
+                                <SafeHtmlRenderer content={itm?.contentDescription} />
                             </div>
                         </div>
                     </div>
