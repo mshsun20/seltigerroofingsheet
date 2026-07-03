@@ -17,7 +17,7 @@ export const specsColourCoatedRoofingSheetInfo = [{
         {
             itemIndex: 0,
             itemName: "Colour Coated",
-            itemDescription: `<span>These coloured roofing sheets come in different thickness options (0.25 mm to 1.50 mm), wide sizes up to 1500 mm, up to 15 metric tons coil weight and strong protective coatings (70 GSM to 150 GSM). We use quality paint systems (RMP, SMP, SDP, or PVDF) and follow international standards for durability and performance.</span>`,
+            itemDescription: `<p>These coloured roofing sheets come in different thickness options (0.25 mm to 1.50 mm), wide sizes up to 1500 mm, up to 15 metric tons coil weight and strong protective coatings (70 GSM to 150 GSM). We use quality paint systems (RMP, SMP, SDP, or PVDF) and follow international standards for durability and performance.</p>`,
             itemSpecifications: [
                 {
                     specsIndex: 0,

@@ -144,6 +144,13 @@
 }
 .product-specifications-description {
     padding: 1rem;
+
+    p {
+        color: #616161;
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding: 0.5rem 0;
+    }
 }
 .product-specifications-action {
     display: flex;

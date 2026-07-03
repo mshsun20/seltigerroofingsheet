@@ -4,16 +4,24 @@ import React from 'react'
 import "@/styles/components/productshades.css";
 import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer";
 
-const ProductShades = ({ dataSet = {} }) => {
+const ProductShades = ({ dataSet = {}, tabs = [] }) => {
+    const [tabContents, setTabContents] = React.useState({... dataSet?.contents[0]})
+
+    const handleTab = React.useCallback((e, indx) => {
+        e.preventDefault();
+        const itemSpecs = dataSet?.contents?.find(d => parseInt(d.contentIndex)===parseInt(indx))
+        setTabContents({...itemSpecs})
+    }, [dataSet])
+    
   return (
     <div className="product-shades-layout">
         <div className="product-shades-wall">
             <div className="product-shades-poster">
                 <Image
-                    src={dataSet?.contents?.graphicalContents?.poster?.url}
-                    alt={dataSet?.contents?.graphicalContents?.poster?.alt}
-                    width={parseInt(dataSet?.contents?.graphicalContents?.poster?.width)}
-                    height={parseInt(dataSet?.contents?.graphicalContents?.poster?.height)}
+                    src={tabContents?.contentShade?.url}
+                    alt={tabContents?.contentShade?.alt}
+                    width={parseInt(tabContents?.contentShade?.width)}
+                    height={parseInt(tabContents?.contentShade?.height)}
                 />
             </div>
         </div>
@@ -32,31 +40,42 @@ const ProductShades = ({ dataSet = {} }) => {
                 </div>
                 <div className="product-shades-heading">{dataSet?.heading?.data}</div>
             </div>
-            <div className="product-shades-contents">
-                {dataSet?.contents?.textualContents?.length>0
-                && dataSet?.contents?.textualContents?.map(itm => 
+            <div className="product-shades-tabs">
+                {tabs?.length>0
+                && tabs?.map(itm => 
                     <div
-                        className="product-shades-item"
+                        className="product-shades-tab"
                         key={itm?.contentIndex}
-                    >
-                        <div className="product-shades-item-icon">
-                            <Image
-                                src={itm?.contentIcon?.url}
-                                alt={itm?.contentIcon?.alt}
-                                width={itm?.contentIcon?.width}
-                                height={itm?.contentIcon?.height}
-                            />
-                        </div>
-                        <div className="product-shades-item-details">
-                            <div className="product-shades-item-title">
-                                {itm?.contentHeading}
-                            </div>
-                            <div className="product-shades-item-description">
-                                <SafeHtmlRenderer content={itm?.contentDescription} />
-                            </div>
-                        </div>
-                    </div>
+                        onClick={(e) => handleTab(e, itm?.contentIndex)}
+                        style={{backgroundColor: itm?.contentColor}}
+                    ></div>
                 )}
+            </div>
+            <div className="product-shades-contents">
+                <div className="product-shades-item">
+                    <div className="product-shades-item-title">
+                        {tabContents?.contentHeading}
+                    </div>
+                    <div className="product-shades-item-description">
+                        <SafeHtmlRenderer content={tabContents?.contentDescription} />
+                    </div>
+                    <div className="product-shades-item-images">
+                        {tabContents?.contentImages?.length>0
+                        && tabContents?.contentImages?.map((elm, i) => (
+                            <div
+                                className="product-shades-item-image"
+                                key={i}
+                            >
+                                <Image
+                                    src={elm?.url}
+                                    alt={elm?.alt}
+                                    width={parseInt(elm?.width)}
+                                    height={parseInt(elm?.height)}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
