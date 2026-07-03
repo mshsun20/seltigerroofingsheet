@@ -17,6 +17,7 @@ const ColourCoated = () => {
     itemIndex: elm?.itemIndex,
     itemName: elm?.itemName,
   }))
+  
   return (
     <div className="content-layout">
       <LazyWrapper><Banner data={"Colour Coated Sheet and Coil"} info={colourCoatedSheetCoilBanner} /></LazyWrapper>
