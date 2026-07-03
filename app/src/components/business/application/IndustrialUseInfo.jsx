@@ -8,13 +8,16 @@ import Image from 'next/image';
 const IndustrialUseInfo = () => {
   return (
     <div className="industrial-use-info-layout">
+
       <div className={industrialUseInfoDetails[0]?.mainContent?.textualContents?.className}>
-        {industrialUseInfoDetails[0]?.mainContent?.textualContents?.contents?.length>0
-        && industrialUseInfoDetails[0]?.mainContent?.textualContents?.contents?.map((elm, i) => (
-          <SafeHtmlRenderer content={elm} key={i} />
-        ))}
-        <div className="industrial-use-info-link">
-          <Link href={`/contact`}>Contact Us</Link>
+        <div className="contnr">
+          {industrialUseInfoDetails[0]?.mainContent?.textualContents?.contents?.length>0
+          && industrialUseInfoDetails[0]?.mainContent?.textualContents?.contents?.map((elm, i) => (
+            <SafeHtmlRenderer content={elm} key={i} />
+          ))}
+          <div className="industrial-use-info-link">
+            <Link href={`/contact`}>Contact Us</Link>
+          </div>
         </div>
       </div>
       <div className="industrial-use-info-hdr">
@@ -32,22 +35,24 @@ const IndustrialUseInfo = () => {
         <div className={industrialUseInfoDetails[0]?.heading?.className}>{industrialUseInfoDetails[0]?.heading?.data}</div>
       </div>
       <div className="industrial-use-info-container">
-        <div className={industrialUseInfoDetails[0]?.mainContent?.className}>
-          <div className={industrialUseInfoDetails[0]?.mainContent?.graphicalContents?.className}>
-            {industrialUseInfoDetails[0]?.mainContent?.graphicalContents?.contents?.length>0
-            && industrialUseInfoDetails[0]?.mainContent?.graphicalContents?.contents?.map(elm => 
-              <div
-                className="graphical-content-info"
-                key={elm?.contentIndex}
-              >
-                <Image
-                  src={elm?.url}
-                  alt={elm?.alt}
-                  width={elm?.width}
-                  height={elm?.height}
-                />
-              </div>
-            )}
+        <div className="contnr">
+          <div className={industrialUseInfoDetails[0]?.mainContent?.className}>
+            <div className={industrialUseInfoDetails[0]?.mainContent?.graphicalContents?.className}>
+              {industrialUseInfoDetails[0]?.mainContent?.graphicalContents?.contents?.length>0
+              && industrialUseInfoDetails[0]?.mainContent?.graphicalContents?.contents?.map(elm => 
+                <div
+                  className="graphical-content-info"
+                  key={elm?.contentIndex}
+                >
+                  <Image
+                    src={elm?.url}
+                    alt={elm?.alt}
+                    width={elm?.width}
+                    height={elm?.height}
+                  />
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

@@ -10,24 +10,26 @@ const Brands = () => {
     
   return (
     <div className="brands-layout">
-        <div className="brands-hdr">
-            <div className="brands-top">
-                <span className={brandDetails[0]?.topper?.icon?.className}>
-                    <Image
-                        src={brandDetails[0]?.topper?.icon?.url}
-                        alt={brandDetails[0]?.topper?.icon?.alt}
-                        width={parseInt(brandDetails[0]?.topper?.icon?.width)}
-                        height={parseInt(brandDetails[0]?.topper?.icon?.height)}
-                    />
-                </span>
-                <span className={brandDetails[0]?.topper?.text?.className}>{brandDetails[0]?.topper?.text?.data}</span>
+        <div className="contnr">
+            <div className="brands-hdr">
+                <div className="brands-top">
+                    <span className={brandDetails[0]?.topper?.icon?.className}>
+                        <Image
+                            src={brandDetails[0]?.topper?.icon?.url}
+                            alt={brandDetails[0]?.topper?.icon?.alt}
+                            width={parseInt(brandDetails[0]?.topper?.icon?.width)}
+                            height={parseInt(brandDetails[0]?.topper?.icon?.height)}
+                        />
+                    </span>
+                    <span className={brandDetails[0]?.topper?.text?.className}>{brandDetails[0]?.topper?.text?.data}</span>
+                </div>
+                <div className={brandDetails[0]?.heading?.className}>{brandDetails[0]?.heading?.data}</div>
             </div>
-            <div className={brandDetails[0]?.heading?.className}>{brandDetails[0]?.heading?.data}</div>
-        </div>
-        <div className="brands-container">
-            {brandDetails[0]?.allBrands?.map((brand, index) => (
-                <BrandItems key={index} data={brand} />
-            ))}
+            <div className="brands-container">
+                {brandDetails[0]?.allBrands?.map((brand, index) => (
+                    <BrandItems key={index} data={brand} />
+                ))}
+            </div>
         </div>
     </div>
   )

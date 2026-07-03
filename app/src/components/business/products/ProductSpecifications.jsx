@@ -33,61 +33,63 @@ const ProductSpecifications = ({ dataSet = {}, tabs = [] }) => {
 
   return (
     <div className="product-specifications-layout">
-        <div className="product-specifications-hdr">
-            <div className="product-specifications-top">
-                <span className="topper-icon">
-                    <Image
-                        src={dataSet?.topper?.icon?.url}
-                        alt={dataSet?.topper?.icon?.alt}
-                        width={parseInt(dataSet?.topper?.icon?.width)}
-                        height={parseInt(dataSet?.topper?.icon?.height)}
-                    />
-                </span>
-                <span className="topper-text">{dataSet?.topper?.text?.data}</span>
+        <div className="contnr">
+            <div className="product-specifications-hdr">
+                <div className="product-specifications-top">
+                    <span className="topper-icon">
+                        <Image
+                            src={dataSet?.topper?.icon?.url}
+                            alt={dataSet?.topper?.icon?.alt}
+                            width={parseInt(dataSet?.topper?.icon?.width)}
+                            height={parseInt(dataSet?.topper?.icon?.height)}
+                        />
+                    </span>
+                    <span className="topper-text">{dataSet?.topper?.text?.data}</span>
+                </div>
+                <div className="product-specifications-heading">{dataSet?.heading?.data}</div>
             </div>
-            <div className="product-specifications-heading">{dataSet?.heading?.data}</div>
-        </div>
-        <div className="product-specifications-container">
-            {tabs?.length>1 && (
-                <div className="product-specifications-tabs">
-                    {tabs?.map(tabItem => (
-                        <div
-                            key={tabItem?.itemIndex}
-                            className={`product-specifications-tab-item ${tab === tabItem?.itemName ? "active" : ""}`}
-                            onClick={(e) => handleTab(e, tab?.itemIndex)}
-                        >
-                            {tabItem?.itemName}
+            <div className="product-specifications-container">
+                {tabs?.length>1 && (
+                    <div className="product-specifications-tabs">
+                        {tabs?.map(tabItem => (
+                            <div
+                                key={tabItem?.itemIndex}
+                                className={`product-specifications-tab-item ${tab === tabItem?.itemName ? "active" : ""}`}
+                                onClick={(e) => handleTab(e, tab?.itemIndex)}
+                            >
+                                {tabItem?.itemName}
+                            </div>
+                        ))}
+                    </div>
+                )}
+                <div className="product-specifications-contents">
+                    {tabContents?.itemSpecifications?.length>0
+                    && tabContents?.itemSpecifications?.map(spec => (
+                        <div className="product-specifications-section" key={spec?.specsIndex}>
+                            <div className="product-specifications-icon">
+                                <Image
+                                    src={spec?.propertyIcon?.url}
+                                    alt={spec?.propertyIcon?.alt}
+                                    width={spec?.propertyIcon?.width}
+                                    height={spec?.propertyIcon?.height}
+                                />
+                            </div>
+                            <div className="product-specifications-info">
+                                <div className="product-specifications-info-heading">{spec?.propertyHeading}</div>
+                                <div className="product-specifications-info-details">
+                                    <SafeHtmlRenderer content={spec?.propertyDetails} />
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>
-            )}
-            <div className="product-specifications-contents">
-                {tabContents?.itemSpecifications?.length>0
-                && tabContents?.itemSpecifications?.map(spec => (
-                    <div className="product-specifications-section" key={spec?.specsIndex}>
-                        <div className="product-specifications-icon">
-                            <Image
-                                src={spec?.propertyIcon?.url}
-                                alt={spec?.propertyIcon?.alt}
-                                width={spec?.propertyIcon?.width}
-                                height={spec?.propertyIcon?.height}
-                            />
-                        </div>
-                        <div className="product-specifications-info">
-                            <div className="product-specifications-info-heading">{spec?.propertyHeading}</div>
-                            <div className="product-specifications-info-details">
-                                <SafeHtmlRenderer content={spec?.propertyDetails} />
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
-            <div className="product-specifications-description">
-                <SafeHtmlRenderer content={tabContents?.itemDescription} />
-            </div>
-            <div className="product-specifications-action">
-                {tabContents?.itemDetails
-                && <button onClick={() => setOpen(true)}>{tabContents?.itemDetails?.info}</button>}
+                <div className="product-specifications-description">
+                    <SafeHtmlRenderer content={tabContents?.itemDescription} />
+                </div>
+                <div className="product-specifications-action">
+                    {tabContents?.itemDetails
+                    && <button onClick={() => setOpen(true)}>{tabContents?.itemDetails?.info}</button>}
+                </div>
             </div>
         </div>
 

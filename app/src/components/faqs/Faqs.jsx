@@ -16,34 +16,36 @@ const Faqs = () => {
   return (
     <>
         <div className="faqs-layout">
-            <div className="faqs-hdr">
-                <div className="faqs-top">
-                    <span className={faqData[0]?.topper?.icon?.className}>
-                        <Image
-                            src={faqData[0]?.topper?.icon?.url}
-                            alt={faqData[0]?.topper?.icon?.alt}
-                            width={parseInt(faqData[0]?.topper?.icon?.width)}
-                            height={parseInt(faqData[0]?.topper?.icon?.height)}
-                        />
-                    </span>
-                    <span className={faqData[0]?.topper?.text?.className}>{faqData[0]?.topper?.text?.data}</span>
+            <div className="contnr">
+                <div className="faqs-hdr">
+                    <div className="faqs-top">
+                        <span className={faqData[0]?.topper?.icon?.className}>
+                            <Image
+                                src={faqData[0]?.topper?.icon?.url}
+                                alt={faqData[0]?.topper?.icon?.alt}
+                                width={parseInt(faqData[0]?.topper?.icon?.width)}
+                                height={parseInt(faqData[0]?.topper?.icon?.height)}
+                            />
+                        </span>
+                        <span className={faqData[0]?.topper?.text?.className}>{faqData[0]?.topper?.text?.data}</span>
+                    </div>
+                    <div className={faqData[0]?.heading?.className}>{faqData[0]?.heading?.data}</div>
                 </div>
-                <div className={faqData[0]?.heading?.className}>{faqData[0]?.heading?.data}</div>
-            </div>
-            <div className="faqs-container">                
-                <Accordion
-                    items={items}
-                    defaultOpen={0}
-                    multiple={false}
-                    renderItem={(faq, isOpen, toggle) => (
-                        <FaqItem
-                            key={faq.id}
-                            faq={faq}
-                            isOpen={isOpen}
-                            toggle={toggle}
-                        />
-                    )}
-                />
+                <div className="faqs-container">                
+                    <Accordion
+                        items={items}
+                        defaultOpen={0}
+                        multiple={false}
+                        renderItem={(faq, isOpen, toggle) => (
+                            <FaqItem
+                                key={faq.id}
+                                faq={faq}
+                                isOpen={isOpen}
+                                toggle={toggle}
+                            />
+                        )}
+                    />
+                </div>
             </div>
         </div>
     </>

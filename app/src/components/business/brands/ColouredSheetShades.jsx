@@ -16,37 +16,39 @@ const ColouredSheetShades = ({ dataSet = {}, tabs = [] }) => {
 
   return (
     <div className="coloured-sheet-applications-layout">
-        <div className="coloured-sheet-applications-hdr">
-            <div className="coloured-sheet-applications-top">
-                <span className="topper-icon">
+        <div className="contnr">
+            <div className="coloured-sheet-applications-hdr">
+                <div className="coloured-sheet-applications-top">
+                    <span className="topper-icon">
+                        <Image
+                            src={dataSet?.topper?.icon?.url}
+                            alt={dataSet?.topper?.icon?.alt}
+                            width={parseInt(dataSet?.topper?.icon?.width)}
+                            height={parseInt(dataSet?.topper?.icon?.height)}
+                        />
+                    </span>
+                    <span className="topper-text">{dataSet?.topper?.text?.data}</span>
+                </div>
+                <div className="coloured-sheet-applications-heading">{dataSet?.heading?.data}</div>
+            </div>
+            <div className="coloured-sheet-applications-container">
+                <div className="coloured-sheet-applications-tabs">
+                    {tabs?.length>0 && tabs?.map(itm => (
+                        <div
+                            key={itm?.itemIndex}
+                            onClick={(e) => handleTab(e, itm?.itemIndex)}
+                            style={{backgroundColor:itm.itemColour}}
+                        ></div>
+                    ))}
+                </div>
+                <div className="coloured-sheet-applications-contents">
                     <Image
-                        src={dataSet?.topper?.icon?.url}
-                        alt={dataSet?.topper?.icon?.alt}
-                        width={parseInt(dataSet?.topper?.icon?.width)}
-                        height={parseInt(dataSet?.topper?.icon?.height)}
+                        src={tabContents[tabIndex]?.shades?.url}
+                        alt={tabContents[tabIndex]?.shades?.alt}
+                        width={tabContents[tabIndex]?.shades?.width}
+                        height={tabContents[tabIndex]?.shades?.height}
                     />
-                </span>
-                <span className="topper-text">{dataSet?.topper?.text?.data}</span>
-            </div>
-            <div className="coloured-sheet-applications-heading">{dataSet?.heading?.data}</div>
-        </div>
-        <div className="coloured-sheet-applications-container">
-            <div className="coloured-sheet-applications-tabs">
-                {tabs?.length>0 && tabs?.map(itm => (
-                    <div
-                        key={itm?.itemIndex}
-                        onClick={(e) => handleTab(e, itm?.itemIndex)}
-                        style={{backgroundColor:itm.itemColour}}
-                    ></div>
-                ))}
-            </div>
-            <div className="coloured-sheet-applications-contents">
-                <Image
-                    src={tabContents[tabIndex]?.shades?.url}
-                    alt={tabContents[tabIndex]?.shades?.alt}
-                    width={tabContents[tabIndex]?.shades?.width}
-                    height={tabContents[tabIndex]?.shades?.height}
-                />
+                </div>
             </div>
         </div>
     </div>

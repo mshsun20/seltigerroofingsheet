@@ -9,10 +9,12 @@ const WallCard = ({
     contentWall,
     title,
     description,
-    renderAction
+    renderAction,
+    width="100%",
+    height="100%",
 }) => {
   return (
-    <div className="wallcard-content" key={id}>
+    <div className="wallcard-content" key={id} style={{ width: width, height: height }}>
         <div className="wall-section">
             <Image
                 src={contentWall?.url}

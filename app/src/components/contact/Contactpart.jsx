@@ -7,9 +7,9 @@ import Contactlocation from './Contactlocation'
 const Contactpart = () => {
   return (
     <div className="contact-part">
-        <Contactlist />
-        <Contactform />
-        <Contactlocation />
+      <Contactlist />
+      <Contactform />
+      <Contactlocation />
     </div>
   )
 }

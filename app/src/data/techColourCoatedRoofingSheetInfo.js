@@ -7,11 +7,11 @@ export const techColourCoatedRoofingSheetInfo = [{
             height: 20
         },
         text: {
-            data: "Vibrant Choices"
+            data: "Advanced Coating Technology"
         }
     },
     heading: {
-        data: "Available Colour in Roofing Sheet"
+        data: "10 Layers of Protection in Our Colour Coated Roofing Sheet"
     },
     contents: {
         graphicalContents: [

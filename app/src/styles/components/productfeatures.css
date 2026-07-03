@@ -1,11 +1,19 @@
 .product-features-layout {
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
     width: 100%;
     height: auto;
-    padding: 5rem 2rem;
+    padding: 5rem;
+
+    .contnr {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        width: 100%;
+        height: auto;
+    }
 }
 
 .product-features-wall {

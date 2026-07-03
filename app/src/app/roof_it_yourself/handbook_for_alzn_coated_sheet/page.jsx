@@ -11,7 +11,9 @@ const AlZnCoatedSheetHandbook = () => {
     <div className="content-layout">
       <LazyWrapper><Banner data={"Handbook for Al-Zn Coated Sheet"} info={alZnCoatedSheetHandbookBanner} /></LazyWrapper>
       <div className="resource-alzn-sheets-main-description">
-        <span>This page gives you the proper overview, strategy, guide and tutorial of aluzinc sheet. You can make perfect decision either you want to buy or to maintenance the existing al-zn alloy sheets.</span>
+        <div className="contnr">
+          <span>This page gives you the proper overview, strategy, guide and tutorial of aluzinc sheet. You can make perfect decision either you want to buy or to maintenance the existing al-zn alloy sheets.</span>
+        </div>
       </div>
       <LazyWrapper><HandbookResourceAlZnSheets /></LazyWrapper>
     </div>

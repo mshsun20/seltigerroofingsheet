@@ -16,34 +16,36 @@ const FeaturedMeetsEvents = () => {
     
   return (
     <div className="featured-section">
-        <div className="featured-hdr">Featured Meets & Events</div>
-        <div className="featured-container">
-            {
-                featured?.length>0 && featured?.map(elm => (
-                    <div className="featured-content" key={elm?.contentIndex}>
-                        <div className="featured-wall">
-                            <Image
-                                src={elm?.contentWall?.url}
-                                alt={elm?.contentWall?.alt}
-                                width={elm?.contentWall?.width}
-                                height={elm?.contentWall?.height}
-                            />
-                        </div>
-                        <div className="featured-info">
-                            <div className="featured-top"></div>
-                            <div className="featured-title" title={elm?.title}>{elm?.title}</div>
-                            <div className="featured-details">
-                                <span><SafeHtmlRenderer content={elm?.contentTextuals} /></span>
+        <div className="contnr">
+            <div className="featured-hdr">Featured Meets & Events</div>
+            <div className="featured-container">
+                {
+                    featured?.length>0 && featured?.map(elm => (
+                        <div className="featured-content" key={elm?.contentIndex}>
+                            <div className="featured-wall">
+                                <Image
+                                    src={elm?.contentWall?.url}
+                                    alt={elm?.contentWall?.alt}
+                                    width={elm?.contentWall?.width}
+                                    height={elm?.contentWall?.height}
+                                />
                             </div>
-                            <div className="featured-actions">
-                                <Link href={`/about/highlights/meets_and_events/${elm.contentSlug}`}>
-                                    Read More
-                                </Link>
+                            <div className="featured-info">
+                                <div className="featured-top"></div>
+                                <div className="featured-title" title={elm?.title}>{elm?.title}</div>
+                                <div className="featured-details">
+                                    <span><SafeHtmlRenderer content={elm?.contentTextuals} /></span>
+                                </div>
+                                <div className="featured-actions">
+                                    <Link href={`/about/highlights/meets_and_events/${elm.contentSlug}`}>
+                                        Read More
+                                    </Link>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))
-            }
+                    ))
+                }
+            </div>
         </div>
     </div>
   )

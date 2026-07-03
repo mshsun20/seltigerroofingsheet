@@ -24,51 +24,53 @@ const ProductUpdates = ({ dataSet = {} }) => {
 
   return (
     <div className="product-updates-layout">
-        <div className="product-updates-hdr">
-            <div className="product-updates-top">
-                <span className="topper-icon">
-                    <Image
-                        src={dataSet?.topper?.icon?.url}
-                        alt={dataSet?.topper?.icon?.alt}
-                        width={parseInt(dataSet?.topper?.icon?.width)}
-                        height={parseInt(dataSet?.topper?.icon?.height)}
-                    />
-                </span>
-                <span className="topper-text">{dataSet?.topper?.text?.data}</span>
+        <div className="contnr">
+            <div className="product-updates-hdr">
+                <div className="product-updates-top">
+                    <span className="topper-icon">
+                        <Image
+                            src={dataSet?.topper?.icon?.url}
+                            alt={dataSet?.topper?.icon?.alt}
+                            width={parseInt(dataSet?.topper?.icon?.width)}
+                            height={parseInt(dataSet?.topper?.icon?.height)}
+                        />
+                    </span>
+                    <span className="topper-text">{dataSet?.topper?.text?.data}</span>
+                </div>
+                <div className="product-updates-heading">{dataSet?.heading?.data}</div>
             </div>
-            <div className="product-updates-heading">{dataSet?.heading?.data}</div>
-        </div>
-        <div className="product-updates-container">
-            <div className="product-updates-contents">
-                <CarouselSlider
-                    data={dataSet?.contents?.graphicalContents}
-                    cardWidth={80}
-                    slideWidth={50}
-                    gap={50}
-                    autoPlay={true}
-                    autoDelay={5000}
-                    renderItem={(item) => (
-                        <div>
-                            <Image
-                                src={item?.image?.url || "/"}
-                                alt={item?.image?.alt || "No Image"}
-                                width={item?.image?.width || 0}
-                                height={item?.image?.height || 0}
-                            />
-                        </div>
-                    )}
-                    animationConfig={{
-                        activeOpacity: 1,
-                        inactiveOpacity: 0.4,
-                        activeBlur: "0",
-                        inactiveBlur: "0.2rem"
-                    }}
-                    springConfig={{
-                        type: "spring",
-                        stiffness: 150,
-                        damping: 50
-                    }}
-                />
+            <div className="product-updates-container">
+                <div className="product-updates-contents">
+                    <CarouselSlider
+                        data={dataSet?.contents?.graphicalContents}
+                        cardWidth={80}
+                        slideWidth={50}
+                        gap={50}
+                        autoPlay={true}
+                        autoDelay={5000}
+                        renderItem={(item) => (
+                            <div>
+                                <Image
+                                    src={item?.image?.url || "/"}
+                                    alt={item?.image?.alt || "No Image"}
+                                    width={item?.image?.width || 0}
+                                    height={item?.image?.height || 0}
+                                />
+                            </div>
+                        )}
+                        animationConfig={{
+                            activeOpacity: 1,
+                            inactiveOpacity: 0.4,
+                            activeBlur: "0",
+                            inactiveBlur: "0.2rem"
+                        }}
+                        springConfig={{
+                            type: "spring",
+                            stiffness: 150,
+                            damping: 50
+                        }}
+                    />
+                </div>
             </div>
         </div>
     </div>

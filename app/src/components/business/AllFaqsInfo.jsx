@@ -14,35 +14,37 @@ const AllFaqsInfo = ({ dataSet = {} }) => {
 
   return (
     <div className="all-faq-layout">
-        <div className="all-faq-hdr">
-            <div className="all-faq-top">
-                <span className={dataSet?.topper?.icon?.className}>
-                    <Image
-                        src={dataSet?.topper?.icon?.url}
-                        alt={dataSet?.topper?.icon?.alt}
-                        width={parseInt(dataSet?.topper?.icon?.width)}
-                        height={parseInt(dataSet?.topper?.icon?.height)}
-                    />
-                </span>
-                <span className={dataSet?.topper?.text?.className}>{dataSet?.topper?.text?.data}</span>
-            </div>
-            <div className={dataSet?.heading?.className}>{dataSet?.heading?.data}</div>
-        </div>
-        <div className="all-faq-container">
-            <div className={dataSet?.mainContent?.className}>
-                <Accordion
-                    items={items}
-                    defaultOpen={0}
-                    multiple={false}
-                    renderItem={(item, isOpen, toggle) => (
-                        <AllFaqs
-                            key={item.id}
-                            item={item}
-                            isOpen={isOpen}
-                            toggle={toggle}
+        <div className="contnr">
+            <div className="all-faq-hdr">
+                <div className="all-faq-top">
+                    <span className={dataSet?.topper?.icon?.className}>
+                        <Image
+                            src={dataSet?.topper?.icon?.url}
+                            alt={dataSet?.topper?.icon?.alt}
+                            width={parseInt(dataSet?.topper?.icon?.width)}
+                            height={parseInt(dataSet?.topper?.icon?.height)}
                         />
-                    )}
-                />
+                    </span>
+                    <span className={dataSet?.topper?.text?.className}>{dataSet?.topper?.text?.data}</span>
+                </div>
+                <div className={dataSet?.heading?.className}>{dataSet?.heading?.data}</div>
+            </div>
+            <div className="all-faq-container">
+                <div className={dataSet?.mainContent?.className}>
+                    <Accordion
+                        items={items}
+                        defaultOpen={0}
+                        multiple={false}
+                        renderItem={(item, isOpen, toggle) => (
+                            <AllFaqs
+                                key={item.id}
+                                item={item}
+                                isOpen={isOpen}
+                                toggle={toggle}
+                            />
+                        )}
+                    />
+                </div>
             </div>
         </div>
     </div>

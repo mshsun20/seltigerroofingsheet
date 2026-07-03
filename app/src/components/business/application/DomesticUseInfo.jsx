@@ -9,12 +9,14 @@ const DomesticUseInfo = () => {
   return (
     <div className="domestic-use-info-layout">
         <div className={domesticUseInfoDetails[0]?.mainContent?.textualContents?.className}>
-            {domesticUseInfoDetails[0]?.mainContent?.textualContents?.contents?.length>0
-            && domesticUseInfoDetails[0]?.mainContent?.textualContents?.contents?.map((elm, i) => (
-                <SafeHtmlRenderer content={elm} key={i} />
-            ))}
-            <div className="domestic-use-info-link">
-                <Link href={`/contact`}>Contact Us</Link>
+            <div className="contnr">
+                {domesticUseInfoDetails[0]?.mainContent?.textualContents?.contents?.length>0
+                && domesticUseInfoDetails[0]?.mainContent?.textualContents?.contents?.map((elm, i) => (
+                    <SafeHtmlRenderer content={elm} key={i} />
+                ))}
+                <div className="domestic-use-info-link">
+                    <Link href={`/contact`}>Contact Us</Link>
+                </div>
             </div>
         </div>
         <div className="domestic-use-info-hdr">
@@ -32,22 +34,24 @@ const DomesticUseInfo = () => {
             <div className={domesticUseInfoDetails[0]?.heading?.className}>{domesticUseInfoDetails[0]?.heading?.data}</div>
         </div>
         <div className="domestic-use-info-container">
-            <div className={domesticUseInfoDetails[0]?.mainContent?.className}>
-                <div className={domesticUseInfoDetails[0]?.mainContent?.graphicalContents?.className}>
-                    {domesticUseInfoDetails[0]?.mainContent?.graphicalContents?.contents?.length>0
-                    && domesticUseInfoDetails[0]?.mainContent?.graphicalContents?.contents?.map(elm => 
-                        <div
-                            className="graphical-content-info"
-                            key={elm?.contentIndex}
-                        >
-                            <Image
-                                src={elm?.url}
-                                alt={elm?.alt}
-                                width={elm?.width}
-                                height={elm?.height}
-                            />
-                        </div>
-                    )}
+            <div className="contnr">
+                <div className={domesticUseInfoDetails[0]?.mainContent?.className}>
+                    <div className={domesticUseInfoDetails[0]?.mainContent?.graphicalContents?.className}>
+                        {domesticUseInfoDetails[0]?.mainContent?.graphicalContents?.contents?.length>0
+                        && domesticUseInfoDetails[0]?.mainContent?.graphicalContents?.contents?.map(elm => 
+                            <div
+                                className="graphical-content-info"
+                                key={elm?.contentIndex}
+                            >
+                                <Image
+                                    src={elm?.url}
+                                    alt={elm?.alt}
+                                    width={elm?.width}
+                                    height={elm?.height}
+                                />
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>

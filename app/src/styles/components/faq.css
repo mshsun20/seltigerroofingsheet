@@ -62,7 +62,7 @@
     flex-direction: column;
     background-color: #f3f3f8;
     width: 100%;
-    max-width: 75rem;
+    /* max-width: 75rem; */
     margin-top: 2rem;
     overflow: hidden;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import dynamic from "next/dynamic";
 import LazyWrapper from '@/components/common/LazyWrapper';
 import { csrData } from "@/data/csrData";
-const Banner = dynamic(() => import("@/components/generic/Banner"))
+const Banner = dynamic(() => import("@/components/common/Banner"))
 import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer"
 import Image from 'next/image';
 

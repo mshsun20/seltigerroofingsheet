@@ -201,6 +201,12 @@
     }
 }
 
+.choose-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 .choose-actions a {
     display: flex;
     justify-content: center;
