@@ -28,7 +28,7 @@ export const techColourCoatedRoofingSheetInfo = [{
         ]
     },
     action: {
-        url: `/`,
+        url: `/contact`,
         info: `Enquiry for Bulk Order`
     }
 }]

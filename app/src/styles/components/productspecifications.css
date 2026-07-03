@@ -161,10 +161,12 @@
 
     button {
         background-color: var(--theme);
-        color: white;
         padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
         text-decoration: none;
+        border-radius: 0.5rem;
         cursor: pointer;
         transition: all 0.2s ease-in-out;
 

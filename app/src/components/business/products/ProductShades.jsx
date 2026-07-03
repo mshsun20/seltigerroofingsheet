@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React from 'react'
 import "@/styles/components/productshades.css";
 import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer";
+import Link from 'next/link';
 
 const ProductShades = ({ dataSet = {}, tabs = [] }) => {
     const [tabContents, setTabContents] = React.useState({... dataSet?.contents[0]})
@@ -76,6 +77,11 @@ const ProductShades = ({ dataSet = {}, tabs = [] }) => {
                         ))}
                     </div>
                 </div>
+            </div>
+            <div className="product-shades-action">
+                <Link href={dataSet?.action?.url}>
+                    {dataSet?.action?.info}
+                </Link>
             </div>
         </div>
     </div>

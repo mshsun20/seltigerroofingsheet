@@ -135,7 +135,7 @@ export const shadesColourCoatedRoofingSheetInfo = [{
         }
     ],
     action: {
-        url: `/`,
-        info: `Enquiry for Bulk Order`
+        url: `/contact`,
+        info: `Enquiry Now`
     }
 }]
