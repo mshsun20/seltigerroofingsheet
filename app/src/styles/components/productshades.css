@@ -130,7 +130,7 @@
 .product-shades-item {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     width: 100%;
     transition: all 0.2s ease-in-out;
@@ -160,8 +160,8 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: auto;
-    padding: 1rem;
+    height: 10rem;
+    padding: 1rem 0;
     transition: all 0.2s ease-in-out;
 
     img {
