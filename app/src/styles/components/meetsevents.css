@@ -1,5 +1,5 @@
 /* featured */
-.featured-section {
+.featured-layout {
     position: relative;
     display: flex;
     justify-content: center;
@@ -8,7 +8,7 @@
     background-color: #ffffff;
     width: 100%;
     height: auto;
-    padding: 5rem 2rem;
+    padding: 5rem;
 }
 .featured-hdr {
     font-size: 2.5rem;
@@ -123,7 +123,7 @@
     background-color: #ffffff;
     width: 100%;
     height: auto;
-    padding: 5rem 2rem;
+    padding: 5rem;
 }
 .meets-events-hdr {
     font-size: 2.5rem;

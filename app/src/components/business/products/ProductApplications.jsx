@@ -5,14 +5,38 @@ import "@/styles/components/productapplications.css";
 import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer";
 
 const ProductApplications = ({ dataSet = {}, tabs = [] }) => {
-    const [tabContents, setTabContents] = React.useState({... dataSet[0]})
+    const [tab, setTab] = React.useState(tabs[0]?.itemName);
+    const [app, setApp] = React.useState({...dataSet[0]?.contents[0]?.itemApplications[0]});
+    const [tabContents, setTabContents] = React.useState({... dataSet?.contents[0]})
     const [open, setOpen] = React.useState(false);
+    const modalRef = React.useRef();
 
     const handleTab = React.useCallback((e, indx) => {
         e.preventDefault();
-        const itemSpecs = dataSet?.find(d => parseInt(d.itemIndex)===parseInt(indx))
+        setTab(tabs[indx]?.itemName)
+        const itemSpecs = dataSet?.contents?.find(d => parseInt(d.itemIndex)===parseInt(indx))
         setTabContents({...itemSpecs})
-    }, [dataSet])
+    }, [dataSet, tabs])
+
+    const handleApp = React.useCallback((e, indx) => {
+        e.preventDefault();
+        setApp(tabContents?.itemApplications[indx])
+        setOpen(true)
+    }, [tabContents])
+
+    const handleClickOutside = React.useCallback((e) => {
+        if (modalRef.current && !modalRef.current.contains(e.target)) {
+            setOpen(false)
+        }
+    }, [])
+    React.useEffect(() => {
+        if (open) {
+            document.addEventListener("mousedown", handleClickOutside);
+        }
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [handleClickOutside, open])
 
   return (
     <div className="product-applications-layout">
@@ -37,34 +61,27 @@ const ProductApplications = ({ dataSet = {}, tabs = [] }) => {
                         <div
                             key={itm?.itemIndex}
                             onClick={(e) => handleTab(e, itm?.itemIndex)}
+                            className={`product-applications-tab-item ${tab === itm?.itemName ? "active" : ""}`}
                         >
                             {itm?.itemName}
                         </div>
                     ))}
                 </div>
                 <div className="product-applications-contents">
-                    {tabContents?.itemImages?.length>0
-                    && tabContents?.itemImages?.map(img => (
-                        <div className="product-applications-section" key={img?.imgsIndex}>
+                    {tabContents?.itemApplications?.length>0
+                    && tabContents?.itemApplications?.map(itm => (
+                        <div className="product-applications-section" key={itm?.contentIndex}>
                             <button
                                 className="product-applications-action"
-                                onClick={() => setOpen(true)}
+                                onClick={(e) => handleApp(e, itm?.contentIndex)}
                             >
                                 <Image
-                                    src={img?.itemImage?.url}
-                                    alt={img?.itemImage?.alt}
-                                    width={img?.itemImage?.width}
-                                    height={img?.itemImage?.height}
+                                    src={itm?.url}
+                                    alt={itm?.alt}
+                                    width={itm?.width}
+                                    height={itm?.height}
                                 />
                             </button>
-                            {open && <div className="product-applications-modal">
-                                <Image
-                                    src={img?.itemImage?.url}
-                                    alt={img?.itemImage?.alt}
-                                    width={img?.itemImage?.width}
-                                    height={img?.itemImage?.height}
-                                />
-                            </div>}
                         </div>
                     ))}
                 </div>
@@ -73,6 +90,25 @@ const ProductApplications = ({ dataSet = {}, tabs = [] }) => {
                 </div>
             </div>
         </div>
+
+        {open && <div className="product-applications-modal">
+            <div className="product-applications-modal-container" ref={modalRef}>
+                <button
+                    className="product-applications-modal-close"
+                    onClick={() => setOpen(false)}
+                >
+                    X
+                </button>
+                <div className="product-applications-modal-contents">
+                    <Image
+                        src={app?.url}
+                        alt={app?.alt}
+                        width={app?.width}
+                        height={app?.height}
+                    />
+                </div>
+            </div>
+        </div>}
     </div>
   )
 }

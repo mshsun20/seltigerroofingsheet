@@ -3,10 +3,17 @@ import Image from 'next/image';
 import React from 'react'
 import "@/styles/components/productupdates.css";
 import CarouselSlider from "@/components/common/CarouselSlider";
+import ProductUpdatesCard from "./ProductUpdatesCard";
 
 const ProductUpdates = ({ dataSet = {} }) => {
     const [open, setOpen] = React.useState(false);
+    const [selectedImage, setSelectedImage] = React.useState(null);
     const modalRef = React.useRef();
+
+    const handleImageClick = React.useCallback((image) => {
+        setSelectedImage(image);
+        setOpen(true);
+    }, []);
 
     const handleClickOutside = React.useCallback((e) => {
         if (modalRef.current && !modalRef.current.contains(e.target)) {
@@ -21,6 +28,21 @@ const ProductUpdates = ({ dataSet = {} }) => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [handleClickOutside, open])
+    React.useEffect(() => {
+        const handleEsc = (e) => {
+            if (e.key === "Escape") {
+                setOpen(false);
+            }
+        };
+
+        if (open) {
+            document.addEventListener("keydown", handleEsc);
+        }
+
+        return () => {
+            document.removeEventListener("keydown", handleEsc);
+        };
+    }, [open]);
 
   return (
     <div className="product-updates-layout">
@@ -40,39 +62,56 @@ const ProductUpdates = ({ dataSet = {} }) => {
                 <div className="product-updates-heading">{dataSet?.heading?.data}</div>
             </div>
             <div className="product-updates-container">
-                <div className="product-updates-contents">
-                    <CarouselSlider
-                        data={dataSet?.contents?.graphicalContents}
-                        cardWidth={80}
-                        slideWidth={50}
-                        gap={50}
-                        autoPlay={true}
-                        autoDelay={5000}
-                        renderItem={(item) => (
-                            <div>
-                                <Image
-                                    src={item?.image?.url || "/"}
-                                    alt={item?.image?.alt || "No Image"}
-                                    width={item?.image?.width || 0}
-                                    height={item?.image?.height || 0}
-                                />
-                            </div>
-                        )}
-                        animationConfig={{
-                            activeOpacity: 1,
-                            inactiveOpacity: 0.4,
-                            activeBlur: "0",
-                            inactiveBlur: "0.2rem"
-                        }}
-                        springConfig={{
-                            type: "spring",
-                            stiffness: 150,
-                            damping: 50
-                        }}
-                    />
-                </div>
+                <CarouselSlider
+                    data={dataSet?.contents?.graphicalContents}
+                    slideWidth={100}
+                    gap={350}
+                    autoPlay={true}
+                    autoDelay={5000}
+                    renderItem={(item) => (
+                        <ProductUpdatesCard
+                            item={item}
+                            onClick={handleImageClick}
+                        />
+                    )}
+                    animationConfig={{
+                        activeOpacity: 1,
+                        inactiveOpacity: 1,
+                        activeBlur: "0",
+                        inactiveBlur: "0"
+                    }}
+                    springConfig={{
+                        type: "fade",
+                        stiffness: 150,
+                        damping: 50
+                    }}
+                />
             </div>
         </div>
+
+        {
+            open && selectedImage && (
+                <div className="product-updates-modal">
+                    <div
+                        className="product-updates-modal-container"
+                        ref={modalRef}
+                    >
+                        <button
+                            className="product-updates-modal-close"
+                            onClick={() => setOpen(false)}
+                        >
+                            ✕
+                        </button>
+                        <Image
+                            src={selectedImage.url}
+                            alt={selectedImage.alt}
+                            width={selectedImage.width}
+                            height={selectedImage.height}
+                        />
+                    </div>
+                </div>
+            )
+        }
     </div>
   )
 }

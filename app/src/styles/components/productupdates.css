@@ -6,7 +6,7 @@
     flex-direction: column;
     width: 100%;
     height: auto;
-    padding: 5rem 2rem;
+    padding: 5rem;
 }
 
 .product-updates-hdr {
@@ -61,7 +61,7 @@
     justify-content: center;
     align-items: space-between;
     flex-direction: column;
-    height: auto;
+    height: 35rem;
     padding: 2rem 0;
 }
 
@@ -114,37 +114,6 @@
         box-shadow: 0 0 1rem #00000033;
     }
 }
-.product-updates-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f1dfc5c0;
-    width: 75%;
-    height: 80%;
-
-    img {
-        width: 50%;
-        height: auto;
-    }
-}
-.product-updates-info {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-}
-.product-updates-info-heading {
-    padding: 0.5rem 0;
-    color: var(--theme);
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-.product-updates-info-details {
-    color: #5d5d5d;
-}
-.product-updates-description {
-    padding: 1rem;
-}
 .product-updates-action {
     display: flex;
     justify-content: center;
@@ -168,6 +137,33 @@
     }
 }
 
+
+/* ==========================
+   CONTACT LOCATION CARD
+========================== */
+/* CARD */
+
+.product-updates-slider-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30rem;
+    height: 20rem;
+    background: #ffffff;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: grab;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+/* modal */
 .product-updates-modal {
     position: fixed;
     top: 0;
@@ -178,16 +174,32 @@
     background-color: rgba(0, 0, 0, 0.547);
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     z-index: 1000;
+    animation: fadeIn .25s ease;
+}
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
 }
 .product-updates-modal-container {
     position: relative;
-    width: 90%;
-    max-width: 50rem;
-    height: 100%;
+    top: 0%;
+    left: 0%;
     background-color: white;
-    padding: 1rem;
+    width: 80%;
+    max-width: 50rem;
+    height: 70%;
+    transform: translate(-0%, 0%);
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
 }
 .product-updates-modal-close {
     position: absolute;
@@ -207,41 +219,4 @@
         background-color: #000000;
         box-shadow: 0 0 1rem #00000033;
     }
-}
-.product-updates-modal-contents {
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    padding: 0 1rem;
-    overflow: auto;
-}
-.product-updates-modal-container .stylish-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
-
-    thead {
-        background-color: var(--theme);
-        color: white;
-    }
-    tr {
-        border-bottom: 1px solid #ddd;
-    }
-    th {
-        padding: 0.5rem;
-        text-align: left;
-    }
-    td {
-        padding: 0.5rem;
-        text-align: left;
-    }
-}
-.product-updates-modal-container .gray-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
 }

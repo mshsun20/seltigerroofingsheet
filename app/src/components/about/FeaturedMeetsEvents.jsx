@@ -15,7 +15,7 @@ const FeaturedMeetsEvents = () => {
     }, [])
     
   return (
-    <div className="featured-section">
+    <div className="featured-layout">
         <div className="contnr">
             <div className="featured-hdr">Featured Meets & Events</div>
             <div className="featured-container">
