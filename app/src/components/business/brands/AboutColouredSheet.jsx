@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import "@/styles/components/aboutproduct.css";
+import "@/styles/components/aboutcolouredsheet.css";
 import GallerySlider from "@/components/common/GallerySlider";
 import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer";
 
@@ -10,10 +10,8 @@ const AboutColouredSheet = ({ dataSet = {} }) => {
   return (
     <div className="coloured-sheet-about-layout">
         <div className="contnr">
-            <div className="coloured-sheet-about-wall">
-                <div className="coloured-sheet-about-gallery">
-                    <GallerySlider slides={dataSet?.mainGallery?.galleryItems} />
-                </div>
+            <div className="coloured-sheet-about-gallery">
+                <GallerySlider slides={dataSet?.contents?.mainGallery} />
             </div>
             <div className="coloured-sheet-about-container">
                 <div className="coloured-sheet-about-hdr">
@@ -32,7 +30,7 @@ const AboutColouredSheet = ({ dataSet = {} }) => {
                 </div>
                 <div className="coloured-sheet-about-contents">
                     <div className="coloured-sheet-about-textual-contents">
-                        <SafeHtmlRenderer content={dataSet?.content} />
+                        <SafeHtmlRenderer content={dataSet?.contents?.textualContents} />
                     </div>
                 </div>
                 <div className="coloured-sheet-about-actions">

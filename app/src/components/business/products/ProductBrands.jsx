@@ -27,22 +27,22 @@ const ProductBrands = ({ dataSet = {} }) => {
                 <div className="product-brands-contents">
                     {dataSet?.contents?.length>0
                     && dataSet?.contents?.map(itm => 
-                        <div className={itm?.className} key={itm?.contentIndex}>
-                            <div className="item-wall">
+                        <div className="product-brands-content-item" key={itm?.contentIndex}>
+                            <div className="product-brands-content-item-wall">
                                 <Image
-                                    src={itm?.itemWall?.url}
-                                    alt={itm?.itemWall?.alt}
-                                    width={itm?.itemWall?.width}
-                                    height={itm?.itemWall?.height}
+                                    src={itm?.contentImage?.url}
+                                    alt={itm?.contentImage?.alt}
+                                    width={itm?.contentImage?.width}
+                                    height={itm?.contentImage?.height}
                                 />
                             </div>
-                            <div className="item-info">
-                                <div className="item-info-top"></div>
-                                <div className="item-info-title">{itm?.title}</div>
-                                <div className="item-info-details">
-                                    <span><SafeHtmlRenderer content={itm?.details} /></span>
+                            <div className="product-brands-content-item-info">
+                                <div className="product-brands-content-item-info-top"></div>
+                                <div className="product-brands-content-item-info-title">{itm?.contentTitle}</div>
+                                <div className="product-brands-content-item-info-description">
+                                    <span><SafeHtmlRenderer content={itm?.contentDescription} /></span>
                                 </div>
-                                <div className="item-info-actions">
+                                <div className="product-brands-content-item-info-actions">
                                     <Link href={itm?.action?.url}>{itm?.action?.info}</Link>
                                 </div>
                             </div>

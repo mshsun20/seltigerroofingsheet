@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: var(--background);
     width: 100%;
     height: auto;
     padding: 5rem;
@@ -140,6 +141,7 @@
     font-weight: 600;
 }
 .product-specifications-info-details {
+    padding: 0.5rem 0;
     color: #5d5d5d;
 }
 .product-specifications-description {

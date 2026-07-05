@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import "@/styles/components/aboutproduct.css";
+import "@/styles/components/aboutgalvalume.css";
 import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer";
 
 const AboutGalvalume = ({ dataSet = {} }) => {

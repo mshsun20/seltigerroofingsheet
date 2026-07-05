@@ -1,23 +1,19 @@
 export const industrialUseFaqDetails = [{
     topper: {
         icon: {
-            className: "topper-icon",
             url: "/wp-content/themes/sel/assets/img/icons/sub-logo3.svg",
             alt: "sub logo3",
             width: 20,
             height: 20
         },
         text: {
-            className: "topper-text",
             data: "Know More"
         }
     },
     heading: {
-        className: "industrial-use-faq-heading",
         data: "FAQs"
     },
     mainContent: {
-        className: "industrial-use-faq-contents",
         allContents: [
             {
                 contentIndex: 0,

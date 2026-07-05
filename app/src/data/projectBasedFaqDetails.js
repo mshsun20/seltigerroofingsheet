@@ -1,23 +1,19 @@
 export const projectBasedFaqDetails = [{
     topper: {
         icon: {
-            className: "topper-icon",
             url: "/wp-content/themes/sel/assets/img/icons/sub-logo3.svg",
             alt: "sub logo3",
             width: 20,
             height: 20
         },
         text: {
-            className: "topper-text",
             data: "Know More"
         }
     },
     heading: {
-        className: "project-based-faq-heading",
         data: "FAQs"
     },
     mainContent: {
-        className: "project-based-faq-contents",
         allContents: [
             {
                 contentIndex: 0,

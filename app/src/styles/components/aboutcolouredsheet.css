@@ -1,0 +1,125 @@
+.coloured-sheet-about-layout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    width: 100%;
+    height: auto;
+    padding: 5rem;
+
+    .contnr {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 2rem;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.coloured-sheet-about-gallery {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 2rem 0;
+}
+
+.coloured-sheet-about-container {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+    flex-direction: column;
+    height: auto;
+    padding: 2rem;
+}
+.coloured-sheet-about-hdr {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: auto;
+}
+.coloured-sheet-about-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.coloured-sheet-about-top .topper-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.2rem;
+    
+    img {
+        width: 2rem;
+    }
+}
+.coloured-sheet-about-top .topper-text {
+    margin-left: 0.2rem;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.coloured-sheet-about-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+    max-width: 50rem;
+    padding: 0;
+    color: black;
+    font-size: 2.3rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+
+    .hdng {
+        text-wrap: nowrap;
+    }
+}
+.coloured-sheet-about-contents {
+    width: 100%;
+    height: auto;
+    padding: 1rem 0;
+}
+.coloured-sheet-about-textual-contents {
+    color: #656565;
+    font-size: 1.1rem;
+    letter-spacing: 0.05rem;
+}
+.coloured-sheet-about-actions {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    padding: 1rem 0;
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        height: auto;
+        padding: 0.5rem 1rem;
+        margin-right: 1rem;
+        border-radius: 0.5rem;
+        background-color: var(--theme);
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            background-color: #000000;
+            box-shadow: 0 0 1rem #00000080;
+        }
+    }
+}

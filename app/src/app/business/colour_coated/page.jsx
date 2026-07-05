@@ -1,7 +1,6 @@
 import React from 'react'
 import dynamic from "next/dynamic";
 import LazyWrapper from '@/components/common/LazyWrapper';
-const Banner = dynamic(() => import("@/components/common/Banner"))
 import { colourCoatedSheetCoilBanner } from "@/data/colourCoatedSheetCoilBanner";
 import { aboutColourCoatedRoofingSheetInfo } from "@/data/aboutColourCoatedRoofingSheetInfo";
 import { specsColourCoatedRoofingSheetInfo } from "@/data/specsColourCoatedRoofingSheetInfo";
@@ -10,6 +9,10 @@ import { shadesColourCoatedRoofingSheetInfo } from "@/data/shadesColourCoatedRoo
 import { featuresColourCoatedRoofingSheetInfo } from "@/data/featuresColourCoatedRoofingSheetInfo";
 import { appsColourCoatedRoofingSheetInfo } from "@/data/appsColourCoatedRoofingSheetInfo";
 import { updatesColourCoatedRoofingSheetInfo } from "@/data/updatesColourCoatedRoofingSheetInfo";
+import { brandsColourCoatedRoofingSheetInfo } from "@/data/brandsColourCoatedRoofingSheetInfo";
+import { faqColourCoatedDetails } from "@/data/faqColourCoatedDetails";
+import { commonBusinessEnquiry } from "@/data/commonBusinessEnquiry";
+const Banner = dynamic(() => import("@/components/common/Banner"))
 const AboutProduct = dynamic(() => import("@/components/business/products/AboutProduct"));
 const ProductSpecifications = dynamic(() => import("@/components/business/products/ProductSpecifications"));
 const ProductTechnology = dynamic(() => import("@/components/business/products/ProductTechnology"));
@@ -17,6 +20,9 @@ const ProductShades = dynamic(() => import("@/components/business/products/Produ
 const ProductFeatures = dynamic(() => import("@/components/business/products/ProductFeatures"));
 const ProductApplications = dynamic(() => import("@/components/business/products/ProductApplications"));
 const ProductUpdates = dynamic(() => import("@/components/business/products/ProductUpdates"));
+const ProductBrands = dynamic(() => import("@/components/business/products/ProductBrands"));
+const AllFaqsInfo = dynamic(() => import("@/components/business/AllFaqsInfo"));
+const BusinessEnquiry = dynamic(() => import("@/components/business/BusinessEnquiry"));
 
 const ColourCoated = () => {
   const allTabs = specsColourCoatedRoofingSheetInfo[0]?.contents?.map((elm) => ({
@@ -42,6 +48,9 @@ const ColourCoated = () => {
       <LazyWrapper><ProductFeatures dataSet={featuresColourCoatedRoofingSheetInfo[0]} /></LazyWrapper>
       <LazyWrapper><ProductApplications dataSet={appsColourCoatedRoofingSheetInfo[0]} tabs={allApps} /></LazyWrapper>
       <LazyWrapper><ProductUpdates dataSet={updatesColourCoatedRoofingSheetInfo[0]} /></LazyWrapper>
+      <LazyWrapper><ProductBrands dataSet={brandsColourCoatedRoofingSheetInfo[0]} /></LazyWrapper>
+      <LazyWrapper><AllFaqsInfo dataSet={faqColourCoatedDetails[0]} /></LazyWrapper>
+      <LazyWrapper><BusinessEnquiry dataSet={commonBusinessEnquiry[0]} /></LazyWrapper>
     </div>
   )
 }

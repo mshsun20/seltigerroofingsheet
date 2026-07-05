@@ -1,0 +1,68 @@
+.business-enquiry-layout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #25252588;
+    width: 100%;
+    height: auto;
+    padding: 5rem;
+}
+
+.business-enquiry-parallax {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+.business-enquiry-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+    width: 100%;
+    height: auto;
+}
+.business-enquiry-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.business-enquiry-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: auto;
+    padding: 1rem 0;
+
+    a {
+        background-color: var(--theme);
+        padding: 0.5rem 1rem;
+        color: white;
+        font-size: 1.35rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 0.2rem;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            background-color: #000000;
+            box-shadow: 0 0 1rem #00000033;
+        }
+    }
+}

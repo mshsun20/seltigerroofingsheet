@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 import React from 'react';
-import "@/styles/components/aboutproduct.css";
+import "@/styles/components/galvalumefeatures.css";
 import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer";
 
 const GalvalumeFeatures = () => {

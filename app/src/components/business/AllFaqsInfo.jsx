@@ -17,7 +17,7 @@ const AllFaqsInfo = ({ dataSet = {} }) => {
         <div className="contnr">
             <div className="all-faq-hdr">
                 <div className="all-faq-top">
-                    <span className={dataSet?.topper?.icon?.className}>
+                    <span className="topper-icon">
                         <Image
                             src={dataSet?.topper?.icon?.url}
                             alt={dataSet?.topper?.icon?.alt}
@@ -25,12 +25,12 @@ const AllFaqsInfo = ({ dataSet = {} }) => {
                             height={parseInt(dataSet?.topper?.icon?.height)}
                         />
                     </span>
-                    <span className={dataSet?.topper?.text?.className}>{dataSet?.topper?.text?.data}</span>
+                    <span className="topper-text">{dataSet?.topper?.text?.data}</span>
                 </div>
-                <div className={dataSet?.heading?.className}>{dataSet?.heading?.data}</div>
+                <div className="all-faq-heading">{dataSet?.heading?.data}</div>
             </div>
             <div className="all-faq-container">
-                <div className={dataSet?.mainContent?.className}>
+                <div className="all-faq-item-contents">
                     <Accordion
                         items={items}
                         defaultOpen={0}
