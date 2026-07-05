@@ -1,0 +1,223 @@
+.coloured-sheet-gallery-layout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--background);
+    width: 100%;
+    height: auto;
+    padding: 5rem;
+}
+
+.coloured-sheet-gallery-hdr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+}
+.coloured-sheet-gallery-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.coloured-sheet-gallery-top .topper-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.2rem;
+    img {
+        width: 2rem;
+    }
+}
+.coloured-sheet-gallery-top .topper-text {
+    margin-left: 0.2rem;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.coloured-sheet-gallery-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+    max-width: 50rem;
+    padding: 0;
+    color: black;
+    font-size: 2.3rem;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.1rem;
+
+    .hdng {
+        text-wrap: nowrap;
+    }
+}
+
+.coloured-sheet-gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+    flex-direction: column;
+    height: 35rem;
+    padding: 2rem 0;
+}
+
+.coloured-sheet-gallery-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    padding: 0.5rem 0;
+}
+.coloured-sheet-gallery-tab-item {
+    background-color: var(--background);
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    color: black;
+    font-size: 1.1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 0 1rem #00000033;
+    }
+}
+.coloured-sheet-gallery-tab-item.active {
+    background-color: var(--theme);
+    color: white;
+    box-shadow: 0 0 1rem #00000033;
+}
+.coloured-sheet-gallery-contents {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2rem;
+    width: 100%;
+    padding: 2rem 0;
+}
+.coloured-sheet-gallery-section {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 2fr;
+    gap: 0;
+    width: 100%;
+    height: 8rem;
+    padding: 1rem;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 0 1rem #00000033;
+    }
+}
+.coloured-sheet-gallery-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0;
+
+    button {
+        background-color: var(--theme);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            background-color: #000000;
+            box-shadow: 0 0 1rem #00000033;
+        }
+    }
+}
+
+
+/* ==========================
+   CONTACT LOCATION CARD
+========================== */
+/* CARD */
+
+.coloured-sheet-gallery-slider-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30rem;
+    height: 20rem;
+    background: #ffffff;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: grab;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+/* modal */
+.coloured-sheet-gallery-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.547);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn .25s ease;
+}
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+.coloured-sheet-gallery-modal-container {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    background-color: white;
+    width: 80%;
+    max-width: 50rem;
+    height: 70%;
+    transform: translate(-0%, 0%);
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+.coloured-sheet-gallery-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: -3rem;
+    background-color: var(--theme);
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #000000;
+        box-shadow: 0 0 1rem #00000033;
+    }
+}

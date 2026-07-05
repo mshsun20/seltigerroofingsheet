@@ -1,0 +1,206 @@
+.coloured-sheet-shades-layout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--background);
+    width: 100%;
+    height: auto;
+    padding: 0;
+
+    /* .contnr {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        width: 100%;
+        height: auto;
+    } */
+}
+
+.coloured-sheet-shades-hdr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: linear-gradient(to right, #69bbff 10%, #72c2fe 60%, #6cb9ff);
+    width: 100%;
+    padding: 5rem;
+}
+.coloured-sheet-shades-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.coloured-sheet-shades-top .topper-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.2rem;
+    
+    img {
+        width: 2rem;
+    }
+}
+.coloured-sheet-shades-top .topper-text {
+    margin-left: 0.2rem;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.coloured-sheet-shades-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+    max-width: 50rem;
+    padding: 0;
+    color: white;
+    font-size: 2.3rem;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.1rem;
+
+    .hdng {
+        text-wrap: nowrap;
+    }
+}
+
+.coloured-sheet-shades-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    min-height: 20rem;
+    padding: 1rem 0;
+}
+
+.coloured-sheet-shades-wall {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+.coloured-sheet-shades-tabs {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: white;
+    width: auto;
+    height: auto;
+    padding: 0.5rem;
+    border-radius: 5rem;
+    z-index: 1;
+}
+.coloured-sheet-shades-tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    padding: 1rem;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+        background-color: #e0e0e0;
+        box-shadow: 0 0 1rem #0000004d;
+    }
+}
+.coloured-sheet-shades-contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 0.5rem 0;
+}
+.coloured-sheet-shades-item {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+}
+.coloured-sheet-shades-item-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    color: #414141;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+.coloured-sheet-shades-item-description {
+    color: #505050;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.coloured-sheet-shades-item-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem 0;
+}
+.coloured-sheet-shades-item-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10rem;
+    padding: 1rem 0;
+    transition: all 0.2s ease-in-out;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+.coloured-sheet-shades-action {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0;
+
+    a {
+        background-color: var(--theme);
+        padding: 0.5rem 1rem;
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 0.5rem;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            background-color: black;
+            box-shadow: 0 0 1rem #00000033;
+        }
+    }
+}
