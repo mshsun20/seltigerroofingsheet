@@ -7,145 +7,101 @@ export const featuresAlfaInfo = [{
             height: 20
         },
         text: {
-            data: "What Makes Royale the Best"
+            data: "Effective Performance"
         }
     },
     heading: {
-        data: "Features of SEL Tiger Royale Colour Roofing Sheet"
+        data: "Features of Alfa Aluminium Zinc Sheet"
     },
     contents: {
         contentFeatures: [
             {
                 contentIndex: 0,
-                contentTitle: "1500 Hours Salt Spray Test",
+                contentTitle: "Affordability",
                 contentIcon: {
-                    url: "/wp-content/uploads/2026/06/SST_1500.webp",
+                    url: "/wp-content/uploads/2026/06/Affordability.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
-                },
-                contentDescription: `<span>It ensures high corrosion resistance of our roofing sheet.</span>`,
+                },                                                                                                                                                                                  
+                contentDescription: `<span>Designed to offer strength and protection at a cost that fits all kinds of budgets.</span>`,
             },
             {
                 contentIndex: 1,
-                contentTitle: "Back Coat",
+                contentTitle: "Consistent Quality",
                 contentIcon: {
-                    url: "/wp-content/uploads/2026/06/SEL_15-years-Warranty.webp",
+                    url: "/wp-content/uploads/2026/06/Consistent-Quality.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>Every aluminium zinc coated sheet meets the same standard to keep performance steady across projects.</span>`,
             },
             {
                 contentIndex: 2,
-                contentTitle: "Primer",
+                contentTitle: "Reliable",
                 contentIcon: {
-                    url: "/wp-content/uploads/2026/06/10-Layers-Protection.webp",
+                    url: "/wp-content/uploads/2026/06/Reliability.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>Built to handle rough weather and daily wear without giving up on strength.</span>`,
             },
             {
                 contentIndex: 3,
-                contentTitle: "Thickness (mm)",
+                contentTitle: "Consistent Supply",
                 contentIcon: {
-                    url: "/wp-content/uploads/2026/06/Colour-Vibrancy.webp",
+                    url: "/wp-content/uploads/2026/06/Consistant-Supply.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>Available when needed so your projects never slow down or stop.</span>`,
             },
             {
                 contentIndex: 4,
-                contentTitle: "Width (mm)",
-                contentIcon: {
-                    url: "/wp-content/uploads/2026/06/ISI-Certified.webp",
-                    alt: "sub logo3",
-                    width: 1000,
-                    height: 1000
-                },
-                contentDescription: `<span>dedqdd</span>`,
-            },
-            {
-                contentIndex: 5,
-                contentTitle: "Coil weight (mt)",
-                contentIcon: {
-                    url: "/wp-content/uploads/2026/06/UV-Resistance.webp",
-                    alt: "sub logo3",
-                    width: 1000,
-                    height: 1000
-                },
-                contentDescription: `<span>dedqdd</span>`,
-            },
-            {
-                contentIndex: 6,
-                contentTitle: "Paint Type",
-                contentIcon: {
-                    url: "/wp-content/uploads/2026/06/Seperior-Paint-Technology.webp",
-                    alt: "sub logo3",
-                    width: 1000,
-                    height: 1000
-                },
-                contentDescription: `<span>dedqdd</span>`,
-            },
-            {
-                contentIndex: 7,
-                contentTitle: "Coating",
-                contentIcon: {
-                    url: "/wp-content/uploads/2026/06/Durability.webp",
-                    alt: "sub logo3",
-                    width: 1000,
-                    height: 1000
-                },
-                contentDescription: `<span>dedqdd</span>`,
-            },
-            {
-                contentIndex: 8,
-                contentTitle: "Standard",
-                contentIcon: {
-                    url: "/wp-content/uploads/2026/06/All-weather-Protection.webp",
-                    alt: "sub logo3",
-                    width: 1000,
-                    height: 1000
-                },
-                contentDescription: `<span>dedqdd</span>`,
-            },
-            {
-                contentIndex: 9,
-                contentTitle: "Standard",
+                contentTitle: "Anti-Corrosion",
                 contentIcon: {
                     url: "/wp-content/uploads/2026/06/Anti-Corrosion.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>Performs well in harsh weather and high-moisture areas by protecting the aluzinc coating coils from rust and early damage.</span>`,
             },
             {
-                contentIndex: 10,
-                contentTitle: "Standard",
+                contentIndex: 5,
+                contentTitle: "Zinc-Aluminium Coating",
                 contentIcon: {
-                    url: "/wp-content/uploads/2026/06/Best-In-Class.webp",
+                    url: "/wp-content/uploads/2026/06/Zinc-Aluminium-Coating.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>Comes with a special zinc and aluminium coating that gives better surface protection and helps improve the life of the aluzinc coils.</span>`,
             },
             {
-                contentIndex: 11,
-                contentTitle: "Standard",
+                contentIndex: 6,
+                contentTitle: "ISI Approved",
+                contentIcon: {
+                    url: "/wp-content/uploads/2026/06/ISI-Certified.webp",
+                    alt: "sub logo3",
+                    width: 1000,
+                    height: 1000
+                },
+                contentDescription: `<span>Our products are ISI approved, ensuring compliance with the highest quality.</span>`,
+            },
+            {
+                contentIndex: 7,
+                contentTitle: "Make In India",
                 contentIcon: {
                     url: "/wp-content/uploads/2026/06/Made-in-India.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>Proudly manufactured in India to deliver world-class roofing solutions with trusted quality.</span>`,
             },
         ],
     },

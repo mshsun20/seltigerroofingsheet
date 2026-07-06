@@ -11,7 +11,7 @@ export const galleryAzureInfo = [{
         }
     },
     heading: {
-        data: "Images of Royale - Colour Coated Sheet"
+        data: "Images of Azure Aluzinc Coated Coil"
     },
     contents: {
         graphicalContents: [
