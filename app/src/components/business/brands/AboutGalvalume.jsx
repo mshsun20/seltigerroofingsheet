@@ -12,10 +12,10 @@ const AboutGalvalume = ({ dataSet = {} }) => {
             <div className="galvalume-about-wall">
                 <div className="galvalume-about-gallery">
                     <Image
-                        src={dataSet?.poster?.url}
-                        alt={dataSet?.poster?.alt}
-                        width={dataSet?.poster?.width}
-                        height={dataSet?.poster?.height}
+                        src={dataSet?.contents?.poster?.url}
+                        alt={dataSet?.contents?.poster?.alt}
+                        width={dataSet?.contents?.poster?.width}
+                        height={dataSet?.contents?.poster?.height}
                     />
                 </div>
             </div>
@@ -36,7 +36,7 @@ const AboutGalvalume = ({ dataSet = {} }) => {
                 </div>
                 <div className="galvalume-about-contents">
                     <div className="galvalume-about-textual-contents">
-                        <SafeHtmlRenderer content={dataSet?.content} />
+                        <SafeHtmlRenderer content={dataSet?.contents?.textualContents} />
                     </div>
                 </div>
                 <div className="galvalume-about-actions">

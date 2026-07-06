@@ -28,124 +28,124 @@ export const featuresRoyaleInfo = [{
             },
             {
                 contentIndex: 1,
-                contentTitle: "Back Coat",
+                contentTitle: "15 Years Warranty",
                 contentIcon: {
                     url: "/wp-content/uploads/2026/06/SEL_15-years-Warranty.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>We offer dependable performance and long-term protection.</span>`,
             },
             {
                 contentIndex: 2,
-                contentTitle: "Primer",
+                contentTitle: "10 layers of protection",
                 contentIcon: {
                     url: "/wp-content/uploads/2026/06/10-Layers-Protection.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>This coloured sheet manufactured with multiple safeguards. It ensures maximum durability, safety, and all-round defense against external damage, giving you complete peace of mind.</span>`,
             },
             {
                 contentIndex: 3,
-                contentTitle: "Thickness (mm)",
+                contentTitle: "Color Vibrancy",
                 contentIcon: {
                     url: "/wp-content/uploads/2026/06/Colour-Vibrancy.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>Keeps the color bright and fresh looking for many years ahead.</span>`,
             },
             {
                 contentIndex: 4,
-                contentTitle: "Width (mm)",
+                contentTitle: "ISI Approved",
                 contentIcon: {
                     url: "/wp-content/uploads/2026/06/ISI-Certified.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>Our color coated sheets are ISI approved, ensuring compliance with the highest quality.</span>`,
             },
             {
                 contentIndex: 5,
-                contentTitle: "Coil weight (mt)",
+                contentTitle: "UV Resistance",
                 contentIcon: {
                     url: "/wp-content/uploads/2026/06/UV-Resistance.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>Protects the surface from sunlight and helps avoid early fading.</span>`,
             },
             {
                 contentIndex: 6,
-                contentTitle: "Paint Type",
+                contentTitle: "Superior Paint Technology",
                 contentIcon: {
                     url: "/wp-content/uploads/2026/06/Seperior-Paint-Technology.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>Advanced paint coating ensures long-lasting shine, resistance to fading, and enhanced durability.</span>`,
             },
             {
                 contentIndex: 7,
-                contentTitle: "Coating",
+                contentTitle: "Durability",
                 contentIcon: {
                     url: "/wp-content/uploads/2026/06/Durability.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>Stays strong and performs well even in tough weather conditions.</span>`,
             },
             {
                 contentIndex: 8,
-                contentTitle: "Standard",
+                contentTitle: "All Weather Protection",
                 contentIcon: {
                     url: "/wp-content/uploads/2026/06/All-weather-Protection.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>Built to withstand heat, rain, and extreme conditions, ensuring reliable performance year-round.</span>`,
             },
             {
                 contentIndex: 9,
-                contentTitle: "Standard",
+                contentTitle: "Anti-Corrosion",
                 contentIcon: {
                     url: "/wp-content/uploads/2026/06/Anti-Corrosion.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>Protects against rust and moisture to last longer in all environments.</span>`,
             },
             {
                 contentIndex: 10,
-                contentTitle: "Standard",
+                contentTitle: "Best In Class",
                 contentIcon: {
                     url: "/wp-content/uploads/2026/06/Best-In-Class.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>Engineered with premium quality and advanced technology for unmatched performance.</span>`,
             },
             {
                 contentIndex: 11,
-                contentTitle: "Standard",
+                contentTitle: "Make In India",
                 contentIcon: {
                     url: "/wp-content/uploads/2026/06/Made-in-India.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>Proudly manufactured in India to deliver world-class roofing solutions with trusted quality.</span>`,
             },
         ],
     },

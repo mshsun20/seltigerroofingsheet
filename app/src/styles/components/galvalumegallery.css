@@ -1,0 +1,90 @@
+.galvalume-gallery-layout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--background);
+    width: 100%;
+    height: auto;
+    padding: 5rem;
+}
+
+.galvalume-gallery-hdr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+}
+.galvalume-gallery-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.galvalume-gallery-top .topper-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.2rem;
+    img {
+        width: 2rem;
+    }
+}
+.galvalume-gallery-top .topper-text {
+    margin-left: 0.2rem;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.galvalume-gallery-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+    max-width: 50rem;
+    padding: 0;
+    color: black;
+    font-size: 2.3rem;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.1rem;
+
+    .hdng {
+        text-wrap: nowrap;
+    }
+}
+
+.galvalume-gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap: 1rem;
+    width: 100%;
+    height: auto;
+    padding: 2rem 0;
+}
+
+.galvalume-gallery-item {
+    background-color: var(--background);
+    height: 20rem;
+    color: black;
+    border-radius: 0.2rem;
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+        box-shadow: 0 0 1rem #00000033;
+
+        img {
+            transform: scale(1.1) rotate(5deg);
+        }
+    }
+}

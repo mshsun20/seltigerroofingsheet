@@ -2,7 +2,6 @@
 import Image from 'next/image';
 import React from 'react'
 import "@/styles/components/colouredsheetapplication.css";
-import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer";
 
 const ColouredSheetApplications = ({ dataSet = {}, tabs = [] }) => {
     const [tab, setTab] = React.useState(tabs[0]?.itemName);
