@@ -14,7 +14,7 @@ const ColouredSheetShades = ({ dataSet = {}, tabs = [] }) => {
 
   return (
     <div className="coloured-sheet-shades-layout">
-        <div className="coloured-sheet-shades-hdr">
+        <div className="coloured-sheet-shades-hdr" style={{background: dataSet?.headerbg}}>
             <div className="coloured-sheet-shades-top">
                 <span className="topper-icon">
                     <Image

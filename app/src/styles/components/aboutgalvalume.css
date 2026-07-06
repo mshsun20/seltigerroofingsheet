@@ -17,8 +17,8 @@
     }
 }
 
-.galvalume-about-gallery {
-    order: 2;
+.galvalume-about-wall {
+    order: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,9 +26,22 @@
     height: 100%;
     padding: 2rem 0;
 }
+.galvalume-about-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+    
+    img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+}
 
 .galvalume-about-container {
-    order: 1;
+    order: 2;
     display: flex;
     justify-content: center;
     align-items: space-between;

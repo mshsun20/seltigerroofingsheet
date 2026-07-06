@@ -13,6 +13,7 @@ export const shadesRoyaleInfo = [{
     heading: {
         data: "Available Colours in Royale Roofing Sheet"
     },
+    headerbg: `linear-gradient(to right, #69bbff 10%, #72c2fe 60%, #6cb9ff)`,
     contents: [
         {
             contentIndex: 0,

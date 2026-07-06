@@ -1,5 +1,4 @@
 "use client";
-
 import React from 'react'
 import '@/styles/components/galleryslider.css';
 import Image from 'next/image';

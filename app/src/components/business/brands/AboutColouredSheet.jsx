@@ -10,8 +10,10 @@ const AboutColouredSheet = ({ dataSet = {} }) => {
   return (
     <div className="coloured-sheet-about-layout">
         <div className="contnr">
-            <div className="coloured-sheet-about-gallery">
-                <GallerySlider slides={dataSet?.contents?.mainGallery} />
+            <div className="coloured-sheet-about-wall">
+                <div className="coloured-sheet-about-gallery">
+                    <GallerySlider slides={dataSet?.contents?.mainGallery} />
+                </div>
             </div>
             <div className="coloured-sheet-about-container">
                 <div className="coloured-sheet-about-hdr">

@@ -7,19 +7,19 @@ export const featuresEliteInfo = [{
             height: 20
         },
         text: {
-            data: "What Makes Royale the Best"
+            data: "Why Elite"
         }
     },
     heading: {
-        data: "Features of SEL Tiger Royale Colour Roofing Sheet"
+        data: "Features of SEL Tiger Elite - Colour Coated Sheet"
     },
     contents: {
         contentFeatures: [
             {
                 contentIndex: 0,
-                contentTitle: "1500 Hours Salt Spray Test",
+                contentTitle: "1200 Hours Salt Spray Test",
                 contentIcon: {
-                    url: "/wp-content/uploads/2026/06/SST_1500.webp",
+                    url: "/wp-content/uploads/2026/06/SST_1200.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
@@ -28,124 +28,91 @@ export const featuresEliteInfo = [{
             },
             {
                 contentIndex: 1,
-                contentTitle: "Back Coat",
-                contentIcon: {
-                    url: "/wp-content/uploads/2026/06/SEL_15-years-Warranty.webp",
-                    alt: "sub logo3",
-                    width: 1000,
-                    height: 1000
-                },
-                contentDescription: `<span>dedqdd</span>`,
-            },
-            {
-                contentIndex: 2,
-                contentTitle: "Primer",
-                contentIcon: {
-                    url: "/wp-content/uploads/2026/06/10-Layers-Protection.webp",
-                    alt: "sub logo3",
-                    width: 1000,
-                    height: 1000
-                },
-                contentDescription: `<span>dedqdd</span>`,
-            },
-            {
-                contentIndex: 3,
-                contentTitle: "Thickness (mm)",
-                contentIcon: {
-                    url: "/wp-content/uploads/2026/06/Colour-Vibrancy.webp",
-                    alt: "sub logo3",
-                    width: 1000,
-                    height: 1000
-                },
-                contentDescription: `<span>dedqdd</span>`,
-            },
-            {
-                contentIndex: 4,
-                contentTitle: "Width (mm)",
-                contentIcon: {
-                    url: "/wp-content/uploads/2026/06/ISI-Certified.webp",
-                    alt: "sub logo3",
-                    width: 1000,
-                    height: 1000
-                },
-                contentDescription: `<span>dedqdd</span>`,
-            },
-            {
-                contentIndex: 5,
-                contentTitle: "Coil weight (mt)",
-                contentIcon: {
-                    url: "/wp-content/uploads/2026/06/UV-Resistance.webp",
-                    alt: "sub logo3",
-                    width: 1000,
-                    height: 1000
-                },
-                contentDescription: `<span>dedqdd</span>`,
-            },
-            {
-                contentIndex: 6,
-                contentTitle: "Paint Type",
+                contentTitle: "Superior Paint Technology",
                 contentIcon: {
                     url: "/wp-content/uploads/2026/06/Seperior-Paint-Technology.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>Offers rich color with a smooth finish that stays bright for years</span>`,
             },
             {
-                contentIndex: 7,
-                contentTitle: "Coating",
+                contentIndex: 2,
+                contentTitle: "Thermal Insulation",
                 contentIcon: {
-                    url: "/wp-content/uploads/2026/06/Durability.webp",
+                    url: "/wp-content/uploads/2026/06/Thermal-insulation.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>Helps reduce heat inside by blocking sunlight and high temperatures</span>`,
             },
             {
-                contentIndex: 8,
-                contentTitle: "Standard",
+                contentIndex: 3,
+                contentTitle: "7 Years Warranty",
                 contentIcon: {
-                    url: "/wp-content/uploads/2026/06/All-weather-Protection.webp",
+                    url: "/wp-content/uploads/2026/06/SEL_7-years-Warranty.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>We provide reliable performance and protection against defects for years to come.</span>`,
             },
             {
-                contentIndex: 9,
-                contentTitle: "Standard",
+                contentIndex: 4,
+                contentTitle: "ISI Approved",
+                contentIcon: {
+                    url: "/wp-content/uploads/2026/06/ISI-Certified.webp",
+                    alt: "sub logo3",
+                    width: 1000,
+                    height: 1000
+                },
+                contentDescription: `<span>Our products are ISI approved, ensuring compliance with the highest quality.</span>`,
+            },
+            {
+                contentIndex: 5,
+                contentTitle: "Anti-Corrosion",
                 contentIcon: {
                     url: "/wp-content/uploads/2026/06/Anti-Corrosion.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>Protects against rust and moisture to last longer in all environments.</span>`,
             },
             {
-                contentIndex: 10,
-                contentTitle: "Standard",
+                contentIndex: 6,
+                contentTitle: "Color Vibrancy",
+                contentIcon: {
+                    url: "/wp-content/uploads/2026/06/Colour-Vibrancy.webp",
+                    alt: "sub logo3",
+                    width: 1000,
+                    height: 1000
+                },
+                contentDescription: `<span>Keeps the color bright and fresh looking for many years ahead.</span>`,
+            },
+            {
+                contentIndex: 7,
+                contentTitle: "Best In Class",
                 contentIcon: {
                     url: "/wp-content/uploads/2026/06/Best-In-Class.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>Engineered with premium quality and advanced technology for unmatched performance.</span>`,
             },
             {
-                contentIndex: 11,
-                contentTitle: "Standard",
+                contentIndex: 8,
+                contentTitle: "Make In India",
                 contentIcon: {
                     url: "/wp-content/uploads/2026/06/Made-in-India.webp",
                     alt: "sub logo3",
                     width: 1000,
                     height: 1000
                 },
-                contentDescription: `<span>dedqdd</span>`,
+                contentDescription: `<span>Proudly manufactured in India to deliver world-class roofing solutions with trusted quality.</span>`,
             },
         ],
     },

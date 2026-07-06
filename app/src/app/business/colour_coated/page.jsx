@@ -12,7 +12,7 @@ import { updatesColourCoatedRoofingSheetInfo } from "@/data/updatesColourCoatedR
 import { brandsColourCoatedRoofingSheetInfo } from "@/data/brandsColourCoatedRoofingSheetInfo";
 import { faqColourCoatedDetails } from "@/data/faqColourCoatedDetails";
 import { commonBusinessEnquiry } from "@/data/commonBusinessEnquiry";
-const Banner = dynamic(() => import("@/components/common/Banner"))
+const Banner = dynamic(() => import("@/components/common/Banner"));
 const AboutProduct = dynamic(() => import("@/components/business/products/AboutProduct"));
 const ProductSpecifications = dynamic(() => import("@/components/business/products/ProductSpecifications"));
 const ProductTechnology = dynamic(() => import("@/components/business/products/ProductTechnology"));

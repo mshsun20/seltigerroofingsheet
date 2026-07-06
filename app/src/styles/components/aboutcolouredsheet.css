@@ -17,7 +17,7 @@
     }
 }
 
-.coloured-sheet-about-gallery {
+.coloured-sheet-about-wall {
     order: 2;
     display: flex;
     justify-content: center;
@@ -25,6 +25,18 @@
     width: 100%;
     height: 100%;
     padding: 2rem 0;
+}
+.coloured-sheet-about-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+
+    .gallery-slider {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .coloured-sheet-about-container {
