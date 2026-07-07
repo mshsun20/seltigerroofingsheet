@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Statcounter from '@/components/common/Statcounter';
 import { heroStatCounterItems } from '@/configs/allStatCounterItems';
+import BannerObserver from "@/components/BannerObserver";
 
 const Hero = () => {
     const [arrow, setArrow] = React.useState('↗');
@@ -55,6 +56,8 @@ const Hero = () => {
                 </div>
             </div>
         </div>
+        
+        <BannerObserver range={72} />
     </div>
   )
 }

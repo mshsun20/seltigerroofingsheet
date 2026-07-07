@@ -2,10 +2,11 @@
 import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
+import BannerObserver from "@/components/BannerObserver";
 
 const Banner = ({ data, info }) => {
   return (
-    <div className='banner'>
+    <div className='banner-layout'>
         <div className="banner-poster">
             <Image
                 src={info?.bannerImage?.url}
@@ -31,6 +32,8 @@ const Banner = ({ data, info }) => {
                 }
             </div>
         </div>
+        
+        <BannerObserver range={72} />
     </div>
   )
 }

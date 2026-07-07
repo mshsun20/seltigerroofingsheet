@@ -6,21 +6,23 @@ import Image from 'next/image'
 import { menuItems } from '@/data/menuItems'
 import Menusection from './Menusection'
 import { m, AnimatePresence } from 'framer-motion'
+import { useNavbar } from "@/context/NavbarContext"
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+  const { bannerActive } = useNavbar()
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
   return (
-    <div className='container nav-container'>
+    <div className={`nav-container ${bannerActive ? "nav-transparent" : "nav-solid"}`}>
         <div className="navbar">
             <div className="logo">
                 <Link className='icon-link' href="/">
                     <Image
-                        src="/wp-content/themes/sel/assets/img/logo/Logo_White.png"
+                        src={`/wp-content/themes/sel/assets/img/logo/${bannerActive ? `Logo_White.png` : `logo.png`}`}
                         alt="SELTigerRoofingSheet"
                         width="100"
                         height="100"
