@@ -17,24 +17,24 @@ export const csrData = [{
         data: "Our CSRs"
     },
     mainContent: {
-        className: "csr-container",
+        className: "csr-contents",
         mainSlug: "CSR",
         allContent: [
             {
-                className: "csr-content",
+                className: "csr-content-item",
                 contentIndex: 0,
                 contentSlug: "solar-project",
                 contentBackground: {
-                    className: "csr-content-bg",
+                    className: "csr-content-item-bg",
                     url: "/wp-content/uploads/2025/06/solar-img-1.png",
                     alt: "solar project image",
                     width: 1000,
                     height: 800
                 },
                 contentTextuals: {
-                    className: "csr-textuals",
-                    caption: "Solar Project",
-                    details: `<div class="space32"></div>
+                    className: "csr-item-textuals",
+                    title: "Solar Project",
+                    description: `<div class="space32"></div>
                         <h2>Solarization Project</h2>
                         <div class="space24"></div>
                         <ul>
@@ -55,20 +55,20 @@ export const csrData = [{
                 }
             },
             {
-                className: "csr-content",
+                className: "csr-content-item",
                 contentIndex: 1,
                 contentSlug: "jamuria-blood-donation-camp-sep-2023",
                 contentBackground: {
-                    className: "csr-content-bg",
+                    className: "csr-content-item-bg",
                     url: "/wp-content/uploads/2025/06/jamuria-bood-donation-camp-1024x461-1.jpg",
                     alt: "jamuria blood donation camp image",
                     width: 1000,
                     height: 800
                 },
                 contentTextuals: {
-                    className: "csr-textuals",
-                    caption: "Jamuria blood donation camp - Sep 2023",
-                    details: `<div class="space32"></div>
+                    className: "csr-item-textuals",
+                    title: "Jamuria blood donation camp - Sep 2023",
+                    description: `<div class="space32"></div>
                         <p>On the occasion of VCMD Sir's birthday, We organized a Mega “Blood Donation Camp” at the premises of Jamuria
                             plant for the employees of SSPL Jamuria.<span id="more-5172"></span></p>
                         <p>Mr. Hareram Singh ( MLA Jamuria Constituency), Mr. Sumit Chakraborty ( Director SSPL), Mr. Narayan Sen (Sr. VP),

@@ -2,21 +2,17 @@ import React from 'react'
 import dynamic from "next/dynamic";
 import LazyWrapper from '@/components/common/LazyWrapper';
 import { alZnSheetCoilBanner } from "@/data/alZnSheetCoilBanner";
-import { aboutColourCoatedRoofingSheetInfo } from "@/data/aboutColourCoatedRoofingSheetInfo";
-import { specsColourCoatedRoofingSheetInfo } from "@/data/specsColourCoatedRoofingSheetInfo";
-import { techColourCoatedRoofingSheetInfo } from "@/data/techColourCoatedRoofingSheetInfo";
-import { shadesColourCoatedRoofingSheetInfo } from "@/data/shadesColourCoatedRoofingSheetInfo";
-import { featuresColourCoatedRoofingSheetInfo } from "@/data/featuresColourCoatedRoofingSheetInfo";
-import { appsColourCoatedRoofingSheetInfo } from "@/data/appsColourCoatedRoofingSheetInfo";
-import { updatesColourCoatedRoofingSheetInfo } from "@/data/updatesColourCoatedRoofingSheetInfo";
-import { brandsColourCoatedRoofingSheetInfo } from "@/data/brandsColourCoatedRoofingSheetInfo";
-import { faqColourCoatedDetails } from "@/data/faqColourCoatedDetails";
+import { aboutAlZnSheetInfo } from "@/data/aboutAlZnSheetInfo";
+import { specsAlZnSheetInfo } from "@/data/specsAlZnSheetInfo";
+import { featuresAlZnSheetInfo } from "@/data/featuresAlZnSheetInfo";
+import { appsAlZnSheetInfo } from "@/data/appsAlZnSheetInfo";
+import { updatesAlZnSheetInfo } from "@/data/updatesAlZnSheetInfo";
+import { brandsAlZnSheetInfo } from "@/data/brandsAlZnSheetInfo";
+import { faqAlZnDetails } from "@/data/faqAlZnDetails";
 import { commonBusinessEnquiry } from "@/data/commonBusinessEnquiry";
 const Banner = dynamic(() => import("@/components/common/Banner"));
 const AboutProduct = dynamic(() => import("@/components/business/products/AboutProduct"));
 const ProductSpecifications = dynamic(() => import("@/components/business/products/ProductSpecifications"));
-const ProductTechnology = dynamic(() => import("@/components/business/products/ProductTechnology"));
-const ProductShades = dynamic(() => import("@/components/business/products/ProductShades"));
 const ProductFeatures = dynamic(() => import("@/components/business/products/ProductFeatures"));
 const ProductApplications = dynamic(() => import("@/components/business/products/ProductApplications"));
 const ProductUpdates = dynamic(() => import("@/components/business/products/ProductUpdates"));
@@ -25,15 +21,11 @@ const AllFaqsInfo = dynamic(() => import("@/components/business/AllFaqsInfo"));
 const BusinessEnquiry = dynamic(() => import("@/components/business/BusinessEnquiry"));
 
 const AluzincSheets = () => {
-  const allTabs = specsColourCoatedRoofingSheetInfo[0]?.contents?.map((elm) => ({
+  const allTabs = specsAlZnSheetInfo[0]?.contents?.map((elm) => ({
     itemIndex: elm?.itemIndex,
     itemName: elm?.itemName,
   }))
-  const allShades = shadesColourCoatedRoofingSheetInfo[0]?.contents?.map((elm) => ({
-    contentIndex: elm?.contentIndex,
-    contentColor: elm?.contentColor,
-  }))
-  const allApps = appsColourCoatedRoofingSheetInfo[0]?.contents?.map((elm) => ({
+  const allApps = appsAlZnSheetInfo[0]?.contents?.map((elm) => ({
     itemIndex: elm?.itemIndex,
     itemName: elm?.itemName,
   }))
@@ -41,15 +33,13 @@ const AluzincSheets = () => {
   return (
     <div className="content-layout">
       <LazyWrapper><Banner data={"Aluzinc Sheet and Coil"} info={alZnSheetCoilBanner} /></LazyWrapper>
-      <LazyWrapper><AboutProduct dataSet={aboutColourCoatedRoofingSheetInfo[0]} /></LazyWrapper>
-      <LazyWrapper><ProductSpecifications dataSet={specsColourCoatedRoofingSheetInfo[0]} tabs={allTabs} /></LazyWrapper>
-      <LazyWrapper><ProductTechnology dataSet={techColourCoatedRoofingSheetInfo[0]} /></LazyWrapper>
-      <LazyWrapper><ProductShades dataSet={shadesColourCoatedRoofingSheetInfo[0]} tabs={allShades} /></LazyWrapper>
-      <LazyWrapper><ProductFeatures dataSet={featuresColourCoatedRoofingSheetInfo[0]} /></LazyWrapper>
-      <LazyWrapper><ProductApplications dataSet={appsColourCoatedRoofingSheetInfo[0]} tabs={allApps} /></LazyWrapper>
-      <LazyWrapper><ProductUpdates dataSet={updatesColourCoatedRoofingSheetInfo[0]} /></LazyWrapper>
-      <LazyWrapper><ProductBrands dataSet={brandsColourCoatedRoofingSheetInfo[0]} /></LazyWrapper>
-      <LazyWrapper><AllFaqsInfo dataSet={faqColourCoatedDetails[0]} /></LazyWrapper>
+      <LazyWrapper><AboutProduct dataSet={aboutAlZnSheetInfo[0]} /></LazyWrapper>
+      <LazyWrapper><ProductSpecifications dataSet={specsAlZnSheetInfo[0]} tabs={allTabs} /></LazyWrapper>
+      <LazyWrapper><ProductFeatures dataSet={featuresAlZnSheetInfo[0]} /></LazyWrapper>
+      <LazyWrapper><ProductApplications dataSet={appsAlZnSheetInfo[0]} tabs={allApps} /></LazyWrapper>
+      <LazyWrapper><ProductUpdates dataSet={updatesAlZnSheetInfo[0]} /></LazyWrapper>
+      <LazyWrapper><ProductBrands dataSet={brandsAlZnSheetInfo[0]} /></LazyWrapper>
+      <LazyWrapper><AllFaqsInfo dataSet={faqAlZnDetails[0]} /></LazyWrapper>
       <LazyWrapper><BusinessEnquiry dataSet={commonBusinessEnquiry[0]} /></LazyWrapper>
     </div>
   )

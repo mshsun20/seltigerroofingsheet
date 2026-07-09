@@ -83,13 +83,13 @@ const ProductSpecifications = ({ dataSet = {}, tabs = [] }) => {
                         </div>
                     ))}
                 </div>
-                <div className="product-specifications-description">
+                {tabContents?.itemDescription && <div className="product-specifications-description">
                     <SafeHtmlRenderer content={tabContents?.itemDescription} />
-                </div>
-                <div className="product-specifications-action">
-                    {tabContents?.itemDetails
-                    && <button onClick={() => setOpen(true)}>{tabContents?.itemDetails?.info}</button>}
-                </div>
+                </div>}
+                {tabContents?.itemDetails
+                && <div className="product-specifications-action">
+                    <button onClick={() => setOpen(true)}>{tabContents?.itemDetails?.info}</button>
+                </div>}
             </div>
         </div>
 

@@ -80,8 +80,4 @@ export const featuresColourCoatedRoofingSheetInfo = [{
             }
         }
     },
-    action: {
-        url: `/`,
-        info: `Enquiry for Bulk Order`
-    }
 }]

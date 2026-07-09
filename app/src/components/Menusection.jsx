@@ -7,6 +7,7 @@ import {
     ChevronDown,
     X
 } from "lucide-react"
+import useSubmenuPosition from "@/hooks/useSubmenuPosition";
 
 /* =========================================================================================
    MOBILE MENU ITEM
@@ -79,18 +80,45 @@ const MobileMenuItem = ({ item, level = 0, onToggle }) => {
 const DesktopMenuItem = ({ item }) => {
     const [open, setOpen] = React.useState(false)
     const hasChildren = item.children && item.children.length > 0
+    const { triggerRef, submenuRef, position, calculatePosition } = useSubmenuPosition();
+    const [positionCalculated, setPositionCalculated] = React.useState(false);
 
     return (
-        <li className={`menu-item ${hasChildren ? "has-children" : ""}`}>
+        <li
+            ref={triggerRef}
+            className={`menu-item ${hasChildren ? "has-children" : ""}`}
+            onMouseEnter={() => {
+                setOpen(true);
+                if (!positionCalculated) {
+                    requestAnimationFrame(() => {
+                        calculatePosition();
+                        setPositionCalculated(true);
+                    });
+                }
+            }}
+            onMouseLeave={() => {
+                setOpen(false);
+                setPositionCalculated(false);
+            }}
+        >
             {hasChildren ? (
                 <>
-                    <button className="submenu-toggle" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+                    <button
+                        className="submenu-toggle"
+                    >
                         <span>{item.name}</span>
                         <span className={`desktop-arrow ${open ? "open" : ""}`}>
                             <ChevronDown size={15} />
                         </span>
                     </button>
-                    <ul className="desktop-submenu">
+                    <ul
+                        ref={submenuRef}
+                        className={`
+                            desktop-submenu
+                            ${position.horizontal}
+                            ${position.vertical}
+                        `}
+                    >
                         {item.children.map((child, index) => (<DesktopMenuItem key={index} item={child} />))}
                     </ul>
                 </>

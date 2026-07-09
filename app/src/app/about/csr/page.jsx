@@ -1,18 +1,20 @@
 "use client";
 import React from 'react'
 import dynamic from "next/dynamic";
-const Banner = dynamic(() => import("@/components/common/Banner"))
-import { csrBanner } from "@/data/csrBanner";
-import { csrData } from "@/data/csrData"
-import Image from 'next/image';
-import Link from 'next/link';
 import LazyWrapper from '@/components/common/LazyWrapper';
+import { csrBanner } from "@/data/csrBanner";
+import { aboutCsr } from "@/data/aboutCsr";
+const Banner = dynamic(() => import("@/components/common/Banner"))
+const AboutCsr = dynamic(() => import("@/components/about/AboutCsr"));
+const OurCsr = dynamic(() => import("@/components/about/OurCsr"));
 
 const Csr = () => {
   return (
     <div className="content-layout">
         <LazyWrapper><Banner data={"CSR"} info={csrBanner} /></LazyWrapper>
-        <div className={csrData[0]?.mainContent?.className}>
+        <LazyWrapper><AboutCsr dataSet={aboutCsr[0]} /></LazyWrapper>
+        <LazyWrapper><OurCsr /></LazyWrapper>
+        {/* <div className={csrData[0]?.mainContent?.className}>
             {
                 csrData[0]?.mainContent?.allContent?.map(elm => (
                     <div className={elm?.className} key={elm?.contentIndex}>
@@ -31,7 +33,7 @@ const Csr = () => {
                     </div>
                 ))
             }
-        </div>
+        </div> */}
     </div>
   )
 }

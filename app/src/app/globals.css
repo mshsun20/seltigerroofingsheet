@@ -132,11 +132,15 @@ a {
 }
 
 .nav-transparent{
-  background: transparent;
+  /* background: transparent; */
+  background: #00000017;
+  box-shadow: 0 10px 25px #00000014;
+  -webkit-backdrop-filter: blur(1rem);
+  backdrop-filter: blur(1rem);
 }
 
 .nav-solid{
-  background: #ffffff1d;
+  background: #dfdfdf85;
   box-shadow: 0 10px 25px #00000014;
   -webkit-backdrop-filter: blur(1rem);
   backdrop-filter: blur(1rem);
@@ -302,10 +306,21 @@ a {
 }
 
 /* nested submenu */
-.desktop-submenu .desktop-submenu {
-  top: 0;
-  left: calc(100% + 0rem);
-  margin-top: -0.35rem;
+.desktop-submenu .desktop-submenu.right{
+  left:100%;
+  right:auto;
+}
+.desktop-submenu .desktop-submenu.left{
+  right:100%;
+  left:auto;
+}
+.desktop-submenu .desktop-submenu.top{
+  top:0;
+  bottom:auto;
+}
+.desktop-submenu .desktop-submenu.bottom{
+  bottom:0;
+  top:auto;
 }
 
 /* show submenu on hover */

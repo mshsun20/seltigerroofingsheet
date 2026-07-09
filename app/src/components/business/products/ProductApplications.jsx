@@ -85,9 +85,9 @@ const ProductApplications = ({ dataSet = {}, tabs = [] }) => {
                         </div>
                     ))}
                 </div>
-                <div className="product-applications-description">
+                {tabContents?.itemDescription && <div className="product-applications-description">
                     <SafeHtmlRenderer content={tabContents?.itemDescription} />
-                </div>
+                </div>}
             </div>
         </div>
 

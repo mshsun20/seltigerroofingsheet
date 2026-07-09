@@ -1,0 +1,135 @@
+.csr-about-layout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    width: 100%;
+    height: auto;
+    padding: 5rem;
+}
+
+.csr-about-hdr {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: auto;
+}
+.csr-about-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.csr-about-top .topper-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.2rem;
+    
+    img {
+        width: 2rem;
+    }
+}
+.csr-about-top .topper-text {
+    margin-left: 0.2rem;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.csr-about-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+    max-width: 50rem;
+    padding: 0;
+    color: black;
+    font-size: 2.3rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+
+    .hdng {
+        text-wrap: nowrap;
+    }
+}
+
+.csr-about-container {
+    order: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2rem;
+    width: 100%;
+    height: auto;
+}
+.csr-about-contents {
+    width: 100%;
+    height: auto;
+    padding: 1rem 0;
+}
+.csr-about-wall {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0;
+}
+.csr-about-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+    img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+}
+.csr-about-subheading {
+    padding: 0.5rem 0;
+    color: #424242;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.csr-about-textual-contents {
+    color: #656565;
+    font-size: 1.1rem;
+    letter-spacing: 0.05rem;
+}
+.csr-about-actions {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    padding: 1rem 0;
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        height: auto;
+        padding: 0.5rem 1rem;
+        margin-right: 1rem;
+        border-radius: 0.5rem;
+        background-color: var(--theme);
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            background-color: #000000;
+            box-shadow: 0 0 1rem #00000080;
+        }
+    }
+}
