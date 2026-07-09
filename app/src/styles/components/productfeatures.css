@@ -3,7 +3,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--white);
     width: 100%;
     height: auto;
     padding: 5rem;
@@ -47,7 +46,7 @@
     align-items: space-between;
     flex-direction: column;
     height: auto;
-    padding: 2rem 0;
+    /* padding: 2rem 0; */
 }
 .product-features-hdr {
     display: flex;
@@ -102,7 +101,7 @@
     flex-direction: column;
     width: 100%;
     height: auto;
-    padding: 1rem 0;
+    /* padding: 1rem 0; */
 }
 .product-features-item {
     display: grid;

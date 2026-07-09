@@ -14,53 +14,58 @@ export const featuresAlZnSheetInfo = [{
         data: "Features and Benefits of Aluzinc Roofing Sheet"
     },
     contents: {
-        textualContents: [
-            {
-                contentIndex: 0,
-                contentIcon: {
-                    url: "/wp-content/themes/sel/assets/img/icons/check1.svg",
-                    alt: "feature icon1",
-                    width: 1000,
-                    height: 1000
+        bg: "var(--white)",
+        textualContents: {
+            order: 2,
+            allContents: [
+                {
+                    contentIndex: 0,
+                    contentIcon: {
+                        url: "/wp-content/themes/sel/assets/img/icons/check1.svg",
+                        alt: "feature icon1",
+                        width: 1000,
+                        height: 1000
+                    },
+                    contentHeading: "Affordability",
+                    contentDescription: `<p>Gives strong quality without making the project costly, ideal for budget roofing and bulk orders.</p>`
                 },
-                contentHeading: "Affordability",
-                contentDescription: `<p>Gives strong quality without making the project costly, ideal for budget roofing and bulk orders.</p>`
-            },
-            {
-                contentIndex: 1,
-                contentIcon: {
-                    url: "/wp-content/themes/sel/assets/img/icons/check1.svg",
-                    alt: "feature icon1",
-                    width: 1000,
-                    height: 1000
+                {
+                    contentIndex: 1,
+                    contentIcon: {
+                        url: "/wp-content/themes/sel/assets/img/icons/check1.svg",
+                        alt: "feature icon1",
+                        width: 1000,
+                        height: 1000
+                    },
+                    contentHeading: "Corrosion Resistance",
+                    contentDescription: `<p>Protects from rust, rain and moisture in any region, making it reliable for coastal and humid zones.</p>`
                 },
-                contentHeading: "Corrosion Resistance",
-                contentDescription: `<p>Protects from rust, rain and moisture in any region, making it reliable for coastal and humid zones.</p>`
-            },
-            {
-                contentIndex: 3,
-                contentIcon: {
-                    url: "/wp-content/themes/sel/assets/img/icons/check1.svg",
-                    alt: "feature icon1",
-                    width: 1000,
-                    height: 1000
+                {
+                    contentIndex: 3,
+                    contentIcon: {
+                        url: "/wp-content/themes/sel/assets/img/icons/check1.svg",
+                        alt: "feature icon1",
+                        width: 1000,
+                        height: 1000
+                    },
+                    contentHeading: "Durability",
+                    contentDescription: `<p>Made to last long and handle all types of weather, perfect for both roofing and wall applications.</p>`
                 },
-                contentHeading: "Durability",
-                contentDescription: `<p>Made to last long and handle all types of weather, perfect for both roofing and wall applications.</p>`
-            },
-            {
-                contentIndex: 4,
-                contentIcon: {
-                    url: "/wp-content/themes/sel/assets/img/icons/check1.svg",
-                    alt: "feature icon1",
-                    width: 1000,
-                    height: 1000
+                {
+                    contentIndex: 4,
+                    contentIcon: {
+                        url: "/wp-content/themes/sel/assets/img/icons/check1.svg",
+                        alt: "feature icon1",
+                        width: 1000,
+                        height: 1000
+                    },
+                    contentHeading: "Paint-Friendly Surface",
+                    contentDescription: `<p>Comes with a smooth surface that is easy to coat or customise based on color or branding needs.</p>`
                 },
-                contentHeading: "Paint-Friendly Surface",
-                contentDescription: `<p>Comes with a smooth surface that is easy to coat or customise based on color or branding needs.</p>`
-            },
-        ],
+            ]
+        },
         graphicalContents: {
+            order: 1,
             poster: {
                 url: `/wp-content/uploads/2025/07/Alfa-gallery-5.webp`,
                 alt: `alzn feature poster`,

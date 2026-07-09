@@ -6,7 +6,7 @@ import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer";
 
 const ProductSpecifications = ({ dataSet = {}, tabs = [] }) => {
     const [tab, setTab] = React.useState(tabs[0]?.itemName);
-    const [tabContents, setTabContents] = React.useState({... dataSet?.contents[0]})
+    const [tabContents, setTabContents] = React.useState({...dataSet?.contents[0]})
     const [open, setOpen] = React.useState(false);
     const modalRef = React.useRef();
 
@@ -55,7 +55,7 @@ const ProductSpecifications = ({ dataSet = {}, tabs = [] }) => {
                             <div
                                 key={tabItem?.itemIndex}
                                 className={`product-specifications-tab-item ${tab === tabItem?.itemName ? "active" : ""}`}
-                                onClick={(e) => handleTab(e, tab?.itemIndex)}
+                                onClick={(e) => handleTab(e, tabItem?.itemIndex)}
                             >
                                 {tabItem?.itemName}
                             </div>

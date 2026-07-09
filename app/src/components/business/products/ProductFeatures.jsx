@@ -6,9 +6,14 @@ import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer";
 
 const ProductFeatures = ({ dataSet = {} }) => {
   return (
-    <div className="product-features-layout">
+    <div className="product-features-layout"
+        style={{background: dataSet?.contents?.bg}}
+    >
         <div className="contnr">
-            <div className="product-features-wall">
+            <div
+                className="product-features-wall"
+                style={{order: dataSet?.contents?.graphicalContents?.order}}
+            >
                 <div className="product-features-poster">
                     <Image
                         src={dataSet?.contents?.graphicalContents?.poster?.url}
@@ -18,7 +23,10 @@ const ProductFeatures = ({ dataSet = {} }) => {
                     />
                 </div>
             </div>
-            <div className="product-features-container">
+            <div
+                className="product-features-container"
+                style={{order: dataSet?.contents?.textualContents?.order}}
+            >
                 <div className="product-features-hdr">
                     <div className="product-features-top">
                         <span className="topper-icon">
@@ -34,8 +42,8 @@ const ProductFeatures = ({ dataSet = {} }) => {
                     <div className="product-features-heading">{dataSet?.heading?.data}</div>
                 </div>
                 <div className="product-features-contents">
-                    {dataSet?.contents?.textualContents?.length>0
-                    && dataSet?.contents?.textualContents?.map(itm => 
+                    {dataSet?.contents?.textualContents?.allContents?.length>0
+                    && dataSet?.contents?.textualContents?.allContents?.map(itm => 
                         <div
                             className="product-features-item"
                             key={itm?.contentIndex}
