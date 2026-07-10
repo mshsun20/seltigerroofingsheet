@@ -11,6 +11,7 @@ import { appsColourCoatedRoofingSheetInfo } from "@/data/appsColourCoatedRoofing
 import { updatesColourCoatedRoofingSheetInfo } from "@/data/updatesColourCoatedRoofingSheetInfo";
 import { brandsColourCoatedRoofingSheetInfo } from "@/data/brandsColourCoatedRoofingSheetInfo";
 import { faqColourCoatedDetails } from "@/data/faqColourCoatedDetails";
+import { allProductsInfo } from "@/data/allProductsInfo";
 import { commonBusinessEnquiry } from "@/data/commonBusinessEnquiry";
 const Banner = dynamic(() => import("@/components/common/Banner"));
 const AboutProduct = dynamic(() => import("@/components/business/products/AboutProduct"));
