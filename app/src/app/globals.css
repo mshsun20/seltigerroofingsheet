@@ -833,6 +833,42 @@ a {
   opacity: 1;
 }
 
+/* CUSTOM TABLE styles */
+table {
+  display: table;
+  box-sizing: border-box;
+  border-collapse: separate;
+  text-indent: initial;
+  unicode-bidi: isolate;
+  /* border-spacing: 2px; */
+}
+.stylish-table {
+  width: 100%;
+  margin: 1rem 0;
+  text-align: left;
+  color: #6C757D;
+  font-size: 1rem;
+  text-indent: initial;
+  unicode-bidi: isolate;
+  border-collapse: collapse;
+  border-spacing: 0;
+  
+
+  thead {
+    background-color: var(--theme);
+  }
+  th {
+    padding: 0.2rem;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: 0.35rem solid #e5e5e5;
+  }
+  td {
+    padding: 0.2rem;
+    border: 0.35rem solid #e5e5e5;
+  }
+}
 
 
 
