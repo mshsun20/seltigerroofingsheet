@@ -9,6 +9,7 @@ import { diffPipesInfo } from "@/data/diffPipesInfo";
 import { appsPipesInfo } from "@/data/appsPipesInfo";
 import { updatesPipesInfo } from "@/data/updatesPipesInfo";
 import { faqPipesDetails } from "@/data/faqPipesDetails";
+import { allProductsInfo } from "@/data/allProductsInfo";
 import { commonBusinessEnquiry } from "@/data/commonBusinessEnquiry";
 const Banner = dynamic(() => import("@/components/common/Banner"));
 const AboutProduct = dynamic(() => import("@/components/business/products/AboutProduct"));
@@ -18,6 +19,7 @@ const ProducstAdvantages = dynamic(() => import("@/components/business/products/
 const ProductApplications = dynamic(() => import("@/components/business/products/ProductApplications"));
 const ProductUpdates = dynamic(() => import("@/components/business/products/ProductUpdates"));
 const AllFaqsInfo = dynamic(() => import("@/components/business/AllFaqsInfo"));
+const AllProducts = dynamic(() => import("@/components/business/products/AllProducts"));
 const BusinessEnquiry = dynamic(() => import("@/components/business/BusinessEnquiry"));
 
 const Pipes = () => {
@@ -40,6 +42,7 @@ const Pipes = () => {
       <LazyWrapper><ProductApplications dataSet={appsPipesInfo[0]} tabs={allApps} /></LazyWrapper>
       <LazyWrapper><ProductUpdates dataSet={updatesPipesInfo[0]} /></LazyWrapper>
       <LazyWrapper><AllFaqsInfo dataSet={faqPipesDetails[0]} /></LazyWrapper>
+      <LazyWrapper><AllProducts dataSet={allProductsInfo[0]} product={`Pipes`} /></LazyWrapper>
       <LazyWrapper><BusinessEnquiry dataSet={commonBusinessEnquiry[0]} /></LazyWrapper>
     </div>
   )

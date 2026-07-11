@@ -23,6 +23,7 @@ const ProductApplications = dynamic(() => import("@/components/business/products
 const ProductUpdates = dynamic(() => import("@/components/business/products/ProductUpdates"));
 const ProductBrands = dynamic(() => import("@/components/business/products/ProductBrands"));
 const AllFaqsInfo = dynamic(() => import("@/components/business/AllFaqsInfo"));
+const AllProducts = dynamic(() => import("@/components/business/products/AllProducts"));
 const BusinessEnquiry = dynamic(() => import("@/components/business/BusinessEnquiry"));
 
 const ColourCoated = () => {
@@ -51,6 +52,7 @@ const ColourCoated = () => {
       <LazyWrapper><ProductUpdates dataSet={updatesColourCoatedRoofingSheetInfo[0]} /></LazyWrapper>
       <LazyWrapper><ProductBrands dataSet={brandsColourCoatedRoofingSheetInfo[0]} /></LazyWrapper>
       <LazyWrapper><AllFaqsInfo dataSet={faqColourCoatedDetails[0]} /></LazyWrapper>
+      <LazyWrapper><AllProducts dataSet={allProductsInfo[0]} product={`Colour Coated Sheets and Coils`} /></LazyWrapper>
       <LazyWrapper><BusinessEnquiry dataSet={commonBusinessEnquiry[0]} /></LazyWrapper>
     </div>
   )

@@ -9,6 +9,7 @@ import { appsAlZnSheetInfo } from "@/data/appsAlZnSheetInfo";
 import { updatesAlZnSheetInfo } from "@/data/updatesAlZnSheetInfo";
 import { brandsAlZnSheetInfo } from "@/data/brandsAlZnSheetInfo";
 import { faqAlZnDetails } from "@/data/faqAlZnDetails";
+import { allProductsInfo } from "@/data/allProductsInfo";
 import { commonBusinessEnquiry } from "@/data/commonBusinessEnquiry";
 const Banner = dynamic(() => import("@/components/common/Banner"));
 const AboutProduct = dynamic(() => import("@/components/business/products/AboutProduct"));
@@ -18,6 +19,7 @@ const ProductApplications = dynamic(() => import("@/components/business/products
 const ProductUpdates = dynamic(() => import("@/components/business/products/ProductUpdates"));
 const ProductBrands = dynamic(() => import("@/components/business/products/ProductBrands"));
 const AllFaqsInfo = dynamic(() => import("@/components/business/AllFaqsInfo"));
+const AllProducts = dynamic(() => import("@/components/business/products/AllProducts"));
 const BusinessEnquiry = dynamic(() => import("@/components/business/BusinessEnquiry"));
 
 const AluzincSheets = () => {
@@ -40,6 +42,7 @@ const AluzincSheets = () => {
       <LazyWrapper><ProductUpdates dataSet={updatesAlZnSheetInfo[0]} /></LazyWrapper>
       <LazyWrapper><ProductBrands dataSet={brandsAlZnSheetInfo[0]} /></LazyWrapper>
       <LazyWrapper><AllFaqsInfo dataSet={faqAlZnDetails[0]} /></LazyWrapper>
+      <LazyWrapper><AllProducts dataSet={allProductsInfo[0]} product={`Aluzinc Sheets`} /></LazyWrapper>
       <LazyWrapper><BusinessEnquiry dataSet={commonBusinessEnquiry[0]} /></LazyWrapper>
     </div>
   )
