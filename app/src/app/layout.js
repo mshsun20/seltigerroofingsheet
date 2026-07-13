@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NavbarProvider from "@/context/NavbarContext";
 import FramerProvider from "@/components/common/FramerProvider";
+// import Router from "next/navigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

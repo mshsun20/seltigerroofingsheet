@@ -1,35 +1,21 @@
 import React from 'react'
 import dynamic from "next/dynamic";
-import LazyWrapper from '@/components/common/LazyWrapper';
-const Blogwall = dynamic(() => import("@/components/blog/Blogwall"))
 import axiosInstance from '@/configs/axiosInstance'
-import Card from '@/components/common/Card'
-import Banner from "@/components/common/Banner";
+import LazyWrapper from '@/components/common/LazyWrapper';
 import { blogBanner } from "@/data/blogBanner";
+const Banner = React.lazy(() => import("@/components/common/Banner"));
+const BlogPage = dynamic(() => import("@/components/blog/BlogPage"));
 
 const Blogs = async () => {
   const response = await axiosInstance.get('/api/blogs')
-  const blogs = response.data?.data || []
+  const blogsData = response.data?.data?.sort((a, b) => a.contentIndex - b.contentIndex) || [];
+
+  // console.log(blogsData);
 
   return (
-    <div className="blog-layout">
-      <LazyWrapper><Banner data={"Blogs"} info={blogBanner} /></LazyWrapper>
-      <LazyWrapper>
-        <Blogwall>
-          <ul className='blog-list'>
-            {blogs.map((blog) => (
-              <li key={blog.slug}>
-                <Card 
-                  poster={blog?.mediaLink}
-                  title={blog?.title}
-                  description={blog?.description}
-                  url={`/blogs/${blog?.slug}`}
-                />
-              </li>
-            ))}
-          </ul>
-        </Blogwall>
-      </LazyWrapper>
+    <div className="content-layout">
+      <LazyWrapper><Banner data="Blogs" info={blogBanner} /></LazyWrapper>
+      <LazyWrapper><BlogPage blogs={blogsData} limit={4} /></LazyWrapper>
     </div>
   )
 }

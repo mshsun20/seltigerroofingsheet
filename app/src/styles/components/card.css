@@ -1,28 +1,34 @@
 .card {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    background-color: white;
+    background-color: transparent;
     border-radius: 0.2rem;
-    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.1);
-    /* padding: 1rem; */
-    width: 30rem;
+    width: auto;
     height: 35rem;
-    margin: 2rem;
+    /* margin: 2rem; */
+    transition: all 0.2s ease-in-out;
 }
 .card-poster {
     width: 100%;
-    /* height: 65%; */
-    height: 20rem;
-    margin-bottom: 1rem;
+    /* height: 100%; */
+    max-height: 20rem;
     border-radius: 0.2rem;
+    overflow: hidden;
 }
 .card-poster img {
     width: 100%;
     height: 100%;
     background-size: cover;
     border-radius: 0.2rem;
+    transition: transform 0.2s ease-in-out;
+}
+.card:hover {
+    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.1);
+    .card-poster img {
+        transform: scale(1.1) rotate(3deg);
+    }
 }
 .card-info {
     display: flex;
@@ -31,34 +37,48 @@
     flex-direction: column;
     width: 100%;
     height: auto;
-    /* min-height: 10rem; */
     padding: 1rem;
-    /* white-space: nowrap; */
-    /* overflow: hidden; */
-    /* text-overflow: ellipsis; */
+}
+.card-toppr {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    .card-date {
+        color: #7b7b7b;
+        font-style: italic;
+    }
+    .card-author {
+        font-size: 1rem;
+    }
 }
 .card-hdr {
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.4rem;
+    font-weight: 700;
     padding: 0.2rem 0;
 }
 .card-details {
+    min-height: 8rem;
+    color: #545454;
     font-size: 1rem;
-    /* overflow: hidden; */
-    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 .card-actions {
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
-    padding: 0.5rem 1rem;
+    align-items: center;
     margin: 1rem;
-    background-color: var(--theme);
-    color: var(--foreground);
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 600;
     transition: all 0.1s ease-in-out;
 
     &:hover {
-        background-color: black;
-        color: var(--background);
+        color: var(--theme);
     }
 }
