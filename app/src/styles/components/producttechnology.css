@@ -162,3 +162,56 @@
         }
     }
 }
+
+
+
+
+
+/* __________________________________________________________________________________________________________ */
+/* Media Queries */
+/* ========================================================================================================== */
+@media (max-width: 1024px) {
+    .product-technology-layout {
+        padding: 3.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .product-technology-layout {
+        padding: 2.5rem;
+    }
+}
+@media (max-width: 680px) {
+    .product-technology-layout {
+        padding: 2rem;
+    }
+}
+@media (max-width: 592px) {
+    .product-technology-layout {
+        padding: 1.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .product-technology-layout {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 472px) {
+    .product-technology-layout {
+        padding: 1.3rem;
+    }
+}
+@media (max-width: 425px) {
+    .product-technology-layout {
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 375px) {
+    .product-technology-layout {
+        padding: 1.1rem;
+    }
+}
+@media (max-width: 320px) {
+    .product-technology-layout {
+        padding: 1rem;
+    }
+}

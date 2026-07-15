@@ -144,3 +144,56 @@
     font-size: 1rem;
     font-weight: 400;
 }
+
+
+
+
+
+/* __________________________________________________________________________________________________________ */
+/* Media Queries */
+/* ========================================================================================================== */
+@media (max-width: 1024px) {
+    .product-features-layout {
+        padding: 3.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .product-features-layout {
+        padding: 2.5rem;
+    }
+}
+@media (max-width: 680px) {
+    .product-features-layout {
+        padding: 2rem;
+    }
+}
+@media (max-width: 592px) {
+    .product-features-layout {
+        padding: 1.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .product-features-layout {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 472px) {
+    .product-features-layout {
+        padding: 1.3rem;
+    }
+}
+@media (max-width: 425px) {
+    .product-features-layout {
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 375px) {
+    .product-features-layout {
+        padding: 1.1rem;
+    }
+}
+@media (max-width: 320px) {
+    .product-features-layout {
+        padding: 1rem;
+    }
+}

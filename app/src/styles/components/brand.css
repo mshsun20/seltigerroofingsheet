@@ -238,25 +238,68 @@
 }
 
 
+
+
+
+/* __________________________________________________________________________________________________________ */
+/* Media Queries */
+/* ========================================================================================================== */
 @media (max-width: 1024px) {
     .brands-layout {
-        padding: 2rem; /* Reduces huge desktop padding on mobile screens */
+        padding: 3.5rem;
     }
-
     .brands-container {
         flex-direction: column;
         height: 80rem;   /* CRITICAL FIX: Locks total mobile vertical space */
     }
-
     .brands-item-container {
         width: 100%;     /* Forces full-width usage horizontally */
         height: auto;    /* Releases fixed desktop heights */
         flex: 1 1 0%;    /* Splits the 60rem height equally into 5 rows (12rem each) */
         transition: flex-grow 0.4s ease-in-out;
     }
-
     /* Keeps 1.5x hover logic perfectly confined to the 60rem constraint */
     .brands-container:hover .brands-item-container:hover {
         flex-grow: 2; /* Expanded row becomes 18rem; others shrink to 10.5rem */
+    }
+}
+@media (max-width: 768px) {
+    .brands-layout {
+        padding: 2.5rem;
+    }
+}
+@media (max-width: 680px) {
+    .brands-layout {
+        padding: 2rem;
+    }
+}
+@media (max-width: 592px) {
+    .brands-layout {
+        padding: 1.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .brands-layout {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 472px) {
+    .brands-layout {
+        padding: 1.3rem;
+    }
+}
+@media (max-width: 425px) {
+    .brands-layout {
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 375px) {
+    .brands-layout {
+        padding: 1.1rem;
+    }
+}
+@media (max-width: 320px) {
+    .brands-layout {
+        padding: 1rem;
     }
 }

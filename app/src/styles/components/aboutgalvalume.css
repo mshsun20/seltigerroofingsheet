@@ -136,3 +136,56 @@
         }
     }
 }
+
+
+
+
+
+/* __________________________________________________________________________________________________________ */
+/* Media Queries */
+/* ========================================================================================================== */
+@media (max-width: 1024px) {
+    .galvalume-about-layout {
+        padding: 3.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .galvalume-about-layout {
+        padding: 2.5rem;
+    }
+}
+@media (max-width: 680px) {
+    .galvalume-about-layout {
+        padding: 2rem;
+    }
+}
+@media (max-width: 592px) {
+    .galvalume-about-layout {
+        padding: 1.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .galvalume-about-layout {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 472px) {
+    .galvalume-about-layout {
+        padding: 1.3rem;
+    }
+}
+@media (max-width: 425px) {
+    .galvalume-about-layout {
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 375px) {
+    .galvalume-about-layout {
+        padding: 1.1rem;
+    }
+}
+@media (max-width: 320px) {
+    .galvalume-about-layout {
+        padding: 1rem;
+    }
+}

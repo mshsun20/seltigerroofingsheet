@@ -154,11 +154,53 @@
 
 
 
+
+
+/* __________________________________________________________________________________________________________ */
+/* Media Queries */
+/* ========================================================================================================== */
 @media (max-width: 1024px) {
     .about-layout {
-        padding: 5rem;
+        padding: 3.5rem;
     }
-    .about-container {
-        flex-direction: column;
+}
+@media (max-width: 768px) {
+    .about-layout {
+        padding: 2.5rem;
+    }
+}
+@media (max-width: 680px) {
+    .about-layout {
+        padding: 2rem;
+    }
+}
+@media (max-width: 592px) {
+    .about-layout {
+        padding: 1.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .about-layout {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 472px) {
+    .about-layout {
+        padding: 1.3rem;
+    }
+}
+@media (max-width: 425px) {
+    .about-layout {
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 375px) {
+    .about-layout {
+        padding: 1.1rem;
+    }
+}
+@media (max-width: 320px) {
+    .about-layout {
+        padding: 1rem;
     }
 }

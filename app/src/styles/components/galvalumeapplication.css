@@ -219,3 +219,57 @@
     border-collapse: collapse;
     margin: 1rem 0;
 }
+
+
+
+
+
+
+/* __________________________________________________________________________________________________________ */
+/* Media Queries */
+/* ========================================================================================================== */
+@media (max-width: 1024px) {
+    .galvalume-applications-layout {
+        padding: 3.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .galvalume-applications-layout {
+        padding: 2.5rem;
+    }
+}
+@media (max-width: 680px) {
+    .galvalume-applications-layout {
+        padding: 2rem;
+    }
+}
+@media (max-width: 592px) {
+    .galvalume-applications-layout {
+        padding: 1.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .galvalume-applications-layout {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 472px) {
+    .galvalume-applications-layout {
+        padding: 1.3rem;
+    }
+}
+@media (max-width: 425px) {
+    .galvalume-applications-layout {
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 375px) {
+    .galvalume-applications-layout {
+        padding: 1.1rem;
+    }
+}
+@media (max-width: 320px) {
+    .galvalume-applications-layout {
+        padding: 1rem;
+    }
+}

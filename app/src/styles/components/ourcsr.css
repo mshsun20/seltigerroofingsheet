@@ -158,3 +158,57 @@
         }
     }
 }
+
+
+
+
+
+
+/* __________________________________________________________________________________________________________ */
+/* Media Queries */
+/* ========================================================================================================== */
+@media (max-width: 1024px) {
+    .csr-layout {
+        padding: 3.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .csr-layout {
+        padding: 2.5rem;
+    }
+}
+@media (max-width: 680px) {
+    .csr-layout {
+        padding: 2rem;
+    }
+}
+@media (max-width: 592px) {
+    .csr-layout {
+        padding: 1.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .csr-layout {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 472px) {
+    .csr-layout {
+        padding: 1.3rem;
+    }
+}
+@media (max-width: 425px) {
+    .csr-layout {
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 375px) {
+    .csr-layout {
+        padding: 1.1rem;
+    }
+}
+@media (max-width: 320px) {
+    .csr-layout {
+        padding: 1rem;
+    }
+}

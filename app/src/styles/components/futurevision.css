@@ -382,7 +382,6 @@
     }
 }
 
-
 @media (max-width: 1024px) {
     .upcoming-updates-lines {
         grid-column: span 2;
@@ -457,4 +456,77 @@
     width: 100%;
     height: auto;
     padding: 1rem 0;
+}
+
+
+
+
+
+
+
+/* __________________________________________________________________________________________________________ */
+/* Media Queries */
+/* ========================================================================================================== */
+@media (max-width: 1024px) {
+    .future-vision-layout,
+    .upcoming-updates-layout,
+    .upcoming-products-layout {
+        padding: 3.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .future-vision-layout,
+    .upcoming-updates-layout,
+    .upcoming-products-layout {
+        padding: 2.5rem;
+    }
+}
+@media (max-width: 680px) {
+    .future-vision-layout,
+    .upcoming-updates-layout,
+    .upcoming-products-layout {
+        padding: 2rem;
+    }
+}
+@media (max-width: 592px) {
+    .future-vision-layout,
+    .upcoming-updates-layout,
+    .upcoming-products-layout {
+        padding: 1.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .future-vision-layout,
+    .upcoming-updates-layout,
+    .upcoming-products-layout {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 472px) {
+    .future-vision-layout,
+    .upcoming-updates-layout,
+    .upcoming-products-layout {
+        padding: 1.3rem;
+    }
+}
+@media (max-width: 425px) {
+    .future-vision-layout,
+    .upcoming-updates-layout,
+    .upcoming-products-layout {
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 375px) {
+    .future-vision-layout,
+    .upcoming-updates-layout,
+    .upcoming-products-layout {
+        padding: 1.1rem;
+    }
+}
+@media (max-width: 320px) {
+    .future-vision-layout,
+    .upcoming-updates-layout,
+    .upcoming-products-layout {
+        padding: 1rem;
+    }
 }

@@ -282,12 +282,64 @@
     font-weight: 600;
 }
 
-
-
 .contact-location-slider {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 40rem;
+}
+
+
+
+
+
+
+/* __________________________________________________________________________________________________________ */
+/* Media Queries */
+/* ========================================================================================================== */
+@media (max-width: 1024px) {
+    .brands-layout {
+        padding: 3.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .brands-layout {
+        padding: 2.5rem;
+    }
+}
+@media (max-width: 680px) {
+    .brands-layout {
+        padding: 2rem;
+    }
+}
+@media (max-width: 592px) {
+    .brands-layout {
+        padding: 1.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .brands-layout {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 472px) {
+    .brands-layout {
+        padding: 1.3rem;
+    }
+}
+@media (max-width: 425px) {
+    .brands-layout {
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 375px) {
+    .brands-layout {
+        padding: 1.1rem;
+    }
+}
+@media (max-width: 320px) {
+    .brands-layout {
+        padding: 1rem;
+    }
 }

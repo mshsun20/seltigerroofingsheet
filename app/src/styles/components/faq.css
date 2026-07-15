@@ -125,22 +125,53 @@
 
 
 
+
+
+
+/* __________________________________________________________________________________________________________ */
+/* Media Queries */
+/* ========================================================================================================== */
 @media (max-width: 1024px) {
     .faqs-layout {
-        padding: 4rem;
+        padding: 3.5rem;
     }
 }
 @media (max-width: 768px) {
     .faqs-layout {
-        padding: 3rem;
+        padding: 2.5rem;
     }
 }
-@media (max-width: 425px) {
+@media (max-width: 680px) {
     .faqs-layout {
         padding: 2rem;
     }
 }
+@media (max-width: 592px) {
+    .faqs-layout {
+        padding: 1.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .faqs-layout {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 472px) {
+    .faqs-layout {
+        padding: 1.3rem;
+    }
+}
+@media (max-width: 425px) {
+    .faqs-layout {
+        padding: 1.2rem;
+    }
+}
 @media (max-width: 375px) {
+    .faqs-layout {
+        padding: 1.1rem;
+    }
+}
+@media (max-width: 320px) {
     .faqs-layout {
         padding: 1rem;
     }

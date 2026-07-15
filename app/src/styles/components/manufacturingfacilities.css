@@ -115,15 +115,7 @@
     }
 }
 
-@media (max-width: 768px) {
-    .manufacturing-facility-graphical-contents {
-        grid-template-columns: 1fr;
-    }
-}
 @media (max-width: 1024px) {
-    .manufacturing-facility-layout {
-        padding: 2rem;
-    }
     .manufacturing-facility-hdr {
         align-items: center;
         width: 80%;
@@ -131,6 +123,11 @@
     .manufacturing-facility-container {
         grid-template-columns: 0.75fr;
         gap: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    .manufacturing-facility-graphical-contents {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -189,4 +186,67 @@
 .other-facility-content-btn {
     color: var(--theme);
     cursor: pointer;
+}
+
+
+
+
+
+
+/* __________________________________________________________________________________________________________ */
+/* Media Queries */
+/* ========================================================================================================== */
+@media (max-width: 1024px) {
+    .manufacturing-facility-layout,
+    .other-facility-layout {
+        padding: 3.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .manufacturing-facility-layout,
+    .other-facility-layout {
+        padding: 2.5rem;
+    }
+}
+@media (max-width: 680px) {
+    .manufacturing-facility-layout,
+    .other-facility-layout {
+        padding: 2rem;
+    }
+}
+@media (max-width: 592px) {
+    .manufacturing-facility-layout,
+    .other-facility-layout {
+        padding: 1.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .manufacturing-facility-layout,
+    .other-facility-layout {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 472px) {
+    .manufacturing-facility-layout,
+    .other-facility-layout {
+        padding: 1.3rem;
+    }
+}
+@media (max-width: 425px) {
+    .manufacturing-facility-layout,
+    .other-facility-layout {
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 375px) {
+    .manufacturing-facility-layout,
+    .other-facility-layout {
+        padding: 1.1rem;
+    }
+}
+@media (max-width: 320px) {
+    .manufacturing-facility-layout,
+    .other-facility-layout {
+        padding: 1rem;
+    }
 }

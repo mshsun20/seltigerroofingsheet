@@ -175,9 +175,14 @@
 }
 
 
+
+
+/* __________________________________________________________________________________________________________ */
+/* Media Queries */
+/* ========================================================================================================== */
 @media (max-width: 1024px) {
     .products-layout {
-        padding: 2rem;
+        padding: 3.5rem;
     }
     .products-container {
         flex-direction: column;
@@ -198,8 +203,10 @@
         padding: 1rem;
     }
 }
-
 @media (max-width: 768px) {
+    .products-layout {
+        padding: 2.5rem;
+    }
     .products-heading {
         display: inline-block;
         font-size: 1.8rem;
@@ -220,5 +227,40 @@
         position: relative;
         width: 100%;
         padding: 1rem 0;
+    }
+}
+@media (max-width: 680px) {
+    .products-layout {
+        padding: 2rem;
+    }
+}
+@media (max-width: 592px) {
+    .products-layout {
+        padding: 1.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .products-layout {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 472px) {
+    .products-layout {
+        padding: 1.3rem;
+    }
+}
+@media (max-width: 425px) {
+    .products-layout {
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 375px) {
+    .products-layout {
+        padding: 1.1rem;
+    }
+}
+@media (max-width: 320px) {
+    .products-layout {
+        padding: 1rem;
     }
 }

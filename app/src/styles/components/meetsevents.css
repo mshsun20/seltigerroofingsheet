@@ -113,6 +113,9 @@
     transform: scale(1.15) rotate(5deg);
 }
 
+
+
+
 /* all */
 .meets-events-layout {
     position: relative;
@@ -218,4 +221,66 @@
     align-items: center;
     width: 100%;
     padding: 1rem;
+}
+
+
+
+
+
+/* __________________________________________________________________________________________________________ */
+/* Media Queries */
+/* ========================================================================================================== */
+@media (max-width: 1024px) {
+    .featured-layout,
+    .meets-events-layout {
+        padding: 3.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .featured-layout,
+    .meets-events-layout {
+        padding: 2.5rem;
+    }
+}
+@media (max-width: 680px) {
+    .featured-layout,
+    .meets-events-layout {
+        padding: 2rem;
+    }
+}
+@media (max-width: 592px) {
+    .featured-layout,
+    .meets-events-layout {
+        padding: 1.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .featured-layout,
+    .meets-events-layout {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 472px) {
+    .featured-layout,
+    .meets-events-layout {
+        padding: 1.3rem;
+    }
+}
+@media (max-width: 425px) {
+    .featured-layout,
+    .meets-events-layout {
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 375px) {
+    .featured-layout,
+    .meets-events-layout {
+        padding: 1.1rem;
+    }
+}
+@media (max-width: 320px) {
+    .featured-layout,
+    .meets-events-layout {
+        padding: 1rem;
+    }
 }

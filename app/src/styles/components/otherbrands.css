@@ -206,3 +206,56 @@
         }
     }
 }
+
+
+
+
+
+/* __________________________________________________________________________________________________________ */
+/* Media Queries */
+/* ========================================================================================================== */
+@media (max-width: 1024px) {
+    .other-brands-layout {
+        padding: 3.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .other-brands-layout {
+        padding: 2.5rem;
+    }
+}
+@media (max-width: 680px) {
+    .other-brands-layout {
+        padding: 2rem;
+    }
+}
+@media (max-width: 592px) {
+    .other-brands-layout {
+        padding: 1.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .other-brands-layout {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 472px) {
+    .other-brands-layout {
+        padding: 1.3rem;
+    }
+}
+@media (max-width: 425px) {
+    .other-brands-layout {
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 375px) {
+    .other-brands-layout {
+        padding: 1.1rem;
+    }
+}
+@media (max-width: 320px) {
+    .other-brands-layout {
+        padding: 1rem;
+    }
+}

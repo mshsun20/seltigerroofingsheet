@@ -235,9 +235,6 @@
 
 
 @media (max-width: 1024px) {
-    .choose-layout {
-        padding: 2rem;
-    }
     .choose-heading {
         font-size: 1.8rem;
     }
@@ -283,5 +280,58 @@
             order: 2;
             align-items: flex-start;
         }
+    }
+}
+
+
+
+
+
+/* __________________________________________________________________________________________________________ */
+/* Media Queries */
+/* ========================================================================================================== */
+@media (max-width: 1024px) {
+    .choose-layout {
+        padding: 3.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .choose-layout {
+        padding: 2.5rem;
+    }
+}
+@media (max-width: 680px) {
+    .choose-layout {
+        padding: 2rem;
+    }
+}
+@media (max-width: 592px) {
+    .choose-layout {
+        padding: 1.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .choose-layout {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 472px) {
+    .choose-layout {
+        padding: 1.3rem;
+    }
+}
+@media (max-width: 425px) {
+    .choose-layout {
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 375px) {
+    .choose-layout {
+        padding: 1.1rem;
+    }
+}
+@media (max-width: 320px) {
+    .choose-layout {
+        padding: 1rem;
     }
 }
