@@ -1,4 +1,5 @@
 import React from 'react'
+import "../../styles/blogs.css"
 
 const AddEdit = ({
     onCancel,

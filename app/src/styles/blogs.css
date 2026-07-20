@@ -34,7 +34,7 @@
     flex-direction: column;
     background-color: white;
     width: 100%;
-    /* padding: 2rem; */
+    padding: 5rem;
 }
 .blog-poster {
     display: flex;
@@ -87,6 +87,7 @@
 /* custom tags style of blog contents */
 .block-details h1 {font-size: 2.5rem;}
 .block-details h2 {font-size: 1.75rem;}
+
 
 
 

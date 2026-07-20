@@ -28,7 +28,7 @@ const Card = ({ content }) => {
             <div className="card-date">
               {moment(content?.updatedAt).format("Do MMM YYYY")}
             </div>
-            <div className="card-author">by {content?.author}</div>
+            <div className="card-author">by {content?.author?.name}</div>
           </div>
           <div className="card-hdr">
             <Link href={`/blogs/${content.slug}`}>{content?.title}</Link>

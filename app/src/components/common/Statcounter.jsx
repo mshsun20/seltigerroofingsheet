@@ -1,64 +1,84 @@
 "use client";
 import React from 'react';
+import { m, useInView } from "framer-motion";
+import {
+    zoomFadeIn,
+    fadeLeft,
+    fadeRight,
+    fadeTop,
+    fadeBottom
+} from "@/animations/allVariants";
 
 const CounterItem = React.memo(function CounterItem({ target, suffix, info }) {
     const [count, setCount] = React.useState(0);
+    const ref = React.useRef(null);
+    const isInView = useInView(ref, {
+        once: false,
+        amount: 0.3, // starts when 50% visible
+    });
 
     React.useEffect(() => {
-        const endValue = Number(target);
+    if (!isInView) {
+        setTimeout(() => {
+            setCount(target);
+        }, 0); // Reset when leaving viewport
+        return;
+    }
 
-        if (!Number.isFinite(endValue)) {
-            setTimeout(() => {
-                setCount(target);
-            }, 0);
-            return;
+    const endValue = Number(target);
+
+    if (!Number.isFinite(endValue)) {
+        setTimeout(() => {
+            setCount(target);
+        }, 0);
+        return;
+    }
+
+    const duration = 2000;
+    const startTime = performance.now();
+
+    const decimalPlaces = (() => {
+        const str = endValue.toString();
+
+        if (str.includes("e")) {
+            const [, exp] = str.split("e");
+            return Math.max(0, Math.abs(Number(exp)));
         }
 
-        const duration = 2000;
-        const startTime = performance.now();
+        return str.includes(".")
+            ? str.split(".")[1].length
+            : 0;
+    })();
 
-        // Detect precision automatically
-        const decimalPlaces = (() => {
-            const str = endValue.toString();
+    let animationFrame;
 
-            if (str.includes("e")) {
-                const [, exp] = str.split("e");
-                return Math.max(0, Math.abs(Number(exp)));
-            }
+    const updateCounter = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
 
-            return str.includes(".")
-                ? str.split(".")[1].length
-                : 0;
-        })();
+        const currentValue = endValue * progress;
 
-        let animationFrame;
+        setCount(
+            decimalPlaces > 0
+                ? Number(currentValue.toFixed(decimalPlaces))
+                : Math.round(currentValue)
+        );
 
-        const updateCounter = (currentTime) => {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
+        if (progress < 1) {
+            animationFrame = requestAnimationFrame(updateCounter);
+        } else {
+            setCount(endValue);
+        }
+    };
 
-            const currentValue = endValue * progress;
+    animationFrame = requestAnimationFrame(updateCounter);
 
-            setCount(
-                decimalPlaces > 0
-                    ? Number(currentValue.toFixed(decimalPlaces))
-                    : Math.round(currentValue)
-            );
+    return () => cancelAnimationFrame(animationFrame);
 
-            if (progress < 1) {
-                animationFrame = requestAnimationFrame(updateCounter);
-            } else {
-                setCount(endValue);
-            }
-        };
-
-        animationFrame = requestAnimationFrame(updateCounter);
-
-        return () => cancelAnimationFrame(animationFrame);
-    }, [target]);
+}, [isInView, target]);
 
     return (
-        <div className="stat-counter">
+        <div className="stat-counter" ref={ref}>
             <div className="counter-details">
                 <div className="counter-value">
                     {typeof count === "number" ? count.toLocaleString() : count}
@@ -72,7 +92,13 @@ const CounterItem = React.memo(function CounterItem({ target, suffix, info }) {
 
 const Statcounter = ({ statData=[] }) => {
     return (
-        <div className="stat-counter-wrapper">
+        <m.div
+            className="stat-counter-wrapper"
+            variants={zoomFadeIn}
+            initial={zoomFadeIn.hidden}
+            whileInView={zoomFadeIn.show}
+            viewport={{ once: false }}
+        >
             {statData.map((elm, i) => (
                 <CounterItem
                     key={i}
@@ -81,7 +107,7 @@ const Statcounter = ({ statData=[] }) => {
                     info={elm.info}
                 />
             ))}
-        </div>
+        </m.div>
     );
 };
 

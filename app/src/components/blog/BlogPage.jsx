@@ -20,7 +20,7 @@ const BlogPage = ({ blogs, limit }) => {
     }, []);
 
   return (
-    <div className="blog-layout">
+    <div className="blog-details">
         <div className="contnr">
             <Blogwall>
                 <ul className="blog-container">

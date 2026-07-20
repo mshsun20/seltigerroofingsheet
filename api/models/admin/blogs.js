@@ -10,9 +10,21 @@ const blogSchema = new Schema({
     site_name: { type: String, trim: true },
     robots: { type: String, trim: true },
     canonical: { type: String, trim: true },
-    author: { type: String, trim: true },
+    author: {
+        name: { type: String, trim: true, required: true },
+        bio: { type: String, trim: true },
+        socials: [{
+            provider: { type: String, trim: true },
+            link: { type: String, trim: true },
+        }],
+    },
     mediaLink: { type: String, trim: true },
     blocks: [{ type: Schema.Types.Mixed, required: true }],
+    faqs: [{
+        heading: { type: String, trim: true },
+        details: { type: String, trim: true },
+    }],
+    tags: [{ info: { type: String, trim: true } }],
     status: { type: String, required: true, enum: ['Active', 'Inactive'], default: 'Active' },
     createdBy: { type: Types.ObjectId, ref: 'Account' },
     updatedBy: { type: Types.ObjectId, ref: 'Account' }

@@ -6,6 +6,14 @@ import Link from 'next/link';
 import Statcounter from '@/components/common/Statcounter';
 import { heroStatCounterItems } from '@/configs/allStatCounterItems';
 import BannerObserver from "@/components/BannerObserver";
+import { m } from "framer-motion";
+import {
+    zoomFadeIn,
+    fadeLeft,
+    fadeRight,
+    fadeTop,
+    fadeBottom
+} from "@/animations/allVariants";
 
 const Hero = () => {
     const [arrow, setArrow] = React.useState('↗');
@@ -22,7 +30,13 @@ const Hero = () => {
             />
         </div>
         <div className="hero-part">
-            <div className="hero-container container">
+            <m.div
+                className="hero-container container"
+                variants={fadeTop}
+                initial={fadeTop.hidden}
+                whileInView={fadeTop.show}
+                viewport={{ once: false }}
+            >
                 <div className="hero-topper">
                     <span className="topper-icon">
                         <Image
@@ -46,15 +60,22 @@ const Hero = () => {
                 <div className="hero-stat">
                     <Statcounter statData={heroStatCounterItems} />
                 </div>
-            </div>
-            <div className="hero-links">
+            </m.div>
+            
+            <m.div
+                className="hero-links"
+                variants={fadeBottom}
+                initial={fadeBottom.hidden}
+                whileInView={fadeBottom.show}
+                viewport={{ once: false }}
+            >
                 <div className="link-wrap"></div>
                 <div className="link-info">
                     <Link href="#">Industrial Use</Link>
                     <Link href="#">Domestic Use</Link>
                     <Link href="#">Project Application</Link>
                 </div>
-            </div>
+            </m.div>
         </div>
         
         <BannerObserver range={72} />

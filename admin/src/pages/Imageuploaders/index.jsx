@@ -12,7 +12,9 @@ const Imageuploaders = () => {
     const fetchData = React.useCallback(async () => {
         try {
             const response = await axiosInstance.get(`/api/files/fetch-all`)
-            setData(response.data.files || [])
+            setTimeout(() => {
+                setData(response.data.files || [])
+            }, 0)
         } catch (error) {
             console.error(error)
         }
@@ -59,7 +61,7 @@ const Imageuploaders = () => {
                     <table>
                         <thead>
                             <tr>
-                                <th>Id</th>
+                                <th>Image</th>
                                 <th>Name</th>
                                 <th>Image</th>
                                 <th>Size</th>
@@ -72,7 +74,9 @@ const Imageuploaders = () => {
                             && data?.map((img, i) => (
                                 <tbody key={i}>
                                     <tr>
-                                        <td>{img?._id}</td>
+                                        <td>
+                                            <img src={img?.relativePath} alt="blog image" width={100} height={75} />
+                                        </td>
                                         <td>{img?.filename}</td>
                                         <td></td>
                                         <td>{parseFloat(img.size/1000).toFixed(3)}</td>

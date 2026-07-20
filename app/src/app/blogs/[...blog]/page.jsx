@@ -1,10 +1,10 @@
 import React from 'react'
 import dynamic from "next/dynamic";
 import LazyWrapper from "@/components/common/LazyWrapper"
-const Banner = dynamic(() => import("@/components/common/Banner"))
-import { blogBanner } from "@/data/blogBanner";
-const Blogcontent = dynamic(() => import("@/components/blog/Blogcontent"))
 import axiosInstance from "@/configs/axiosInstance"
+import { blogBanner } from "@/data/blogBanner";
+const Banner = dynamic(() => import("@/components/common/Banner"))
+const Blogcontent = dynamic(() => import("@/components/blog/Blogcontent"))
 
 export const generateMetadata = async ({ params }) => {
   const { blog } = await params
@@ -28,22 +28,22 @@ export const generateMetadata = async ({ params }) => {
 
 const Blog = async ({ params }) => {
   const { blog } = await params
-  console.log(blog);
+  // console.log(blog);
   const slug = blog?.[0] || "";
 
   const response = await axiosInstance.get(`/api/blogs/${slug}`)
   const blogData = response.data?.data || null
+
+  // console.log(blogData);
 
   const banner = {...blogBanner}
   banner.bannerInfo = [...banner.bannerInfo, {
     name: blogData?.title,
     url: "#"
   }]
-
-  console.log(banner);
     
   return (
-    <div className="blog-layout">
+    <div className="content-layout">
       <LazyWrapper><Banner data={blogData?.title} info={banner} /></LazyWrapper>
       <LazyWrapper><Blogcontent data={blogData} /></LazyWrapper>
     </div>

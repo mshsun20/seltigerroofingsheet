@@ -13,7 +13,9 @@ const Blogs = () => {
         try {
             const response = await axiosInstance.get('/api/blogs');
             // console.log(response);
-            setData(response.data.data || []);
+            setTimeout(() => {
+                setData(response.data.data || []);
+            }, 0)
         }
         catch (error) {
             console.error("Error fetching blog posts:", error);
@@ -81,7 +83,7 @@ const Blogs = () => {
                                 <tr key={blog._id}>
                                     <td>{blog.title}</td>
                                     <td>{blog.slug}</td>
-                                    <td>{blog.author}</td>
+                                    <td>{blog.author?.name}</td>
                                     <td>
                                         <button className="edit-btn" onClick={() => {
                                             setMode("edit");
