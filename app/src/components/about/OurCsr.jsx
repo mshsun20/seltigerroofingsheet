@@ -46,7 +46,7 @@ const OurCsr = () => {
                                         </div>
                                     </div>
                                     <div className="csr-content-actions">
-                                        <Link href={`/about/csr/${elm?.contentSlug}`}>Read More</Link>
+                                        <Link href={`/csr/${elm?.contentSlug}`}>Read More</Link>
                                     </div>
                                 </div>
                             </div>

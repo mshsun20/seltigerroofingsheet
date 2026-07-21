@@ -25,7 +25,7 @@ export const allProductsInfo = [{
                 height: 5000,
             },
             action: {
-                url: "/business/colour_coated",
+                url: "/colour-coated-sheets-and-coils",
                 info: "Read More"
             },
         },
@@ -40,7 +40,7 @@ export const allProductsInfo = [{
                 height: 5000,
             },
             action: {
-                url: "/business/aluzinc_sheets",
+                url: "/aluzinc-sheets-and-coils",
                 info: "Read More"
             },
         },
@@ -55,7 +55,7 @@ export const allProductsInfo = [{
                 height: 5000,
             },
             action: {
-                url: "/business/pipes",
+                url: "/pipes",
                 info: "Read More"
             },
         },
@@ -70,7 +70,7 @@ export const allProductsInfo = [{
                 height: 5000,
             },
             action: {
-                url: "/business/crfh_and_crca",
+                url: "/crfh-crca",
                 info: "Read More"
             },
         },

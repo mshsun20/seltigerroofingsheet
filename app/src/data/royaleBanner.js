@@ -9,6 +9,6 @@ export const royaleBanner = {
     bannerDescription: "Ultra-premium colour coated roofing sheets crafted for high durability and timeless elegance.",
     baseInfo: { name: "Home", url: "/" },
     bannerInfo: [
-        { name: "Royale", url: "/business/coloured_roofing_sheets/royale" }
+        { name: "Royale", url: "/royale" }
     ]
 }

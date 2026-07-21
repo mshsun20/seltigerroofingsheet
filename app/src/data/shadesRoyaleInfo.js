@@ -72,7 +72,7 @@ export const shadesRoyaleInfo = [{
         }
     ],
     action: {
-        url: `/contact`,
+        url: `/contact-us`,
         info: `Enquiry Now`
     }
 }]

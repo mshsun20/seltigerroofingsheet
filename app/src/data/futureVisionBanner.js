@@ -9,6 +9,6 @@ export const futureVisionBanner = {
     bannerDescription: "",
     baseInfo: { name: "Home", url: "/" },
     bannerInfo: [
-        { name: "Future Vision", url: "/about/future_vision" }
+        { name: "Future Vision", url: "/future-vision" }
     ]
 }

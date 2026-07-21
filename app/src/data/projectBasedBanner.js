@@ -9,6 +9,6 @@ export const projectBasedBanner = {
     bannerDescription: "",
     baseInfo: { name: "Home", url: "/" },
     bannerInfo: [
-        { name: "Roofing Sheets for Project Based", url: "/business/project_based" }
+        { name: "Roofing Sheets for Project Based", url: "/project-based" }
     ]
 }

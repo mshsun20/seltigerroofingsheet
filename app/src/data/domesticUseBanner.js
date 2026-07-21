@@ -9,6 +9,6 @@ export const domesticUseBanner = {
     bannerDescription: "",
     baseInfo: { name: "Home", url: "/" },
     bannerInfo: [
-        { name: "Roofing Sheets for Domestic Use", url: "/business/domestic_use" }
+        { name: "Roofing Sheets for Domestic Use", url: "/domestic-use" }
     ]
 }

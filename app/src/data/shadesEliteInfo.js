@@ -72,7 +72,7 @@ export const shadesEliteInfo = [{
         }
     ],
     action: {
-        url: `/contact`,
+        url: `/contact-us`,
         info: `Enquiry Now`
     }
 }]

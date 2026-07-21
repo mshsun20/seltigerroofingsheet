@@ -25,7 +25,7 @@ export const brandsRoyaleInfo = [{
                 height: 1000,
             },
             action: {
-                url: "/business/coloured_roofing_sheets/elite",
+                url: "/elite",
                 info: "Read More"
             },
         },
@@ -40,7 +40,7 @@ export const brandsRoyaleInfo = [{
                 height: 1000,
             },
             action: {
-                url: "/business/galvalume/azure",
+                url: "/azure",
                 info: "Read More"
             },
         },
@@ -55,7 +55,7 @@ export const brandsRoyaleInfo = [{
                 height: 1000,
             },
             action: {
-                url: "/business/galvalume/alfa",
+                url: "/alfa",
                 info: "Read More"
             },
         },

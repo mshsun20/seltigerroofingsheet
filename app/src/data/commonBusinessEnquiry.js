@@ -9,7 +9,7 @@ export const commonBusinessEnquiry = [{
         title: "Business Enquiry",
         actions: {
             info: "Enquire Now",
-            url: "/contact",
+            url: "/contact-us",
         }
     }
 }]

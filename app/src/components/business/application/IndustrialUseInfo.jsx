@@ -16,7 +16,7 @@ const IndustrialUseInfo = () => {
             <SafeHtmlRenderer content={elm} key={i} />
           ))}
           <div className="industrial-use-info-link">
-            <Link href={`/contact`}>Contact Us</Link>
+            <Link href={`/contact-us`}>Contact Us</Link>
           </div>
         </div>
       </div>

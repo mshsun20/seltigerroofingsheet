@@ -9,6 +9,6 @@ export const companyOverviewBanner = {
     bannerDescription: "",
     baseInfo: { name: "Home", url: "/" },
     bannerInfo: [
-        { name: "About Us", url: "/about/company_overview" }
+        { name: "About Us", url: "/about-us" }
     ]
 }

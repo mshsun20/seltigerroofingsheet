@@ -9,6 +9,6 @@ export const cataloguesBanner = {
     bannerDescription: "",
     baseInfo: { name: "Home", url: "/" },
     bannerInfo: [
-        { name: "Catalogues", url: "/about/highlights/meets_and_events" }
+        { name: "Catalogues", url: "/catalogues" }
     ]
 }

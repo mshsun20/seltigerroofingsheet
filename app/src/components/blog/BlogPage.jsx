@@ -20,10 +20,10 @@ const BlogPage = ({ blogs, limit }) => {
     }, []);
 
   return (
-    <div className="blog-details">
+    <div className="blog-layout">
         <div className="contnr">
             <Blogwall>
-                <ul className="blog-container">
+                <ul className="blog-contents">
                 {paginatedData.map((blog) => (
                     <li className="blog-content-list" key={blog.slug}>
                         <Card
@@ -31,14 +31,14 @@ const BlogPage = ({ blogs, limit }) => {
                             poster={blog.mediaLink}
                             title={blog.title}
                             description={blog.description}
-                            url={`/blogs/${blog.slug}`}
+                            url={`/${blog.slug}`}
                         />
                     </li>
                 ))}
                 </ul>
             </Blogwall>
 
-            <div className="meets-events-pagination">
+            <div className="blog-pagination">
                 <CustomPagination
                     page={page}
                     totalPages={totalPages}

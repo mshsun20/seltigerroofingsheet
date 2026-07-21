@@ -9,6 +9,6 @@ export const csrBanner = {
     bannerDescription: "",
     baseInfo: { name: "Home", url: "/" },
     bannerInfo: [
-        { name: "CSR", url: "/about/csr" }
+        { name: "CSR", url: "/csr" }
     ]
 }

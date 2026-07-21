@@ -25,7 +25,7 @@ export const brandsColourCoatedRoofingSheetInfo = [{
                 height: 1000,
             },
             action: {
-                url: "/business/coloured_roofing_sheets/royale",
+                url: "/royale",
                 info: "Read More"
             },
         },
@@ -40,7 +40,7 @@ export const brandsColourCoatedRoofingSheetInfo = [{
                 height: 1000,
             },
             action: {
-                url: "/business/coloured_roofing_sheets/elite",
+                url: "/elite",
                 info: "Read More"
             },
         },

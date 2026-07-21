@@ -10,20 +10,20 @@ const Blogcontent = ({ data }) => {
   console.log(data.tags.length);
 
   return (
-    <div className="blog-details">
-      <div className="blog-poster">
-        <div className="blog-image">
+    <div className="blog-item-layout">
+      <div className="blog-item-poster">
+        <div className="blog-item-image">
           <Image src={data?.mediaLink} alt="blog image" width={1000} height={800} unoptimized />
         </div>
-        <div className="blog-date">{`${moment(data?.createdAt).format("Do MMM, YYYY")} - by ${data?.author?.name}`} </div>
+        <div className="blog-item-date">{`${moment(data?.createdAt).format("Do MMM, YYYY")} - by ${data?.author?.name}`} </div>
       </div>
-      <div className="blog-info">
-        {/* <div className="blog-hdr">{data?.title}</div> */}
-        <div className="blog-description">
+      <div className="blog-item-info">
+        {/* <div className="blog-item-hdr">{data?.title}</div> */}
+        <div className="blog-item-description">
           <SafeHtmlRenderer content={data?.description} />
         </div>
         {data?.blocks?.length>0 && (
-          <div className="blog-content">
+          <div className="blog-item-content">
             {data?.blocks?.map((block, i) => (
               <div className="block-details" key={i}>
                 { block?.blockType==="snippet" && <SafeHtmlRenderer content={block?.blockSnippet} /> }
@@ -32,13 +32,13 @@ const Blogcontent = ({ data }) => {
             ))}
           </div>
         )}
-        {data?.blocks?.length>0 && <div style={{background:"grey", width:"100%", height:"0.1rem", margin:"1rem 0"}}></div>}
+        {data?.blocks?.length>0 && <div className="blog-divider"></div>}
 
         {data?.author?.name && (
-          <div className="blog-author">
-            <div className="blog-author-hdr">Written and Verified by:</div>
-            <div className="blog-author-info">
-              <div className="blog-author-icon">
+          <div className="blog-item-author">
+            <div className="blog-item-author-hdr">Written and Verified by:</div>
+            <div className="blog-item-author-info">
+              <div className="blog-item-author-icon">
                 <Image
                   src={`/wp-content/themes/sel/assets/img/logo/logo.png`}
                   alt="roofing sheet icon"
@@ -46,31 +46,31 @@ const Blogcontent = ({ data }) => {
                   height={100}
                 />
               </div>
-              <div className="blog-author-details">
-                <div className="blog-author-title">{data?.author?.name}</div>
-                <div className="blog-author-description">
+              <div className="blog-item-author-details">
+                <div className="blog-item-author-title">{data?.author?.name}</div>
+                <div className="blog-item-author-description">
                   <span>Bio:</span>
                   <span>{data?.author?.bio}</span>
                 </div>
-                <div className="blog-author-links"></div>
+                <div className="blog-item-author-links"></div>
               </div>
             </div>
           </div>
         )}
-        {data?.author?.name && <div style={{background:"grey", width:"100%", height:"0.1rem", margin:"1rem 0"}}></div>}
+        {data?.author?.name && <div className="blog-divider"></div>}
         
         {data?.faqs?.length>0 && (
-          <div className="blog-faqs">
+          <div className="blog-item-faqs">
             <BlogFaqs dataSet={data?.faqs} />
           </div>
         )}
-        {data?.faqs?.length>0 && <div style={{background:"grey", width:"100%", height:"0.1rem", margin:"1rem 0"}}></div>}
+        {data?.faqs?.length>0 && <div className="blog-divider"></div>}
         
         {data?.tags?.length>0 ? (
-          <div className="blog-tags">
-            <span className="blog-tags-hdr">Tags:</span>
+          <div className="blog-item-tags">
+            <span className="blog-item-tags-hdr">Tags:</span>
             {data?.tags?.map((elm, i) => (
-              <div className="blog-tags-link" key={i}>
+              <div className="blog-item-tags-link" key={i}>
                 <Link href={elm?.url || '#'} target="_blank">{elm?.info}</Link>
               </div>
             ))}

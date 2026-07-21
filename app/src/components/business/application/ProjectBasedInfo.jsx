@@ -15,7 +15,7 @@ const ProjectBasedInfo = () => {
                     <SafeHtmlRenderer content={elm} key={i} />
                 ))}
                 <div className="project-based-info-link">
-                    <Link href={`/contact`}>Contact Us</Link>
+                    <Link href={`/contact-us`}>Contact Us</Link>
                 </div>
             </div>
         </div>

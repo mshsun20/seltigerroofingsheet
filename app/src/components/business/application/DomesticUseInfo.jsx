@@ -15,7 +15,7 @@ const DomesticUseInfo = () => {
                     <SafeHtmlRenderer content={elm} key={i} />
                 ))}
                 <div className="domestic-use-info-link">
-                    <Link href={`/contact`}>Contact Us</Link>
+                    <Link href={`/contact-us`}>Contact Us</Link>
                 </div>
             </div>
         </div>

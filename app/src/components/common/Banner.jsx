@@ -1,5 +1,6 @@
 "use client";
 import React from 'react'
+import "@/styles/banner.css";
 import Image from 'next/image';
 import Link from 'next/link';
 import BannerObserver from "@/components/BannerObserver";
@@ -15,21 +16,23 @@ const Banner = ({ data, info }) => {
                 height={info?.bannerImage?.height}
             />
         </div>
-        <div className="banner-content container">
-            <div className="banner-hdr">{data}</div>
-            <div className="banner-info">
-                <Link href={info?.baseInfo?.url}>{info?.baseInfo?.name}</Link>
-                {
-                    info?.bannerInfo?.map((elm, i) => (
-                        <div key={i}>
-                            <span>&nbsp;&nbsp;{">>"}&nbsp;&nbsp;</span>
-                            {
-                                String(elm?.url)==="#" ? <span>{elm.name}</span>
-                                : <Link href={elm?.url}>{elm?.name}</Link>
-                            }
-                        </div>
-                    ))
-                }
+        <div className="banner-content">
+            <div className="contnr">
+                <div className="banner-hdr">{data}</div>
+                <div className="banner-info">
+                    <Link href={info?.baseInfo?.url}>{info?.baseInfo?.name}</Link>
+                    {
+                        info?.bannerInfo?.map((elm, i) => (
+                            <div key={i}>
+                                <span>&nbsp;&nbsp;{">>"}&nbsp;&nbsp;</span>
+                                {
+                                    String(elm?.url)==="#" ? <span>{elm.name}</span>
+                                    : <Link href={elm?.url}>{elm?.name}</Link>
+                                }
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
         </div>
         

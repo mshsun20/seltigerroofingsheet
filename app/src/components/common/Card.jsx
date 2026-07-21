@@ -11,7 +11,7 @@ const Card = ({ content }) => {
   return (
     <div className='card'>
         <div className="card-poster">
-          <Link href={`/blogs/${content.slug}`}>
+          <Link href={`/${content.slug}`}>
             {String(content?.mediaLink) === ""
             ? <h3>{content?.title || ""}</h3>
             : <Image
@@ -31,14 +31,14 @@ const Card = ({ content }) => {
             <div className="card-author">by {content?.author?.name}</div>
           </div>
           <div className="card-hdr">
-            <Link href={`/blogs/${content.slug}`}>{content?.title}</Link>
+            <Link href={`/${content.slug}`}>{content?.title}</Link>
           </div>
           <div className="card-details">
             <SafeHtmlRenderer content={content?.description} />
           </div>
         </div>
         <div className="card-actions">
-          <Link href={`/blogs/${content.slug}`}>Read More</Link>
+          <Link href={`/${content.slug}`}>Read More</Link>
         </div>
     </div>
   )

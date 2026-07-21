@@ -28,7 +28,7 @@ export const techAlZnSheetInfo = [{
         ]
     },
     action: {
-        url: `/contact`,
+        url: `/contact-us`,
         info: `Enquiry for Bulk Order`
     }
 }]

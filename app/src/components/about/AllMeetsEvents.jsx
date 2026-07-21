@@ -54,7 +54,7 @@ const AllMeetsEvents = () => {
                                     <span><SafeHtmlRenderer content={elm?.contentTextuals} /></span>
                                 </div>
                                 <div className="all-content-info-actions">
-                                    <Link href={`/about/highlights/meets_and_events/${elm.contentSlug}`}>Read More</Link>
+                                    <Link href={`/meets-events/${elm.contentSlug}`}>Read More</Link>
                                 </div>
                             </div>
                         </div>

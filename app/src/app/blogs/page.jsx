@@ -1,4 +1,5 @@
 import React from 'react'
+import "@/styles/blogs.css";
 import dynamic from "next/dynamic";
 import axiosInstance from '@/configs/axiosInstance'
 import LazyWrapper from '@/components/common/LazyWrapper';

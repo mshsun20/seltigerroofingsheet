@@ -12,13 +12,13 @@ const BlogFaqs = ({ dataSet = [] }) => {
     }));
 
   return (
-    <div className="all-faq-layout">
+    <div className="blog-item-faq-layout">
         <div className="contnr">
-            <div className="all-faq-hdr">
-                <div className="all-faq-heading">FAQs</div>
+            <div className="blog-item-faq-hdr">
+                <div className="blog-item-faq-heading">FAQs</div>
             </div>
-            <div className="all-faq-container">
-                <div className="all-faq-item-contents">
+            <div className="blog-item-faq-container">
+                <div className="blog-item-faq-item-contents">
                     <Accordion
                         items={items}
                         defaultOpen={0}

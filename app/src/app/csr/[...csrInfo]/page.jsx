@@ -22,7 +22,7 @@ const CsrInfo = async ({ params }) => {
         bannerTitle: "CSR",
         baseInfo: { name: "Home", url: "/" },
         bannerInfo: [
-            { name: "CSR", url: "/about/csr" },
+            { name: "CSR", url: "/csr" },
             { name: data?.contentTextuals?.caption, url: "#" },
         ]
     })
