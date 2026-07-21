@@ -35,13 +35,39 @@ const Blogs = () => {
             else if (mode === "edit") {
                 response = await axiosInstance.patch(`/api/blogs/${blogData.id}`, blogData.formData);
             }
-            alert(`Blog post for ${response.data.data.slug} ${mode === "add" ? "created" : "updated"} successfully!`);
-            setShowForm(false);
-            setMode(null);
-            fetchData();
+
+            if (response.status === 201) {
+                alert(`Blog post for ${response.data.data.slug} ${mode === "add" ? "created" : "updated"} successfully!`);
+                setShowForm(false);
+                setMode(null);
+                fetchData();
+            }
+            else {
+                alert(response.data.message)
+            }
         }
         catch (error) {
             console.error("Error submitting blog post:", error);
+            alert("ERROR details: " + (error.response?.data?.error || error.message || "An unknown error occurred"));
+        }
+    }
+
+    const handleRemove = async (e, id) => {
+        e.preventDefault();
+
+        try {
+            if (confirm(`Confirm Blog removal ?`)) {
+                const response = await axiosInstance.delete(`/api/blogs/${id}`)
+                if (response.status === 200) {
+                    alert(response.data.message)
+                    fetchData()
+                }
+                else {
+                    alert(response.data.message)
+                }
+            }
+        } catch (error) {
+            console.error(error)
             alert("ERROR details: " + (error.response?.data?.error || error.message || "An unknown error occurred"));
         }
     }
@@ -74,8 +100,8 @@ const Blogs = () => {
                                 <th>Title</th>
                                 <th>Slug</th>
                                 <th>Author</th>
+                                <th>Image</th>
                                 <th>Actions</th>
-
                             </tr>
                         </thead>
                         <tbody>
@@ -85,6 +111,9 @@ const Blogs = () => {
                                     <td>{blog.slug}</td>
                                     <td>{blog.author?.name}</td>
                                     <td>
+                                        <img src={blog?.mediaLink} alt="Blog Image" width={100} height={75} />
+                                    </td>
+                                    <td>
                                         <button className="edit-btn" onClick={() => {
                                             setMode("edit");
                                             setBlog(blog);
@@ -92,7 +121,7 @@ const Blogs = () => {
                                         }}>
                                             Edit
                                         </button>
-                                        <button className="delete-btn">Delete</button>
+                                        <button className="delete-btn" onClick={(e) => handleRemove(e, blog?._id)}>Delete</button>
                                     </td>
                                 </tr>
                             ))}

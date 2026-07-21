@@ -24,7 +24,10 @@ const blogSchema = new Schema({
         heading: { type: String, trim: true },
         details: { type: String, trim: true },
     }],
-    tags: [{ info: { type: String, trim: true } }],
+    tags: [{
+        info: { type: String, trim: true },
+        url: { type: String, trim: true }
+    }],
     status: { type: String, required: true, enum: ['Active', 'Inactive'], default: 'Active' },
     createdBy: { type: Types.ObjectId, ref: 'Account' },
     updatedBy: { type: Types.ObjectId, ref: 'Account' }

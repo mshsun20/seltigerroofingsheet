@@ -34,7 +34,7 @@ const Blog = async ({ params }) => {
   const response = await axiosInstance.get(`/api/blogs/${slug}`)
   const blogData = response.data?.data || null
 
-  // console.log(blogData);
+  console.log(blogData);
 
   const banner = {...blogBanner}
   banner.bannerInfo = [...banner.bannerInfo, {

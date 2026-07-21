@@ -5,13 +5,17 @@ export const generateSlug = (title) => {
     return title.toLowerCase().replace(/ /g, "-").replace(/[^\w-]+/g, "");
 };
 
-export const parseIntoJson = (dataSet={}) => {
+export const parseToJson = (dataSet={}) => {
     Object.assign(dataSet, {
         author: JSON.parse(dataSet.author),
         blocks: JSON.parse(dataSet.blocks),
         faqs: JSON.parse(dataSet.faqs),
         tags: JSON.parse(dataSet.tags),
     })
+    dataSet.author.socials = dataSet.author.socials?.filter(elm => elm.link!=="")
+    dataSet.blocks = dataSet.blocks?.filter(elm => elm.blockSnippet!=="")
+    dataSet.faqs = dataSet.faqs?.filter(elm => elm.heading!=="" || elm.details!=="")
+    dataSet.tags = dataSet.tags?.filter(elm => elm.info!=="")
 
     return dataSet
 }
@@ -28,7 +32,8 @@ export const createBlog = async (req, res) => {
             return res.status(400).json({ error: `A blog post for '${slug}' already exists`, success: false });
         }
         
-        const parsedPayload = parseIntoJson(blogPayload);
+        const parsedPayload = parseToJson(blogPayload);
+        // console.log(parsedPayload);
         const newBlog = new Blog(parsedPayload);
         const savedBlog = await newBlog.save();
         res.status(201).json({ message: "Blog post created successfully", data: savedBlog, success: true });
@@ -67,16 +72,13 @@ export const updateBlog = async (req, res) => {
 
         delete blogPayload._id;
         delete blogPayload.slug;
-        // const parsedblocks = JSON.parse(blogPayload.blocks)
-        // Object.assign(blogPayload, { blocks: parsedblocks })
-
-        const parsedPayload = parseIntoJson(blogPayload);
-        console.log(parsedPayload);
+        const parsedPayload = parseToJson(blogPayload);
+        // console.log(parsedPayload);
         const updatedBlog = await Blog.findByIdAndUpdate(id, parsedPayload, { returnDocument: "after" });
         if (!updatedBlog) {
             return res.status(404).json({ error: "Blog post not found", success: false });
         }
-        res.status(200).json({ message: "Blog post updated successfully", data: updatedBlog, success: true });
+        res.status(201).json({ message: "Blog post updated successfully", data: updatedBlog, success: true });
     } catch (error) {
         res.status(500).json({ error: "Failed to update blog post", success: false });
     }

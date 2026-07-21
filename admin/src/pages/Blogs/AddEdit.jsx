@@ -17,6 +17,7 @@ const faqsSection = [{
 }]
 const tagSection = [{
     info: "",
+    link: "",
 }]
 
 const initialForm = {
@@ -64,7 +65,6 @@ const AddEdit = ({
         faqs: initialData.faqs?.map(elm => elm) || [...faqsSection],
         tags: initialData.tags?.map(elm => elm) || [...tagSection]
     });
-    // const [blocks, setBlocks] = React.useState([...blockSection])
     const [fileList, setFileList] = React.useState([])
 
     const fetchData = React.useCallback(async () => {
@@ -131,6 +131,7 @@ const AddEdit = ({
                 ...prev.tags,
                 {
                     info: "",
+                    link: "",
                 }
             ]
         }))
@@ -238,6 +239,7 @@ const AddEdit = ({
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(form);
+
         const formData = new FormData();
         for (const key in form) {
             if (key === "author") {
@@ -287,7 +289,7 @@ const AddEdit = ({
                     </div>
                     <div className="form-group">
                         <label htmlFor="description">Description</label>
-                        <input type="text" name="description" className="form-control" placeholder="Add Description" value={form.description} onChange={handleChange} />
+                        <textarea name="description" className="form-control" placeholder="Add Description" cols={24} rows={5} value={form.description} onChange={handleChange}></textarea>
                     </div>
                     <div className="form-group">
                         <label htmlFor="url">URL</label>
@@ -343,13 +345,14 @@ const AddEdit = ({
                             <textarea type="text" name="bio" className="form-control" placeholder="Add Author Bio" value={form.author.bio} onChange={handleAuthorChange}></textarea>
                         </div>
 
-                        <div className="social-activator">
-                            <button onClick={addSocials}>Add New Social</button>
-                        </div>
-                        <div className="social-group">
+                        <div className="socials-group">
+                            <label htmlFor="name">Social</label>
+                            <div className="socials-activator">
+                                <button onClick={addSocials}>Add New Social</button>
+                            </div>
                             {form?.author?.socials?.length>0
                             && form?.author?.socials?.map((elm, i) => (
-                                <div id="social-section" key={i}>
+                                <div id="socials-section" key={i}>
                                     <div className="form-group">
                                         <label htmlFor="provider">Provider</label>
                                         <input type="text" name="provider" className="form-control" placeholder="Add Provider" value={form.author.socials[i]?.provider || ""} onChange={(e) => handleAuthorSocialChange(i, e)} />
@@ -364,17 +367,17 @@ const AddEdit = ({
                     </div>
 
                     <div
-                        className="block-group"
+                        className="blocks-group"
                         style={{ padding:"1rem", border:"0.2rem solid black" }}
                     >
                         <label htmlFor="name">Block</label>
-                        <div className="block-activator">
+                        <div className="blocks-activator">
                             <button onClick={addBlocks}>Add New Block</button>
                         </div>
                         {
                             form?.blocks?.length>0
                             && form?.blocks?.map((elm, i) => (
-                                <div id="block-section" key={i}>
+                                <div id="blocks-section" key={i}>
                                     <div className="form-group">
                                         <label htmlFor="blockType">Type</label>
                                         <select name="blockType" className="form-select" value={form.blocks[i]?.blockType || ""} onChange={(e) => handleBlockChange(i, e)}>
@@ -395,7 +398,7 @@ const AddEdit = ({
                                         form.blocks[i]?.blockType==="tag" && (
                                             <div className="form-group">
                                                 <label htmlFor="blockTags">Tag Name</label>
-                                                <input type="text" name="blockTags" className="form-control" placeholder="Add Tag" value={form.blocks[i]?.blockTags || ""} onChange={(e) => handleBlockChange(i, e)} />
+                                                <input type="text" name="blockTags" className="form-control" placeholder="Add Tag Name" value={form.blocks[i]?.blockTags || ""} onChange={(e) => handleBlockChange(i, e)} />
                                             </div>
                                         )
                                     }
@@ -413,20 +416,20 @@ const AddEdit = ({
                     </div>
 
                     <div
-                        className="faq-group"
+                        className="faqs-group"
                         style={{ padding:"1rem", border:"0.2rem solid black" }}
                     >
                         <label htmlFor="name">Faqs</label>
-                        <div className="faq-activator">
+                        <div className="faqs-activator">
                             <button onClick={addFaqs}>Add New Faqs</button>
                         </div>
                         {
                             form?.faqs?.length>0
                             && form?.faqs?.map((elm, i) => (
-                                <div id="faq-section" key={i}>
+                                <div id="faqs-section" key={i}>
                                     <div className="form-group">
                                         <label htmlFor="heading">Heading</label>
-                                        <input type="text" name="heading" className="form-control" placeholder="Add Tag" value={form.faqs[i]?.heading || ""} onChange={(e) => handleFaqChange(i, e)} />
+                                        <input type="text" name="heading" className="form-control" placeholder="Add Faqs heading" value={form.faqs[i]?.heading || ""} onChange={(e) => handleFaqChange(i, e)} />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="details">Details</label>
@@ -438,20 +441,24 @@ const AddEdit = ({
                     </div>
 
                     <div
-                        className="tag-group"
+                        className="tags-group"
                         style={{ padding:"1rem", border:"0.2rem solid black" }}
                     >
                         <label htmlFor="name">Tags</label>
-                        <div className="tag-activator">
+                        <div className="tags-activator">
                             <button onClick={addTags}>Add New Tags</button>
                         </div>
                         {
                             form?.tags?.length>0
                             && form?.tags?.map((elm, i) => (
-                                <div id="tag-section" key={i}>
+                                <div id="tags-section" key={i}>
                                     <div className="form-group">
                                         <label htmlFor="info">Info</label>
-                                        <input type="text" name="info" className="form-control" placeholder="Add Tgas" value={form.tags[i]?.info || ""} onChange={(e) => handleTagChange(i, e)} />
+                                        <input type="text" name="info" className="form-control" placeholder="Add Tag Info" value={form.tags[i]?.info || ""} onChange={(e) => handleTagChange(i, e)} />
+                                    </div>
+                                    <div className="form-group">
+                                        <laurlbel htmlFor="info">URL</laurlbel>
+                                        <input type="text" name="url" className="form-control" placeholder="Add Tag URL" value={form.tags[i]?.url || ""} onChange={(e) => handleTagChange(i, e)} />
                                     </div>
                                 </div>
                             ))
