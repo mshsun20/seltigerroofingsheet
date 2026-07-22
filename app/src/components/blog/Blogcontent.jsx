@@ -66,16 +66,19 @@ const Blogcontent = ({ data }) => {
         )}
         {data?.faqs?.length>0 && <div className="blog-divider"></div>}
         
-        {data?.tags?.length>0 ? (
+        {data?.tags?.length>0 && (
           <div className="blog-item-tags">
             <span className="blog-item-tags-hdr">Tags:</span>
-            {data?.tags?.map((elm, i) => (
-              <div className="blog-item-tags-link" key={i}>
-                <Link href={elm?.url || '#'} target="_blank">{elm?.info}</Link>
-              </div>
-            ))}
+            <div className="blog-item-tags-info">
+              {data?.tags?.map((elm, i) => (
+                <div className="blog-item-tags-link" key={i}>
+                  <Link href={elm?.url || '#'} target="_blank">{elm?.info}</Link>
+                </div>
+              ))}
+            </div>
           </div>
-        ) : <div></div>}
+        )}
+        {data?.tags?.length>0 && <div className="blog-divider"></div>}
       </div>
     </div>
   )

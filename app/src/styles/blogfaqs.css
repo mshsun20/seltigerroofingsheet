@@ -7,36 +7,14 @@
     background-color: var(--white);
     width: 100%;
     height: auto;
-    padding: 5rem;
+    /* padding: 5rem; */
 }
 .blog-item-faq-hdr {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     width: 100%;
-}
-.blog-item-faq-top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-}
-.blog-item-faq-top .topper-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 0.2rem;
-
-    img {
-        width: 2rem;
-    }
-}
-.blog-item-faq-top .topper-text {
-    margin-left: 0.2rem;
-    color: black;
-    font-size: 1rem;
-    font-weight: 600;
 }
 .blog-item-faq-heading {
     width: auto;
