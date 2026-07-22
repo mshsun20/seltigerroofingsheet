@@ -5,6 +5,8 @@ import Image from 'next/image';
 import moment from "moment";
 import BlogFaqs from "@/components/blog/BlogFaqs";
 import Link from 'next/link';
+import { FaFacebookF } from "react-icons/fa";
+import { BsInstagram } from "react-icons/bs";
 
 const Blogcontent = ({ data }) => {
   console.log(data.tags.length);
@@ -49,10 +51,20 @@ const Blogcontent = ({ data }) => {
               <div className="blog-item-author-details">
                 <div className="blog-item-author-title">{data?.author?.name}</div>
                 <div className="blog-item-author-description">
-                  <span>Bio:</span>
-                  <span>{data?.author?.bio}</span>
+                  <span className="blog-item-author-description-caption">Bio:&nbsp;</span>
+                  <span className="blog-item-author-description-data">{data?.author?.bio}</span>
                 </div>
-                <div className="blog-item-author-links"></div>
+                {data?.author?.socials?.length>0
+                && (
+                  <div className="blog-item-author-links">
+                    {data?.author?.socials?.map((itm, i) => (
+                      <Link href={itm?.link} key={i} target="_blank" className="social-link">
+                        {String(itm?.provider).toLowerCase()==="facebook" && <FaFacebookF className="social-icon" />}
+                        {String(itm?.provider).toLowerCase()==="instagram" && <BsInstagram className="social-icon" />}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </div>

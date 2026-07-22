@@ -142,10 +142,100 @@
     padding: 0rem;
     margin: 0.5rem 0 2rem 0;
 }
+
+/* author design */
 .blog-item-author {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
     padding: 1rem 0;
     color: #646464;
     font-size: 1rem;
+}
+.blog-item-author-hdr {
+    padding-bottom: 1rem;
+    color: var(--theme);
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+.blog-item-author-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1rem;
+    width: 100%;
+}
+.blog-item-author-icon {
+    grid-column: span 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    height: auto;
+    padding: 1rem 1rem 1rem 0;
+
+    img {
+        width: 10rem;
+        height: auto;
+    }
+}
+.blog-item-author-details {
+    grid-column: span 3;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    /* max-height: 5rem; */
+}
+.blog-item-author-title {
+    padding-bottom: 0.5rem;
+    color: var(--theme);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.blog-item-author-description {
+    padding: 0.2rem 0;
+    font-size: 1.1rem;
+}
+.blog-item-author-description-caption {
+    color: #383c3e;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+.blog-item-author-description-data {
+    color: #6C757D;
+}
+.blog-item-author-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+
+    .social-link {
+        background: transparent;
+        padding: 0.5rem;
+        border: 0.1rem solid var(--theme);
+        border-radius: 0.75rem;
+        transition: all 0.1s ease-in-out;
+
+        .social-icon {
+            color: var(--theme);
+            font-size: 1.2rem;
+            transition: all 0.1s ease-in-out;
+        }
+
+        &:hover {
+            background: var(--theme);
+
+            .social-icon {
+                color: white;
+            }
+        }
+    }
 }
 
 /* tags design */
