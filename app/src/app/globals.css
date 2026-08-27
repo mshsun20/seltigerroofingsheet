@@ -127,7 +127,7 @@ a {
   background: #00000017;
   box-shadow: 0 10px 25px #00000014;
   -webkit-backdrop-filter: blur(1rem);
-  backdrop-filter: blur(1rem);
+  backdrop-filter: blur(0rem);
 }
 
 .nav-solid{
@@ -444,7 +444,6 @@ a {
 }
 
 /* links + accordion buttons */
-
 .mobile-menu-link,
 .mobile-submenu-toggle {
   display: flex;
@@ -460,6 +459,18 @@ a {
   text-align: left;
   cursor: pointer;
   transition: all 0.25s ease;
+}
+
+.mobile-parent-button {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 
 .mobile-menu-link:hover,
@@ -536,6 +547,24 @@ a {
   width: auto;
   height: 100%;
   object-fit: contain;
+}
+
+.mobile-submenu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-submenu-toggle > a,
+.mobile-submenu-toggle > .mobile-parent-button {
+  flex: 1;
+  min-width: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.mobile-submenu-toggle > .mobile-arrow {
+  flex-shrink: 0;
 }
 
 /* =======================================================================================================================

@@ -13,9 +13,14 @@ const aboutItems = [
 ]
 
 // Business Menu items
+const crgrsSubItems = [
+  { name: "Colour Corrugated Sheet", path: "/corrugated-sheet/colour-corrugated-sheet" },
+  { name: "Aluminium Zinc Corrugated Sheet", path: "/corrugated-sheet/aluminium-zinc-corrugated-sheet" },
+] 
 const productsItems = [
   { name: "Colour Coated", path: "/colour-coated-sheets-and-coils" },
   { name: "Aluzinc Sheets", path: "/aluzinc-sheets-and-coils" },
+  { name: "Corrugated Roofing Sheets", path: "/corrugated-sheet", children: [ ...crgrsSubItems ] },
   { name: "Pipes", path: "/pipes" },
   { name: "CRFH & CRCA", path: "/crfh-crca" }
 ]
@@ -62,7 +67,7 @@ const roofItYourselfItems = [
 // Main Menu -----------------------------------------------------------------------------------------------------------------------
 export const menuItems = [
   { name: "Home", path: "/" },
-  { name: "About", children: [ ...aboutItems ] },
+  { name: "About", path: "/about-us", children: [ ...aboutItems ] },
   { name: "Business", children: [ ...businessItems ] },
   {
     name: "Shyam Metalics",
