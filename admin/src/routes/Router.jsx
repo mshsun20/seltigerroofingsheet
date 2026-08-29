@@ -1,20 +1,21 @@
 import React from 'react'
 import '../App.css'
 import { createBrowserRouter, RouterProvider, Routes, Route } from 'react-router'
-import Blogs from '../pages/Blogs'
-import AddEdit from '../pages/Blogs/AddEdit'
-import Imageuploaders from '../pages/Imageuploaders'
+const Login = React.lazy(() => import("../pages/Login"));
+const Blogs = React.lazy(() => import("../pages/Blogs/index"));
+const Imageuploaders = React.lazy(() => import("../pages/Imageuploaders/index"));
 
 const router = createBrowserRouter([
-  { path: "/", element: <Blogs /> },
-  { path: "/blogs/add", element: <AddEdit mode="add" /> },
-  { path: "/blogs/edit/:id", element: <AddEdit mode="edit" /> },
+  { path: "/", element: <Login /> },
+  { path: "/blogs", element: <Blogs /> },
   { path: "/image-uploader", element: <Imageuploaders /> },
 ]);
 
 const Router = () => {
   return (
-    <RouterProvider router={router} />
+    <React.Suspense fallback={<div>Loading...</div>}>
+      <RouterProvider router={router} />
+    </React.Suspense>
   )
 }
 

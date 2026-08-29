@@ -1,0 +1,73 @@
+.corrugated-specifications-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 2rem 5rem;
+}
+.corrugated-specifications-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    font-size: 3rem;
+    font-weight: 600;
+}
+.corrugated-specifications-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+.corrugated-specifications-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+.corrugated-specifications-tabular-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 0;
+}
+.corrugated-specifications-table {
+    width: 100%;
+    border-collapse: collapse;
+    thead {
+        th {
+            background: var(--theme);
+            padding: 1rem;
+            color: #ffffff;
+            text-align: start;
+            border: 0.1rem solid #c1c0c0;
+        }
+    }
+    tbody {
+        td {
+            padding: 1rem;
+            border: 0.1rem solid #c1c0c0;
+        }
+    }
+    tfoot {
+        td {
+            padding: 0.5rem 0;
+            color: #646363;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+    }
+}
+.corrugated-specifications-textual-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}

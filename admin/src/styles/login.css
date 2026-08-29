@@ -1,0 +1,46 @@
+.login-layout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #2c5552;
+    width: 100%;
+    height: 100svh;
+}
+.login-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #6bcec7;
+    width: auto;
+    height: auto;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem #0e1515;
+}
+.login-header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    font-size: 2rem;
+}
+.login-form {}
+
+.login-form-group {}
+.login-form-label {}
+.login-form-input {}
+.login-form-btns {}
+.login-message {}
+
+.show-hide-btn {}
+.submit-btn {}
+
+.success-messsage {}
+.error-messsage {}
