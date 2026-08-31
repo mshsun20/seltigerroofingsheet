@@ -1,42 +1,48 @@
 import React from 'react'
 import "../styles/login.css";
-import axiosInstance from '../config/axiosInstance';
+// import axiosInstance from '../config/axiosInstance';
+import { useDispatch } from "react-redux";
+import { login } from "../redux/slices/authSlice";
 
-const reducerAction = async ({ prevState, formData }) => {
-    const payload = Object.fromEntries(formData);
+const initialState = { success:false, message:"", data:null, attempt:0 }
 
-    try {
-        const response = await axiosInstance.post(`/api/login`, payload);
-        if (response.status === 200) {
-            return {
-                success: true,
-                message: response.data.message,
-                data: response.data.data,
-                attempt: 0
+const Login = () => {
+    const dispatch = useDispatch();
+    const [showPass, setShowPass] = React.useState(false);
+
+    const reducerAction = async (prevState, formData) => {
+        const payload = Object.fromEntries(formData);
+
+        try {
+            const response = await dispatch(login(payload));
+            console.log(response);
+            if (response.payload.success) {
+                return {
+                    success: true,
+                    message: response.data.message,
+                    data: response.data.data,
+                    attempt: 0
+                }
             }
-        }
-        else {
+            else {
+                return {
+                    success: false,
+                    message: response.data.message,
+                    data: null,
+                    attempt: prevState.attempt + 1
+                }
+            }
+        } catch (error) {
             return {
                 success: false,
-                message: response.data.message,
+                message: error.message,
                 data: null,
                 attempt: prevState.attempt + 1
             }
         }
-    } catch (error) {
-        return {
-            success: false,
-            message: error.message,
-            data: null,
-            attempt: prevState.attempt + 1
-        }
     }
-}
-const initialState = { success:false, message:"", data:null, attempt:0 }
 
-const Login = () => {
     const [stateValue, dispatchAction, isPending] = React.useActionState(reducerAction, initialState);
-    const [showPass, setShowPass] = React.useState(false);
 
   return (
     <div className="login-layout">
@@ -59,6 +65,7 @@ const Login = () => {
                     <input type="submit" value={isPending ? "Signing In" : "Sign In"} disabled={isPending} className="submit-btn" />
                 </div>
             </form>
+
             {stateValue.message!=="" && (
                 stateValue.success
                 ? <div className="login-message success-messsage">{stateValue.message}</div>

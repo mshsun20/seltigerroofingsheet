@@ -14,7 +14,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #6bcec7;
+    background: #c9e6e4;
     width: auto;
     height: auto;
     padding: 2rem;
@@ -30,17 +30,109 @@
     height: auto;
     padding: 1rem;
     font-size: 2rem;
+    letter-spacing: 0.05rem;
+    border-bottom: 0.2rem solid #2c5552;
 }
-.login-form {}
+.login-form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 0.5rem;
+}
 
-.login-form-group {}
-.login-form-label {}
-.login-form-input {}
-.login-form-btns {}
-.login-message {}
+.login-form-group {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.1rem;
+    width: 100%;
+    height: auto;
+    padding: 0.5rem;
+}
+.login-form-label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.login-form-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    width: 100%;
+    min-width: 15rem;
+    padding: 0.5rem;
+    border: none;
+    outline: 0.05rem solid #74c3be;
+    transition: all 0.2s ease;
+    &:hover, &:focus {
+        outline: 0.05rem solid #2c5552;
+    }
+}
+.login-form-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 0.5rem;
+}
+.login-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 0.5rem;
+}
 
-.show-hide-btn {}
-.submit-btn {}
+.show-hide-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    color: #32222f;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.submit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0e1515;
+    padding: 0.5rem;
+    color: #74c3be;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    border: 0.1rem solid #0e1515;
+    border-radius: 0.2rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    &:hover {
+        background: #273b3b;
+        color: #c9e6e4;
+        border: 0.1rem solid #273b3b;
+    }
+}
 
-.success-messsage {}
-.error-messsage {}
+.success-messsage {
+    background: green;
+    color: #e1ffe1;
+}
+.error-messsage {
+    background: red;
+    color: #ffdada;
+}

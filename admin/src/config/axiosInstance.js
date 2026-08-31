@@ -1,95 +1,132 @@
-import axios from 'axios';
+import axios from "axios";
+import { clearAuthState } from "../redux/slices/authSlice";
 
-const env = import.meta.env.VITE_ENV || 'dev';
-const appenv = import.meta.env.VITE_APP_ENV || 'quality';
+const appenv = import.meta.env.VITE_ENV || "development";
 
 const baseUrl = {
-    dev: {
-        quality: import.meta.env.VITE_API_URL_DEVQ,
-        production: import.meta.env.VITE_API_URL_DEVP,
-    },
-    live: {
-        quality: import.meta.env.VITE_API_URL_QAS,
-        production: import.meta.env.VITE_API_URL_PRD,
-    }
+    production: import.meta.env.VITE_APIURL_PRD,
+    quality: import.meta.env.VITE_APIURL_QAS,
+    development: import.meta.env.VITE_APIURL_DEV,
 };
 
-const basicAuthHeader = 'Basic ' + btoa(`${import.meta.env.VITE_API_USR}:${import.meta.env.VITE_API_PSS}`);
+const basicAuthHeader = "Basic " + btoa(`${import.meta.env.VITE_API_USR}:${import.meta.env.VITE_API_PSS}`);
 
 const axiosInstance = axios.create({
-    baseURL: baseUrl[env][appenv],
-    withCredentials: true, // ✅ crucial for cookies
+    baseURL: baseUrl[appenv],
+    withCredentials: true,
 });
 
+let isRefreshing = false;
+let failedQueue = [];
+
+const processQueue = (error) => {
+    failedQueue.forEach((promise) => {
+        if (error) {
+            promise.reject(error);
+        } else {
+            promise.resolve();
+        }
+    });
+
+    failedQueue = [];
+};
+
 export const setupInterceptors = (store) => {
+    //----------------------------------------------------------
+    // REQUEST
+    //----------------------------------------------------------
     axiosInstance.interceptors.request.use(
         (config) => {
-        // ✅ ONLY set JSON content-type when NOT FormData
-        if (!(config.data instanceof FormData)) {
-            config.headers['Content-Type'] = 'application/json';
-        }
-        config.headers['Accept'] = 'application/json';
+            const isFormData = config.data instanceof FormData;
 
-        const isAuthEndpoint =
-            config.url?.startsWith('/auth/login') ||
-            config.url?.startsWith('/auth/refresh-token') ||
-            config.url?.startsWith('/auth/session');
+            if (!isFormData) {
+                config.headers["Content-Type"] = "application/json";
+                config.headers["Accept"] = "application/json";
+            }
+            config.headers["X-Requested-With"] = "XMLHttpRequest";
 
-        if (isAuthEndpoint) {
-            config.headers['authorization'] = basicAuthHeader;
+            if (!config.url?.startsWith("/auth")) {
+                config.headers["Authorization"] = basicAuthHeader;
+            }
+
             return config;
-        }
 
-        const accessToken = store.getState().auth.user?.token;
-
-        if (accessToken) {
-            config.headers['authorization'] = `Bearer ${accessToken}`;
-        }
-
-        return config;
         },
+
         (error) => Promise.reject(error)
     );
 
+    //----------------------------------------------------------
+    // RESPONSE
+    //----------------------------------------------------------
     axiosInstance.interceptors.response.use(
-        res => res,
+        (response) => response,
         async (error) => {
-        const originalRequest = error.config;
+            const originalRequest = error.config;
+            if (!originalRequest) {
+                return Promise.reject(error);
+            }
 
-        // ❌ If refresh itself fails → logout immediately
-        if (originalRequest.url?.includes('/auth/refresh-token')) {
-            store.dispatch({ type: 'auth/logout' });
-            return Promise.reject(error);
-        }
+            //--------------------------------------------------
+            // Don't retry regenerate token endpoint
+            //--------------------------------------------------
+            if (originalRequest.url?.includes("/auth/regenerate-token")) {
+                return Promise.reject(error);
+            }
 
-        if (
-            error.response?.status === 401 &&
-            !originalRequest._retry
-        ) {
+            //--------------------------------------------------
+            // Skip login/register
+            //--------------------------------------------------
+            const excludedEndpoints = [
+                "/auth/login",
+                "/auth/register",
+            ];
+
+            const isExcluded = excludedEndpoints.some((endpoint) =>
+                originalRequest.url?.includes(endpoint)
+            );
+
+            if (isExcluded) {
+                return Promise.reject(error);
+            }
+
+            //--------------------------------------------------
+            // Refresh only for 401 / 419
+            //--------------------------------------------------
+            const status = error.response?.status;
+            if ((status !== 400 && status !== 401) || originalRequest._retry) {
+                return Promise.reject(error);
+            }
+
+            //--------------------------------------------------
+            // Already refreshing
+            //--------------------------------------------------
+            if (isRefreshing) {
+                return new Promise((resolve, reject) => {
+                    failedQueue.push({
+                        resolve,
+                        reject,
+                    });
+                })
+                .then(() => axiosInstance(originalRequest));
+            }
+
             originalRequest._retry = true;
+            isRefreshing = true;
 
             try {
-            const res = await axiosInstance.post('/auth/refresh-token');
-            const newToken = res.data.data;
-
-            store.dispatch({
-                type: 'auth/setAccessToken',
-                payload: newToken
-            });
-
-            originalRequest.headers['authorization'] = `Bearer ${newToken}`;
-            return axiosInstance(originalRequest);
-
-            } catch (refreshErr) {
-            // ❌ NO REFRESH TOKEN → LOGOUT
-            store.dispatch({ type: 'auth/logout' });
-            return Promise.reject(refreshErr);
+                await axiosInstance.post("/auth/regenerate-token");
+                processQueue(null);
+                return axiosInstance(originalRequest);
+            } catch (refreshError) {
+                processQueue(refreshError);
+                store.dispatch(clearAuthState());
+                return Promise.reject(refreshError);
+            } finally {
+                isRefreshing = false;
             }
-        }
-
-        return Promise.reject(error);
         }
     );
 };
 
-export default axiosInstance
+export default axiosInstance;

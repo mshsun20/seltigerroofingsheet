@@ -1,0 +1,134 @@
+/* ---------------------------------------------------------------------------------------------------------- */
+/* navbar styles */
+/* ========================================================================================================== */
+.nv-shell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100svw;
+    height: auto;
+    min-height: 100svh;
+}
+
+/* sidebar */
+.nv-sidebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background: #315f59;
+    width: var(--nv-sidebar-width);
+    height: auto;
+    min-height: 100svh;
+    padding: 1rem 0;
+}
+.nv-sidebar-main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+.nv-sidebar-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+
+.nv-sidebar-link {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: transparent;
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: #70c5b9;
+    }
+}
+.nv-sidebar-link.active {
+    transition: all 0.2s ease;
+    background: linear-gradient(to left, #70c5b9, #ffffff, #70c5b9);
+}
+.nv-sidebar-children {
+    position: absolute;
+    left: var(--nv-sidebar-width);
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    background: #315f59;
+    width: 100%;
+}
+.nv-sidebar-child-link {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: transparent;
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: #70c5b9;
+    }
+}
+.nv-sidebar-child-link.active {
+    transition: all 0.2s ease;
+    background: linear-gradient(to left, #70c5b9, #ffffff, #70c5b9);
+}
+
+/* nav main */
+.nv-main {
+    width: calc(100svw - var(--nv-sidebar-width));
+    height: auto;
+    min-height: 100svh;
+}
+
+/* topbar */
+.nv-topbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: var(--nv-topbar-height);
+    padding: 0 1rem;
+}
+
+/* container */
+.nv-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    min-height: calc(100svh - var(--nv-topbar-height));
+}
+
+
+
+
+/* ---------------------------------------------------------------------------------------------------------- */
+/* loader styles */
+/* ========================================================================================================== */
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}

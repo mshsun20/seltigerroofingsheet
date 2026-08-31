@@ -1,11 +1,10 @@
-import express from "express";
-import { loginAccount, checkSession, refreshToken, logoutAccount } from "../controller/auth";
+import express from 'express';
+const authRouter = express.Router();
+import Auth from '../handlers/auth.js';
 
-const authRouter = express.Router()
-
-authRouter.post('/login', loginAccount);
-authRouter.get('/session', checkSession);
-authRouter.post('/refresh-token', refreshToken);
-authRouter.post('/logout', logoutAccount);
+authRouter.post('/login', Auth.login);
+authRouter.get('/session', Auth.checkAuth);
+authRouter.post('/regenerate-token', Auth.regenerateAccessToken);
+authRouter.post('/logout', Auth.logout);
 
 export default authRouter;

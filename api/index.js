@@ -6,8 +6,16 @@ import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import bodyParser from 'body-parser';
+import cookieParser from "cookie-parser";
 import mongoConn from './db/dbcon.js';
-// import certificateRouter from './routes/certificate.js';
+import authRouter from "./routes/auth.js";
+import accountRouter from "./routes/account.js";
+import roleRouter from "./routes/masters/role.js";
+import departmentRouter from "./routes/masters/department.js";
+import permissionRouter from "./routes/masters/permission.js";
+import productRouter from "./routes/masters/product.js";
+import stateRouter from "./routes/masters/state.js";
+import subcategoryRouter from "./routes/masters/subcategory.js";
 import blogRouter from './routes/admin/blogs.js';
 import fileRouter from './routes/file.js';
 // Load environment variables from .env file
@@ -17,26 +25,21 @@ dotenv.config({ quiet: true });
 const numCPUs = Math.ceil(os.cpus().length / Math.ceil(os.cpus().length / 2)); // Use half of the available CPUs
 
 const app = express();
-const apienv = process.env.NODE_ENV || 'dev';
-const appenv = process.env.APP_ENV || 'quality';
+const apienv = process.env.NODE_ENV || 'development';
 
 const portDetails = {
-    quality: process.env.PORT_QAS || 5052,
     production: process.env.PORT_PRD || 5051,
+    quality: process.env.PORT_QAS || 5052,
+    development: process.env.PORT_DEV || 5052,
 }
-const port = portDetails[appenv] || 5052;
+const port = portDetails[apienv] || 5052;
 
 const allowedOrigins = {
-    dev: {
-        quality: [process.env.APP_URL_DEVQ, process.env.ADMIN_URL_DEVQ],
-        production: [process.env.APP_URL_DEVP, process.env.ADMIN_URL_DEVP]
-    },
-    live: {
-        quality: [process.env.APP_URL_LIVQ, process.env.ADMIN_URL_LIVQ],
-        production: [process.env.APP_URL_LIVP, process.env.ADMIN_URL_LIVP]
-    }
+    production: [process.env.APP_URL_PRD, process.env.ADMIN_URL_PRD],
+    quality: [process.env.APP_URL_QAS, process.env.ADMIN_URL_QAS],
+    development: [process.env.APP_URL_DEV, process.env.ADMIN_URL_DEV],
 }
-const origins = allowedOrigins[apienv][appenv] || ['http://localhost:3052'];
+const origins = allowedOrigins[apienv] || ['http://localhost:3052'];
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -70,6 +73,7 @@ else {
 
     app.use(express.json({ limit: '10000mb' }));
     app.use(express.urlencoded({ limit: '10000mb', extended: true }));
+    app.use(cookieParser());
     app.use(cors({
         origin: origins,
         methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
@@ -82,6 +86,14 @@ else {
     app.use("/api/uploads", express.static(path.join(__dirname, "uploads")));
 
     // routers
+    app.use('/api/auth', authRouter);
+    app.use('/api/accounts', accountRouter);
+    app.use('/api/roles', roleRouter);
+    app.use('/api/departments', departmentRouter);
+    app.use('/api/permissions', permissionRouter);
+    app.use('/api/products', productRouter);
+    app.use('/api/states', stateRouter);
+    app.use('/api/subcategories', subcategoryRouter);
     app.use('/api/blogs', blogRouter);
     app.use('/api/files', fileRouter);
 
@@ -89,9 +101,9 @@ else {
         await mongoConn();
         
         app.listen(port, () => {
-            console.log(`Worker ${process.pid}: ${apienv.toUpperCase()}[${appenv.toUpperCase()}] Server running on port ${port}`);
-            if (appenv !== 'production') {
-                console.log(`Worker ${process.pid}: ${apienv.toUpperCase()}[${appenv.toUpperCase()}] Accepting requests from: ${origins[0]}`);
+            console.log(`Worker ${process.pid}: ${apienv.toUpperCase()} Server running on port ${port}`);
+            if (apienv === 'development') {
+                console.log(`Worker ${process.pid}: ${apienv.toUpperCase()} Accepting requests from: ${origins[0]}`);
             }
         });
     })();

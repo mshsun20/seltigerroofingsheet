@@ -1,11 +1,15 @@
 import express from "express";
-import authMiddleware from "../../middleware/auth.js";
-import subcategory from "../../controller/masters/subcategory.js";
+const subcategoryRouter = express.Router();
+import Subcategory from "../../handlers/masters/subcategory.js";
+import { jwtHybrdProtect, basicAuth } from "../../middlewares/auth.js";
 
-const subcategoryRouter = express.Router()
+// subcategoryRouter.use(jwtHybrdProtect);
+// subcategoryRouter.use(basicAuth);
 
-subcategoryRouter.post('/', subcategory.create)
-subcategoryRouter.get('/', subcategory.read)
-subcategoryRouter.delete('/delete', authMiddleware, subcategory.remove)
+subcategoryRouter.post("/", Subcategory.create);
+subcategoryRouter.get("/", Subcategory.read);
+subcategoryRouter.get("/:id", Subcategory.readById);
+subcategoryRouter.patch("/:id", Subcategory.update);
+subcategoryRouter.delete("/:id", Subcategory.remove);
 
-export default subcategoryRouter
+export default subcategoryRouter;

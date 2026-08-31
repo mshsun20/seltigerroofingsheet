@@ -1,103 +1,139 @@
-import Account from '../model/admin/account';
-import jwt from 'jsonwebtoken';
-import bcrypt from 'bcrypt';
-import { generateAccessToken, generateRefreshToken } from '../config/token';
+import Account from "../models/account.js";
+import Session from "../models/session.js";
+import { generateAccessToken, generateRefreshToken, verifyAccessToken, verifyRefreshToken } from "../services/tokenProcessingService.js";
+import { comparePassword } from "../services/passwordHashService.js";
+import { hashToken } from "../services/tokenHashService.js";
+import dotenv from 'dotenv';
+dotenv.config({ quiet: true });
 
-const loginAccount = async (req, res) => {    
-  const { accountEmail, accountPassword } = req.body;
-  if(!accountEmail || !accountPassword)
-  return res.status(400).json({ status: 400, message: "Email and Password are required" });
 
-  try {
-    const response = await Account.findOne({accountEmail})
-    if(!response) res.status(500).json({ status:500, message: "Incorrect Email or Password." })
-    
-    const isMatch = await bcrypt.compare(accountPassword, response.accountPassword);
-    if(isMatch) {
-      const accessToken = generateAccessToken(response);
-      const refreshToken = generateRefreshToken(response);
-      // console.log(accessToken);
-      // console.log(refreshToken);
+const appenv = process.env.NODE_ENV || 'development';
+let accessTokenExpiryTTL, refreshTokenExpiryTTL
 
-      res.status(200)
-      .cookie('accessToken', accessToken, {
-        httpOnly: true,
-        sameSite: 'Lax',
-        secure: process.env.NODE_ENV === 'live',
-        maxAge: 60 * 1000,
-      })
-      .cookie('refreshToken', refreshToken, {
-        httpOnly: true,
-        sameSite: 'Lax',
-        secure: process.env.NODE_ENV === 'live',
-        maxAge: 7 * 24 * 60 * 60 * 1000,
-      })
-      .json({ status: 200, data: {
-        account: {
-          _id: response._id,
-          accountName: response.accountName,
-          accountEmail: response.accountEmail
-        },
-        accessToken
-      } });
-    }
-    else res.status(500).json({ status: 500, message: "Incorrect Email or Password" })
-  }catch (error) {
-    res.status(500).json({ status: 500, err: error.message })
+switch (appenv) {
+  case "development":
+    accessTokenExpiryTTL = parseInt(process.env.ACCESS_EXP_DEV) * 60 * 1000;
+    refreshTokenExpiryTTL = parseInt(process.env.REFRESH_EXP_DEV) * 24 * 60 * 60 * 1000;
+    break;
+  case "quality":
+    accessTokenExpiryTTL = parseInt(process.env.ACCESS_EXP_QAS) * 60 * 1000;
+    refreshTokenExpiryTTL = parseInt(process.env.REFRESH_EXP_QAS) * 24 * 60 * 60 * 1000;
+    break;
+  case "production":
+    accessTokenExpiryTTL = parseInt(process.env.ACCESS_EXP_PRD) * 60 * 1000;
+    refreshTokenExpiryTTL = parseInt(process.env.REFRESH_EXP_PRD) * 24 * 60 * 60 * 1000;
+    break;
+}
+
+
+export const accessCookieOptions = {
+  httpOnly: true,
+  secure: appenv==="production",
+  sameSite: "Strict",
+  maxAge: accessTokenExpiryTTL,
+};
+export const refreshCookieOptions = {
+  httpOnly: true,
+  secure: appenv==="production",
+  sameSite: "Strict",
+  maxAge: refreshTokenExpiryTTL,
+};
+
+// reusable functions
+export const generateSession = async (account, device, location, userAgent, ipAddress) => {
+  const accessToken = generateAccessToken(account);
+  const refreshToken = generateRefreshToken(account);
+
+  const refreshHash = hashToken(refreshToken)
+
+  await Session.create({
+    sessacc: account._id,
+    userAgent,
+    ipAddress,
+    device,
+    location,
+    refreshToken: refreshHash,
+    expiresAt: new Date(Date.now() + refreshTokenExpiryTTL)
+  });
+  const accountDetails = {
+    _id: account?._id,
+    username: account?.username,
+    email: account?.email,
+    phone: account?.phone,
+    fullName: account?.fullName,
+    role: account?.role,
+    isCreator: account?.isCreator,
+    isApprover: account?.isApprover,
+    status: account?.status
+  }
+
+  return { accessToken, refreshToken, accountDetails };
+}
+
+
+// handler functions
+export const loginUser = async (accountInfo) => {
+  const { username, password, device, location, userAgent, ipAddress } = accountInfo;
+
+  const accountDetails = await Account.findOne({ username })
+  .populate([ 'role', 'createdBy', 'updatedBy' ])
+  .lean();
+  
+  const hash = accountDetails?.password ?? "$2b$12$abcdefghijklmnopqrstuv"
+  const accValdt = comparePassword(password, hash);
+
+  // console.log(accValdt);
+
+  if (accountDetails && accValdt) {
+    const account = await Account.findById(accountDetails._id).select(['-password', '-passwordBackup'])
+    .populate([ 'role', 'createdBy', 'updatedBy' ])
+    .lean();
+
+    const verifiedData = await generateSession(
+      account, device, location, userAgent, ipAddress
+    );
+    return verifiedData;
+  }
+  else {
+    throw new Error('Invalid username or password');
   }
 }
 
-const checkSession = async (req, res) => {
-  try {
-    const token = req.cookies.accessToken;
-    if (!token) return res.status(401).json({ message: 'Not authenticated', statuscode: 401 });
+export const checkSession = async (accessToken) => {
+  if (!accessToken) throw new Error('Not authenticated');
 
-    const account = jwt.verify(token, process.env.JWT_ACCESS_SECRET);
-    if (!account) return res.status(404).json({ message: 'Account not found', statuscode: 404 });
+  const decoded = verifyAccessToken(accessToken);
+  const session = await Session.findOne({ sessacc: decoded.sessacc });
+  if(!session) throw new Error('Session expired');
 
-    // console.log(account);
-    res.status(200).json({ message: 'Session is live', statuscode: 200, data: account });
-  } catch (err) {
-    return res.status(419).json({ message: 'Session invalid or expired', statuscode: 419 });
+  const account = await Account.findById(decoded.sessacc).select(['-password', '-passwordBackup'])
+  .populate([ 'role', 'createdBy', 'updatedBy' ]).lean();
+  if (!account) throw new Error('Account details not found');
+
+  return account;
+};
+
+export const regenerateToken = async (refreshToken) => {
+  if (!refreshToken) throw new Error('No token provided');
+
+  const decoded = verifyRefreshToken(refreshToken);
+  const refreshHash = hashToken(refreshToken)
+  const session = await Session.findOne({ sessacc: decoded.sessacc, refreshToken: refreshHash });
+  if (!session) throw new Error('Invalid session');
+
+  const account = await Account
+  .findById(decoded.sessacc)
+  .select("-password -passwordBackup");
+  if(!account) throw new Error('Account details not found');
+  const newAccessToken = generateAccessToken(account);
+
+  return newAccessToken;
+};
+
+export const logoutUser = async (refreshToken) => {
+  if(refreshToken){
+    const refreshHash = hashToken(refreshToken);
+    await Session.deleteMany({ refreshToken: refreshHash });
   }
+  return true;
 };
-
-const refreshToken = async (req, res) => {
-  try {
-    const token = req.cookies.refreshToken;
-    if (!token)
-      return res.status(401).json({ status: 401, message: "Refresh token required" });
-
-    const account = jwt.verify(token, process.env.JWT_REFRESH_SECRET);
-
-    const accessToken = generateAccessToken(account);
-
-    return res
-      .status(200)
-      .cookie('accessToken', accessToken, {
-        httpOnly: true,
-        sameSite: 'Lax',
-        secure: process.env.NODE_ENV === 'live',
-        maxAge: 60 * 1000,
-      })
-      .json({ status: 200, data: accessToken });
-
-  } catch (error) {
-    return res.status(403).json({ status: 403, message: "Invalid/Expired refresh token" });
-  }
-};
-
-
-const logoutAccount = (req, res) => {
-  res.clearCookie("refreshToken");
-  res.clearCookie("accessToken");
-
-  return res.status(200).json({
-    status: 200,
-    message: "Logged out",
-    success: true
-  });
-};
-
-
-export { loginAccount, checkSession, refreshToken, logoutAccount  };

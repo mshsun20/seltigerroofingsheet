@@ -5,11 +5,11 @@ import * as archiver from "archiver";
 import File from "../models/file.js";
 import mongoose from "mongoose";
 
-const appenv = process.env.APP_ENV || 'quality';
-// const env = process.env.NODE_ENV || 'dev';
+const apienv = process.env.NODE_ENV || 'development';
 const apiUrl = {
+    production: process.env.API_PRD,
     quality: process.env.API_QAS,
-    production: process.env.API_PRD
+    development: process.env.API_DEV,
 }
 const BASE_UPLOAD_DIR = path.join(process.cwd(), "uploads");
 
@@ -70,7 +70,7 @@ export const uploadFile = async (buffer, originalname, mimetype) => {
 
         const filename = `${Date.now()}_${safeName}`;
         const filePath = path.join(docDir, filename);
-        const fileRelativePath = `${apiUrl[appenv]}/uploads/${filename}`;
+        const fileRelativePath = `${apiUrl[apienv]}/uploads/${filename}`;
 
         await fs.promises.writeFile(filePath, buffer);
 
@@ -156,7 +156,6 @@ export const getZipStream = async (fileIds = []) => {
         }
 
         usedNames.add(zipName);
-
         archive.file(file.path, { name: zipName });
     }
 
@@ -174,7 +173,6 @@ export const deleteFile = async (fileId) => {
     }
 
     const file = await File.findById(fileId);
-
     if (!file) {
         return { message: "File not found" };
     }
@@ -194,6 +192,5 @@ export const deleteFile = async (fileId) => {
        Delete DB record
     -------------------------------------------------------------- */
     await File.findByIdAndDelete(fileId);
-
     return { message: "File deleted successfully", _id: fileId };
 };

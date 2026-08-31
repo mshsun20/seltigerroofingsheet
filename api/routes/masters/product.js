@@ -1,11 +1,15 @@
 import express from "express";
-import authMiddleware from "../../middleware/auth.js";
-import product from '../../controller/masters/product.js'
+const productRouter = express.Router();
+import Product from "../../handlers/masters/product.js";
+import { jwtHybrdProtect, basicAuth } from "../../middlewares/auth.js";
 
-const productRouter = express.Router()
+// productRouter.use(jwtHybrdProtect);
+// productRouter.use(basicAuth);
 
-productRouter.post('/', product.create)
-productRouter.get('/', product.read)
-productRouter.delete('/delete', authMiddleware, product.remove)
+productRouter.post("/", Product.create);
+productRouter.get("/", Product.read);
+productRouter.get("/:id", Product.readById);
+productRouter.patch("/:id", Product.update);
+productRouter.delete("/:id", Product.remove);
 
-export default productRouter
+export default productRouter;

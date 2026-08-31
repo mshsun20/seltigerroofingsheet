@@ -55,7 +55,7 @@ const Imageuploaders = () => {
                     }}>
                         Uploader Form
                     </button>
-                    <Link to='/'>Blog</Link>
+                    <Link to='/blogs'>Blog</Link>
                 </div>
                 <div className="data-list">
                     <table>
