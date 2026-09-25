@@ -9,7 +9,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";
 
 const Blogcontent = ({ data }) => {
-  console.log(data.tags.length);
+  // console.log(data.tags.length);
 
   return (
     <div className="blog-item-layout">

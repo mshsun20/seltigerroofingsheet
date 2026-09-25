@@ -69,7 +69,7 @@ const AddEdit = ({
 
     const fetchData = React.useCallback(async () => {
         try {
-            const response = await axiosInstance.get(`/api/files/fetch-all`)
+            const response = await axiosInstance.get(`/files/fetch-all`)
             setTimeout(() => {
                 setFileList(response.data.files || [])
             }, 0)
@@ -89,10 +89,7 @@ const AddEdit = ({
                 ...prev.author,
                 socials: [
                     ...prev.author.socials,
-                    {
-                        provider: "",
-                        link: "",
-                    }
+                    { provider: "", link: "" }
                 ]
             }
         }));
@@ -102,12 +99,7 @@ const AddEdit = ({
             ...prev,
             blocks: [
                 ...prev.blocks,
-                {
-                    blockType: "",
-                    blockSnippet: "",
-                    blockTags: "",
-                    blockContent: "",
-                }
+                { blockType: "", blockSnippet: "", blockTags: "", blockContent: "" }
             ]
         }))
     }
@@ -117,10 +109,7 @@ const AddEdit = ({
             ...prev,
             faqs: [
                 ...prev.faqs,
-                {
-                    heading: "",
-                    details: "",
-                }
+                { heading: "", details: "" }
             ]
         }))
     }
@@ -129,10 +118,7 @@ const AddEdit = ({
             ...prev,
             tags: [
                 ...prev.tags,
-                {
-                    info: "",
-                    link: "",
-                }
+                { info: "", link: "" }
             ]
         }))
     }
@@ -234,6 +220,33 @@ const AddEdit = ({
         }));
     };
 
+    const handleremove = (section, index) => {
+        setForm(prev => {
+            const updatedForm = { ...prev };
+
+            if (section === "social") {
+                updatedForm.author = {
+                    ...prev.author,
+                    socials: prev.author.socials.filter((_, i) => i !== index)
+                };
+            }
+
+            if (section === "block") {
+                updatedForm.blocks = prev.blocks.filter((_, i) => i !== index);
+            }
+
+            if (section === "faq") {
+                updatedForm.faqs = prev.faqs.filter((_, i) => i !== index);
+            }
+
+            if (section === "tag") {
+                updatedForm.tags = prev.tags.filter((_, i) => i !== index);
+            }
+
+            return updatedForm;
+        });
+    };
+
 
     // submit functions
     const handleSubmit = (e) => {
@@ -270,204 +283,247 @@ const AddEdit = ({
 
   return (
     <>
-        <div className="content">
-            <div className="heading">
-                <h1>Create / Edit Blog Post</h1>
-            </div>
-            <div className="data-section">
-                <div className="data-description">
-                    <p>Use the form below to create a new blog post or edit an existing one. Fill in the required fields and click "Submit" to save your changes.</p>
+        <div className="form-container">
+            <div className="form-content">
+                <div className="form-heading">
+                    <h1>Create / Edit Blog Post</h1>
                 </div>
-                <div className='add-edit-form'>
-                    <div className="form-group">
-                        <label htmlFor="slug">Slug</label>
-                        <input type="text" name="slug" className="form-control" placeholder="Add Slug" value={form.slug} onChange={handleChange} disabled={mode!=="add"} />
+                <div className="form-data-section">
+                    <div className="form-data-description">
+                        <p>Use the form below to create a new blog post or edit an existing one. Fill in the required fields and click "Submit" to save your changes.</p>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="title">Title</label>
-                        <input type="text" name="title" className="form-control" placeholder="Add Title" value={form.title} onChange={handleChange} />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="description">Description</label>
-                        <textarea name="description" className="form-control" placeholder="Add Description" cols={24} rows={5} value={form.description} onChange={handleChange}></textarea>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="url">URL</label>
-                        <input type="text" name="url" className="form-control" placeholder="Add URL" value={form.url} onChange={handleChange} />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="type">Type</label>
-                        <input type="text" name="type" className="form-control" placeholder="Add Type" value={form.type} onChange={handleChange} />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="site_name">Site Name</label>
-                        <input type="text" name="site_name" className="form-control" placeholder="Add Site Name" value={form.site_name} onChange={handleChange} />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="robots">Robots</label>
-                        <input type="text" name="robots" className="form-control" placeholder="Add Robots" value={form.robots} onChange={handleChange} />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="canonical">Cannonical</label>
-                        <input type="text" name="canonical" className="form-control" placeholder="Add Cannonical" value={form.canonical} onChange={handleChange} />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="mediaLink">Media Link</label>
-                        <select name="mediaLink" id="mediaLink" className="form-control" value={form.mediaLink} onChange={handleChange}>
-                            <option value="">Choose</option>
-                            {fileList?.map((itm, i) => (
-                                <option value={itm?.relativePath} key={i}>
-                                    {itm.relativePath.split("/").pop()}
-                                </option>
-                            ))}
-                        </select>
-                        {form?.mediaLink!=="" ? (
-                            <div className="form-media-preview">
-                                <img
-                                    src={form.mediaLink}
-                                    alt="Selected media"
-                                />
+                    <div className='add-edit-form'>
+                        <div
+                            className="form-sections-group"
+                            id="main-section"
+                        >
+                            <div className="form-sections">
+                                <div className="form-group">
+                                    <label htmlFor="slug">Slug</label>
+                                    <input type="text" name="slug" className="form-control" placeholder="Add Slug" value={form.slug} onChange={handleChange} disabled={mode!=="add"} />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="title">Title</label>
+                                    <input type="text" name="title" className="form-control" placeholder="Add Title" value={form.title} onChange={handleChange} />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="description">Description</label>
+                                    <textarea name="description" className="form-control" placeholder="Add Description" cols={24} rows={5} value={form.description} onChange={handleChange}></textarea>
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="url">URL</label>
+                                    <input type="text" name="url" className="form-control" placeholder="Add URL" value={form.url} onChange={handleChange} />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="type">Type</label>
+                                    <input type="text" name="type" className="form-control" placeholder="Add Type" value={form.type} onChange={handleChange} />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="site_name">Site Name</label>
+                                    <input type="text" name="site_name" className="form-control" placeholder="Add Site Name" value={form.site_name} onChange={handleChange} />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="robots">Robots</label>
+                                    <input type="text" name="robots" className="form-control" placeholder="Add Robots" value={form.robots} onChange={handleChange} />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="canonical">Cannonical</label>
+                                    <input type="text" name="canonical" className="form-control" placeholder="Add Cannonical" value={form.canonical} onChange={handleChange} />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="mediaLink">Media Link</label>
+                                    <select name="mediaLink" id="mediaLink" className="form-control" value={form.mediaLink} onChange={handleChange}>
+                                        <option value="">Choose</option>
+                                        {fileList?.map((itm, i) => (
+                                            <option value={itm?.relativePath} key={i}>
+                                                {itm.relativePath.split("/").pop()}
+                                            </option>
+                                        ))}
+                                    </select>
+                                    {form?.mediaLink!=="" ? (
+                                        <div className="form-media-preview">
+                                            <img
+                                                src={form.mediaLink}
+                                                alt="Selected media"
+                                            />
+                                        </div>
+                                    ) : <span></span>}
+                                </div>
                             </div>
-                        ) : <span></span>}
-                    </div>
-
-                    <div
-                        className="author-section"
-                        style={{ padding:"1rem", border:"0.2rem solid black" }}
-                    >
-                        <label htmlFor="name">Author</label>
-                        <div className="form-group">
-                            <label htmlFor="name">Name</label>
-                            <input type="text" name="name" className="form-control" placeholder="Add Author Name" value={form.author.name} onChange={handleAuthorChange} />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="bio">Bio</label>
-                            <textarea type="text" name="bio" className="form-control" placeholder="Add Author Bio" value={form.author.bio} onChange={handleAuthorChange}></textarea>
                         </div>
 
-                        <div className="socials-group">
-                            <label htmlFor="name">Social</label>
-                            <div className="socials-activator">
-                                <button onClick={addSocials}>Add New Social</button>
+                        <div
+                            className="form-sections-group"
+                            id="author-group"
+                        >
+                            <span>Author</span>
+                            <div className="form-sections">
+                                <div className="form-group">
+                                    <label htmlFor="name">Name</label>
+                                    <input type="text" name="name" className="form-control" placeholder="Add Author Name" value={form.author.name} onChange={handleAuthorChange} />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="bio">Bio</label>
+                                    <textarea type="text" name="bio" className="form-control" placeholder="Add Author Bio" value={form.author.bio} onChange={handleAuthorChange}></textarea>
+                                </div>
+
+                                <div className="socials-group">
+                                    <label htmlFor="name">Social</label>
+                                    <div className="socials-activator">
+                                        <button onClick={addSocials}>Add New Social</button>
+                                    </div>
+                                    {form?.author?.socials?.length>0
+                                    && form?.author?.socials?.map((elm, i) => (
+                                        <div id="socials-section" key={i}>
+                                            <div className="form-group">
+                                                <label htmlFor="provider">Provider</label>
+                                                <input type="text" name="provider" className="form-control" placeholder="Add Provider" value={form.author.socials[i]?.provider || ""} onChange={(e) => handleAuthorSocialChange(i, e)} />
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="link">Link</label>
+                                                <input type="text" name="link" className="form-control" placeholder="Add Link" value={form.author.socials[i]?.link || ""} onChange={(e) => handleAuthorSocialChange(i, e)} />
+                                            </div>
+                                            <button
+                                                type="button"
+                                                className="close-btn"
+                                                onClick={() => handleremove("social", i)}
+                                                title="Remove social"
+                                            >
+                                                X
+                                            </button>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                            {form?.author?.socials?.length>0
-                            && form?.author?.socials?.map((elm, i) => (
-                                <div id="socials-section" key={i}>
-                                    <div className="form-group">
-                                        <label htmlFor="provider">Provider</label>
-                                        <input type="text" name="provider" className="form-control" placeholder="Add Provider" value={form.author.socials[i]?.provider || ""} onChange={(e) => handleAuthorSocialChange(i, e)} />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="link">Link</label>
-                                        <input type="text" name="link" className="form-control" placeholder="Add Link" value={form.author.socials[i]?.link || ""} onChange={(e) => handleAuthorSocialChange(i, e)} />
-                                    </div>
-                                </div>
-                            ))}
                         </div>
-                    </div>
 
-                    <div
-                        className="blocks-group"
-                        style={{ padding:"1rem", border:"0.2rem solid black" }}
-                    >
-                        <label htmlFor="name">Block</label>
-                        <div className="blocks-activator">
-                            <button onClick={addBlocks}>Add New Block</button>
+                        <div
+                            className="form-sections-group"
+                            id="blocks-group"
+                        >
+                            <span>Block</span>
+                            <div className="blocks-activator">
+                                <button onClick={addBlocks}>Add New Block</button>
+                            </div>
+                            {
+                                form?.blocks?.length>0
+                                && form?.blocks?.map((elm, i) => (
+                                    <div id="form-sections" key={i}>
+                                        <div className="form-group">
+                                            <label htmlFor="blockType">Type</label>
+                                            <select name="blockType" className="form-select" value={form.blocks[i]?.blockType || ""} onChange={(e) => handleBlockChange(i, e)}>
+                                                <option value="">Choose-------</option>
+                                                <option value="snippet">Using Snippets</option>
+                                                <option value="tag">Using Tags</option>
+                                            </select>
+                                        </div>
+                                        {
+                                            form.blocks[i]?.blockType==="snippet" && (
+                                                <div className="form-group">
+                                                    <label htmlFor="blockSnippet">Code Snippet</label>
+                                                    <textarea name="blockSnippet" cols={24} rows={5} className='form-control' placeholder='Code snippets' value={form.blocks[i]?.blockSnippet || ""} onChange={(e) => handleBlockChange(i, e)}></textarea>
+                                                </div>
+                                            )
+                                        }
+                                        {
+                                            form.blocks[i]?.blockType==="tag" && (
+                                                <div className="form-group">
+                                                    <label htmlFor="blockTags">Tag Name</label>
+                                                    <input type="text" name="blockTags" className="form-control" placeholder="Add Tag Name" value={form.blocks[i]?.blockTags || ""} onChange={(e) => handleBlockChange(i, e)} />
+                                                </div>
+                                            )
+                                        }
+                                        {
+                                            form.blocks[i]?.blockType==="tag" && (
+                                                <div className="form-group">
+                                                    <label htmlFor="blockContent">Tag Content</label>
+                                                    <textarea name="blockContent" cols={24} rows={5} className='form-control' placeholder='Block Content' value={form.blocks[i]?.blockContent || ""} onChange={(e) => handleBlockChange(i, e)}></textarea>
+                                                </div>
+                                            )
+                                        }
+                                        <button
+                                            type="button"
+                                            className="close-btn"
+                                            onClick={() => handleremove("block", i)}
+                                            title="Remove block"
+                                        >
+                                            X
+                                        </button>
+                                    </div>
+                                ))
+                            }
                         </div>
-                        {
-                            form?.blocks?.length>0
-                            && form?.blocks?.map((elm, i) => (
-                                <div id="blocks-section" key={i}>
-                                    <div className="form-group">
-                                        <label htmlFor="blockType">Type</label>
-                                        <select name="blockType" className="form-select" value={form.blocks[i]?.blockType || ""} onChange={(e) => handleBlockChange(i, e)}>
-                                            <option value="">Choose-------</option>
-                                            <option value="snippet">Using Snippets</option>
-                                            <option value="tag">Using Tags</option>
-                                        </select>
-                                    </div>
-                                    {
-                                        form.blocks[i]?.blockType==="snippet" && (
-                                            <div className="form-group">
-                                                <label htmlFor="blockSnippet">Code Snippet</label>
-                                                <textarea name="blockSnippet" cols={24} rows={5} className='form-control' placeholder='Code snippets' value={form.blocks[i]?.blockSnippet || ""} onChange={(e) => handleBlockChange(i, e)}></textarea>
-                                            </div>
-                                        )
-                                    }
-                                    {
-                                        form.blocks[i]?.blockType==="tag" && (
-                                            <div className="form-group">
-                                                <label htmlFor="blockTags">Tag Name</label>
-                                                <input type="text" name="blockTags" className="form-control" placeholder="Add Tag Name" value={form.blocks[i]?.blockTags || ""} onChange={(e) => handleBlockChange(i, e)} />
-                                            </div>
-                                        )
-                                    }
-                                    {
-                                        form.blocks[i]?.blockType==="tag" && (
-                                            <div className="form-group">
-                                                <label htmlFor="blockContent">Tag Content</label>
-                                                <textarea name="blockContent" cols={24} rows={5} className='form-control' placeholder='Block Content' value={form.blocks[i]?.blockContent || ""} onChange={(e) => handleBlockChange(i, e)}></textarea>
-                                            </div>
-                                        )
-                                    }
-                                </div>
-                            ))
-                        }
-                    </div>
 
-                    <div
-                        className="faqs-group"
-                        style={{ padding:"1rem", border:"0.2rem solid black" }}
-                    >
-                        <label htmlFor="name">Faqs</label>
-                        <div className="faqs-activator">
-                            <button onClick={addFaqs}>Add New Faqs</button>
+                        <div
+                            className="form-sections-group"
+                            id="faqs-group"
+                        >
+                            <span>Faqs</span>
+                            <div className="faqs-activator">
+                                <button onClick={addFaqs}>Add New Faqs</button>
+                            </div>
+                            {
+                                form?.faqs?.length>0
+                                && form?.faqs?.map((elm, i) => (
+                                    <div id="form-sections" key={i}>
+                                        <div className="form-group">
+                                            <label htmlFor="heading">Heading</label>
+                                            <input type="text" name="heading" className="form-control" placeholder="Add Faqs heading" value={form.faqs[i]?.heading || ""} onChange={(e) => handleFaqChange(i, e)} />
+                                        </div>
+                                        <div className="form-group">
+                                            <label htmlFor="details">Details</label>
+                                            <textarea name="details" cols={24} rows={5} className='form-control' placeholder='Code snippets' value={form.faqs[i]?.details || ""} onChange={(e) => handleFaqChange(i, e)}></textarea>
+                                        </div>
+                                        <button
+                                            type="button"
+                                            className="close-btn"
+                                            onClick={() => handleremove("faq", i)}
+                                            title="Remove faq"
+                                        >
+                                            X
+                                        </button>
+                                    </div>
+                                ))
+                            }
                         </div>
-                        {
-                            form?.faqs?.length>0
-                            && form?.faqs?.map((elm, i) => (
-                                <div id="faqs-section" key={i}>
-                                    <div className="form-group">
-                                        <label htmlFor="heading">Heading</label>
-                                        <input type="text" name="heading" className="form-control" placeholder="Add Faqs heading" value={form.faqs[i]?.heading || ""} onChange={(e) => handleFaqChange(i, e)} />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="details">Details</label>
-                                        <textarea name="details" cols={24} rows={5} className='form-control' placeholder='Code snippets' value={form.faqs[i]?.details || ""} onChange={(e) => handleFaqChange(i, e)}></textarea>
-                                    </div>
-                                </div>
-                            ))
-                        }
-                    </div>
 
-                    <div
-                        className="tags-group"
-                        style={{ padding:"1rem", border:"0.2rem solid black" }}
-                    >
-                        <label htmlFor="name">Tags</label>
-                        <div className="tags-activator">
-                            <button onClick={addTags}>Add New Tags</button>
+                        <div
+                            className="form-sections-group"
+                            id="tags-group"
+                        >
+                            <span>Tags</span>
+                            <div className="tags-activator">
+                                <button onClick={addTags}>Add New Tags</button>
+                            </div>
+                            {
+                                form?.tags?.length>0
+                                && form?.tags?.map((elm, i) => (
+                                    <div id="form-sections" key={i}>
+                                        <div className="form-group">
+                                            <label htmlFor="info">Info</label>
+                                            <input type="text" name="info" className="form-control" placeholder="Add Tag Info" value={form.tags[i]?.info || ""} onChange={(e) => handleTagChange(i, e)} />
+                                        </div>
+                                        <div className="form-group">
+                                            <laurlbel htmlFor="info">URL</laurlbel>
+                                            <input type="text" name="url" className="form-control" placeholder="Add Tag URL" value={form.tags[i]?.url || ""} onChange={(e) => handleTagChange(i, e)} />
+                                        </div>
+                                        <button
+                                            type="button"
+                                            className="close-btn"
+                                            onClick={() => handleremove("tag", i)}
+                                            title="Remove tag"
+                                        >
+                                            X
+                                        </button>
+                                    </div>
+                                ))
+                            }
                         </div>
-                        {
-                            form?.tags?.length>0
-                            && form?.tags?.map((elm, i) => (
-                                <div id="tags-section" key={i}>
-                                    <div className="form-group">
-                                        <label htmlFor="info">Info</label>
-                                        <input type="text" name="info" className="form-control" placeholder="Add Tag Info" value={form.tags[i]?.info || ""} onChange={(e) => handleTagChange(i, e)} />
-                                    </div>
-                                    <div className="form-group">
-                                        <laurlbel htmlFor="info">URL</laurlbel>
-                                        <input type="text" name="url" className="form-control" placeholder="Add Tag URL" value={form.tags[i]?.url || ""} onChange={(e) => handleTagChange(i, e)} />
-                                    </div>
-                                </div>
-                            ))
-                        }
-                    </div>
 
-                    <div className="btn-group">
-                        <button type="submit" onClick={handleSubmit}>Submit</button>
-                        <button onClick={handleCancel}>Cancel</button>
+                        <div className="btn-group">
+                            <button type="submit" onClick={handleSubmit}>Submit</button>
+                            <button onClick={handleCancel}>Cancel</button>
+                        </div>
                     </div>
                 </div>
             </div>

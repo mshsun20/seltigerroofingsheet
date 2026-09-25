@@ -11,7 +11,7 @@ const Imageuploaders = () => {
 
     const fetchData = React.useCallback(async () => {
         try {
-            const response = await axiosInstance.get(`/api/files/fetch-all`)
+            const response = await axiosInstance.get(`/files/fetch-all`)
             setTimeout(() => {
                 setData(response.data.files || [])
             }, 0)
@@ -26,7 +26,7 @@ const Imageuploaders = () => {
     const handleSubmit = async (formData) => {
         console.log(formData);
         try {
-            const response = await axiosInstance.post(`/api/files/upload`, formData, {
+            const response = await axiosInstance.post(`/files/upload`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 }
@@ -43,12 +43,12 @@ const Imageuploaders = () => {
 
   return (
     <>
-        <div className="content">
-            <div className="heading">
-                <h1>Blogs</h1>
+        <div className="main-content">
+            <div className="main-heading">
+                <h1>Images Uploader</h1>
             </div>
-            <div className="data-section">
-                <div className="lnk-group">
+            <div className="main-data-section">
+                <div className="main-lnk-group">
                     <button className="create-btn" onClick={() => {
                         setMode("add");
                         setShowForm(true);
@@ -57,7 +57,7 @@ const Imageuploaders = () => {
                     </button>
                     <Link to='/blogs'>Blog</Link>
                 </div>
-                <div className="data-list">
+                <div className="main-data-list">
                     <table>
                         <thead>
                             <tr>

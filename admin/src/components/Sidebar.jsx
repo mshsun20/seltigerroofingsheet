@@ -48,12 +48,15 @@ const Sidebar = () => {
   return (
     <div className="nv-sidebar">
         <div className="nv-sidebar-main">
+            <div className="nv-sidebar-main-top"></div>
             {sidebarMainLinks?.length > 0
             && sidebarMainLinks?.map(lnk => (
                 lnk?.url
                 ? (<NavLink to={lnk?.url} key={lnk?.linkIndex} className="nv-sidebar-link">{lnk?.name}</NavLink>)
-                : (<button onClick={() => handleChildren(lnk?.linkIndex, "main")} key={lnk?.linkIndex} ref={open === `main-${lnk?.linkIndex}` ? sidebarRef : null} className="nv-sidebar-link">
-                    {lnk?.name}
+                : (<span key={lnk?.linkIndex} ref={open === `main-${lnk?.linkIndex}` ? sidebarRef : null} className="nv-sidebar-dash">
+                    <span onClick={() => handleChildren(lnk?.linkIndex, "main")} className="nv-sidebar-link">
+                        {lnk?.name}
+                    </span>
                     {open === `main-${lnk?.linkIndex}` && (
                         <div className="nv-sidebar-children">
                             {lnk?.children?.length > 0
@@ -62,7 +65,7 @@ const Sidebar = () => {
                             ))}
                         </div>
                     )}
-                </button>)
+                </span>)
             ))}
         </div>
         <div className="nv-sidebar-bottom">
@@ -70,8 +73,10 @@ const Sidebar = () => {
             && sidebarBottomLinks?.map(lnk => (
                 lnk?.url
                 ? (<NavLink to={lnk?.url} key={lnk?.linkIndex} className="nv-sidebar-link">{lnk?.name}</NavLink>)
-                : (<button onClick={() => handleChildren(lnk?.linkIndex, "bottom")} key={lnk?.linkIndex} ref={open === `bottom-${lnk?.linkIndex}` ? sidebarRef : null} className="nv-sidebar-link">
-                    {lnk?.name}
+                : (<span key={lnk?.linkIndex} ref={open === `bottom-${lnk?.linkIndex}` ? sidebarRef : null} className="nv-sidebar-dash">
+                    <span onClick={() => handleChildren(lnk?.linkIndex, "bottom")} className="nv-sidebar-link">
+                        {lnk?.name}
+                    </span>
                     {open === `bottom-${lnk?.linkIndex}` && (
                         <div className="nv-sidebar-children">
                             {lnk?.children?.length > 0
@@ -80,7 +85,7 @@ const Sidebar = () => {
                             ))}
                         </div>
                     )}
-                </button>)
+                </span>)
             ))}
         </div>
     </div>

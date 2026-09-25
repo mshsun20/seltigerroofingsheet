@@ -7,41 +7,58 @@ import { blogBanner } from "@/data/blogBanner";
 const Banner = dynamic(() => import("@/components/common/Banner"))
 const Blogcontent = dynamic(() => import("@/components/blog/Blogcontent"))
 
+const getSlug = (blog) => {
+  if (!Array.isArray(blog)) return "";
+  // Your blog URL should contain exactly one path segment
+  if (blog.length !== 1) return "";
+  const slug = blog[0];
+  // Ignore special/system paths
+  if (!slug || slug.startsWith(".")) return "";
+  return slug;
+};
+
 export const generateMetadata = async ({ params }) => {
-  const { blog } = await params
-  const slug = blog?.[0] || "";
-  try {
-    const response = await axiosInstance.get(`/api/blogs/${slug}`)
-    const blogData = response.data?.data || {}
-    return {
-      title: blogData.title || blogData.title || "",
-      description: blogData.description || "",
-    }
-  }
-  catch (error) {
-    console.error(error)
+  const { blog } = await params;
+  const slug = getSlug(blog);
+  if (!slug) {
     return {
       title: "Blog Details",
       description: "",
-    }
+    };
+  }
+
+  try {
+    const response = await axiosInstance.get(`/api/blogs/${slug}`);
+    const blogData = response.data?.data || {};
+    return {
+      title: blogData.title || "",
+      description: blogData.description || "",
+    };
+  } catch (error) {
+    console.error("Blog metadata error:", error);
+    return {
+      title: "Blog Details",
+      description: "",
+    };
   }
 }
 
 const Blog = async ({ params }) => {
-  const { blog } = await params
-  // console.log(blog);
-  const slug = blog?.[0] || "";
+  const { blog } = await params;
+  // console.log("BLOG DETAILS::", blog);
+  const slug = getSlug(blog);
+  // console.log("BLOG SLUG:", slug);
+  if (!slug) return null;
 
-  const response = await axiosInstance.get(`/api/blogs/${slug}`)
-  const blogData = response.data?.data || null
-
-  console.log(blogData);
-
-  const banner = {...blogBanner}
-  banner.bannerInfo = [...banner.bannerInfo, {
-    name: blogData?.title,
-    url: "#"
-  }]
+  const response = await axiosInstance.get(`/api/blogs/${slug}`);
+  const blogData = response.data?.data || null;
+  const banner = {
+    ...blogBanner,
+    bannerInfo: [
+      ...blogBanner.bannerInfo,
+      { name: blogData?.title, url: "#" },
+    ],
+  };
     
   return (
     <div className="content-layout">

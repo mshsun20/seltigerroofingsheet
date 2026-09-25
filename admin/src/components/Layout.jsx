@@ -17,6 +17,7 @@ const Layout = () => {
                 variants={zoomFadeIn}
                 initial="hidden"
                 animate="show"
+                className="nv-content"
                 style={{
                     width: "100%",
                     height: "100%"

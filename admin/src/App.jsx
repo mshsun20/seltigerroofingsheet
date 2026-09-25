@@ -1,6 +1,6 @@
 import React from 'react';
-import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
+import { useDispatch, useSelector } from "react-redux";
 import { checkAuth } from './redux/slices/authSlice';
 import Loader from './components/Loader';
 import Router from "./routes/Router";

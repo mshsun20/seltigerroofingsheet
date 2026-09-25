@@ -1,4 +1,5 @@
 import React from 'react'
+import "../../styles/blogs.css";
 import { Link } from 'react-router';
 import AddEdit from './AddEdit';
 import axiosInstance from '../../config/axiosInstance';
@@ -11,7 +12,7 @@ const Blogs = () => {
 
     const fetchData = React.useCallback(async () => {
         try {
-            const response = await axiosInstance.get('/api/blogs');
+            const response = await axiosInstance.get('/blogs');
             // console.log(response);
             setTimeout(() => {
                 setData(response.data.data || []);
@@ -30,10 +31,10 @@ const Blogs = () => {
         try {
             let response;
             if (mode === "add") {
-                response = await axiosInstance.post('/api/blogs', blogData.formData);
+                response = await axiosInstance.post('/blogs', blogData.formData);
             }
             else if (mode === "edit") {
-                response = await axiosInstance.patch(`/api/blogs/${blogData.id}`, blogData.formData);
+                response = await axiosInstance.patch(`/blogs/${blogData.id}`, blogData.formData);
             }
 
             if (response.status === 201) {
@@ -57,7 +58,7 @@ const Blogs = () => {
 
         try {
             if (confirm(`Confirm Blog removal ?`)) {
-                const response = await axiosInstance.delete(`/api/blogs/${id}`)
+                const response = await axiosInstance.delete(`/blogs/${id}`)
                 if (response.status === 200) {
                     alert(response.data.message)
                     fetchData()
@@ -75,16 +76,16 @@ const Blogs = () => {
 
   return (
     <>
-        <div className="content">
-            <div className="heading">
+        <div className="main-content">
+            <div className="main-heading">
                 <h1>Blogs</h1>
             </div>
-            <div className="data-section">
-                <div className="data-description">
+            <div className="main-data-section">
+                <div className="main-data-description">
                     <p>Here you can manage your blog posts. You can create, edit, and delete blog posts as needed.</p>
                     <p>To create a new blog post, click the "Create New Blog Post" button below. To edit or delete an existing blog post, click on the respective buttons next to each post in the list.</p>
                 </div>
-                <div className="lnk-group">
+                <div className="main-lnk-group">
                     <button className="create-btn" onClick={() => {
                         setMode("add");
                         setShowForm(true);
@@ -93,7 +94,7 @@ const Blogs = () => {
                     </button>
                     <Link to='/image-uploader'>Image Uploader</Link>
                 </div>
-                <div className="data-list">
+                <div className="main-data-list">
                     <table>
                         <thead>
                             <tr>
@@ -128,17 +129,17 @@ const Blogs = () => {
                         </tbody>
                     </table>
                 </div>
-
-                {
-                    showForm === true && <AddEdit
-                        mode={mode === "edit" ? "edit" : "add"}
-                        initialData={mode === "edit" ? blog : {}}
-                        onSubmit={handleSubmit}
-                        onSuccess={fetchData}
-                        onCancel={() => setShowForm(false)}
-                    />
-                }
             </div>
+
+            {
+                showForm === true && <AddEdit
+                    mode={mode === "edit" ? "edit" : "add"}
+                    initialData={mode === "edit" ? blog : {}}
+                    onSubmit={handleSubmit}
+                    onSuccess={fetchData}
+                    onCancel={() => setShowForm(false)}
+                />
+            }
         </div>
     </>
   )

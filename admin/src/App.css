@@ -4,11 +4,12 @@
 .nv-shell {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: row;
     width: 100svw;
     height: auto;
-    min-height: 100svh;
+    max-height: 100svh;
+    /* overflow: hidden; */
 }
 
 /* sidebar */
@@ -17,11 +18,9 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    background: #315f59;
+    background: #233331;
     width: var(--nv-sidebar-width);
-    height: auto;
-    min-height: 100svh;
-    padding: 1rem 0;
+    height: 100svh;
 }
 .nv-sidebar-main {
     display: flex;
@@ -29,6 +28,15 @@
     align-items: flex-start;
     flex-direction: column;
     width: 100%;
+    height: auto;
+}
+.nv-sidebar-main-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: var(--nv-topbar-height);
 }
 .nv-sidebar-bottom {
     display: flex;
@@ -36,6 +44,7 @@
     align-items: flex-start;
     flex-direction: column;
     width: 100%;
+    height: auto;
 }
 
 .nv-sidebar-link {
@@ -46,6 +55,7 @@
     background: transparent;
     width: 100%;
     padding: 0.5rem;
+    color: #eff7f6;
     border: none;
     outline: none;
     cursor: pointer;
@@ -53,15 +63,25 @@
 
     &:hover {
         background: #70c5b9;
+        color: #273b3b;
+        font-weight: 600;
     }
 }
 .nv-sidebar-link.active {
-    transition: all 0.2s ease;
     background: linear-gradient(to left, #70c5b9, #ffffff, #70c5b9);
+    color: #273b3b;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+.nv-sidebar-dash {
+    position: relative;
+    width: 100%;
 }
 .nv-sidebar-children {
     position: absolute;
     left: var(--nv-sidebar-width);
+    right: auto;
+    top: auto;
     bottom: 0;
     display: flex;
     justify-content: center;
@@ -69,6 +89,9 @@
     flex-direction: column;
     background: #315f59;
     width: 100%;
+    border: 0.1rem solid #273b3b;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem #273b3b;
 }
 .nv-sidebar-child-link {
     position: relative;
@@ -78,6 +101,7 @@
     background: transparent;
     width: 100%;
     padding: 0.5rem;
+    color: #eff7f6;
     border: none;
     outline: none;
     cursor: pointer;
@@ -85,18 +109,21 @@
 
     &:hover {
         background: #70c5b9;
+        color: #273b3b;
+        font-weight: 700;
     }
 }
 .nv-sidebar-child-link.active {
-    transition: all 0.2s ease;
     background: linear-gradient(to left, #70c5b9, #ffffff, #70c5b9);
+    color: #273b3b;
+    font-weight: 700;
+    transition: all 0.2s ease;
 }
 
 /* nav main */
 .nv-main {
     width: calc(100svw - var(--nv-sidebar-width));
-    height: auto;
-    min-height: 100svh;
+    height: 100svh;
 }
 
 /* topbar */
@@ -104,19 +131,110 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    background: #f0f4f4;
     width: 100%;
     height: var(--nv-topbar-height);
     padding: 0 1rem;
+}
+.nv-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 100%;
+    padding: 0 0.5rem;
+}
+.nv-title {
+    font-size: 1rem;
+    text-align: center;
+}
+.nv-info {
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+.nv-vertical-divider {
+    height: calc(var(--nv-topbar-height) - 1rem);
+    border: 0.005rem solid #d9e4e2;
+}
+.nv-logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    height: 100%;
+    padding: 0 0.5rem;
+    color: #315f59;
+    font-size: 1rem;
+    font-weight: 800;
+    text-align: center;
+    border: none;
+    outline: none;
 }
 
 /* container */
 .nv-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    height: auto;
-    min-height: calc(100svh - var(--nv-topbar-height));
+    height: calc(100svh - var(--nv-topbar-height));
+    /* overflow: auto; */
+}
+.nv-content {
+    display: flex;
+    width: 100%;
+    height: calc(100svh - var(--nv-topbar-height));
+    /* overflow: auto; */
+}
+
+
+@media (max-width: 768px) {
+    .nv-shell {
+        flex-direction: column;
+    }
+    .nv-sidebar {
+        flex-direction: row;
+        width: 100%;
+        height: var(--nv-topbar-height);
+        padding: 0 1rem;
+    }
+    .nv-sidebar-main {
+        flex-direction: row;
+        width: auto;
+        height: var(--nv-topbar-height);
+    }
+    .nv-main {
+        width: 100%;
+        height: calc(100svh - var(--nv-topbar-height));
+    }
+    .nv-sidebar-bottom {
+        flex-direction: row;
+        width: auto;
+        height: var(--nv-topbar-height);
+    }
+    .nv-sidebar-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-wrap: nowrap;
+    }
+    .nv-sidebar-dash {
+        position: relative;
+        width: auto;
+        height: 100%;
+    }
+    .nv-sidebar-children {
+        position: absolute;
+        left: auto;
+        right: 0;
+        top: 100%;
+        bottom: auto;
+        width: auto;
+        min-width: 10rem;
+    }
+    .nv-container {
+        height: calc(100svh - (2 * var(--nv-topbar-height)))
+    }
 }
 
 
@@ -131,4 +249,42 @@
     align-items: center;
     width: 100%;
     height: 100%;
+}
+
+
+
+
+/* ---------------------------------------------------------------------------------------------------------- */
+/* main section styles */
+/* ========================================================================================================== */
+.main-content {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    max-height: calc(100svh - var(--nv-topbar-height));
+    /* padding: 1rem; */
+}
+.main-heading {
+    height: 10%;
+}
+.main-data-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 90%;
+}
+.main-data-description {}
+.main-lnk-group {}
+.main-data-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
 }
