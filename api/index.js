@@ -28,8 +28,8 @@ const app = express();
 const apienv = process.env.NODE_ENV || 'development';
 
 const portDetails = {
-    production: process.env.PORT_PRD || 5051,
-    quality: process.env.PORT_QAS || 5052,
+    production: process.env.PORT_PRD || 5050,
+    quality: process.env.PORT_QAS || 5051,
     development: process.env.PORT_DEV || 5052,
 }
 const port = portDetails[apienv] || 5052;
@@ -71,9 +71,7 @@ else {
         });
     });
 
-    app.use(express.json({ limit: '10000mb' }));
-    app.use(express.urlencoded({ limit: '10000mb', extended: true }));
-    app.use(cookieParser());
+    // Middleware    
     app.use(cors({
         origin: origins,
         methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
@@ -81,8 +79,13 @@ else {
         credentials: true,
         optionsSuccessStatus: 200
     }));
+    app.use(express.json({ limit: '10000mb' }));
+    app.use(express.urlencoded({ limit: '10000mb', extended: true }));
+    app.use(cookieParser());
     app.use(bodyParser.json({ limit: '10000mb' }));
     app.use(bodyParser.urlencoded({ limit: '10000mb', extended: true }));
+
+    // static routes
     app.use("/api/uploads", express.static(path.join(__dirname, "uploads")));
 
     // routers
@@ -96,6 +99,36 @@ else {
     app.use('/api/subcategories', subcategoryRouter);
     app.use('/api/blogs', blogRouter);
     app.use('/api/files', fileRouter);
+
+    // UI Static Serving
+    if (['quality', 'production'].includes(apienv)) {    
+        // =========================
+        // 2. Admin UI
+        // =========================
+        const adminDistPath = path.join(__dirname, "..", "admin", "dist");
+        // Serve Admin static assets
+        app.use( "/admin", express.static(adminDistPath));
+        // Admin SPA fallback
+        app.get(/^\/admin(?:\/.*)?$/, (_, res) => {
+            res.sendFile(path.join(adminDistPath, "index.html"));
+        });
+        
+        // =========================
+        // 1. User UI
+        // =========================
+        const frontendDistPath = path.join(__dirname, "..", "app", "dist");
+        // Serve User frontend static assets
+        app.use(express.static(frontendDistPath));
+        // User frontend SPA fallback
+        app.get(/^\/(?!api|admin)(.*)$/, (_, res) => {
+            res.sendFile(path.join(frontendDistPath, "index.html"));
+        });
+    }
+
+    // ping
+    app.get("/", (req, res) => {
+        res.status(200).json({ message: "Welcome to the SEL Tiger Roofing Sheet API!" });
+    });
 
     (async () => {
         await mongoConn();
