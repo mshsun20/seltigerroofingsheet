@@ -22,12 +22,16 @@ export const resourceAlZnSheetsHandbookData = [{
             heading: "Knowledge",
             details: [
                 {
-                    route: `/`,
-                    description: `SEL Tiger Roofing Sheet manufactures high quality roofing sheets.`
+                    route: `/applications-of-al-zn-coated-roofing-sheet`,
+                    description: `Applications of Al-Zn Coated Roofing Sheet`
                 },
                 {
-                    route: `/`,
-                    description: `SEL Tiger Roofing Sheet manufactures high quality roofing sheets.`
+                    route: `/specifications-of-aluzinc-roofing-sheet`,
+                    description: `Specifications of Aluzinc Sheet`
+                },
+                {
+                    route: `/benefits-of-aluzinc-roofing-sheets-for-commercial-construction`,
+                    description: `Benefits of Aluzinc Sheets in Commercial Construction`
                 },
             ]
         },
@@ -36,8 +40,8 @@ export const resourceAlZnSheetsHandbookData = [{
             heading: "Comparison",
             details: [
                 {
-                    route: `/`,
-                    description: `SEL Tiger Roofing Sheet manufactures high quality roofing sheets.`
+                    route: `/aluzinc-vs-galvanized-roofing-which-one-should-you-choose`,
+                    description: `Aluzinc vs Galvanized Sheet`
                 },
             ]
         },

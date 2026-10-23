@@ -1,0 +1,232 @@
+.resource-roofing-sheets-main-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 5rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.resource-roofing-sheets-main-description-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    width: 100%;
+    padding: 1rem;
+}
+.resource-roofing-sheets-main-description-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--theme);
+    padding: 0.5rem 1rem;
+    margin: 1rem 0.5rem;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: black;
+    }
+}
+
+
+.resource-roofing-sheets-layout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--white);
+    width: 100%;
+    height: auto;
+    padding: 5rem;
+}
+
+.resource-roofing-sheets-hdr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.resource-roofing-sheets-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.resource-roofing-sheets-top .topper-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.2rem;
+    img {
+        width: 2rem;
+    }
+}
+.resource-roofing-sheets-top .topper-text {
+    margin-left: 0.2rem;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.resource-roofing-sheets-heading {
+    width: auto;
+    max-width: 50rem;
+    padding: 0;
+    color: black;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    text-align: center;
+}
+
+.resource-roofing-sheets-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.resource-roofing-sheets-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #f3f3f8;
+    width: 100%;
+    max-width: 75rem;
+    margin-top: 2rem;
+    overflow: hidden;
+}
+.resource-roofing-sheets-item-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: auto;
+    padding: 2rem;
+    cursor: pointer;
+}
+.resource-roofing-sheets-heading-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+.resource-roofing-sheets-toggler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    width: 3rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+.resource-roofing-sheets-item-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    padding: 0;
+    opacity: 0;
+    color: #808080;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+
+    li {
+        margin-left: 2rem;
+        list-style-type: disc;
+
+        a {
+            color: #808080;
+            transition: color 0.1s ease-in-out;
+        }
+
+        &:hover {
+            a {
+                color: var(--theme);
+            }
+        }
+    }
+}
+.resource-roofing-sheets-item.active {
+    .resource-roofing-sheets-item-heading {
+        padding-bottom: 1rem;
+    }
+    .resource-roofing-sheets-item-content {
+        max-height: 40rem;
+        opacity: 1;
+        padding: 0 2rem 2rem 2rem;
+    }
+}
+
+
+
+
+
+/* __________________________________________________________________________________________________________ */
+/* Media Queries */
+/* ========================================================================================================== */
+@media (max-width: 1024px) {
+    .resource-roofing-sheets-layout {
+        padding: 3.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .resource-roofing-sheets-layout {
+        padding: 2.5rem;
+    }
+}
+@media (max-width: 680px) {
+    .resource-roofing-sheets-layout {
+        padding: 2rem;
+    }
+}
+@media (max-width: 592px) {
+    .resource-roofing-sheets-layout {
+        padding: 1.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .resource-roofing-sheets-layout {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 472px) {
+    .resource-roofing-sheets-layout {
+        padding: 1.3rem;
+    }
+}
+@media (max-width: 425px) {
+    .resource-roofing-sheets-layout {
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 375px) {
+    .resource-roofing-sheets-layout {
+        padding: 1.1rem;
+    }
+}
+@media (max-width: 320px) {
+    .resource-roofing-sheets-layout {
+        padding: 1rem;
+    }
+}

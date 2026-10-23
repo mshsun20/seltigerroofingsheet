@@ -23,7 +23,7 @@ export const aboutEliteInfo = [{
         ]
     },
     action: {
-        url: `/`,
+        url: `/contact-us`,
         info: `Enquiry for Bulk Order`
     }
 }]

@@ -159,7 +159,8 @@ export const chooseDetails = [{
         ]
     },
     link: {
-        className: "",
+        className: "choose-actions-link",
+        url: "/contact-us",
         name: "Contact Us"
     }
 }]

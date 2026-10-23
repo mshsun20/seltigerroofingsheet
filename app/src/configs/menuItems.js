@@ -45,19 +45,20 @@ const businessItems = [
   { name: "Our Products", children: [ ...productsItems ] },
   { name: "Our Brands", children: [ ...brandItems ] },
   { name: "Application", children: [ ...applicationItems ] },
-  { name: "Media", path: "/media" }
+  { name: "Media", path: "#/media" }
 ]
 
 // Roof It Yourself menu items
 const resourceItems = [
+  { name: "Handbook for Roofing Sheet", path: "/handbook-for-roofing-sheet" },
   { name: "Handbook for Colour Coated Roofing Sheet", path: "/handbook-for-colour-coated-roofing-sheet" },
   { name: "Handbook for Al-Zn Coated Sheet", path: "/handbook-for-aluzinc-sheet" },
 ]
-const roofItYourselfItems = [
-  { name: "Design Your Roof", path: "/design_your_roof" },
-  { name: "Roof Sheet Calculator", path: "/roof_sheet_calculator" },
-  { name: "Maintenance", path: "/maintenance" },
-  { name: "Installation", path: "/installation" },
+const roofingAssistant = [
+  { name: "Design Your Roof", path: "#/design_your_roof" },
+  { name: "Roof Sheet Calculator", path: "#/roof_sheet_calculator" },
+  { name: "Maintenance", path: "#/maintenance" },
+  { name: "Installation", path: "#/installation" },
   { name: "Resources", children: [ ...resourceItems ] }
 ]
 
@@ -75,8 +76,8 @@ export const menuItems = [
     path: "https://www.shyammetalics.com",
     target: "_blank"
   },
-  { name: "Roof It Yourself", children: [ ...roofItYourselfItems ] },
+  { name: "Roofing Assistant", children: [ ...roofingAssistant ] },
   { name: "Blog", path: "/blogs" },
-  { name: "Dealer Location", path: "/dealer_locations" },
+  { name: "Dealer Location", path: "#/dealer_locations" },
   { name: "Contact Us", path: "/contact-us" }
 ]

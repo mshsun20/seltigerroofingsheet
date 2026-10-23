@@ -25,7 +25,7 @@ export const aboutCorrugatedSheetInfo = [{
         ]
     },
     action: {
-        url: `/`,
+        url: `/contact-us`,
         info: `Enquiry for Bulk Order`
     }
 }]

@@ -50,7 +50,7 @@ export const diffPipesInfo = [{
         ]
     },
     action: {
-        url: `/`,
+        url: `/contact-us`,
         info: `Enquiry for Bulk Order`
     }
 }]

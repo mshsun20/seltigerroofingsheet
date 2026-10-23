@@ -18,7 +18,7 @@ const BrandItems = ({ data }) => {
                 <div className="item-description-heading">{data.description?.heading}</div>
                 <div className="item-description-details">{data.description?.details}</div>
                 <div className={data.description.link.className}>
-                    <Link href="#">{data.description?.link?.name}</Link>
+                    <Link href={data.description?.link?.url}>{data.description?.link?.name}</Link>
                 </div>
             </div>
         </div>

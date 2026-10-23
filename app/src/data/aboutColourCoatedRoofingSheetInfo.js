@@ -33,7 +33,7 @@ export const aboutColourCoatedRoofingSheetInfo = [{
         }
     },
     action: {
-        url: `/`,
+        url: `/contact-us`,
         info: `Enquiry for Bulk Order`
     }
 }]

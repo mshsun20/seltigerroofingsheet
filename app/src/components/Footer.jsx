@@ -9,18 +9,18 @@ import Policylinks from './Policylinks'
 const Footer = () => {
   return (
     <div className='footer'>
-        <div className="footer-container container">
-            <div className="footer-top">
-                <Infosec />
-                <Quicklinks />
-            </div>
-            <div className="footer-middle">
-                <Productlinks />
-                <Subscription />
-            </div>
-            <div className="footer-bottom">
-                <Disclaimer />
-                <Policylinks />
+        <div className="footer-container">
+            <div className="contnr">
+                <div className="footer-top">
+                    <Infosec />
+                    <Quicklinks />
+                    <Productlinks />
+                    <Subscription />
+                </div>
+                <div className="footer-bottom">
+                    <Disclaimer />
+                    <Policylinks />
+                </div>
             </div>
         </div>
     </div>

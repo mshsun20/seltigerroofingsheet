@@ -22,8 +22,16 @@ export const resourceColouredSheetsHandbookData = [{
             heading: "Guide",
             details: [
                 {
-                    route: `/`,
-                    description: `SEL Tiger Roofing Sheet manufactures high quality roofing sheets.`
+                    route: `/maintenance-requirements-for-colour-coated-sheet`,
+                    description: `Maintenance of Colour Coated Sheets`
+                },
+                {
+                    route: `/mistakes-to-avoid-while-installing-colour-coated-roofing-sheets`,
+                    description: `Common Mistakes To Avoid When Installing Colour Coated Sheet`
+                },
+                {
+                    route: `/tips-to-maintain-colour-roofing-sheet-from-rust`,
+                    description: `Tips To Protect Colour Roofing Sheet From Corrosion And Rust`
                 },
             ]
         },
@@ -32,8 +40,8 @@ export const resourceColouredSheetsHandbookData = [{
             heading: "Importance",
             details: [
                 {
-                    route: `/`,
-                    description: `SEL Tiger Roofing Sheet manufactures high quality roofing sheets.`
+                    route: `/advantages-of-colour-coated-roofing-sheets`,
+                    description: `Benefits of Colour Coated Roofing Sheets`
                 },
             ]
         },
@@ -42,12 +50,12 @@ export const resourceColouredSheetsHandbookData = [{
             heading: "Knowledge",
             details: [
                 {
-                    route: `/`,
-                    description: `SEL Tiger Roofing Sheet manufactures high quality roofing sheets.`
+                    route: `/the-role-of-color-coated-roofing-in-sustainable-building-practices`,
+                    description: `Role of Colour Roofing Sheets in Sustainable Building`
                 },
                 {
-                    route: `/`,
-                    description: `SEL Tiger Roofing Sheet manufactures high quality roofing sheets.`
+                    route: `/the-rise-of-color-coated-roofing-why-its-the-future-of-construction`,
+                    description: `Rise of Coloured Sheets`
                 },
             ]
         },

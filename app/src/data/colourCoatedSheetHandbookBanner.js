@@ -1,7 +1,7 @@
 export const colourCoatedSheetHandbookBanner = {
     bannerImage: {
         url: "/wp-content/uploads/2025/07/Product-Gallery-3.webp",
-        alt: "Roof It Yourself Banner",
+        alt: "Roofing Assistant Banner",
         width: 1000,
         height: 500
     },

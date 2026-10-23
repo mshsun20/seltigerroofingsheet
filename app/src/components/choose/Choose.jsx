@@ -38,7 +38,7 @@ const Choose = () => {
                 </div>
                 <div className="choose-actions">
                     <Link
-                        href="#"
+                        href={chooseDetails[0]?.link?.url}
                         className={chooseDetails[0]?.link?.className}
                         onMouseEnter={() => setArrow('→')}
                         onMouseLeave={() => setArrow('↗')}

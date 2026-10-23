@@ -611,22 +611,14 @@ a {
   height: auto;
 }
 .footer-top {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  align-items: start;
   /* gap: 2rem; */
   width: 100%;
   height: auto;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--border-light);
-}
-.footer-middle {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  height: auto;
-  padding: 0.5rem 0;
 }
 .footer-bottom {
   display: flex;
@@ -638,12 +630,14 @@ a {
   border-top: 1px solid var(--border-light);
 }
 .info-sec {
+  grid-column: span 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
   width: 100%;
-  height: auto;
+  max-width: 20rem;
+  height: 100%;
   padding: 1rem;
   text-align: center;
 }
@@ -666,12 +660,14 @@ a {
   text-align: left;
 }
 .quick-links {
+  grid-column: span 1;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   flex-direction: column;
   width: 100%;
-  height: auto;
+  max-width: 20rem;
+  height: 100%;
   padding: 1rem;
 }
 .quick-links-title {
@@ -689,12 +685,14 @@ a {
   transition: all 0.25s ease;
 }
 .product-links {
+  grid-column: span 1;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   flex-direction: column;
   width: 100%;
-  height: auto;
+  max-width: 20rem;
+  height: 100%;
   padding: 1rem;
 }
 .product-links-title {
@@ -712,12 +710,14 @@ a {
   transition: all 0.25s ease;
 }
 .subsciption {
+  grid-column: span 1;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   flex-direction: column;
   width: 100%;
-  height: auto;
+  max-width: 20rem;
+  height: 100%;
   padding: 1rem;
 }
 .subscription-title {
@@ -741,11 +741,13 @@ a {
 }
 .subscription-form input {
   background-color: var(--background);
+  width: 100%;
   padding: 0.8rem 1rem;
   color: var(--foreground);
   font-size: 0.9rem;
   border: none;
   outline: none;
+  box-sizing: border-box;
 }
 .subscription-form button {
   background-color: var(--theme);
@@ -803,7 +805,9 @@ a {
 }
 
 
-
+/* =======================================================================================================================
+   OTHER CUSTOM STYLES ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+======================================================================================================================= */
 /* CUSTOM TABLE styles */
 table {
   display: table;
@@ -867,6 +871,9 @@ table {
     /* padding: 0 18rem; */
     max-width: 80rem;
   }
+  .footer-container {
+    padding: 0 5rem;
+  }
 }
 
 @media (max-width: 1280px) {
@@ -876,6 +883,9 @@ table {
   .contnr {
     /* padding: 0 15rem; */
     max-width: 80rem;
+  }
+  .footer-container {
+    padding: 0 3.5rem;
   }
 }
 
@@ -902,6 +912,9 @@ table {
   .menuclose {
     display: flex;
   }
+  .footer-container {
+    padding: 0 2.5rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -914,6 +927,9 @@ table {
   }
   .sub .menu {
     max-width: 100%;
+  }
+  .footer-container {
+    padding: 0 2rem;
   }
 }
 
@@ -929,6 +945,9 @@ table {
     width: 6.5rem;
     height: 2.8rem;
   }
+  .footer-container {
+    padding: 0 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -942,5 +961,8 @@ table {
   .menu-link,
   .submenu-toggle {
     font-size: 0.92rem;
+  }
+  .footer-container {
+    padding: 0 1rem;
   }
 }

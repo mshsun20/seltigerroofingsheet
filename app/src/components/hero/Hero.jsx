@@ -71,9 +71,9 @@ const Hero = () => {
             >
                 <div className="link-wrap"></div>
                 <div className="link-info">
-                    <Link href="#">Industrial Use</Link>
-                    <Link href="#">Domestic Use</Link>
-                    <Link href="#">Project Application</Link>
+                    <Link href="/industrial-use">Industrial Use</Link>
+                    <Link href="/domestic-use">Domestic Use</Link>
+                    <Link href="/project-based">Project Application</Link>
                 </div>
             </m.div>
         </div>

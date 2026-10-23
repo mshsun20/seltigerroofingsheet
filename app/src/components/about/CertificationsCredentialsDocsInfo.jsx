@@ -7,9 +7,10 @@ const CertificationsCredentialsDocsInfo = () => {
   return (
     <div className="certifications-credentials-document-layout">
         <div className="contnr">
+            <div className="certifications-credentials-document-heading">{certificationCredentialData[0]?.heading?.data}</div>
             <div className="certifications-credentials-document-container">
                 {
-                    certificationCredentialData?.map(elm => (
+                    certificationCredentialData[0]?.contents?.map(elm => (
                         <div className="certifications-credentials-document-section" key={elm?.certIndex}>
                             <div className="certifications-credentials-document-icon">
                                 <Image
