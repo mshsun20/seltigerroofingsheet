@@ -1,0 +1,114 @@
+.corrugated-roofing-applications-layout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    width: 100%;
+    height: auto;
+    padding: 1rem 5rem;
+}
+.corrugated-roofing-applications-hdr {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: auto;
+}
+.corrugated-roofing-applications-heading {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: auto;
+    padding: 0;
+    color: black;
+    font-size: 2.3rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+
+.corrugated-roofing-applications-container {
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0;
+}
+.corrugated-roofing-applications-textual {
+    color: #3d3d3d;
+    font-size: 1.2rem;
+}
+.corrugated-roofing-applications-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+.corrugated-roofing-applications-card {
+    padding: 1rem;
+    box-shadow: 0 0.2rem 2rem #9e9e9e4c;
+}
+.corrugated-roofing-applications-card-heading {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.corrugated-roofing-applications-card-details {
+    padding: 1rem 0;
+    color: #3d3d3d;
+    font-size: 1.1rem;
+}
+
+
+
+
+
+/* __________________________________________________________________________________________________________ */
+/* Media Queries */
+/* ========================================================================================================== */
+@media (max-width: 1024px) {
+    .corrugated-roofing-applications-layout {
+        padding: 3.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .corrugated-roofing-applications-layout {
+        padding: 2.5rem;
+    }
+}
+@media (max-width: 680px) {
+    .corrugated-roofing-applications-layout {
+        padding: 2rem;
+    }
+}
+@media (max-width: 592px) {
+    .corrugated-roofing-applications-layout {
+        padding: 1.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .corrugated-roofing-applications-layout {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 472px) {
+    .corrugated-roofing-applications-layout {
+        padding: 1.3rem;
+    }
+}
+@media (max-width: 425px) {
+    .corrugated-roofing-applications-layout {
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 375px) {
+    .corrugated-roofing-applications-layout {
+        padding: 1.1rem;
+    }
+}
+@media (max-width: 320px) {
+    .corrugated-roofing-applications-layout {
+        padding: 1rem;
+    }
+}

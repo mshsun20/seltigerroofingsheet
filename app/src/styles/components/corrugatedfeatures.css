@@ -1,0 +1,99 @@
+.corrugated-features-layout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    width: 100%;
+    height: auto;
+    padding: 2rem 5rem;
+}
+.corrugated-features-hdr {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: auto;
+}
+.corrugated-features-heading {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: auto;
+    padding: 0;
+    color: black;
+    font-size: 2.3rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+
+.corrugated-features-container {
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+    flex-direction: column;
+    height: auto;
+    padding: 0;
+    color: #3d3d3d;
+}
+.corrugated-features-list {
+    padding: 1rem;
+}
+.corrugated-features-list-item {
+    font-size: 1.1rem;
+    list-style-type: disc;
+}
+
+
+
+
+
+/* __________________________________________________________________________________________________________ */
+/* Media Queries */
+/* ========================================================================================================== */
+@media (max-width: 1024px) {
+    .corrugated-features-layout {
+        padding: 3.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .corrugated-features-layout {
+        padding: 2.5rem;
+    }
+}
+@media (max-width: 680px) {
+    .corrugated-features-layout {
+        padding: 2rem;
+    }
+}
+@media (max-width: 592px) {
+    .corrugated-features-layout {
+        padding: 1.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .corrugated-features-layout {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 472px) {
+    .corrugated-features-layout {
+        padding: 1.3rem;
+    }
+}
+@media (max-width: 425px) {
+    .corrugated-features-layout {
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 375px) {
+    .corrugated-features-layout {
+        padding: 1.1rem;
+    }
+}
+@media (max-width: 320px) {
+    .corrugated-features-layout {
+        padding: 1rem;
+    }
+}

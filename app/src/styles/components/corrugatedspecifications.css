@@ -1,11 +1,20 @@
 .corrugated-specifications-layout {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: var(--white);
     width: 100%;
     height: auto;
     padding: 2rem 5rem;
+}
+.corrugated-specifications-hdr {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: auto;
 }
 .corrugated-specifications-heading {
     display: flex;
@@ -70,4 +79,89 @@
     justify-content: center;
     align-items: center;
     padding: 1rem 0;
+}
+.corrugated-specifications-action {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 1.2rem;
+        background-color: var(--theme);
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            background-color: var(--foreground);
+            color: var(--background);
+        }
+        span {
+            width: 2rem;
+            margin-left: 0.5rem;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+    }
+}
+
+
+
+
+
+
+/* __________________________________________________________________________________________________________ */
+/* Media Queries */
+/* ========================================================================================================== */
+@media (max-width: 1024px) {
+    .corrugated-specifications-layout {
+        padding: 3.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .corrugated-specifications-layout {
+        padding: 2.5rem;
+    }
+}
+@media (max-width: 680px) {
+    .corrugated-specifications-layout {
+        padding: 2rem;
+    }
+}
+@media (max-width: 592px) {
+    .corrugated-specifications-layout {
+        padding: 1.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .corrugated-specifications-layout {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 472px) {
+    .corrugated-specifications-layout {
+        padding: 1.3rem;
+    }
+}
+@media (max-width: 425px) {
+    .corrugated-specifications-layout {
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 375px) {
+    .corrugated-specifications-layout {
+        padding: 1.1rem;
+    }
+}
+@media (max-width: 320px) {
+    .corrugated-specifications-layout {
+        padding: 1rem;
+    }
 }

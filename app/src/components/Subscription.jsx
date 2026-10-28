@@ -1,6 +1,14 @@
 "use client";
 import React from 'react'
 import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faFacebookF,
+    faInstagram,
+    faLinkedin,
+    faYoutube,
+    faWhatsapp,
+} from '@fortawesome/free-brands-svg-icons';
 
 const Subscription = () => {
     const [arrow, setArrow] = React.useState('↗');
@@ -14,8 +22,12 @@ const Subscription = () => {
             <button onMouseEnter={() => setArrow('→')} onMouseLeave={() => setArrow('↗')}>Subscribe <span>{arrow}</span></button>
         </div>
         <div className="subscription-social-links">
-            <Link href="https://www.facebook.com/seltigerroofingsheet" target="_blank" rel="noopener noreferrer">Facebook</Link>
-            <Link href="https://www.instagram.com/seltigerroofingsheet" target="_blank" rel="noopener noreferrer">Instagram</Link>
+            <Link href="https://www.facebook.com/SELTiger.RoofingSheets" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faFacebookF} />
+            </Link>
+            <Link href="https://www.instagram.com/seltigerroofingsheets" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faInstagram} />
+            </Link>
         </div>
     </div>
   )

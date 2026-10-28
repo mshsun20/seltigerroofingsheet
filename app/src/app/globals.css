@@ -635,6 +635,7 @@ a {
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  gap: 0.5rem;
   width: 100%;
   max-width: 20rem;
   height: 100%;
@@ -645,7 +646,7 @@ a {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 100%;
+  width: 80%;
   margin-bottom: 1rem;
   font-size: 1.2rem;
   font-weight: bold;
@@ -654,8 +655,8 @@ a {
 .info-desc {
   display: flex;
   width: 100%;
-  color: var(--foreground);
-  font-size: 0.9rem;
+  color: #5d5d5f;
+  font-size: 1rem;
   text-wrap: wrap;
   text-align: left;
 }
@@ -671,18 +672,26 @@ a {
   padding: 1rem;
 }
 .quick-links-title {
-  font-size: 1.1rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding-left: 3rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: var(--foreground);
-  margin-bottom: 0.5rem;
 }
 .quick-links li {
+  width: 100%;
+  padding-left: 3rem;
   list-style: none;
 }
 .quick-links li a {
   color: var(--foreground);
-  font-size: 0.9rem;
+  font-size: 1rem;
   transition: all 0.25s ease;
+
+  &:hover {
+    color: var(--theme);
+  }
 }
 .product-links {
   grid-column: span 1;
@@ -696,40 +705,49 @@ a {
   padding: 1rem;
 }
 .product-links-title {
-  font-size: 1.1rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding-left: 2rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: var(--foreground);
-  margin-bottom: 0.5rem;
 }
 .product-links li {
+  width: 100%;
+  padding-left: 2rem;
   list-style: none;
 }
 .product-links li a {
   color: var(--foreground);
-  font-size: 0.9rem;
+  font-size: 1rem;
   transition: all 0.25s ease;
+
+  &:hover {
+    color: var(--theme);
+  }
 }
 .subsciption {
   grid-column: span 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  gap: 0.5rem;
   width: 100%;
   max-width: 20rem;
   height: 100%;
   padding: 1rem;
 }
 .subscription-title {
-  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: var(--foreground);
-  margin-bottom: 0.5rem;
 }
 .subscription-info {
   color: var(--foreground);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  padding: 0.2rem 0;
 }
 .subscription-form {
   display: flex;
@@ -740,7 +758,7 @@ a {
   padding: 0.5rem 0;
 }
 .subscription-form input {
-  background-color: var(--background);
+  background-color: var(--white);
   width: 100%;
   padding: 0.8rem 1rem;
   color: var(--foreground);
@@ -748,6 +766,9 @@ a {
   border: none;
   outline: none;
   box-sizing: border-box;
+  transition: all 0.2s ease;
+
+  /* &:focus {} */
 }
 .subscription-form button {
   background-color: var(--theme);
@@ -757,6 +778,8 @@ a {
   cursor: pointer;
   transition: all 0.25s ease;
   font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
 
   &:hover {
     background-color: black;
@@ -777,6 +800,24 @@ a {
   gap: 1rem;
   width: 100%;
   padding: 0.5rem 0;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--theme);
+    padding: 0.5rem 0.35rem;
+    color: white;
+    font-size: 1.1rem;
+    text-align: center;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+
+    &:hover {
+      background: white;
+      color: var(--theme);
+    }
+  }
 }
 .disclaimer {
   display: flex;
@@ -784,24 +825,26 @@ a {
   align-items: center;
   width: 100%;
   padding: 1rem;
-  color: var(--foreground);
-  font-size: 0.8rem;
+  color: #5d5d5f;
+  font-size: 1.2rem;
 }
 .policy-links {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
-  gap: 1rem;
-  width: 100%;
+  gap: 0.5rem;
+  width: auto;
   padding: 1rem;
 }
-.policy-links li {
-  list-style: none;
-}
-.policy-links li a {
-  color: var(--foreground);
-  font-size: 0.8rem;
+.policy-links a {
+  color: #5d5d5f;
+  font-size: 1rem;
+  text-wrap: nowrap;
   transition: all 0.25s ease;
+
+  &:hover {
+    color: var(--theme-alt);
+  }
 }
 
 

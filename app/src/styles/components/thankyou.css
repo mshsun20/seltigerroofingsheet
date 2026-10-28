@@ -1,0 +1,125 @@
+.thank-you-layout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--white);
+    width: 100%;
+    height: auto;
+    padding: 2rem 5rem;
+}
+.thank-you-hdr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.thank-you-heading {
+    width: auto;
+    max-width: 50rem;
+    padding: 1rem 0;
+    color: black;
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.1rem;
+}
+
+.thank-you-container {
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+    flex-direction: column;
+    height: auto;
+    /* padding: 2rem 0; */
+}
+.thank-you-contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 0.5rem 0;
+}
+.thank-you-text-content {
+    padding: 0.2rem;
+    color: #5b5a5eed;
+    font-size: 1.1rem;
+}
+.thank-you-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0;
+
+    a {
+        background-color: var(--theme);
+        padding: 1rem 1.5rem;
+        color: white;
+        font-size: 1.4rem;
+        font-weight: 600;
+        /* border-radius: 0.5rem; */
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            background-color: black;
+            box-shadow: 0 0 1rem #00000033;
+        }
+    }
+}
+
+
+
+
+/* __________________________________________________________________________________________________________ */
+/* Media Queries */
+/* ========================================================================================================== */
+@media (max-width: 1024px) {
+    .thank-you-layout {
+        padding: 3.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .thank-you-layout {
+        padding: 2.5rem;
+    }
+}
+@media (max-width: 680px) {
+    .thank-you-layout {
+        padding: 2rem;
+    }
+}
+@media (max-width: 592px) {
+    .thank-you-layout {
+        padding: 1.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .thank-you-layout {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 472px) {
+    .thank-you-layout {
+        padding: 1.3rem;
+    }
+}
+@media (max-width: 425px) {
+    .thank-you-layout {
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 375px) {
+    .thank-you-layout {
+        padding: 1.1rem;
+    }
+}
+@media (max-width: 320px) {
+    .thank-you-layout {
+        padding: 1rem;
+    }
+}

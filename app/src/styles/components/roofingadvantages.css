@@ -1,0 +1,109 @@
+.corrugated-roofing-advantages-layout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    width: 100%;
+    height: auto;
+    padding: 2rem 5rem;
+}
+.corrugated-roofing-advantages-hdr {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: auto;
+}
+.corrugated-roofing-advantages-heading {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: auto;
+    padding: 0;
+    color: black;
+    font-size: 2.3rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+
+.corrugated-roofing-advantages-container {
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0;
+    color: #3d3d3d;
+}
+.corrugated-roofing-advantages-textual {
+    font-size: 1.2rem;
+}
+.corrugated-roofing-advantages-list {
+    padding-top: 1rem;
+}
+.corrugated-roofing-advantages-list-heading {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.corrugated-roofing-advantages-list-items {
+    padding: 1rem;
+}
+.corrugated-roofing-advantages-list-item {
+    font-size: 1.1rem;
+    list-style-type: disc;
+}
+
+
+
+
+
+/* __________________________________________________________________________________________________________ */
+/* Media Queries */
+/* ========================================================================================================== */
+@media (max-width: 1024px) {
+    .corrugated-roofing-advantages-layout {
+        padding: 3.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .corrugated-roofing-advantages-layout {
+        padding: 2.5rem;
+    }
+}
+@media (max-width: 680px) {
+    .corrugated-roofing-advantages-layout {
+        padding: 2rem;
+    }
+}
+@media (max-width: 592px) {
+    .corrugated-roofing-advantages-layout {
+        padding: 1.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .corrugated-roofing-advantages-layout {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 472px) {
+    .corrugated-roofing-advantages-layout {
+        padding: 1.3rem;
+    }
+}
+@media (max-width: 425px) {
+    .corrugated-roofing-advantages-layout {
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 375px) {
+    .corrugated-roofing-advantages-layout {
+        padding: 1.1rem;
+    }
+}
+@media (max-width: 320px) {
+    .corrugated-roofing-advantages-layout {
+        padding: 1rem;
+    }
+}

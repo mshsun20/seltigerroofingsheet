@@ -7,7 +7,7 @@
     background-color: var(--white);
     width: 100%;
     height: auto;
-    padding: 5rem;
+    padding: 2rem 5rem;
 }
 .all-faq-hdr {
     display: flex;
