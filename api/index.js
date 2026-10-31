@@ -16,8 +16,9 @@ import permissionRouter from "./routes/masters/permission.js";
 import productRouter from "./routes/masters/product.js";
 import stateRouter from "./routes/masters/state.js";
 import subcategoryRouter from "./routes/masters/subcategory.js";
-import blogRouter from './routes/admin/blogs.js';
 import fileRouter from './routes/file.js';
+import blogRouter from './routes/admin/blogs.js';
+import enquiryRouter from "./routes/enquiry.js";
 // Load environment variables from .env file
 dotenv.config({ quiet: true });
 
@@ -97,8 +98,9 @@ else {
     app.use('/api/products', productRouter);
     app.use('/api/states', stateRouter);
     app.use('/api/subcategories', subcategoryRouter);
-    app.use('/api/blogs', blogRouter);
     app.use('/api/files', fileRouter);
+    app.use('/api/blogs', blogRouter);
+    app.use('/api/enquiries', enquiryRouter);
 
     // UI Static Serving
     if (['quality', 'production'].includes(apienv)) {    

@@ -55,7 +55,7 @@ export const cataloguesData = [{
                 height: 1000
             },
             fileContent: {
-                url: "/wp-content/uploads/2025/12/SEL_Royale-Plus-A4-Brochure_Single-Page.pdf",
+                url: "/wp-content/uploads/2025/12/SEL_Royale-Plus-Brochure_A4-Single-Page.pdf",
             }
         },
         {

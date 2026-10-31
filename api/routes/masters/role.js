@@ -1,9 +1,9 @@
 import express from 'express';
 const roleRouter = express.Router();
 import Role from '../../handlers/masters/role.js';
-import { jwtHybrdProtect, basicAuth } from '../../middlewares/auth.js';
+import { jwtHybridProtect, basicAuth } from '../../middlewares/auth.js';
 
-// roleRouter.use(jwtHybrdProtect);
+// roleRouter.use(jwtHybridProtect);
 // roleRouter.use(basicAuth);
 
 roleRouter.post('/', Role.create);

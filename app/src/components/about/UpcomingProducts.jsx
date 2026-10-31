@@ -5,7 +5,36 @@ import { upcomingProductsData } from "@/data/upcomingProductsData";
 import WallCard from "@/components/common/WallCard";
 import SafeHtmlRenderer from '@/configs/SafeHtmlRenderer';
 
+const UpcomingProductDetails = React.memo(function UpcomingProductDetails({
+    heading="",
+    contentDetails="",
+    onClose
+}) {
+    return (
+        <div className="upcoming-products-content-card-modal">
+            <div className="upcoming-products-content-card-modal-close" onClick={onClose}>X</div>
+            <div className="upcoming-products-content-card-heading">{heading}</div>
+            <div className="upcoming-products-content-card-details">
+                <SafeHtmlRenderer content={contentDetails} />
+            </div>
+        </div>
+    )
+})
+
+const DEFAULT_VALUE = { status: false, title: "", data: "" }
+
 const UpcomingProducts = () => {
+    const [open, setOpen] = React.useState(DEFAULT_VALUE);
+
+    const handleOpen = (e, heading, details) => {
+        e.preventDefault();
+        setOpen({ status: true, title: heading, data: details });
+    }
+
+    const handleClose = (e) => {
+        setOpen(DEFAULT_VALUE);
+    }
+
   return (
     <div className="upcoming-products-layout">
         <div className="contnr">
@@ -33,14 +62,27 @@ const UpcomingProducts = () => {
                             contentWall={elm?.poster}
                             title={elm?.caption}
                             height="25rem"
+                            onClick={(e) => handleOpen(e, elm?.caption, elm?.description)}
                             renderAction={
-                                <div>
-                                    <SafeHtmlRenderer content={elm?.description} />
-                                </div>
+                                <div
+                                    style={{
+                                        padding:"1rem 0",
+                                        color:"var(--theme)",
+                                        fontSize:"1rem",
+                                        fontWeight:400,
+                                        cursor:"pointer"
+                                    }}
+                                >Read More</div>
                             }
                         />
                     ))}
                 </div>
+                {open?.status
+                && <UpcomingProductDetails
+                    heading={open?.title}
+                    contentDetails={open?.data}
+                    onClose={handleClose}
+                />}
             </div>
         </div>
     </div>

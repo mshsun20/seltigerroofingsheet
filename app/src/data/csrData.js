@@ -34,25 +34,23 @@ export const csrData = [{
                 contentTextuals: {
                     className: "csr-item-textuals",
                     title: "Solar Project",
-                    description: `<div class="space32"></div>
-                        <h2>Solarization Project</h2>
-                        <div class="space24"></div>
-                        <ul>
-                            <li>Capacity - 1.085 MWp</li>
-                            <li>Project Developer - Fourth Partner Energy Pvt Ltd</li>
-                            <li>Brief Profile of the company - India's largest Commercial &amp; Industrial Solar Developer with total asset
-                                of around 750MW spread over 24 states and 7 countries</li>
-                        </ul>
-                        <div class="space24"></div>
-                        <h2>Benefits of the project</h2>
-                        <div class="space24"></div>
-                        <ul>
-                            <li>Reduction in CO2 Emission - 12.5 Lacs Kg/Annually</li>
-                            <li>Reduction in Water Usage - 32 Lacs Litre/Annually</li>
-                            <li>Reduction in CO2 is equivalent to planting Number of Trees = 57,500 Nos of trees annually</li>
-                        </ul>
-                    </div>`
-                }
+                    details: `<h2>Solarization Project</h2>
+                    <div class="space24"></div>
+                    <ul>
+                    <li>Capacity – 1.085 MWp</li>
+                    <li>Project Developer – Fourth Partner Energy Pvt Ltd</li>
+                    <li>Brief Profile of the company – India’s largest Commercial &amp; Industrial Solar Developer with total asset of around 750MW spread over 24 states and 7 countries</li>
+                    </ul>
+                    <div class="space24"></div>
+                    <h2>Benefits of the project</h2>
+                    <div class="space24"></div>
+                    <ul>
+                    <li>Reduction in CO2 Emission – 12.5 Lacs Kg/Annually</li>
+                    <li>Reduction in Water Usage – 32 Lacs Litre/Annually</li>
+                    <li>Reduction in CO2 is equivalent to planting Number of Trees = 57,500 Nos of trees annually</li>
+                    </ul>`
+                },
+                contentGraphicals: []
             },
             {
                 className: "csr-content-item",
@@ -68,7 +66,7 @@ export const csrData = [{
                 contentTextuals: {
                     className: "csr-item-textuals",
                     title: "Jamuria blood donation camp - Sep 2023",
-                    description: `<div class="space32"></div>
+                    details: `<div class="space32"></div>
                         <p>On the occasion of VCMD Sir's birthday, We organized a Mega “Blood Donation Camp” at the premises of Jamuria
                             plant for the employees of SSPL Jamuria.<span id="more-5172"></span></p>
                         <p>Mr. Hareram Singh ( MLA Jamuria Constituency), Mr. Sumit Chakraborty ( Director SSPL), Mr. Narayan Sen (Sr. VP),

@@ -1,9 +1,9 @@
 import express from "express";
 const stateRouter = express.Router();
 import State from "../../handlers/masters/state.js";
-import { jwtHybrdProtect, basicAuth } from "../../middlewares/auth.js";
+import { jwtHybridProtect, basicAuth } from "../../middlewares/auth.js";
 
-// stateRouter.use(jwtHybrdProtect);
+// stateRouter.use(jwtHybridProtect);
 // stateRouter.use(basicAuth);
 
 stateRouter.post("/", State.create);

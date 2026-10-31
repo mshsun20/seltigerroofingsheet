@@ -49,6 +49,8 @@ export const setupInterceptors = (store) => {
                 config.headers["Authorization"] = basicAuthHeader;
             }
 
+            console.log(config);
+
             return config;
 
         },
@@ -94,7 +96,7 @@ export const setupInterceptors = (store) => {
             // Refresh only for 401 / 419
             //--------------------------------------------------
             const status = error.response?.status;
-            if ((status !== 401 && status !== 419) || originalRequest._retry) {
+            if ((status !== 401 && status !== 400) || originalRequest._retry) {
                 return Promise.reject(error);
             }
 

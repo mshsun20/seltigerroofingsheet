@@ -1,9 +1,9 @@
 import express from "express";
 const accountRouter = express.Router();
 import Account from "../handlers/account.js";
-import { jwtHybrdProtect, basicAuth } from "../middlewares/auth.js";
+import { unifiedAuthProtect } from "../middlewares/auth.js";
 
-accountRouter.use(jwtHybrdProtect);
+accountRouter.use(unifiedAuthProtect);
 // accountRouter.use(basicAuth);
 
 accountRouter.post("/", Account.create);

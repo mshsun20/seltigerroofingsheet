@@ -14,26 +14,6 @@ const Csr = () => {
         <LazyWrapper><Banner data={"CSR"} info={csrBanner} /></LazyWrapper>
         <LazyWrapper><AboutCsr dataSet={aboutCsr[0]} /></LazyWrapper>
         <LazyWrapper><OurCsr /></LazyWrapper>
-        {/* <div className={csrData[0]?.mainContent?.className}>
-            {
-                csrData[0]?.mainContent?.allContent?.map(elm => (
-                    <div className={elm?.className} key={elm?.contentIndex}>
-                        <div className={elm?.contentBackground?.className}>
-                            <Image
-                                src={elm?.contentBackground?.url}
-                                alt={elm?.contentBackground?.alt}
-                                width={elm?.contentBackground?.width}
-                                height={elm?.contentBackground?.height}
-                            />
-                        </div>
-                        <div className={elm?.contentTextuals?.className}></div>
-                        <div className="csr-content-actions">
-                            <Link href={`/about/csr/${elm?.contentSlug}`}>Read More</Link>
-                        </div>
-                    </div>
-                ))
-            }
-        </div> */}
     </div>
   )
 }

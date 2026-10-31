@@ -92,6 +92,7 @@
     border: 0.1rem solid #273b3b;
     border-radius: 0.5rem;
     box-shadow: 0 0 0.5rem #273b3b;
+    z-index: 9999;
 }
 .nv-sidebar-child-link {
     position: relative;
@@ -170,6 +171,7 @@
     text-align: center;
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
 /* container */

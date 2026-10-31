@@ -219,7 +219,7 @@ export const allProductDetails = [
         },
         caption: `Galvanized Pipe`,
         description: [
-            `<p></p>`,
+            `<p>SEL Tiger Galvanized Pipes combine strong steel construction with comprehensive corrosion resistance. It is engineered for longevity in structural, plumbing, and outdoor installations. These pipes offer dependable strength, dimensional consistency, and easy integration into construction and industrial systems.<br>Backed by meticulous quality checks, SEL Tiger Galvanized Pipes support safe, efficient project execution with minimal maintenance. Trusted across sectors, they deliver lasting performance and peace of mind for installers, engineers, and project owners alike.</p>`,
         ]
     },
     {
@@ -248,7 +248,7 @@ export const allProductDetails = [
         },
         caption: `Hot Rolled Coil`,
         description: [
-            `<p></p>`,
+            `<p>Hot Rolled (HR) steel from SEL Tiger delivers dependable strength and consistent performance. It is made for heavy fabrication, structural frames, and industrial projects. With robust dimensional accuracy and superior material integrity, SEL Tiger HR steel supports long-lasting installations and smooth project execution.<br>Trusted by constructors and engineers alike, this product ensures structural confidence and resilience for large-scale construction, industrial assemblies, and bespoke manufacturing applications, backed by rigorous quality standards and supply reliability.</p>`,
         ]
     },
     {
@@ -277,7 +277,7 @@ export const allProductDetails = [
         },
         caption: `Color Coated Aluminium Sheets`,
         description: [
-            `<p></p>`,
+            `<p>SEL Tiger Aluminium Colour Coated sheets blend aesthetic appeal with enduring performance, ideal for modern roofing, façades, and architectural accents. The advanced colour coating system ensures vibrant and fade-resistant finishes paired with excellent weather and UV resistance. Lightweight yet strong, these sheets simplify installation while enhancing thermal performance and visual impact.<br>Designed for commercial, industrial, and residential projects, SEL Tiger Aluminium Colour Coated products deliver both beauty and functionality. They transform spaces with lasting colour retention and robust engineering you can rely on in every build.</p>`,
         ]
     },
     {
@@ -306,7 +306,7 @@ export const allProductDetails = [
         },
         caption: `Aluminium Sheets`,
         description: [
-            `<p></p>`,
+            `<p>SEL Tiger Aluminum products offer a powerful combination of lightweight resilience and corrosion resistance. Precision-produced from high-grade aluminium, these products deliver reliable performance, ease of handling, and excellent dimensional stability. Whether used in roofing, automotive assemblies, or architectural features, SEL Tiger Aluminium ensures longevity and consistent quality through every phase of use.<br>With inherent resistance to weather and chemical exposure, this versatile metal supports efficient installation, reduced maintenance, and enduring strength that aligns with modern project demands and sustainability goals.</p>`,
         ]
     },
 ]

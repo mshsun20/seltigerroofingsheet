@@ -1,9 +1,9 @@
 import express from "express";
 const departmentRouter = express.Router();
 import Department from "../../handlers/masters/department.js";
-import { jwtHybrdProtect, basicAuth } from "../../middlewares/auth.js";
+import { jwtHybridProtect, basicAuth } from "../../middlewares/auth.js";
 
-// departmentRouter.use(jwtHybrdProtect);
+// departmentRouter.use(jwtHybridProtect);
 // departmentRouter.use(basicAuth);
 
 departmentRouter.post("/", Department.create);

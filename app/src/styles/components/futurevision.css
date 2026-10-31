@@ -184,6 +184,13 @@
     color: black;
     font-size: 1.2rem;
     border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--theme);
+        color: white;
+    }
 }
 .upcoming-updates-tab-item.active {
     background-color: var(--theme);
@@ -214,6 +221,14 @@
     font-size: 1.2rem;
     font-weight: 600;
     text-align: left;
+    transition: all 0.2s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--theme);
+        color: white;
+        border-radius: 0.5rem;
+    }
 }
 .upcoming-updates-line-item.active {
     background-color: var(--theme);
@@ -456,6 +471,53 @@
     width: 100%;
     height: auto;
     padding: 1rem 0;
+}
+
+
+.upcoming-products-content-card-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    background: #dedde5;
+    width: auto;
+    max-width: 35rem;
+    height: auto;
+    max-height: 30rem;
+    padding: 2.5rem;
+    transform: translate(-50%, -50%);
+    z-index: 99999;
+}
+.upcoming-products-content-card-modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+    color: var(--theme);
+    cursor: pointer;
+}
+.upcoming-products-content-card-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.5rem 1rem 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.upcoming-products-content-card-details {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0.5rem;
+    width: 100%;
+    color: #565656;
+    font-size: 1.1rem;
+    font-weight: 400;
+    overflow-y: auto;
 }
 
 

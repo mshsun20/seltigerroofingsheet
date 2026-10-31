@@ -2,14 +2,13 @@ import React from 'react';
 import dynamic from "next/dynamic";
 import LazyWrapper from '@/components/common/LazyWrapper';
 import { csrData } from "@/data/csrData";
-const Banner = dynamic(() => import("@/components/common/Banner"))
-import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer"
-import Image from 'next/image';
+const Banner = dynamic(() => import("@/components/common/Banner"));
+const CsrDetails = dynamic(() => import("@/components/about/CsrDetails"));
 
 
 const CsrInfo = async ({ params }) => {
     const { csrInfo } = await params
-    console.log(csrInfo);
+    // console.log(csrInfo);
     const data = csrData[0]?.mainContent?.allContent?.find(itm => String(itm?.contentSlug)===String(csrInfo?.[0] || ""))
     const csrSubBannerData = {}
     Object.assign(csrSubBannerData, {
@@ -23,26 +22,14 @@ const CsrInfo = async ({ params }) => {
         baseInfo: { name: "Home", url: "/" },
         bannerInfo: [
             { name: "CSR", url: "/csr" },
-            { name: data?.contentTextuals?.caption, url: "#" },
+            { name: data?.contentTextuals?.title, url: data?.contentSlug },
         ]
     })
 
   return (
-    <div className="csr-layout">
-        <LazyWrapper><Banner data={data?.contentTextuals?.caption} info={csrSubBannerData} /></LazyWrapper>
-        <div className={data?.className}>
-            <div className={data?.contentBackground?.className}>
-                <Image
-                    src={data?.contentBackground?.url}
-                    alt={data?.contentBackground?.alt}
-                    width={data?.contentBackground?.width}
-                    height={data?.contentBackground?.height}
-                />
-            </div>
-            <div className={data?.contentTextuals?.className}>
-                <SafeHtmlRenderer content={data?.contentTextuals?.details} />
-            </div>
-        </div>
+    <div className="content-layout">
+        <LazyWrapper><Banner data={data?.contentTextuals?.title} info={csrSubBannerData} /></LazyWrapper>
+        <LazyWrapper><CsrDetails dataSet={data} /></LazyWrapper>
     </div>
   )
 }

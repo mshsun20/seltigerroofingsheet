@@ -23,7 +23,7 @@ const Catalogues = () => {
               fileContent={elm?.fileContent}
               title={elm?.title}
               renderAction={
-                <Link href={`http://localhost:3052/${elm?.fileContent?.url}`} className="catalogues-content-link">
+                <Link href={`http://localhost:3052/${elm?.fileContent?.url}`} target="_blank" className="catalogues-content-link">
                   Download
                 </Link>
               }

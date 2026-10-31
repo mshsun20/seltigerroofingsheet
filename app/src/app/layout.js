@@ -4,6 +4,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ReduxProvider from "@/redux/provider/ReduxProvider";
 import NavbarProvider from "@/context/NavbarContext";
 import FramerProvider from "@/components/common/FramerProvider";
 // import Router from "next/navigation";
@@ -42,15 +43,19 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="root-layout">
-        <NavbarProvider>
-          <FramerProvider>
-            <Header />
-            <main className="main">
-              {children}
-            </main>
-            <Footer />
-          </FramerProvider>
-        </NavbarProvider>
+        <ReduxProvider>
+          <NavbarProvider>
+            <FramerProvider>
+              <Header />
+
+              <main className="main">
+                {children}
+              </main>
+
+              <Footer />
+            </FramerProvider>
+          </NavbarProvider>
+        </ReduxProvider>
       </body>
     </html>
   );

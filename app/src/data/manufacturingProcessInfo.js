@@ -5,5 +5,11 @@ export const manufacturingProcessInfo = [{
     },
     mainContent: {
         className: "manufacturing-process-content",
+        contentGraphicals: {
+            url: `/wp-content/themes/sel/assets/img/all-images/facilitiy/manufacturing_process.png`,
+            alt: `manufacturing process image`,
+            width: 5000,
+            height: 5000,
+        }
     }
 }]

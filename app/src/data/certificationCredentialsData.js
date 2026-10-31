@@ -67,7 +67,7 @@ export const certificationCredentialData = [{
                 width: 1000,
                 height: 1000,
             },
-            certLink: `http://localhost:3052/wp-content/uploads/2025/12/BIS-IS-513.pdf`
+            certLink: `http://localhost:3052/wp-content/uploads/2025/12/BIS-IS513.pdf`
         }
     ]
 }]

@@ -5,6 +5,7 @@ const Banner = dynamic(() => import("@/components/common/Banner"));
 import { manufacturingFacilitiesBanner } from "@/data/manufacturingFacilitiesBanner";
 import LazyWrapper from '@/components/common/LazyWrapper';
 const ManufacturingFacilitySection = dynamic(() => import("@/components/about/ManufacturingFacilitySection"));
+const ManufacturingProcess = dynamic(() => import("@/components/about/ManufacturingProcess"));
 const OtherFacilitySection = dynamic(() => import("@/components/about/OtherFacilitySection"));
 
 
@@ -13,6 +14,7 @@ const ManufacturingFacilities = () => {
     <div className="content-layout">
       <LazyWrapper><Banner data={"Manufacturing Facilities"} info={manufacturingFacilitiesBanner} /></LazyWrapper>
       <LazyWrapper><ManufacturingFacilitySection /></LazyWrapper>
+      <LazyWrapper><ManufacturingProcess /></LazyWrapper>
       <LazyWrapper><OtherFacilitySection /></LazyWrapper>
     </div>
   )

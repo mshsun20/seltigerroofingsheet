@@ -1,9 +1,9 @@
 import express from "express";
 const subcategoryRouter = express.Router();
 import Subcategory from "../../handlers/masters/subcategory.js";
-import { jwtHybrdProtect, basicAuth } from "../../middlewares/auth.js";
+import { jwtHybridProtect, basicAuth } from "../../middlewares/auth.js";
 
-// subcategoryRouter.use(jwtHybrdProtect);
+// subcategoryRouter.use(jwtHybridProtect);
 // subcategoryRouter.use(basicAuth);
 
 subcategoryRouter.post("/", Subcategory.create);

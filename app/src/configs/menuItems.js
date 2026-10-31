@@ -1,7 +1,8 @@
 // About menu items
 const highlightItems = [
   { name: "Meets & Events", path: "/meets-events" },
-  { name: "Catalogues", path: "/catalogues" }
+  { name: "Catalogues", path: "/catalogues" },
+  { name: "News & Press Releases", path: "/news" },
 ]
 const aboutItems = [
   { name: "Company Overview", path: "/about-us" },
