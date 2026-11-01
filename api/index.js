@@ -36,9 +36,9 @@ const portDetails = {
 const port = portDetails[apienv] || 5052;
 
 const allowedOrigins = {
-    production: [process.env.APP_URL_PRD, process.env.ADMIN_URL_PRD],
-    quality: [process.env.APP_URL_QAS, process.env.ADMIN_URL_QAS],
-    development: [process.env.APP_URL_DEV, process.env.ADMIN_URL_DEV],
+    production: [process.env.APP_URL_PRD, process.env.ADMIN_URL_PRD, "http://localhost:3050"],
+    quality: [process.env.APP_URL_QAS, process.env.ADMIN_URL_QAS, "http://localhost:3051"],
+    development: [process.env.APP_URL_DEV, process.env.ADMIN_URL_DEV, "http://localhost:3052"],
 }
 const origins = allowedOrigins[apienv] || ['http://localhost:3052'];
 
@@ -59,7 +59,7 @@ if (cluster.isPrimary) {
 }
 else {
     // Trust Apache proxy
-    app.set("trust proxy", "loopback"); // or simply: app.set("trust proxy", 1);
+    app.set("trust proxy", 1);
 
     // Debug route to verify IP + UA
     app.get("/api/debug/ip", (req, res) => {
