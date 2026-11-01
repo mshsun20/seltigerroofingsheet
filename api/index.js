@@ -36,9 +36,23 @@ const portDetails = {
 const port = portDetails[apienv] || 5052;
 
 const allowedOrigins = {
-    production: [process.env.APP_URL_PRD, process.env.ADMIN_URL_PRD, "http://localhost:3050"],
-    quality: [process.env.APP_URL_QAS, process.env.ADMIN_URL_QAS, "http://localhost:3051"],
-    development: [process.env.APP_URL_DEV, process.env.ADMIN_URL_DEV, "http://localhost:3052"],
+    production: [
+        process.env.APP_URL_PRD,
+        process.env.ADMIN_URL_PRD,
+        "http://localhost:3050",
+        "http://65.2.193.121",
+        "http://65.2.193.121/admin",
+    ],
+    quality: [
+        process.env.APP_URL_QAS,
+        process.env.ADMIN_URL_QAS,
+        "http://localhost:3051",
+    ],
+    development: [
+        process.env.APP_URL_DEV,
+        process.env.ADMIN_URL_DEV,
+        "http://localhost:3052",
+    ],
 }
 const origins = allowedOrigins[apienv] || ['http://localhost:3052'];
 
