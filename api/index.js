@@ -115,16 +115,16 @@ else {
             res.sendFile(path.join(adminDistPath, "index.html"));
         });
         
-        // =========================
-        // 1. User UI
-        // =========================
-        const frontendDistPath = path.join(__dirname, "..", "app", "dist");
-        // Serve User frontend static assets
-        app.use(express.static(frontendDistPath));
-        // User frontend SPA fallback
-        app.get(/^\/(?!api|admin)(.*)$/, (_, res) => {
-            res.sendFile(path.join(frontendDistPath, "index.html"));
-        });
+        // // =========================
+        // // 1. User UI
+        // // =========================
+        // const frontendDistPath = path.join(__dirname, "..", "app", "dist");
+        // // Serve User frontend static assets
+        // app.use(express.static(frontendDistPath));
+        // // User frontend SPA fallback
+        // app.get(/^\/(?!api|admin)(.*)$/, (_, res) => {
+        //     res.sendFile(path.join(frontendDistPath, "index.html"));
+        // });
     }
 
     // ping
