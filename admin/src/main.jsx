@@ -7,7 +7,6 @@ import store, { persistor } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { setupInterceptors } from './config/axiosInstance.js';
 
-
 setupInterceptors(store);
 
 const appenv = import.meta.env.VITE_ENV || "development"

@@ -176,7 +176,7 @@ export const jwtHybridProtect = async (req, res, next) => {
 export const unifiedAuthProtect = async (req, res, next) => {
     const authHeader = req.headers.authorization;
 
-    console.log(authHeader);
+    // console.log(authHeader);
 
     // --------------------------------------------
     // Bearer API Key

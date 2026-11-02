@@ -31,6 +31,7 @@ const login = async (req, res) => {
 const checkAuth = async (req, res) => {
     try {
         const accessToken = req.cookies.access_token;
+        console.log("Access Token:", accessToken);
         const accountDetails = await checkSession(accessToken);
         res.status(200).json({
             success: true,

@@ -23,7 +23,7 @@ const router = createBrowserRouter([
       { path: "/image-uploader", element: <ProtectedRoute><Imageuploaders /></ProtectedRoute> },
     ]
   },
-]);
+], { basename: "/admin" });
 
 const Router = () => {
   return (
