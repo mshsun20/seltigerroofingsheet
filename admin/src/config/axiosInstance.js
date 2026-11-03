@@ -1,7 +1,7 @@
 import axios from "axios";
 import { clearAuthState } from "../redux/slices/authSlice";
 
-const appenv = import.meta.env.VITE_APP_ENV || "development";
+const appenv = import.meta.env.VITE_ENV || "development";
 
 const baseUrl = {
     production: import.meta.env.VITE_APIURL_PRD,
