@@ -7,7 +7,6 @@ import moment from 'moment';
 import SafeHtmlRenderer from "@/configs/SafeHtmlRenderer";
 
 const Card = ({ content }) => {
-  console.log(content);
   return (
     <div className='card'>
         <div className="card-poster">
