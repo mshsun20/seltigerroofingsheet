@@ -74,7 +74,8 @@ export const csrData = [{
                             Abhisekh Lath, Md Hussan, Mr. Satyam Kumar were present in the program.</p>
                         <p>A total of 452 samples of blood was collected by Blood Bank of Durgapur &amp; Asansol.</p>
                     </div>`
-                }
+                },
+                contentGraphicals: []
             },
         ]
     }
