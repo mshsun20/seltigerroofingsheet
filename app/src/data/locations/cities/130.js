@@ -1,0 +1,14 @@
+// Auto-generated from World_City_Data.xlsx (City Master). Country id 130, keyed by state id.
+export default {
+  2950: [
+    { id: 67377, name: "Ampasimanolotra" },
+    { id: 67378, name: "Andovoranto" },
+    { id: 67379, name: "Mahanoro" },
+    { id: 67380, name: "Mahavelona" },
+    { id: 67381, name: "Marolambo" },
+    { id: 67382, name: "Toamasina" },
+    { id: 67383, name: "Toamasina I" },
+    { id: 67384, name: "Toamasina II" },
+    { id: 67385, name: "Vohibinany" }
+  ]
+};

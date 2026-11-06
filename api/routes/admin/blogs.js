@@ -1,13 +1,14 @@
 import express from 'express';
 const blogRouter = express.Router();
 import fileUpload from '../../middlewares/fileUpload.js';
-import { createBlog, getBlogs, getBlogBySlug, updateBlog, deleteBlog } from '../../controllers/admin/blogs.js';
+import Blog from '../../handlers/admin/blogs.js';
 
 // Routes ---------------------------------------------------------------------------------------------------------------------------------------------------------
-blogRouter.post('/', fileUpload.none(), createBlog);
-blogRouter.get('/', getBlogs);
-blogRouter.get('/:slug', getBlogBySlug);
-blogRouter.patch('/:id', fileUpload.none(), updateBlog);
-blogRouter.delete('/:id', deleteBlog);
+blogRouter.post('/', fileUpload.none(), Blog.createBlog);
+blogRouter.get('/', Blog.getBlogs);
+blogRouter.get('/:slug', Blog.getBlogBySlug);
+blogRouter.get('/:id', Blog.getBlogById);
+blogRouter.patch('/:id', fileUpload.none(), Blog.updateBlog);
+blogRouter.delete('/:id', Blog.deleteBlog);
 
 export default blogRouter;

@@ -1,0 +1,24 @@
+// Auto-generated from World_City_Data.xlsx (City Master). Country id 228, keyed by state id.
+export default {
+  3946: [
+    { id: 108997, name: "Kulia Village" },
+    { id: 108998, name: "Niulakita" }
+  ],
+  3947: [
+    { id: 109001, name: "Toga Village" }
+  ],
+  3948: [
+    { id: 109000, name: "Tanrake Village" }
+  ],
+  3950: [
+    { id: 108994, name: "Asau Village" }
+  ],
+  3951: [
+    { id: 108993, name: "Alapi Village" },
+    { id: 108995, name: "Fakaifou Village" },
+    { id: 108996, name: "Funafuti" }
+  ],
+  3952: [
+    { id: 108999, name: "Savave Village" }
+  ]
+};

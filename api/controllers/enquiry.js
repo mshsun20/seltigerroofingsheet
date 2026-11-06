@@ -6,6 +6,11 @@ export const createFunction = async (payload) => {
     return data;
 }
 
+export const createMultipleFunction = async (payload) => {
+    const data = await Enquiry.insertMany(payload);
+    return data;
+}
+
 export const readFunction = async () => {
     return await Enquiry.find().lean();
 }
