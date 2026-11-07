@@ -1,6 +1,7 @@
 // fileOpController.js
 
 import {
+    uploadSingleFile,
     uploadFiles,
     getFiles,
     getFileById,
@@ -8,6 +9,35 @@ import {
     removeFile,
     deleteFiles
 } from "../utilities/fileOperations.js";
+
+/* ------------------------------------------------------------------
+   ✅ Upload Single File
+------------------------------------------------------------------ */
+export const uploadSingleHandler = async (req, res) => {
+    try {
+        if (!req.file) {
+            return res.status(400).json({
+                success: false,
+                message: "No file uploaded"
+            });
+        }
+        const file = req.file;
+        const result = await uploadSingleFile(file);
+
+        return res.status(200).json({
+            success: true,
+            message: result.message,
+            data: result.uploaded,
+            duplicate: result.duplicate
+        });
+    } catch (error) {
+        return res.status(400).json({
+            success: false,
+            message: error.message
+        });
+    }
+};
+
 
 /* ------------------------------------------------------------------
    ✅ Upload Multiple Files

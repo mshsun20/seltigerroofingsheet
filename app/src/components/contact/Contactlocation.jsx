@@ -7,7 +7,7 @@ import ContactLocationCard from "./ContactLocationCard";
 
 const Contactlocation = () => {
   return (
-    <div className='contact-locations'>
+    <div className='contact-location-layout'>
         <div className="contact-location-hdr">
             <div className="contact-location-top">
                 <div className="topper-icon">
@@ -22,31 +22,32 @@ const Contactlocation = () => {
             </div>
             <div className="contact-location-hdng">Our Other Loactions</div>
         </div>
-        <div className="contact-location-slider">
-            <CarouselSlider
-                data={testimonialData}
-                cardWidth={80}
-                slideWidth={350}
-                gap={40}
-                autoPlay={true}
-                autoDelay={5000}
-                renderItem={(item) => (
-                    <ContactLocationCard item={item} />
-                )}                
-                animationConfig={{
-                    activeOpacity: 1,
-                    inactiveOpacity: 0.4,
-                    activeBlur: "0",
-                    inactiveBlur: "0.2rem"
-                }}
-                springConfig={{
-                    type: "spring",
-                    stiffness: 500,
-                    damping: 350
-                }}
-            />
+        <div className="contact-location-container">
+            <div className="contact-location-slider">
+                <CarouselSlider
+                    data={testimonialData}
+                    cardWidth={80}
+                    slideWidth={350}
+                    gap={40}
+                    autoPlay={true}
+                    autoDelay={5000}
+                    renderItem={(item) => (
+                        <ContactLocationCard item={item} />
+                    )}                
+                    animationConfig={{
+                        activeOpacity: 1,
+                        inactiveOpacity: 0.4,
+                        activeBlur: "0",
+                        inactiveBlur: "0.2rem"
+                    }}
+                    springConfig={{
+                        type: "spring",
+                        stiffness: 500,
+                        damping: 350
+                    }}
+                />
+            </div>
         </div>
-        <div className="contact-location-map"></div>
     </div>
   )
 }

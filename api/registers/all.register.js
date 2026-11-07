@@ -1,0 +1,33 @@
+export const PURPOSE_REGISTER=[
+  { code: "BETRD", label: "Trader", group: "business" },
+  { code: "BECMP", label: "Company", group: "business" },
+  { code: "BEDIST", label: "Distributor", group: "business" },
+  { code: "BEDLR", label: "Dealer", group: "business" },
+  { code: "BESTM", label: "Steel Mills", group: "business" },
+  { code: "BEOEM", label: "OEM Customer", group: "business" },
+  { code: "BEB2B", label: "B2B Customer", group: "business" },
+  { code: "BEEXP", label: "Export Customer", group: "business" },
+  // { code: "BEENDC", label: "End Customer", group: "business" },
+  { code: "BECSUBDLR", label: "Sub Dealer", group: "business" },
+  { code: "BECRTL", label: "Retailer", group: "business" },
+  { code: "BECPRFL", label: "Profiler", group: "business" },
+  { code: "BECPRJ", label: "Project", group: "business" },
+  { code: "BECARCH", label: "Architect", group: "business" },
+  { code: "BECENGR", label: "Engineer", group: "business" },
+  { code: "BECCNTR", label: "Contractor", group: "business" },
+  { code: "BECMSN", label: "Mason", group: "business" },
+  { code: "BECAGNT", label: "Agent", group: "business" },
+  { code: "BECBLDR", label: "Builder", group: "business" },
+  { code: "BECEPCNTR", label: "EPC Contractor", group: "business" },
+  { code: "BECFABR", label: "Fabricator", group: "business" },
+  { code: "BECHOWN", label: "House Owner", group: "business" },
+  { code: "BECPRTNR", label: "Partner", group: "business" },
+  { code: "DDDIST", label: "Distributor", group: "dealership" },
+  { code: "DDDLR", label: "Dealer", group: "dealership" },
+  { code: "JO", label: "Job & Others", group: "Job & Others" },
+]
+
+export const SRC_REGISTER = [
+  { code: "sm", value: "Shyam Metalics", media: "Website" },
+  { code: "sel", value: "SEL Tiger TMT", media: "Website" },
+]

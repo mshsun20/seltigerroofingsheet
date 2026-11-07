@@ -4,10 +4,14 @@ import {
     deleteFunction
 } from "../controllers/enquiry.js";
 import { idValidator } from "../utilities/idValidator.js";
+import { SRC_REGISTER } from "../registers/all.register.js";
 import crypto from "crypto";
+import moment from "moment";
 import {
     newSfTokenGen
 } from "../config/sfTokenGen.js";
+import axios from "axios";
+import { uploadSingleFile } from "../utilities/fileOperations.js";
 
 
 const ENQUIRY_API_URL = String(process.env.SF_LEAD_ADD).trim();
@@ -15,59 +19,24 @@ const ENQUIRY_API_URL = String(process.env.SF_LEAD_ADD).trim();
 // Reusables Functions
 
 // Controller logics
-// const create = async (req, res) => {
-//     try {
-//         const enquiryPayload = req.body
-//         // console.log(enquiryPayload);
-//         Object.assign(enquiryPayload, { enquiryNo: crypto.randomUUID() });
-//         const existingEnquiry = await readByUniqueFunction(enquiryPayload?.enquiryNo);
-//         if (!existingEnquiry) {
-//             const newEnquiry = await createFunction(enquiryPayload);
-//             if (!newEnquiry) return res.status(401).json({ message: 'Enquiry details creation failed.', success: false })
-//             return res.status(201).json({ message: 'Enquiry details created successfully.', success: true, data: newEnquiry })
-//         }
-//         else {
-//             ['_id', '__v', 'createdAt', 'updatedAt'].forEach(elm => delete enquiryPayload[elm])
-//             const updatedEnquiry = await updateFunction(enquiryPayload, existingEnquiry?._id);
-//             if (!updatedEnquiry) return res.status(401).json({ message: 'Existing Enquiry details update failed.', success: false })
-//             return res.status(201).json({ message: 'Existing Enquiry details updated successfully.', success: true, data: updatedEnquiry })
-//         }
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).json({ message: 'Internal Server Error.', success: false, data: error });
-//     }
-// }
-
-
 const create = async (req, res) => {
     try {
         const enquiryPayload = req.body;
-        // console.log(enquiryPayload);
-        const attachment = req.file;
-
-        if (attachment) {
-            const s3Url = await uploadtoS3(attachment, "enquiry");
-            // console.log(s3Url);
-            if (!s3Url) {
-                res.status(400).json({
-                    success: false,
-                    message: "Document upload error",
-                });
-            }
-            enquiryPayload.attachment = s3Url;
-        }
-
-        // const date = new Date();
-
+        const file = req.file;
+        const uploadResult = await uploadSingleFile(file);
+        
         Object.assign(enquiryPayload, {
             source: SRC_REGISTER?.find(src => src.code === "sm")?.value,
+            attachment: uploadResult?.uploaded?._id || null,
+            status: "Pending",
             createdAt: moment().toISOString(),
             updatedAt: moment().toISOString(),
         })
-        // console.log(enquiryPayload);
-        const newEnquiryPayload = []
+        console.log(enquiryPayload);
+        const newEnquiryPayload = [];
 
-        if (enquiryPayload?.businessRequirements?.length > 0) {
+        if (typeof enquiryPayload?.businessRequirements !== "string" && enquiryPayload?.businessRequirements?.length > 0) {
+            // console.log("x1");
             const { businessRequirements, productInterests, ...rest } = enquiryPayload
             businessRequirements?.forEach(breq => {
                 newEnquiryPayload.push({
@@ -83,7 +52,8 @@ const create = async (req, res) => {
                 })
             })
         }
-        else if (enquiryPayload?.productInterests?.length > 0) {
+        else if ( typeof enquiryPayload?.productInterests !== "string" && enquiryPayload?.productInterests?.length > 0) {
+            // console.log("x2");
             const { businessRequirements, productInterests, ...rest } = enquiryPayload
             productInterests?.forEach(pi => {
                 newEnquiryPayload.push({
@@ -98,6 +68,7 @@ const create = async (req, res) => {
             })
         }
         else {
+            // console.log("x3");
             const { businessRequirements, productInterests, ...rest } = enquiryPayload
             newEnquiryPayload.push({ wbEnquiryNo: crypto.randomUUID(), ...rest })
         }
@@ -111,72 +82,75 @@ const create = async (req, res) => {
             "Cookie": "BrowserId=wlkDXIwDEfGoEsVU8ci1RQ; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1"
         }};
 
-        if (newEnquiryPayload?.length > 0) {
-            const enqResponse = await axios.post(ENQUIRY_API_URL, newEnquiryPayload, apiHeader)
-            const updatedEnquiryPayload = newEnquiryPayload?.map((enq, i) => ({
+        let updatedEnquiryPayload;
+        if (newEnquiryPayload?.length > 0 && String(enquiryPayload?.purposeGroup) !== "joborothers") {
+            const enqResponse = await axios.post(ENQUIRY_API_URL, newEnquiryPayload, apiHeader);
+            // console.log(`Enquiry Response::=>> `, enqResponse);
+
+            updatedEnquiryPayload = newEnquiryPayload?.map(enq => ({
                 ...enq,
                 leadId: String(enqResponse?.data?.results?.find(result => String(result.webEnquiryNo).trim() === String(enq.wbEnquiryNo).trim())?.leadId).trim()
             }));
-            const enquiryResponse = await createMultipleFunction(updatedEnquiryPayload);
-
-            if (enquiryResponse?.length > 0) {
-                res.status(201).json({
-                    success: true,
-                    message: "All Enquiry details created successfully",
-                    data: enquiryResponse,
-                });
-            }
-            else {
-                res.status(201).json({
-                    success: true,
-                    message: "All Enquiry details creation failed",
-                    data: enquiryResponse,
-                });
-            }
-
-
-
-            // Enquiry email notification using Graph API
-            const template = mailTemplate(enquiryResponse);
-
-            const mailResponse = await mailConfig({
-                to: [to_eml],
-                cc: [],
-                bcc: [],
-                subject: "New Enquiry Notification",
-                html: template,
-                attachments: [],
-            });
-
-            if (enquiryResponse?.length > 0 && mailResponse?.status === 202) {
-                console.log("Email sent successfully:", mailResponse);
-                res.status(201).json({
-                success: true,
-                message: "All Enquiry details created & email notification sent successfully",
-                data: enquiryResponse,
-                });
-            }
-            else {
-                console.error("Failed to send email:", mailResponse);
-                res.status(201).json({
-                success: true,
-                message: "All Enquiry details created, but Failed to send email notification",
-                data: enquiryResponse,
-                });
-            }
         }
         else {
-            res.status(500).json({
-                success: false,
-                message: "No enquiry data submitted",
+            updatedEnquiryPayload = newEnquiryPayload?.map(enq => ({
+                ...enq,
+            }));
+        }
+
+        // console.log(`Updated Enquiry Payload::=>> `, updatedEnquiryPayload);
+        const enquiryResponse = await createMultipleFunction(updatedEnquiryPayload);
+        if (enquiryResponse?.length > 0) {
+            res.status(201).json({
+                success: true,
+                message: "All Enquiry details created successfully",
+                data: enquiryResponse,
             });
         }
+        else {
+            res.status(401).json({
+                success: true,
+                message: "All Enquiry details creation failed",
+                data: enquiryResponse,
+            });
+        }
+
+
+        // Enquiry email notification using Graph API
+        // const template = mailTemplate(enquiryResponse);
+
+        // const mailResponse = await mailConfig({
+        //     to: [to_eml],
+        //     cc: [],
+        //     bcc: [],
+        //     subject: "New Enquiry Notification",
+        //     html: template,
+        //     attachments: [],
+        // });
+
+        // if (enquiryResponse?.length > 0 && mailResponse?.status === 202) {
+        //     console.log("Email sent successfully:", mailResponse);
+        //     res.status(201).json({
+        //     success: true,
+        //     message: "All Enquiry details created & email notification sent successfully",
+        //     data: enquiryResponse,
+        //     });
+        // }
+        // else {
+        //     console.error("Failed to send email:", mailResponse);
+        //     res.status(201).json({
+        //     success: true,
+        //     message: "All Enquiry details created, but Failed to send email notification",
+        //     data: enquiryResponse,
+        //     });
+        // }
     }
     catch (error) {
-        res.status(500).json({
+        console.error("Error creating enquiry:", error.response ? error.response.data : error.message);
+        res.status(400).json({
             success: false,
             message: "Failed to create enquiry",
-            error: error,
+            error: error.response ? error.response.data : error.message,
         });
     }
 };

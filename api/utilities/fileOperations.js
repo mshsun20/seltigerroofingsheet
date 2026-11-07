@@ -1,3 +1,4 @@
+
 import {
     uploadFile,
     getAllFiles,
@@ -7,69 +8,89 @@ import {
 } from "../config/fileStorage.js";
 
 /* ------------------------------------------------------------------
+   ✅ Upload single file
+------------------------------------------------------------------ */
+export const uploadSingleFile = async (file) => {
+    if (!file) {
+        throw new Error("No file provided for upload.");
+    }
+
+    try {
+        const res = await uploadFile(
+            file.buffer,
+            file.originalname,
+            file.mimetype
+        );
+
+        if (!res?.file) {
+            throw new Error("File upload failed.");
+        }
+
+        return {
+            uploaded: res.file,
+            duplicate: Boolean(res.duplicate),
+            message: res.duplicate
+                ? "File already exists. Existing file reused."
+                : "File uploaded successfully."
+        };
+
+    } catch (err) {
+        console.error("Single file upload error:", err);
+
+        throw new Error(
+            err.message || "Unable to upload file."
+        );
+    }
+};
+
+
+/* ------------------------------------------------------------------
    ✅ Upload multiple files
 ------------------------------------------------------------------ */
 export const uploadFiles = async (files = []) => {
     const uploaded = [];
     const duplicates = [];
+    const failed = [];
 
     await Promise.allSettled(
-        files.map(async (f) => {
+        files.map(async (file) => {
             try {
-                const res = await uploadFile( f.buffer, f.originalname, f.mimetype );
+                const res = await uploadFile(
+                    file.buffer,
+                    file.originalname,
+                    file.mimetype
+                );
 
-                /* --------------------------------------------------
-                   If duplicate found:
-                   - Do not create file again
-                   - But attach existing file info to compliance data
-                -------------------------------------------------- */
                 if (res?.duplicate && res?.file) {
-                    duplicates.push(f.originalname);
+                    duplicates.push(file.originalname);
                     uploaded.push(res.file);
-
-                    // uploaded.push({
-                    //     filId: res.file._id,
-                    //     filName: res.file.originalname,
-                    //     filContentType: res.file.mimetype,
-                    //     filContentSize: res.file.size,
-                    //     filPath: res.file.path,
-                    //     filUploadStatus: "Done",
-                    // });
-                }
-
-                /* --------------------------------------------------
-                   New uploaded file
-                -------------------------------------------------- */
-                else if (res?.file) {
+                } else if (res?.file) {
                     uploaded.push(res.file);
-                    // uploaded.push({
-                    //     filId: res.file._id,
-                    //     filName: res.file.originalname,
-                    //     filContentType: res.file.mimetype,
-                    //     filContentSize: res.file.size,
-                    //     filPath: res.file.path,
-                    //     filUploadStatus: "Done",
-                    // });
+                } else {
+                    failed.push({
+                        fileName: file.originalname,
+                        message: "File upload failed."
+                    });
                 }
 
             } catch (err) {
                 console.error("Upload error:", err);
-                uploaded.push("Upload failed"+f.originalname);
 
-                // uploaded.push({
-                //     filId: null,
-                //     filName: f.originalname,
-                //     filContentType: f.mimetype,
-                //     filContentSize: f.size || 0,
-                //     filPath: null,
-                //     filUploadStatus: "Failed",
-                // });
+                failed.push({
+                    fileName: file.originalname,
+                    message: err.message || "Upload failed."
+                });
             }
         })
     );
 
-    return { uploaded, duplicates };
+    return {
+        uploaded,
+        duplicates,
+        failed
+    };
 };
+
 
 /* ------------------------------------------------------------------
    ✅ Get all files
@@ -78,12 +99,14 @@ export const getFiles = async () => {
     return await getAllFiles();
 };
 
+
 /* ------------------------------------------------------------------
    ✅ Download single file
 ------------------------------------------------------------------ */
 export const getFileById = async (fileId) => {
     return await getFileStream(fileId);
 };
+
 
 /* ------------------------------------------------------------------
    ✅ Download multiple files ZIP
@@ -92,12 +115,14 @@ export const downloadFilesZip = async (ids = []) => {
     return await getZipStream(ids);
 };
 
+
 /* ------------------------------------------------------------------
    ✅ Delete single file
 ------------------------------------------------------------------ */
 export const removeFile = async (fileId) => {
     return await deleteFile(fileId);
 };
+
 
 /* ------------------------------------------------------------------
    ✅ Delete multiple files
@@ -109,10 +134,12 @@ export const deleteFiles = async (ids = []) => {
         ids.map(async (id) => {
             try {
                 const res = await deleteFile(id);
+
                 results.push({
                     success: true,
                     ...res
                 });
+
             } catch (err) {
                 results.push({
                     success: false,

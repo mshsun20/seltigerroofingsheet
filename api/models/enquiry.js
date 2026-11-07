@@ -3,7 +3,7 @@ const { Schema, model, Types } = mongoose;
 
 const enquirySchema = new Schema({
     wbEnquiryNo: { type: String, required: true, trim: true },
-    leadId: { type: String, required: true, trim: true },
+    leadId: { type: String, trim: true },
     firstName: { type: String, required: true, trim: true },
     lastName: { type: String, required: true, trim: true },
     companyName: { type: String, trim: true },

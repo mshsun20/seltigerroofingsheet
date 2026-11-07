@@ -33,7 +33,7 @@ const contList = [
 const Contactlist = () => {
     const contactListItems = React.useMemo(() => [...contList], [])
   return (
-    <div className='contact-list'>
+    <div className='contact-list-layout'>
         <div className="contact-list-hdr">
             <div className="contact-list-top">
                 <span className="topper-icon">
@@ -46,18 +46,20 @@ const Contactlist = () => {
                 </span>
                 <span className="topper-text">Get In Touch</span>
             </div>
-            <div className="contact-list-hdng">Let's Connect With Us</div>
+            <div className="contact-list-hdng">Let Connect With Us</div>
         </div>
-        <div className="contact-list-items">
-            {contactListItems?.length>0 && contactListItems?.map((itm, i) => (
-                <div className="list-item" key={i}>
-                    {itm?.icon && <div className="list-item-icn">{itm.icon}</div>}
-                    <div className="list-item-details">
-                        {itm?.header && <div className="list-item-hdr">{itm.header}</div>}
-                        {itm?.info && <Link href={`${itm.path}${itm.info}}`} className="list-item-info" target="_blank" rel="noopener noreferrer">{itm.info}</Link>}
+        <div className="contact-list-container">
+            <div className="contact-list-items">
+                {contactListItems?.length>0 && contactListItems?.map((itm, i) => (
+                    <div className="list-item" key={i}>
+                        {itm?.icon && <div className="list-item-icn">{itm.icon}</div>}
+                        <div className="list-item-details">
+                            {itm?.header && <div className="list-item-hdr">{itm.header}</div>}
+                            {itm?.info && <Link href={`${itm.path}${itm.info}`} className="list-item-info" target="_blank" rel="noopener noreferrer">{itm.info}</Link>}
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
     </div>
   )
